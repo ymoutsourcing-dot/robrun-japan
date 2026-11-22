@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #121416;
+  color: #f2f4f5;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* React Flow のダークテーマ調整 */
+.react-flow {
+  --xy-background-color: #121416;
+  --xy-edge-stroke: #4a525c;
+  --xy-controls-button-background-color: #20242a;
+  --xy-controls-button-background-color-hover: #2a2f36;
+  --xy-controls-button-color: #f2f4f5;
+  --xy-controls-button-border-color: #2f353d;
+  --xy-minimap-background-color: #1a1d21;
+}
+.react-flow__handle {
+  opacity: 0;
+  pointer-events: none;
+}
+.react-flow__node-shipment {
+  cursor: pointer;
+}
+.react-flow__node-header {
+  pointer-events: none;
+}
