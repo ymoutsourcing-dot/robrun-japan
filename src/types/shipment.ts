@@ -39,6 +39,8 @@ export interface ShipmentItem {
   /** サイト独自の補助分類（例: 車両改造パーツ） */
   subcategory: string | null;
   rarity: Rarity | null;
+  /** アイコン画像のパス（public/icons/<id>.<ext> があるときのみ）。なければ汎用アイコン */
+  icon: string | null;
 
   /** 研究アンロック費用（汚れた現金）。0 は無料（確認済み） */
   researchCost: number | null;

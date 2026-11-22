@@ -8,7 +8,7 @@
  *
  * 出力: src/generated/shipments.json, public/sitemap.xml
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import type {
   CategoryId,
   CategoryInfo,
@@ -129,6 +129,12 @@ const nameSeen = new Map<string, number>();
 
 const allBuilds = new Set<string>();
 
+/** public/icons/<id>.(webp|png|jpg) があればそのパスを返す */
+function findIcon(id: string): string | null {
+  for (const ext of ["webp", "png", "jpg"]) if (existsSync(`public/icons/${id}.${ext}`)) return `/icons/${id}.${ext}`;
+  return null;
+}
+
 const items: ShipmentItem[] = src.nodes.map((n) => {
   const cat = CATEGORY_MAP[n.categoryId];
   if (!cat) throw new Error(`unknown category ${n.categoryId} (${n.id})`);
@@ -182,6 +188,7 @@ const items: ShipmentItem[] = src.nodes.map((n) => {
     category: cat.id,
     subcategory: cat.id === "vehicles" && n.id.startsWith("car_") ? "車両改造" : null,
     rarity,
+    icon: findIcon(n.id),
     researchCost: n.unlockCash,
     purchaseCost: page?.purchasePrice ?? null,
     salePrice: page?.salePrice ?? null,
@@ -250,5 +257,5 @@ writeFileSync(
   indexing ? `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n` : "User-agent: *\nDisallow: /\n",
 );
 
-console.log(`items: ${items.length}, warnings: ${warnings.length}`);
+console.log(`items: ${items.length}, icons: ${items.filter((i) => i.icon).length}, warnings: ${warnings.length}`);
 for (const w of warnings) console.log("  ⚠ " + w);

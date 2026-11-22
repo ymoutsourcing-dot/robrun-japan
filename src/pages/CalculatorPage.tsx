@@ -56,7 +56,7 @@ export default function CalculatorPage() {
                   <button onClick={() => add(s.id)} className="flex w-full items-center gap-2 px-2 py-1.5 text-left text-sm hover:bg-bg-hover">
                     <ItemIcon item={s} size={14} />
                     <span className="flex-1">
-                      {displayNameJa(s)} <span className="font-mono text-xs text-muted">{displayNameEn(s)}</span>
+                      {displayNameJa(s)} <span className="font-mono text-xs text-gray-300">{displayNameEn(s)}</span>
                     </span>
                     <span className="font-mono text-xs text-money">{money(s.researchCost)}</span>
                     <Plus size={14} />
@@ -82,7 +82,7 @@ export default function CalculatorPage() {
                 <li key={id} className="flex items-center gap-2 rounded-md border border-line bg-bg-card px-2 py-1.5">
                   <ItemIcon item={it} size={14} />
                   <Link to={`/shipments/${id}`} className="min-w-0 flex-1 truncate text-sm hover:underline">
-                    {displayNameJa(it)} <span className="font-mono text-xs text-muted">{displayNameEn(it)}</span>
+                    {displayNameJa(it)} <span className="font-mono text-xs text-gray-300">{displayNameEn(it)}</span>
                   </Link>
                   <button onClick={() => setTargets(targets.filter((t) => t !== id))} aria-label="目標から削除" className="text-muted hover:text-danger">
                     <Trash2 size={15} />
@@ -155,7 +155,7 @@ export default function CalculatorPage() {
                         {done ? <CheckCircle2 size={18} className="text-neon" /> : <Circle size={18} className="text-muted" />}
                       </button>
                       <Link to={`/shipments/${it.id}`} className={`min-w-0 flex-1 truncate text-sm hover:underline ${done ? "line-through" : ""}`}>
-                        {displayNameJa(it)} <span className="font-mono text-xs text-muted">{displayNameEn(it)}</span>
+                        {displayNameJa(it)} <span className="font-mono text-xs text-gray-300">{displayNameEn(it)}</span>
                       </Link>
                       <TierBadge level={it.requiredSettlementLevel} />
                       <span className="w-24 text-right font-mono text-sm text-money">{money(it.researchCost)}</span>

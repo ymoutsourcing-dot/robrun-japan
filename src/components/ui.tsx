@@ -43,6 +43,15 @@ export const CATEGORY_ACCENT: Record<CategoryId, string> = {
 
 export function ItemIcon({ item, size = 20 }: { item: ShipmentItem; size?: number }) {
   const Icon = item.subcategory === "車両改造" ? Wrench : CATEGORY_ICON[item.category];
+  if (item.icon)
+    return (
+      <span
+        className="inline-flex shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-bg"
+        style={{ width: size + 14, height: size + 14 }}
+      >
+        <img src={item.icon} alt="" loading="lazy" className="h-full w-full object-contain p-0.5" />
+      </span>
+    );
   return (
     <span
       className="inline-flex shrink-0 items-center justify-center rounded-md border border-line bg-bg"

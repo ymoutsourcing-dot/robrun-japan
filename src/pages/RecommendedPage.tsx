@@ -13,7 +13,7 @@ function ItemRow({ it, right }: { it: ShipmentItem; right?: React.ReactNode }) {
         <ItemIcon item={it} size={14} />
         <span className="min-w-0 flex-1">
           <span className="block truncate text-sm font-bold">{displayNameJa(it)}</span>
-          <span className="block truncate font-mono text-[11px] text-muted">{displayNameEn(it)}</span>
+          <span className="block truncate font-mono text-[11px] text-gray-300">{displayNameEn(it)}</span>
         </span>
         <TierBadge level={it.requiredSettlementLevel} />
         <span className="shrink-0 text-right font-mono text-sm text-money">{right ?? money(it.researchCost)}</span>

@@ -25,8 +25,9 @@ export function categoryName(id: CategoryId): string {
 export function displayNameJa(it: ShipmentItem): string {
   return it.variant ? `${it.nameJa} ${toRoman(it.variant)}` : it.nameJa;
 }
+/** 英語名はゲーム内の表記そのまま（番号は付けない） */
 export function displayNameEn(it: ShipmentItem): string {
-  return it.variant ? `${it.nameEn} (#${it.variant})` : it.nameEn;
+  return it.nameEn;
 }
 
 export function toRoman(n: number): string {

@@ -158,7 +158,7 @@ export default function ItemsPage() {
                       <ItemIcon item={it} size={16} />
                       <span className="min-w-0">
                         <span className={`block font-bold ${done ? "text-neon" : ""}`}>{displayNameJa(it)}</span>
-                        <span className="block font-mono text-[11px] text-muted">{displayNameEn(it)}</span>
+                        <span className="block font-mono text-[11px] text-gray-300">{displayNameEn(it)}</span>
                         <span className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs md:hidden">
                           <span className="font-mono text-money">{money(it.researchCost)}</span>
                           <TierBadge level={it.requiredSettlementLevel} />

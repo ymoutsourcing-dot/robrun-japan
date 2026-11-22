@@ -57,7 +57,7 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
         <ItemIcon item={item} size={26} />
         <div className="min-w-0">
           <h1 className="text-xl font-bold leading-tight">{displayNameJa(item)}</h1>
-          <p className="font-mono text-sm text-muted">{displayNameEn(item)}</p>
+          <p className="font-mono text-sm text-gray-300">{displayNameEn(item)}</p>
           <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
             <span className="rounded border border-line px-1.5 text-xs">{categoryName(item.category)}</span>
             {item.subcategory && <span className="rounded border border-line px-1.5 text-xs">{item.subcategory}</span>}
@@ -71,10 +71,10 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
 
       <div className="rounded-lg border border-line bg-bg p-3">
         <p className="whitespace-pre-line text-[15px] leading-relaxed">{item.descriptionJa}</p>
-        <details className="mt-2">
-          <summary className="cursor-pointer text-xs text-muted">英語原文</summary>
-          <p className="mt-1 whitespace-pre-line font-mono text-xs leading-relaxed text-muted">{item.descriptionEn}</p>
-        </details>
+        <div className="mt-2 border-t border-line/60 pt-2">
+          <p className="mb-0.5 text-[10px] font-bold tracking-wider text-muted">英語原文（ゲーム内表記）</p>
+          <p className="whitespace-pre-line text-sm leading-relaxed text-gray-300">{item.descriptionEn}</p>
+        </div>
       </div>
 
       <section>

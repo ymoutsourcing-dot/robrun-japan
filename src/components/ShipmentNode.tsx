@@ -36,7 +36,7 @@ function ShipmentNodeImpl({ data, selected }: NodeProps<ShipmentFlowNode>) {
         <div className="flex items-center gap-1">
           <span className="truncate text-[13px] font-bold leading-tight">{displayNameJa(item)}</span>
         </div>
-        <div className="truncate font-mono text-[10px] leading-tight text-muted">{displayNameEn(item)}</div>
+        <div className="truncate font-mono text-[11px] leading-tight text-gray-300">{displayNameEn(item)}</div>
         <div className="mt-0.5 flex items-center gap-1">
           <span className="font-mono text-[11px] text-money">{money(item.researchCost)}</span>
           <TierBadge level={item.requiredSettlementLevel} />

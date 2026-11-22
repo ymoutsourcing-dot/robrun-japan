@@ -295,7 +295,7 @@ function ListView({
                         <ItemIcon item={it} size={16} />
                         <span className="min-w-0 flex-1">
                           <span className={`block truncate text-sm font-bold ${done ? "text-neon" : ""}`}>{displayNameJa(it)}</span>
-                          <span className="block truncate font-mono text-[11px] text-muted">{displayNameEn(it)}</span>
+                          <span className="block truncate font-mono text-[11px] text-gray-300">{displayNameEn(it)}</span>
                         </span>
                         <span className="flex shrink-0 flex-col items-end gap-0.5">
                           <span className="font-mono text-xs text-money">{money(it.researchCost)}</span>
