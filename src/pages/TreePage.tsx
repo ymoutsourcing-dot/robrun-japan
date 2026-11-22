@@ -37,7 +37,7 @@ export default function TreePage() {
   const [params, setParams] = useSearchParams();
   const selectedId = params.get("item");
   const selected = selectedId ? getItem(selectedId) : undefined;
-  const [view, setView] = useState<"tree" | "list">(() => (isNarrow() ? "list" : "tree"));
+  const [view, setView] = useState<"tree" | "list">(() => (params.get("view") === "list" || isNarrow() ? "list" : "tree"));
   const [cats, setCats] = useState<CategoryId[]>(() => {
     const c = params.get("cat");
     return c ? (c.split(",") as CategoryId[]) : categories.map((c) => c.id);

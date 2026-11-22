@@ -17,7 +17,10 @@ const TreePage = lazy(() => import("./pages/TreePage"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // scrollTo は新しいブラウザで Promise を返すため、戻り値を effect から返さない
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 

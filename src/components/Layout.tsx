@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 const NAV = [
   { to: "/shipments", label: "研究ツリー" },
@@ -48,7 +49,9 @@ export default function Layout() {
         )}
       </header>
       <main className="flex-1">
-        <Outlet />
+        <ErrorBoundary resetKey={pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
       {!fullBleed && (
         <footer className="mt-8 border-t border-line px-4 py-6 text-center text-xs text-muted">
