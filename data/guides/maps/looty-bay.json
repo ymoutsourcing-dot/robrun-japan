@@ -4,7 +4,13 @@
   "titleEn": "Map guide: Looty Bay",
   "summary": "強盗・売却・銀行・警察が集まる海辺の街。民間人・犯罪者・警官の違い、主な施設、行き方と危険、立ち回りのコツをまとめる。",
   "updatedAt": "2026-11-23",
-  "sources": {},
+  "sources": {
+    "ingame-lootybay-map": {
+      "label": "ゲーム内の Looty Bay マップ（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
+    }
+  },
   "placesTitle": "主な施設とできること",
   "places": [
     {
@@ -136,6 +142,17 @@
     {
       "heading": "ここでできること",
       "facts": [
+        {
+          "text": "Smuggler’s Van（密輸業者のバン）：積荷を売る場所。値段は積荷の売却ボーナス（悪名レベル：最大+25%）で決まる。マップでは箱のアイコン。例：Sunny Beach 付近。略奪品を売る故買屋（$マークのバン）とは別。",
+          "source": "ingame-lootybay-map",
+          "link": "/cargo"
+        },
+        {
+          "text": "密輸品の流れ：Lenny’s Motel で密輸貨物を買う（$10,000）→ 拠点の密輸品作業台で詰め直す → Smuggler’s Van で売る。",
+          "source": "ingame-lootybay-map",
+          "derived": true,
+          "link": "/guides/map-motel"
+        },
         {
           "text": "狙える場所は小さなコンビニや宝石店から、銀行の金庫室や警察の武器庫まで。同じ建物でも、道具・鍵・準備しだいで小銭にも大金にもなる。",
           "source": "steam-0917",
