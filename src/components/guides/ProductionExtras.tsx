@@ -476,7 +476,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
               ラボテーブルで粉末にして（故買屋）
             </button>
           </div>
-          <span className="text-[11px] text-muted">粉末の袋数は実測：エピック37袋・レジェンダリー25袋（アンコモンは未確認）</span>
+          <span className="text-[11px] text-muted">粉末の袋数は実測：エピック37袋前後・レジェンダリー25袋（多少ばらつく・アンコモンは未確認）。加工は1個10秒</span>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs">
           {F.upgrades.map((u) => (
