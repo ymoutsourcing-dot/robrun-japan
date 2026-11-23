@@ -15,6 +15,7 @@ import GuidesPage from "./pages/GuidesPage";
 import GuidePage from "./pages/GuidePage";
 import WeaponsPage from "./pages/WeaponsPage";
 import VehiclesPage from "./pages/VehiclesPage";
+import CargoPage from "./pages/CargoPage";
 
 // React Flow を含むツリーページは遅延読み込み
 const TreePage = lazy(() => import("./pages/TreePage"));
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="guides/:id" element={<GuidePage />} />
           <Route path="weapons" element={<WeaponsPage />} />
           <Route path="vehicles" element={<VehiclesPage />} />
+          <Route path="cargo" element={<CargoPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

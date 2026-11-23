@@ -1,0 +1,315 @@
+{
+  "source": {
+    "name": "robrun.info",
+    "note": "積荷（Груз）の各アイテムページ。密輸業者への売値（悪名レベル1）と警官の没収額",
+    "retrievedAt": "2026-11-23"
+  },
+  "items": [
+    {
+      "id": "bank_cash_bag",
+      "nameEn": "Bank Money Bag",
+      "nameJa": "銀行の札束バッグ",
+      "rarity": "Legendary",
+      "smugglerPrice": 60000,
+      "copSeizure": 15000,
+      "url": "https://robrun.info/items/bank_cash_bag/"
+    },
+    {
+      "id": "cargo_alcohol_grade_1",
+      "nameEn": "Contraband Cargo",
+      "nameJa": "密輸貨物",
+      "rarity": "Uncommon",
+      "smugglerPrice": 10000,
+      "copSeizure": 4000,
+      "url": "https://robrun.info/items/cargo_alcohol_grade_1/"
+    },
+    {
+      "id": "cargo_alcohol_grade_2",
+      "nameEn": "Premium Cargo",
+      "nameJa": "プレミアム貨物",
+      "rarity": "Epic",
+      "smugglerPrice": 35000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_alcohol_grade_2/"
+    },
+    {
+      "id": "cargo_alcohol_grade_3",
+      "nameEn": "Rarity Cargo",
+      "nameJa": "レアリティ貨物",
+      "rarity": "Legendary",
+      "smugglerPrice": 40000,
+      "copSeizure": 12000,
+      "url": "https://robrun.info/items/cargo_alcohol_grade_3/"
+    },
+    {
+      "id": "cargo_ammo",
+      "nameEn": "Weapon Parts Box",
+      "nameJa": "武器部品の木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_ammo/"
+    },
+    {
+      "id": "cargo_ammo_common",
+      "nameEn": "Weapon Parts Box",
+      "nameJa": "武器部品の木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_ammo_common/"
+    },
+    {
+      "id": "cargo_carparts",
+      "nameEn": "Spare Parts Crate",
+      "nameJa": "予備部品の木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_carparts/"
+    },
+    {
+      "id": "cargo_carparts_common",
+      "nameEn": "Spare Parts Crate",
+      "nameJa": "予備部品の木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_carparts_common/"
+    },
+    {
+      "id": "cargo_electronics",
+      "nameEn": "Electronics Crate",
+      "nameJa": "電子機器の木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_electronics/"
+    },
+    {
+      "id": "cargo_electronics_common",
+      "nameEn": "Electronics Crate",
+      "nameJa": "電子機器の木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_electronics_common/"
+    },
+    {
+      "id": "cargo_equip",
+      "nameEn": "Equipment Crate",
+      "nameJa": "装備の木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_equip/"
+    },
+    {
+      "id": "cargo_equip_common",
+      "nameEn": "Equipment Crate",
+      "nameJa": "装備の木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_equip_common/"
+    },
+    {
+      "id": "cargo_jewelry",
+      "nameEn": "Jewelry Box",
+      "nameJa": "宝飾品の箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_jewelry/"
+    },
+    {
+      "id": "cargo_jewelry_common",
+      "nameEn": "Jewelry Box",
+      "nameJa": "宝飾品の箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_jewelry_common/"
+    },
+    {
+      "id": "cargo_medicine",
+      "nameEn": "Medications Crate",
+      "nameJa": "医薬品の木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_medicine/"
+    },
+    {
+      "id": "cargo_medicine_common",
+      "nameEn": "Medications Crate",
+      "nameJa": "医薬品の木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_medicine_common/"
+    },
+    {
+      "id": "cargo_minimarket",
+      "nameEn": "Alcohol Crate",
+      "nameJa": "アルコールの木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/cargo_minimarket/"
+    },
+    {
+      "id": "cargo_minimarket_common",
+      "nameEn": "Alcohol Crate",
+      "nameJa": "アルコールの木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cargo_minimarket_common/"
+    },
+    {
+      "id": "cargo_safe",
+      "nameEn": "Portable Safe",
+      "nameJa": "携帯金庫",
+      "rarity": "Legendary",
+      "smugglerPrice": 100000,
+      "copSeizure": 25000,
+      "url": "https://robrun.info/items/cargo_safe/"
+    },
+    {
+      "id": "cargo_safe_legendary",
+      "nameEn": "Expensive Safe",
+      "nameJa": "高級金庫",
+      "rarity": "Exotic",
+      "smugglerPrice": 200000,
+      "copSeizure": 50000,
+      "url": "https://robrun.info/items/cargo_safe_legendary/"
+    },
+    {
+      "id": "cargo_statue_1",
+      "nameEn": "Golden Statue",
+      "nameJa": "金の像",
+      "rarity": "Legendary",
+      "smugglerPrice": 250000,
+      "copSeizure": 62500,
+      "url": "https://robrun.info/items/cargo_statue_1/"
+    },
+    {
+      "id": "cash_bag",
+      "nameEn": "Closed Money Bag",
+      "nameJa": "閉じた札束バッグ",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/cash_bag/"
+    },
+    {
+      "id": "collection_reward_cargo_0",
+      "nameEn": "Collection Crate",
+      "nameJa": "コレクションの木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 50000,
+      "copSeizure": 12500,
+      "url": "https://robrun.info/items/collection_reward_cargo_0/"
+    },
+    {
+      "id": "collection_reward_cargo_10",
+      "nameEn": "Collection Crate",
+      "nameJa": "コレクションの木箱",
+      "rarity": "Uncommon",
+      "smugglerPrice": 50000,
+      "copSeizure": 12500,
+      "url": "https://robrun.info/items/collection_reward_cargo_10/"
+    },
+    {
+      "id": "collection_reward_cargo_14",
+      "nameEn": "Rare Collection Crate",
+      "nameJa": "レアコレクションの木箱",
+      "rarity": "Epic",
+      "smugglerPrice": 150000,
+      "copSeizure": 60000,
+      "url": "https://robrun.info/items/collection_reward_cargo_14/"
+    },
+    {
+      "id": "collection_reward_cargo_24",
+      "nameEn": "Unique Collection Crate",
+      "nameJa": "ユニークコレクションの木箱",
+      "rarity": "Legendary",
+      "smugglerPrice": 500000,
+      "copSeizure": 125000,
+      "url": "https://robrun.info/items/collection_reward_cargo_24/"
+    },
+    {
+      "id": "drugs_bag_0",
+      "nameEn": "Powder Bag",
+      "nameJa": "パウダーバッグ",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/drugs_bag_0/"
+    },
+    {
+      "id": "drugs_bag_1",
+      "nameEn": "Pure Powder Bag",
+      "nameJa": "ピュアパウダーバッグ",
+      "rarity": "Epic",
+      "smugglerPrice": 40000,
+      "copSeizure": 10000,
+      "url": "https://robrun.info/items/drugs_bag_1/"
+    },
+    {
+      "id": "drugs_bag_2",
+      "nameEn": "Perfect Powder Bag",
+      "nameJa": "パーフェクトパウダーバッグ",
+      "rarity": "Legendary",
+      "smugglerPrice": 60000,
+      "copSeizure": 15000,
+      "url": "https://robrun.info/items/drugs_bag_2/"
+    },
+    {
+      "id": "suitcase",
+      "nameEn": "White Suitcase",
+      "nameJa": "白いスーツケース",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/suitcase/"
+    },
+    {
+      "id": "suitcase_2",
+      "nameEn": "Blue Suitcase",
+      "nameJa": "青いスーツケース",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/suitcase_2/"
+    },
+    {
+      "id": "suitcase_3",
+      "nameEn": "Red Suitcase",
+      "nameJa": "赤いスーツケース",
+      "rarity": "Uncommon",
+      "smugglerPrice": 25000,
+      "copSeizure": 6250,
+      "url": "https://robrun.info/items/suitcase_3/"
+    },
+    {
+      "id": "valuable_cargo",
+      "nameEn": "Valuable Cargo",
+      "nameJa": "貴重な積荷",
+      "rarity": "Legendary",
+      "smugglerPrice": 150000,
+      "copSeizure": 25000,
+      "url": "https://robrun.info/items/valuable_cargo/"
+    },
+    {
+      "id": "weapon_box_1",
+      "nameEn": "Weapon Parts Box",
+      "nameJa": "武器部品の木箱",
+      "rarity": "Legendary",
+      "smugglerPrice": 120000,
+      "copSeizure": 30000,
+      "url": "https://robrun.info/items/weapon_box_1/"
+    }
+  ]
+}

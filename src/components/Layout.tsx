@@ -10,6 +10,7 @@ const NAV = [
   { to: "/items", label: "アイテム" },
   { to: "/weapons", label: "武器" },
   { to: "/vehicles", label: "車両" },
+  { to: "/cargo", label: "積荷" },
   { to: "/calculator", label: "費用計算" },
   { to: "/recommended", label: "おすすめ" },
   { to: "/guides", label: "攻略" },
