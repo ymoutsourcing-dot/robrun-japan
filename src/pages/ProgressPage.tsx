@@ -71,7 +71,7 @@ export default function ProgressPage() {
     <AccordionProvider>
     <div className="mx-auto max-w-4xl space-y-4 px-3 py-4 sm:px-4">
       <h1 className="text-2xl font-bold">研究進捗の管理</h1>
-      <p className="text-sm text-muted">進捗はこのブラウザ（LocalStorage）にのみ保存されます。別の端末へ移すにはエクスポート／インポートを使ってください。</p>
+      <p className="text-sm text-muted">研究済み・予定・お気に入り・服役年数は、このPC・このブラウザ（LocalStorage）にだけ保存されます。別のPCやスマホ、別のブラウザでは空の状態で表示されます。移すときは下の「JSONでエクスポート」で保存して、移した先で「JSONをインポート」してください（服役年数も含まれます）。ブラウザのデータを消すと進捗も消えるので、ときどきエクスポートしておくと安全です。</p>
 
       <Section title="全体の進捗">
         <ProgressBar link={false} />
