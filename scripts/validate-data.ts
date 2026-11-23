@@ -92,6 +92,39 @@ for (const it of ds.items)
   }
 }
 
+// ゲーム風レイアウト（data/layout/game-layout.json）：全項目に位置があり、同じマスに2つ置かれていないか
+{
+  const gl = JSON.parse(readFileSync("data/layout/game-layout.json", "utf8")) as {
+    categories: Record<string, { order: number; direction: "up" | "down"; col: number }>;
+    nodes: Record<string, { col: number; row: number; hidden?: boolean }>;
+  };
+  for (const c of ds.categories) {
+    const gc = gl.categories[c.id];
+    if (!gc) errors.push(`ゲーム風レイアウト: カテゴリーの位置なし: ${c.id}`);
+    else if (gc.direction !== "up" && gc.direction !== "down") errors.push(`ゲーム風レイアウト: direction が不正: ${c.id}`);
+  }
+  for (const id of Object.keys(gl.nodes)) if (!ids.has(id)) errors.push(`ゲーム風レイアウト: 存在しないアイテム: ${id}`);
+  // 絶対位置（向き・段・列）で重なりをチェック。カテゴリー内だけでなく隣のカテゴリーとの重なりも検出する
+  const cells: { id: string; dir: string; row: number; x: number }[] = [];
+  for (const it of ds.items) {
+    const p = gl.nodes[it.id];
+    const gc = gl.categories[it.category];
+    if (!p) {
+      errors.push(`ゲーム風レイアウト: 位置なし: ${it.id}`);
+      continue;
+    }
+    if (!Number.isInteger(p.row) || p.row < 1) errors.push(`ゲーム風レイアウト: row が不正: ${it.id} = ${p.row}`);
+    if (!Number.isInteger(p.col * 2)) errors.push(`ゲーム風レイアウト: col は 0.5 刻み: ${it.id} = ${p.col}`);
+    if (!gc) continue;
+    for (const o of cells) {
+      if (o.dir !== gc.direction || o.row !== p.row) continue;
+      if (Math.abs(o.x - (gc.col + p.col)) < 1)
+        errors.push(`ゲーム風レイアウト: 同じマス: ${o.id} と ${it.id}（${it.category} row ${p.row}）`);
+    }
+    cells.push({ id: it.id, dir: gc.direction, row: p.row, x: gc.col + p.col });
+  }
+}
+
 const total = ds.items.reduce((s, i) => s + (i.researchCost ?? 0), 0);
 console.log(`items: ${ds.items.length}`);
 console.log(`研究費合計: $${total.toLocaleString()}`);

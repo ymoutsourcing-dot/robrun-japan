@@ -10,7 +10,7 @@ Shipments（研究ツリー）全 172 項目を日本語化し、研究費の計
 | ページ | パス | 内容 |
 | --- | --- | --- |
 | ホーム | `/` | 各機能への入口・データ状況 |
-| 研究ツリー | `/shipments` | React Flow による研究ツリー（拡大縮小・ドラッグ）。スマホはリスト表示が既定 |
+| 研究ツリー | `/shipments` | React Flow による研究ツリー（拡大縮小・ドラッグ）。スマホはリスト表示が既定。「ゲーム風」配置（`?layout=game`）はゲーム内の画面と同じく中央線から上下に伸びる |
 | アイテム詳細 | `/shipments/:id` | 日本語/英語説明・研究費・購入/売却価格・前提/派生研究・性能・出典 |
 | アイテムDB | `/items` | 日本語・英語・ひらがな検索、カテゴリー/地区Lv/研究状態/用途/レアリティ/研究費で絞り込み、並び替え |
 | 費用計算機 | `/calculator?targets=a,b` | 複数目標の必要研究費（研究済み除外・共通前提は1回だけ計上）、購入費は別集計 |
@@ -45,6 +45,7 @@ data/                       ← ゲームデータ（表示ロジックと分離
   i18n/shipments.ja.json         アイテム名・説明の日本語訳（手作業で編集）
   i18n/terms.ja.json             ステータス名などの用語辞書
   guides/recommendations.json    根拠付きのおすすめ度（任意）
+  layout/game-layout.json        ゲーム風ツリーの各項目の位置（列・段。validate-data.ts で検証）
   changelog.json                 更新履歴
 scripts/
   extract-robrunguide.ts    保存した HTML → data/source/*.json
@@ -53,7 +54,8 @@ scripts/
 src/
   types/shipment.ts         データ型（ShipmentItem）
   lib/data.ts               検索・前提研究の探索・費用計算
-  lib/treeLayout.ts         ツリーの配置計算
+  lib/treeLayout.ts         ツリーの配置計算（標準）
+  lib/gameLayout.ts         ゲーム風ツリーの配置計算（data/layout/game-layout.json を使用）
   store/progress.ts         進捗（Zustand + LocalStorage）
   pages/ components/        画面
 ```
