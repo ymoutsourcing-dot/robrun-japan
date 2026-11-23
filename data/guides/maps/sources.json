@@ -93,5 +93,10 @@
     "label": "ゲーム内のアイテム説明文（密輸品作業台）",
     "url": "/shipments/cargo_exchange_workbench_1",
     "kind": "data"
+  },
+  "ingame-confiscation-screen": {
+    "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
+    "url": "/changelog",
+    "kind": "official"
   }
 }

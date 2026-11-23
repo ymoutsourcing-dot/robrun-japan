@@ -405,6 +405,10 @@
           "text": "Highlands の住人は財産を持ったまま新しい州へ移れるようになる予定（ゲーム内の告知では「開発中」）。",
           "source": "ingame-confiscation",
           "link": "/guides/wipe"
+        },
+        {
+          "text": "ワイプ画面には「Highlands の住人は没収を逃れて、すべて持ったまま新しい州へ移れる（ESCAPE）」という選択肢があるが、まだ開発中で選べない。",
+          "source": "ingame-confiscation-screen"
         }
       ]
     },

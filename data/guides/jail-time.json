@@ -54,6 +54,11 @@
       "label": "ゲーム内の告知「Federal Confiscation Procedure」（プレイヤーのスクリーンショット・2026/11/23）",
       "url": "/changelog",
       "kind": "official"
+    },
+    "ingame-confiscation-screen": {
+      "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
     }
   },
   "sections": [
@@ -83,6 +88,14 @@
         {
           "text": "ワイプ時は資産が自動で年数に変換されるので、事前に自首する必要はない。",
           "source": "robrun-info-police"
+        },
+        {
+          "text": "ワイプ時の画面「CONFISCATION（没収）」で選べるのは2つ。右の「SURRENDER TO THE AUTHORITIES（当局に投降）」は、資産と財産が没収され、没収された額に応じて刑期（服役年数）と裏社会での格が決まる。",
+          "source": "ingame-confiscation-screen"
+        },
+        {
+          "text": "左の「ESCAPE（逃亡）」は開発中で、まだ選べない。説明では、Highlands の住人は財産の没収を逃れ、貯めたものをすべて持ったまま新しい州へ移れる。次の没収までのあいだ、最強のプレイヤーたちが財産・資源と優位を持ってそこに集まり、それを力で守ることになる。",
+          "source": "ingame-confiscation-screen"
         }
       ]
     },

@@ -333,5 +333,10 @@
     "label": "Kefir公式ヘルプ「How do I unlock new goods?」",
     "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1365-how-do-i-unlock-new-goods/",
     "kind": "official"
+  },
+  "ingame-confiscation-screen": {
+    "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
+    "url": "/changelog",
+    "kind": "official"
   }
 }
