@@ -1,12 +1,12 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { Search, X, CheckCircle2, Circle } from "lucide-react";
+import { Fragment, useMemo, useState } from "react";
+import { Search, X, CheckCircle2, Circle, ChevronDown } from "lucide-react";
 import type { CategoryId, ShipmentItem } from "../types/shipment";
 import { categories, categoryName, descendantCount, displayNameEn, displayNameJa, items, matchesQuery } from "../lib/data";
 import { money, RARITY_JA } from "../lib/format";
 import { useProgress } from "../store/progress";
 import { CategoryIcon, ItemIcon, RarityBadge, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { ItemSummary } from "../components/ItemSummary";
 
 type Sort = "cost-asc" | "cost-desc" | "recommended" | "level" | "name" | "unlocks";
 const TAGS = ["金策", "PvP", "拠点", "車両改造", "収納", "防衛"];
@@ -24,6 +24,14 @@ export default function ItemsPage() {
   const [sort, setSort] = useState<Sort>("cost-asc");
   const researched = useProgress((s) => s.researched);
   const toggle = useProgress((s) => s.toggle);
+  const [open, setOpen] = useState<Set<string>>(new Set());
+  const toggleOpen = (id: string) =>
+    setOpen((cur) => {
+      const n = new Set(cur);
+      if (n.has(id)) n.delete(id);
+      else n.add(id);
+      return n;
+    });
 
   const list = useMemo(() => {
     const set = new Set(researched);
@@ -146,18 +154,20 @@ export default function ItemsPage() {
           <tbody className="divide-y divide-line/60 bg-bg-card">
             {list.map((it) => {
               const done = researched.includes(it.id);
+              const isOpen = open.has(it.id);
               return (
-                <tr key={it.id} className="hover:bg-bg-hover">
+                <Fragment key={it.id}>
+                <tr className={`hover:bg-bg-hover ${isOpen ? "bg-bg-hover" : ""}`}>
                   <td className="p-2 align-middle">
                     <button onClick={() => toggle("researched", it.id)} aria-label={done ? "研究済みを解除" : "研究済みにする"}>
                       {done ? <CheckCircle2 size={18} className="text-neon" /> : <Circle size={18} className="text-muted" />}
                     </button>
                   </td>
                   <td className="p-2">
-                    <Link to={`/shipments/${it.id}`} className="flex items-center gap-2">
+                    <button type="button" onClick={() => toggleOpen(it.id)} aria-expanded={isOpen} className="group flex w-full items-center gap-2 text-left">
                       <ItemIcon item={it} size={16} />
                       <span className="min-w-0">
-                        <span className={`block font-bold ${done ? "text-neon" : ""}`}>{displayNameJa(it)}</span>
+                        <span className={`block font-bold group-hover:text-neon ${done ? "text-neon" : ""}`}>{displayNameJa(it)}</span>
                         <span className="block font-mono text-[11px] text-gray-300">{displayNameEn(it)}</span>
                         <span className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs md:hidden">
                           <span className="font-mono text-money">{money(it.researchCost)}</span>
@@ -165,7 +175,8 @@ export default function ItemsPage() {
                           <span className="text-muted">{categoryName(it.category)}</span>
                         </span>
                       </span>
-                    </Link>
+                      <ChevronDown size={15} className={`ml-auto shrink-0 text-muted transition-transform ${isOpen ? "rotate-180 text-neon" : ""}`} />
+                    </button>
                   </td>
                   <td className="hidden p-2 md:table-cell">
                     <span className="inline-flex items-center gap-1">
@@ -184,6 +195,14 @@ export default function ItemsPage() {
                     <RarityBadge rarity={it.rarity} />
                   </td>
                 </tr>
+                {isOpen && (
+                  <tr className="bg-bg">
+                    <td colSpan={7} className="border-l-2 border-neon/60 p-0">
+                      <ItemSummary item={it} />
+                    </td>
+                  </tr>
+                )}
+                </Fragment>
               );
             })}
           </tbody>

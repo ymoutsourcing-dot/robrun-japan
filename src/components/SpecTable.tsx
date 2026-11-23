@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
+import { ArrowDown, ArrowUp, ArrowUpDown, ChevronDown } from "lucide-react";
 
 export interface SpecColumn<T> {
   key: string;
@@ -26,10 +26,20 @@ interface Props<T> {
   defaultSort?: { key: string; dir: "asc" | "desc" };
   selected?: Set<string>;
   onToggleSelect?: (id: string) => void;
+  /** 名前クリックで行の下に開く内容（アコーディオン）。開いた行だけ描画する */
+  expand?: (row: T) => React.ReactNode;
 }
 
 /** 並び替え・最良値ハイライト付きのスペック表（名前列は横スクロール時も固定） */
-export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selected, onToggleSelect }: Props<T>) {
+export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selected, onToggleSelect, expand }: Props<T>) {
+  const [open, setOpen] = useState<Set<string>>(new Set());
+  const toggleOpen = (id: string) =>
+    setOpen((cur) => {
+      const n = new Set(cur);
+      if (n.has(id)) n.delete(id);
+      else n.add(id);
+      return n;
+    });
   const [sort, setSort] = useState<{ key: string; dir: "asc" | "desc" } | null>(defaultSort ?? null);
 
   const sorted = useMemo(() => {
@@ -96,7 +106,8 @@ export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selecte
             const n = name(r);
             const isSel = selected?.has(id);
             return (
-              <tr key={id} className={`hover:bg-bg-hover ${isSel ? "bg-neon/5" : ""}`}>
+              <Fragment key={id}>
+              <tr className={`hover:bg-bg-hover ${isSel ? "bg-neon/5" : ""} ${open.has(id) ? "bg-bg-hover" : ""}`}>
                 <td className={`sticky left-0 z-10 p-2 ${isSel ? "bg-[#1d2b22]" : "bg-bg-card"}`}>
                   <div className="flex items-center gap-2">
                     {onToggleSelect && (
@@ -109,14 +120,26 @@ export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selecte
                       />
                     )}
                     <div className="min-w-[8.5rem] max-w-[11rem]">
-                      {n.href ? (
-                        <Link to={n.href} className="block truncate font-bold hover:underline">
-                          {n.ja}
-                        </Link>
+                      {expand ? (
+                        <button type="button" onClick={() => toggleOpen(id)} className="group flex w-full items-start gap-1 text-left" aria-expanded={open.has(id)}>
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate font-bold group-hover:text-neon">{n.ja}</span>
+                            {n.en !== n.ja && <span className="block truncate font-mono text-[11px] text-gray-300">{n.en}</span>}
+                          </span>
+                          <ChevronDown size={14} className={`mt-0.5 shrink-0 text-muted transition-transform ${open.has(id) ? "rotate-180 text-neon" : ""}`} />
+                        </button>
                       ) : (
-                        <span className="block truncate font-bold">{n.ja}</span>
+                        <>
+                          {n.href ? (
+                            <Link to={n.href} className="block truncate font-bold hover:underline">
+                              {n.ja}
+                            </Link>
+                          ) : (
+                            <span className="block truncate font-bold">{n.ja}</span>
+                          )}
+                          {n.en !== n.ja && <span className="block truncate font-mono text-[11px] text-gray-300">{n.en}</span>}
+                        </>
                       )}
-                      {n.en !== n.ja && <span className="block truncate font-mono text-[11px] text-gray-300">{n.en}</span>}
                       {n.sub}
                     </div>
                   </div>
@@ -142,6 +165,14 @@ export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selecte
                   );
                 })}
               </tr>
+              {expand && open.has(id) && (
+                <tr className="bg-bg">
+                  <td colSpan={columns.length + 1} className="p-0">
+                    <div className="sticky left-0 w-[calc(100vw-2rem)] max-w-[72rem] border-l-2 border-neon/60">{expand(r)}</div>
+                  </td>
+                </tr>
+              )}
+              </Fragment>
             );
           })}
         </tbody>

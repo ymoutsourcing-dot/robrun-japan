@@ -7,6 +7,7 @@ import { money } from "../lib/format";
 import { SpecTable, type SpecColumn } from "../components/SpecTable";
 import { ItemIcon, Section, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { ItemSummary, PlainSummary } from "../components/ItemSummary";
 import type { Vehicle } from "../types/equipment";
 
 const columns: SpecColumn<Vehicle>[] = [
@@ -62,6 +63,10 @@ export default function VehiclesPage() {
         rowKey={(v) => v.id}
         name={(v) => ({ ja: v.nameJa, en: v.nameEn, href: v.inShipments ? `/shipments/${v.id}` : undefined })}
         defaultSort={{ key: "speed", dir: "desc" }}
+        expand={(v) => {
+          const it = v.inShipments ? getItem(v.id) : undefined;
+          return it ? <ItemSummary item={it} /> : <PlainSummary descriptionJa={null} note={`${v.noteJa ?? ""}。Shipmentsでは研究できません（警官として勤務中に使用）。`} />;
+        }}
       />
 
       <div className="flex gap-2 rounded-lg border border-line bg-bg-panel p-3 text-xs text-muted">

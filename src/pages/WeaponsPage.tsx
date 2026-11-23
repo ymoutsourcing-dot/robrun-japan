@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Info, Lock, Search, X } from "lucide-react";
 import { equipment } from "../lib/equipment";
-import { normalize } from "../lib/data";
+import { getItem, normalize } from "../lib/data";
+import { ItemSummary, PlainSummary } from "../components/ItemSummary";
 import { money, RARITY_COLOR, RARITY_JA } from "../lib/format";
 import { SpecTable, type SpecColumn } from "../components/SpecTable";
 import { TierBadge } from "../components/ui";
@@ -90,6 +91,11 @@ const bagColumns: SpecColumn<Bag>[] = [
   { key: "size", label: "サイズ", get: (b) => b.footprint, align: "center" },
   ...costColumns<Bag>(),
 ];
+
+const expandOf = (r: EquipmentCommon) => {
+  const it = r.inShipments ? getItem(r.id) : undefined;
+  return it ? <ItemSummary item={it} /> : <PlainSummary descriptionJa={r.descriptionJa} sourceUrl={r.sourceUrl} />;
+};
 
 const nameOf = (r: EquipmentCommon) => ({
   ja: r.nameJa,
@@ -204,22 +210,22 @@ export default function WeaponsPage() {
             </button>
           </div>
           {tab === "weapons" && (
-            <SpecTable rows={equipment.weapons.filter((w) => selected.has(w.id))} columns={weaponColumns} rowKey={(w) => w.id} name={nameOf} selected={selected} onToggleSelect={toggle} />
+            <SpecTable rows={equipment.weapons.filter((w) => selected.has(w.id))} columns={weaponColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} selected={selected} onToggleSelect={toggle} />
           )}
           {tab === "armor" && (
-            <SpecTable rows={equipment.armor.filter((w) => selected.has(w.id))} columns={armorColumns} rowKey={(w) => w.id} name={nameOf} selected={selected} onToggleSelect={toggle} />
+            <SpecTable rows={equipment.armor.filter((w) => selected.has(w.id))} columns={armorColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} selected={selected} onToggleSelect={toggle} />
           )}
           {tab === "bags" && (
-            <SpecTable rows={equipment.bags.filter((w) => selected.has(w.id))} columns={bagColumns} rowKey={(w) => w.id} name={nameOf} selected={selected} onToggleSelect={toggle} />
+            <SpecTable rows={equipment.bags.filter((w) => selected.has(w.id))} columns={bagColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} selected={selected} onToggleSelect={toggle} />
           )}
         </section>
       )}
 
       {tab === "weapons" && (
-        <SpecTable rows={weapons} columns={weaponColumns} rowKey={(w) => w.id} name={nameOf} defaultSort={{ key: "dps", dir: "desc" }} selected={selected} onToggleSelect={toggle} />
+        <SpecTable rows={weapons} columns={weaponColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} defaultSort={{ key: "dps", dir: "desc" }} selected={selected} onToggleSelect={toggle} />
       )}
-      {tab === "armor" && <SpecTable rows={armor} columns={armorColumns} rowKey={(w) => w.id} name={nameOf} defaultSort={{ key: "seg", dir: "asc" }} selected={selected} onToggleSelect={toggle} />}
-      {tab === "bags" && <SpecTable rows={bags} columns={bagColumns} rowKey={(w) => w.id} name={nameOf} selected={selected} onToggleSelect={toggle} />}
+      {tab === "armor" && <SpecTable rows={armor} columns={armorColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} defaultSort={{ key: "seg", dir: "asc" }} selected={selected} onToggleSelect={toggle} />}
+      {tab === "bags" && <SpecTable rows={bags} columns={bagColumns} rowKey={(w) => w.id} name={nameOf} expand={expandOf} selected={selected} onToggleSelect={toggle} />}
 
       <div className="flex gap-2 rounded-lg border border-line bg-bg-panel p-3 text-xs text-muted">
         <Info size={16} className="mt-0.5 shrink-0 text-sky-300" />
