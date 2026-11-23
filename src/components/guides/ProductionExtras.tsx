@@ -255,13 +255,13 @@ function Freezer({ mode }: { mode: SpeedMode }) {
 function Reactor() {
   const R = M.reactor;
   const [rarity, setRarity] = useState<Rarity>("Uncommon");
-  const [chance, setChance] = useState(20);
+  const [chance, setChance] = useState(25);
   const conc = M.freezer.concentratePrice[rarity];
   return (
     <Section title="化学研究所：化学反応炉（試薬 → 濃縮液）">
       <div className="mb-2 flex gap-2 rounded-md border border-money/50 bg-money/5 p-2 text-xs">
         <AlertTriangle size={15} className="mt-0.5 shrink-0 text-money" />
-        <p>反応炉の収量（1サイクルで何個できるか）は出典に記載がありません。下の「1時間あたり」は「1サイクル＝濃縮液1個」と仮定した参考値です。</p>
+        <p>反応炉Iは「試薬1つで濃縮液4個・15分ごとに1個・60分」とプレイヤーが確認済み。II・IIIも「1サイクル＝1個」として計算しています（II・IIIは未確認）。</p>
       </div>
       <div className="mb-2 flex items-center gap-2 text-sm">
         <span className="text-muted">濃縮液のレアリティ</span>
@@ -275,8 +275,8 @@ function Reactor() {
               <th className="p-1.5 text-right">1サイクル</th>
               <th className="p-1.5 text-right">サイクル数</th>
               <th className="p-1.5 text-right">1回の稼働</th>
-              <th className="p-1.5 text-right">濃縮液/時（仮定）</th>
-              <th className="p-1.5 text-right">価値/時（仮定）</th>
+              <th className="p-1.5 text-right">濃縮液/時</th>
+              <th className="p-1.5 text-right">価値/時</th>
               <th className="p-1.5 text-right">費用（研究＋購入）</th>
             </tr>
           </thead>
@@ -322,7 +322,7 @@ function Reactor() {
           />
           %
         </label>
-        <span className="text-xs text-muted">初期値20%はプレイヤーの体感（20〜30%）の低い方。公式の数値は非公開。</span>
+        <span className="text-xs text-muted">初期値25%はプレイヤーの実測（公式の数値は非公開）。</span>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[680px] text-sm">
@@ -385,12 +385,12 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
   const [freezer, setFreezer] = useState(0);
   const [fUp, setFUp] = useState<Record<string, boolean>>({});
   const [engine, setEngine] = useState(true);
-  const [chance, setChance] = useState(20);
+  const [chance, setChance] = useState(25);
   const [powder, setPowder] = useState(false);
 
   const rl = R.levels[reactor];
   const reactorSec = rl.cycleSeconds * rl.cycles;
-  const concPerHour = (rl.cycles * 3600) / reactorSec; // 仮定：1サイクル＝濃縮液1個
+  const concPerHour = (rl.cycles * 3600) / reactorSec; // 1サイクル＝濃縮液1個（反応炉Iはプレイヤー確認済み）
   const fSpeed = F.upgrades.reduce((a, u) => a + (fUp[u.id] ? u.speed : 0), 0);
   const freezeSec = timeWith(F.points * F.tickSeconds, fSpeed, mode);
   const freezeCap = (F.levels[freezer].slots * 3600) / freezeSec;
@@ -420,7 +420,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
       <div className="mb-2 flex gap-2 rounded-md border border-money/50 bg-money/5 p-2 text-xs">
         <AlertTriangle size={15} className="mt-0.5 shrink-0 text-money" />
         <p>
-          反応炉は「1サイクル＝濃縮液1個（試薬1つで{rl.cycles}個）」と仮定しています。反応炉I〜IIIのサイクル数（4・6・8）が冷凍庫I〜IIIの枠数（4・6・8）と一致するため、この仮定は妥当と見ていますが未検証です。
+          反応炉は1サイクルで濃縮液1個（試薬1つで{rl.cycles}個）。反応炉Iの「4個・60分」はプレイヤーが確認済みで、II・IIIは同じ仕組みとして計算しています（未確認）。レア度アップ確率の初期値25%はプレイヤーの実測。
         </p>
       </div>
       <div className="grid gap-2 text-sm sm:grid-cols-2">
@@ -492,7 +492,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
         <AccPanel key={id} id={id} />
       ))}
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
-        <Stat label="反応炉：濃縮液/時（仮定）" value={`${Math.round(concPerHour * 10) / 10}個`} sub={`1回 ${min(reactorSec)}・試薬1つで${rl.cycles}個`} />
+        <Stat label="反応炉：濃縮液/時" value={`${Math.round(concPerHour * 10) / 10}個`} sub={`1回 ${min(reactorSec)}・試薬1つで${rl.cycles}個`} />
         <Stat label="冷凍庫：処理できる数/時" value={`${Math.round(freezeCap * 10) / 10}個`} sub={`1回 ${min(freezeSec)}・${F.levels[freezer].slots}枠`} />
         <Stat
           label="クリスタル/時"

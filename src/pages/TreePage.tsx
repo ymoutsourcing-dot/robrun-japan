@@ -61,14 +61,15 @@ export default function TreePage() {
   const [params, setParams] = useSearchParams();
   const selectedId = params.get("item");
   const selected = selectedId ? getItem(selectedId) : undefined;
-  // ゲーム風レイアウト（?layout=game）。標準レイアウトが既定
-  const mode: TreeLayoutMode = params.get("layout") === "game" ? "game" : "standard";
+  // ゲーム風レイアウトが既定。?layout=standard で標準レイアウト
+  const mode: TreeLayoutMode = params.get("layout") === "standard" ? "standard" : "game";
+  // スマホはリスト表示が既定（レイアウトを明示した場合はツリー）
   const [view, setView] = useState<"tree" | "list">(() =>
-    params.get("view") === "list" || (isNarrow() && mode !== "game") ? "list" : "tree",
+    params.get("view") === "list" || (isNarrow() && !params.get("layout")) ? "list" : "tree",
   );
   const setMode = (m: TreeLayoutMode) => {
     const next = new URLSearchParams(params);
-    if (m === "game") next.set("layout", "game");
+    if (m === "standard") next.set("layout", "standard");
     else next.delete("layout");
     setParams(next, { replace: true });
     setView("tree");

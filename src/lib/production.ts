@@ -3,7 +3,8 @@ import { productionGuide } from "./guides";
 /**
  * 生産設備の時給計算（費用対効果ガイドと同じ前提）。
  * - 改造パーツの+%は「時間が%だけ短くなる」方式（プレイヤー報告で確認）
- * - 反応炉は「1サイクル＝濃縮液1個」と仮定
+ * - 反応炉は1サイクル＝濃縮液1個（反応炉Iはプレイヤー確認済み：試薬1つで4個・60分）
+ * - 品質パーツのレア度アップ確率は25%（プレイヤー実測）
  * - 売値は悪名ボーナス前、アンコモン基準
  */
 const M = productionGuide.model;
@@ -44,14 +45,14 @@ export function labHourly(): HourlyEstimate {
     return Math.min(conc, cap);
   };
   const price = F.crystalPrice.Uncommon;
-  const engineBonus = 0.2 * (F.crystalPrice.Epic - F.crystalPrice.Uncommon);
+  const engineBonus = 0.25 * (F.crystalPrice.Epic - F.crystalPrice.Uncommon);
   const allFreeze = F.upgrades.reduce((a, u) => a + u.speed, 0);
   return {
     minLabel: "反応炉I・冷凍庫I・パーツなし",
     min: crystalsPerHour(0, 0, 0) * price,
-    maxLabel: "反応炉III・冷凍庫III・冷凍庫パーツ＋産業用エンジン（確率20%）",
+    maxLabel: "反応炉III・冷凍庫III・冷凍庫パーツ＋産業用エンジン（確率25%）",
     max: crystalsPerHour(2, 2, allFreeze) * (price + engineBonus),
-    note: "試薬を消費する（反応炉1回につき試薬1つ）。反応炉の収量は仮定",
+    note: "試薬を消費する（反応炉1回につき試薬1つで濃縮液4個以上）",
   };
 }
 
