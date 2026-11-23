@@ -142,6 +142,11 @@
           "derived": true
         },
         {
+          "text": "Lenny への借金（$1,000,000）を銀行のお金で返すと、服役年数+10年とスキンがもらえる。ワイプ時の資産換算（$1,000,000で約2年）より5倍効率がいい。",
+          "source": "rri-faq",
+          "link": "/guides/map-motel"
+        },
+        {
           "text": "ワイプ直前に資産を売り払わない。拠点・車両・解放済みShipmentsも換算対象。",
           "source": "robrunwiki-jail"
         },

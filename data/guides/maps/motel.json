@@ -4,7 +4,18 @@
   "titleEn": "Map guide: Lenny's Motel (Hub)",
   "summary": "拠点を持つまでの居場所になる砂漠のハブ。Lenny のサービス（ブラックマーケット・現金の保管・資金洗浄）、ルーレット、物々交換の扉、密輸品の購入と、ボイスチャットの決まりをまとめる。",
   "updatedAt": "2026-11-23",
-  "sources": {},
+  "sources": {
+    "ingame-motel": {
+      "label": "ゲーム内の Lenny’s Motel の画面（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
+    },
+    "ingame-shop": {
+      "label": "ゲーム内のカスタマイズ（ショップ）画面（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
+    }
+  },
   "placesTitle": "モーテルの施設とサービス",
   "places": [
     {
@@ -122,12 +133,36 @@
           "text": "Lenny への借金は $1,000,000。払うとキャラクターのスキンと服役年数+10年がもらえ、スキンは刑務所やワイプの後も残る。",
           "source": "rri-faq",
           "link": "/guides/jail-time"
+        },
+        {
+          "text": "Lenny に話しかけると、Black Market（ブラックマーケット）・Shipments（研究）・Cash Stash（現金の保管）・Speak（会話）・Pay Debt（借金の返済 $1,000,000）が選べる。",
+          "source": "ingame-motel"
+        },
+        {
+          "text": "借金の返済は銀行のお金（カードのマーク）から払う。服役年数で見ると、ワイプ時の資産は$1,000,000で約2年分なのに対し、返済は+10年なので5倍効率がいい。ワイプ直前で銀行に$1,000,000以上余っているなら返済が得（何回払えるか・1日の上限に含まれるかは未確認）。",
+          "source": "rri-faq",
+          "derived": true,
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "バトルパスの無料報酬は、Lenny’s Motel か自分の集落にいるときにカスタマイズ画面（PASSタブ）から交換できる。",
+          "source": "ingame-shop",
+          "link": "/guides/monetization"
         }
       ]
     },
     {
       "heading": "ルーレット・物々交換・密輸品",
       "facts": [
+        {
+          "text": "モーテルの倉庫にある密輸貨物（Contraband Cargo）は1個$10,000で買える。自分の区画の密輸品作業台でプレミアム貨物（$35,000）やレアリティ貨物（$40,000）に詰め直して、密輸業者に売る。",
+          "source": "ingame-motel",
+          "link": "/cargo"
+        },
+        {
+          "text": "密輸貨物の入手先は Looty Bay・Lenny’s Motel・配送センターの3か所（密輸品作業台のゲーム内説明）。Looty Bay・配送センターでの値段や入手方法は未確認。",
+          "source": "game-text"
+        },
         {
           "text": "ルーレットの1回の賭け金は最大20万。必勝法はない。",
           "source": "rri-faq"
