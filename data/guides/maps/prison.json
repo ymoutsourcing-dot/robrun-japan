@@ -1,0 +1,193 @@
+{
+  "id": "map-prison",
+  "title": "マップ解説：刑務所",
+  "titleEn": "Map guide: Prison",
+  "summary": "連邦に自首すると来る場所。サーバー（州）の移動、タトゥーと名前の変更、服役年数の確認、脱出地点、ボイスチャットの決まりをまとめる。",
+  "updatedAt": "2026-11-23",
+  "sources": {},
+  "placesTitle": "刑務所の施設",
+  "places": [
+    {
+      "nameJa": "出口（脱出地点）×2",
+      "nameEn": "Exit",
+      "whatJa": "脱出地点から外の世界に戻る。脱出先の州（サーバー）は、行ける州のリストから選べる。",
+      "source": "rrg-prison"
+    },
+    {
+      "nameJa": "タトゥー師",
+      "nameEn": "Tattoo Artist",
+      "whatJa": "服役年数（権威）に応じたタトゥーを入れる。ゲーム内テキストに「刑務所のタトゥー師でのみ入手可能」とある。",
+      "source": "rrg-prison",
+      "link": "/guides/jail-time"
+    },
+    {
+      "nameJa": "刑務所の中庭",
+      "nameEn": "Prison Yard",
+      "whatJa": "外に出る（Go Outside）。中庭に服役年数のカウンターがある、とファンサイトが書いている。",
+      "source": "fyi-jail"
+    },
+    {
+      "nameJa": "弁護士に電話",
+      "nameEn": "Call your Lawyer",
+      "whatJa": "電話をかける操作がある（何ができるかは未確認）。",
+      "source": "rrg-prison"
+    },
+    {
+      "nameJa": "処刑室",
+      "nameEn": "Execution Chamber",
+      "whatJa": "見物できる（Watch）。電気椅子は、BANされたチーターへの罰の演出として準備中とされる。普段は「まだ処刑はない」と表示。",
+      "source": "fyi-jail"
+    },
+    {
+      "nameJa": "掲示板・郵便受け",
+      "nameEn": "Task Board / Mailbox",
+      "whatJa": "どちらも「開く」操作がある（中身は未確認）。",
+      "source": "rrg-prison"
+    },
+    {
+      "nameJa": "食堂・トイレ・ジム・西棟",
+      "nameEn": "Chow / Restroom / Gym / West Block",
+      "whatJa": "食事に唾を吐く、トイレでいたずら、筋トレ、西棟を開く、といった操作がある。ゲーム内テキストに「西棟で橋の上げ方を学べる」とある（意味は未確認）。",
+      "source": "rrg-prison"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "どんな場所か",
+      "facts": [
+        {
+          "text": "世界マップの説明文は「ここに来たら持ち物にはさよならだ。その代わり、体に刻まれる権威が手に入る」。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "連邦の捜査（ワイプ）や自首で資産が没収されると、服役年数と権威に変わる。没収される量が多いほど刑期が長い。",
+          "source": "kefir-wipe",
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "刑務所にいるキャラクター（囚人）は攻撃できず、取引もできず、アイテムを手に持てない。死んでも持ち物は失わない。",
+          "source": "rri-police"
+        },
+        {
+          "text": "街で警官に捕まる「逮捕」とは別物。普通の逮捕で取られるのはバッグの中身だけで、刑務所には送られない。",
+          "source": "fyi-jail",
+          "link": "/guides/police"
+        }
+      ]
+    },
+    {
+      "heading": "行き方：連邦に自首する",
+      "facts": [
+        {
+          "text": "世界マップで刑務所を選び、「Surrender to Feds（連邦に自首）」を押す。",
+          "source": "rri-faq"
+        },
+        {
+          "text": "自首するとその州の全資産が没収され、刑期になる。ワイプ時は自動で換算されるので、事前に自首する必要はない。",
+          "source": "rri-police",
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "Esc → 設定 → その他 → Surrender to Feds でも同じことができる、と複数のガイドが書いている。",
+          "source": "wiki-change-server"
+        },
+        {
+          "text": "1つの州で得られる刑期は最大40年。",
+          "source": "rri-police",
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "ゲーム内テキストに「この州での最大刑期に達した」という通知がある。",
+          "source": "rrg-prison"
+        }
+      ]
+    },
+    {
+      "heading": "サーバー（州）の移動",
+      "facts": [
+        {
+          "text": "サーバーはゲーム内で「州」と呼ばれ、移動は刑務所経由のみ：自首 → 刑務所の脱出地点 → リストから州を選ぶ。",
+          "source": "rri-faq"
+        },
+        {
+          "text": "移動前に警告が出る：今の州の資産はすべて没収、進行は失われ、クランから抜け、郵便の未受け取り報酬も消える。失う物がないうちに移るのがよい。",
+          "source": "rri-faq"
+        },
+        {
+          "text": "地域（リージョン）の変更も刑務所でしかできない（ゲーム内テキスト）。",
+          "source": "rrg-prison"
+        },
+        {
+          "text": "11/17以降、地域を変えても進行状況とバトルパスのポイントは引き継がれる。",
+          "source": "steam-1117"
+        },
+        {
+          "text": "11/20以降、サーバーリストにオンライン中のフレンドが表示され、どのサーバーにいるか分かる。",
+          "source": "steam-1120"
+        },
+        {
+          "text": "公式も今のサーバー移動（自首して刑務所に戻る）は不便だと認めており、もっと簡単にする予定。",
+          "source": "steam-1113"
+        },
+        {
+          "text": "友だちと遊ぶなら、新サーバーが開いた直後に全員で同じサーバーに入れば刑務所を通らずに済む。",
+          "source": "wiki-change-server",
+          "link": "/guides/wipe"
+        },
+        {
+          "text": "Highlands の住人が財産を持ったまま新しい州へ移る仕組みは、11/17に「開発中」と表示され、11/20に表記が消えた。今使えるかは未確認。",
+          "source": "rri-police",
+          "link": "/guides/map-settlements"
+        }
+      ]
+    },
+    {
+      "heading": "タトゥーと名前の変更",
+      "facts": [
+        {
+          "text": "服役年数が増えるほど権威が上がり、より格の高いタトゥーが入れられる。タトゥーは没収されない。",
+          "source": "rri-police",
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "ゲーム内テキスト：「次のタトゥーまであと○年の服役が必要」「入手できるタトゥーはすべて手に入れた」。",
+          "source": "rrg-prison"
+        },
+        {
+          "text": "キャラクター名は刑務所のタトゥー師で変えられる（2026/11/11 追加）。",
+          "source": "fyi-jail"
+        },
+        {
+          "text": "ゲーム内テキストに「州にいる間はニックネームを変えられない」とある。",
+          "source": "rrg-prison"
+        }
+      ]
+    },
+    {
+      "heading": "ルールと注意",
+      "facts": [
+        {
+          "text": "11/17以降、区画を持たず服役年数もまだないプレイヤーは、刑務所と Lenny’s Motel でボイスチャットを使えない。",
+          "source": "steam-1117"
+        },
+        {
+          "text": "服役年数の上限は、1日（24時間）40年・累計1,200年（11/17導入）。",
+          "source": "rri-police",
+          "link": "/guides/jail-time"
+        },
+        {
+          "text": "ゲームは全員、刑務所を出たばかりで金も住む所もない状態から始まる（公式の「権力ピラミッド」）。",
+          "source": "steam-pyramid"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "「弁護士に電話」「掲示板」「郵便受け」で何ができるか。",
+    "ゲーム内テキストにある「自主的な投降で−○年」の意味（自首すると年数が減るのかどうか）。",
+    "名前の変更に費用や回数制限があるか。",
+    "「西棟で橋の上げ方を学べる」というテキストの意味。",
+    "Highlands 住人の財産を持った州移動が今使えるか。",
+    "脱出先の州リストに出る州の条件（人数・開設日など）。"
+  ]
+}

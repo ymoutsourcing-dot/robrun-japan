@@ -4,6 +4,12 @@ import moneyJson from "../../data/guides/money.json";
 import wipeJson from "../../data/guides/wipe.json";
 import policeJson from "../../data/guides/police.json";
 import productionJson from "../../data/guides/production.json";
+import mapSources from "../../data/guides/maps/sources.json";
+import mapLootyBayJson from "../../data/guides/maps/looty-bay.json";
+import mapMotelJson from "../../data/guides/maps/motel.json";
+import mapPrisonJson from "../../data/guides/maps/prison.json";
+import mapSalesCenterJson from "../../data/guides/maps/sales-center.json";
+import mapSettlementsJson from "../../data/guides/maps/settlements.json";
 
 export type SourceKind = "official" | "fan" | "data";
 export interface Source {
@@ -109,7 +115,39 @@ export type ProductionGuide = Guide & {
 };
 export const productionGuide = withShared(productionJson as unknown as ProductionGuide);
 
-export const ALL_GUIDES: Guide[] = [moneyGuide, productionGuide, wipeGuide, jailTimeGuide, policeGuide];
+/** マップ解説（data/guides/maps/*.json）。施設一覧・地区一覧は任意 */
+export interface MapPlace {
+  nameJa: string;
+  nameEn?: string;
+  whatJa: string;
+  source: string;
+  link?: string;
+}
+export interface MapDistrict {
+  nameJa: string;
+  nameEn: string;
+  level: number;
+  whereJa: string;
+  infraJa: string[];
+  saleBonus: string;
+}
+export type MapGuide = Guide & {
+  placesTitle?: string;
+  places?: MapPlace[];
+  districtsTitle?: string;
+  districtsSources?: string[];
+  districtsNote?: string;
+  districts?: MapDistrict[];
+};
+const mapShared = mapSources as Record<string, Source>;
+function mapGuide(json: unknown): MapGuide {
+  const g = json as MapGuide;
+  return { ...g, sources: { ...shared, ...mapShared, ...g.sources } };
+}
+export const MAP_GUIDES: MapGuide[] = [mapLootyBayJson, mapMotelJson, mapPrisonJson, mapSalesCenterJson, mapSettlementsJson].map(mapGuide);
+export const mapGuideById = new Map(MAP_GUIDES.map((g) => [g.id, g]));
+
+export const ALL_GUIDES: Guide[] = [moneyGuide, productionGuide, wipeGuide, jailTimeGuide, policeGuide, ...MAP_GUIDES];
 export const guideById = new Map(ALL_GUIDES.map((g) => [g.id, g]));
 
 /** 計算に使う数値（robrun.info 掲載のファン情報。公式未発表） */

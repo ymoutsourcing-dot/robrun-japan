@@ -1,0 +1,297 @@
+{
+  "id": "map-settlements",
+  "title": "マップ解説：集落と地区（砂漠）",
+  "titleEn": "Map guide: Settlements & Districts (Desert)",
+  "summary": "プレイヤーの拠点が並ぶ砂漠の世界マップ。10地区とレベル、特殊施設、区画の借り方、集落オーナーと税、地区支配と影の総督、襲撃、砂漠での死亡ルールをまとめる。",
+  "updatedAt": "2026-11-23",
+  "sources": {},
+  "districtsTitle": "10地区の一覧",
+  "districtsSources": ["rrg-worldmap", "wiki-map"],
+  "districtsNote": "レベル・施設・売却ボーナスは Rob Run Guide（ゲームファイル抽出）、位置は robrunwiki.app が公式の世界マップ画像から読み取ったもの。施設の効果がゲーム内で有効かは未検証。",
+  "districts": [
+    { "nameJa": "ハイランズ", "nameEn": "Highlands", "level": 3, "whereJa": "中央", "infraJa": ["放棄された検問所", "研究所", "ブラックマーケット", "兵器工場", "貯水池", "バンカー"], "saleBonus": "+30%" },
+    { "nameJa": "リバータウン", "nameEn": "Rivertown", "level": 2, "whereJa": "ハイランズの北", "infraJa": ["貯水池", "バンカー", "研究所"], "saleBonus": "+20%" },
+    { "nameJa": "フォールロック", "nameEn": "Fallrock", "level": 2, "whereJa": "ハイランズの西", "infraJa": ["兵器工場", "装備工場", "放棄された検問所", "バンカー"], "saleBonus": "+20%" },
+    { "nameJa": "エル・ペソ", "nameEn": "El Peso", "level": 2, "whereJa": "ハイランズの東（Looty Bay 側）", "infraJa": ["兵器工場", "研究所", "放棄された検問所"], "saleBonus": "+20%" },
+    { "nameJa": "ダストボウル", "nameEn": "Dustbowl", "level": 1, "whereJa": "最北", "infraJa": ["バンカー", "装備工場", "兵器工場"], "saleBonus": "+10%" },
+    { "nameJa": "レッドストーン", "nameEn": "Redstone", "level": 1, "whereJa": "北東", "infraJa": ["兵器工場"], "saleBonus": "+10%" },
+    { "nameJa": "フェアフィールド", "nameEn": "Fairfield", "level": 1, "whereJa": "最西", "infraJa": ["バンカー", "装備工場"], "saleBonus": "+10%" },
+    { "nameJa": "ローンフォード", "nameEn": "Loneford", "level": 1, "whereJa": "東（Looty Bay へ続く川に最も近い）", "infraJa": ["装備工場", "バンカー"], "saleBonus": "+10%" },
+    { "nameJa": "ラストベール", "nameEn": "Rustvale", "level": 1, "whereJa": "南西", "infraJa": ["兵器工場"], "saleBonus": "+10%" },
+    { "nameJa": "カスカダス", "nameEn": "Cascadas", "level": 1, "whereJa": "南東", "infraJa": ["装備工場", "兵器工場"], "saleBonus": "+10%" }
+  ],
+  "placesTitle": "特殊施設（インフラ）の効果",
+  "places": [
+    { "nameJa": "兵器工場", "nameEn": "Arms Factory", "whatJa": "近くの集落で、すべての武器が割引。", "source": "rrg-worldmap" },
+    { "nameJa": "装備工場", "nameEn": "Gear Factory", "whatJa": "近くの集落で、すべての装備が割引。", "source": "rrg-worldmap" },
+    { "nameJa": "バンカー", "nameEn": "Bunker", "whatJa": "近くの集落の拠点の建物の防御が上がる（主建物・離れ・壁に防御+3）。", "source": "rri-faq", "link": "/calc?tab=defense" },
+    { "nameJa": "貯水池", "nameEn": "Reservoir", "whatJa": "収穫が1回分増える確率がつく。", "source": "rrg-worldmap", "link": "/guides/production" },
+    { "nameJa": "研究所", "nameEn": "Laboratory", "whatJa": "調理（化学）サイクル全体が速くなる。", "source": "rrg-worldmap", "link": "/guides/production" },
+    { "nameJa": "ブラックマーケット", "nameEn": "Black Market", "whatJa": "密輸品の詰め直しがより儲かる（Highlands のみ）。", "source": "rrg-worldmap", "link": "/cargo" },
+    { "nameJa": "放棄された検問所", "nameEn": "Abandoned Checkpoint", "whatJa": "周りが検問所で囲まれる（Fallrock・El Peso・Highlands）。", "source": "rrg-worldmap" }
+  ],
+  "sections": [
+    {
+      "heading": "どんな場所か",
+      "facts": [
+        {
+          "text": "現金が貯まったら砂漠に拠点を建てる。そのサーバーのプレイヤーの拠点は、すべて1枚の世界マップの上にある。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "マップは地区に分かれ、地区は集落でできている。地区にはレベルがあり、使える機能と買えるアイテムが変わる。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "地区は10個、それぞれ51集落（全510集落）。レベル1が6地区、レベル2が3地区、レベル3は中央の Highlands だけ。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "集落の説明文はレベル1が「外れの集落」、レベル2が「発展した集落」、レベル3が「エリート集落」。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "上のレベルの地区に区画を置くと、上位の Shipments とブラックマーケットの装備が解放される。ただし良い場所は競争も激しい（Lenny の説明）。",
+          "source": "rrg-npc",
+          "link": "/shipments"
+        },
+        {
+          "text": "公式の世界マップ画像は発売前のストア用画像。名前や境界は早期アクセス中に変わる可能性がある。",
+          "source": "wiki-map"
+        }
+      ]
+    },
+    {
+      "heading": "砂漠の危険と死亡ルール",
+      "facts": [
+        {
+          "text": "砂漠は無法地帯で、誰でも命を狙ってくる。自分の拠点にいても、隣人が侵入してくることがある。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "集落に警察はいない。何をしてもよいが、死ぬと装備とバッグの中身を失う。",
+          "source": "rri-base"
+        },
+        {
+          "text": "砂漠で死ぬと、持っている略奪品は常にすべて失う。",
+          "source": "kefir-die",
+          "link": "/guides/police"
+        },
+        {
+          "text": "拠点は追加の復活地点になる。",
+          "source": "steam-base"
+        },
+        {
+          "text": "他人の土地から出るときは、無防備な時間が長くなる。",
+          "source": "rri-base"
+        }
+      ]
+    },
+    {
+      "heading": "特殊施設で立地を選ぶ",
+      "facts": [
+        {
+          "text": "周りの集落に効果を与える特殊な建造物がある（防御、ビジネスのボーナス、割引など）。複数の施設の近くにある集落もある。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "施設ごとに恩恵を受ける集落の番号が決まっている（各施設4〜6集落）。",
+          "source": "rrg-worldmap"
+        }
+      ]
+    },
+    {
+      "heading": "区画を借りる（集落の住人）",
+      "facts": [
+        {
+          "text": "拠点を置けるのは、オーナーのいる集落だけ。空いている区画の横の看板で賃料を払う。",
+          "source": "kefir-plot"
+        },
+        {
+          "text": "オーナーのいない地区には土地を持てない。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "11/4以降、Tier1 の集落と区画は現金ではなく書類（権利書）で手に入れる。",
+          "source": "steam-1104"
+        },
+        {
+          "text": "レベル2・3地区の区画には、ブラックマーケットの特別な書類が必要。",
+          "source": "kefir-plot"
+        },
+        {
+          "text": "土地区画の権利書（研究費／購入価格）：レベル1 $50,000／$100,000、レベル2 $200,000／$800,000、レベル3 $1,000,000／$2,000,000。",
+          "source": "shipments-data",
+          "link": "/shipments/plot_sale_1"
+        },
+        {
+          "text": "権利書のレベルは地区のレベルと合わせる。研究しただけでは足りず、別に購入が必要。持ったまま死ぬと失うので、まっすぐ集落へ運ぶ。",
+          "source": "fyi-land"
+        },
+        {
+          "text": "最初の家としてトレーラーが用意されている。",
+          "source": "rrg-npc"
+        },
+        {
+          "text": "区画は1人1つ。新しい区画を借りると拠点の中身ごと引っ越し、前の区画は空く。拠点にレイドブロックがかかっている間は引っ越せない。",
+          "source": "rri-base"
+        },
+        {
+          "text": "住人になると、拠点・新しい Shipments・販売センターでの売却・密輸品の割引購入が使えるようになる。",
+          "source": "steam-pyramid",
+          "link": "/guides/map-sales-center"
+        },
+        {
+          "text": "住人が資金洗浄やノートPCでの買い物をすると、集落のオーナーに一定の割合が入る。",
+          "source": "rrg-npc"
+        },
+        {
+          "text": "ブラックマーケットで買える段階（Tier）は、区画がある地区のレベルと同じ（区画なしは I）。",
+          "source": "rri-base",
+          "link": "/shipments"
+        },
+        {
+          "text": "自分の家がないと自分の車は持てず、レンタカーだけ。良い車が欲しければ上の地区へ移る必要がある。",
+          "source": "rrg-npc",
+          "link": "/vehicles"
+        },
+        {
+          "text": "同じパーティの友だちは、あなたの家に自由に入れる。近くに住みたいなら同じ集落に区画を借りる。",
+          "source": "rri-faq"
+        }
+      ]
+    },
+    {
+      "heading": "集落オーナーと税",
+      "facts": [
+        {
+          "text": "お金が貯まれば集落ごと買える。住人の資金洗浄とブラックマーケットの買い物に税がかかり、オーナーの収入になる。自分の集落には無料で拠点を置け、ワイプまで誰にも奪われない。",
+          "source": "steam-pyramid"
+        },
+        {
+          "text": "集落の権利書（研究費／購入価格）：レベル1 $100,000／$200,000、レベル2 $500,000／$2,000,000、レベル3 $2,000,000／$6,000,000。",
+          "source": "shipments-data",
+          "link": "/shipments/settlement_sale_1"
+        },
+        {
+          "text": "税は自分で直接受け取りに行く必要がある。",
+          "source": "kefir-settlement"
+        },
+        {
+          "text": "税は集落の借金取りのバン（Debt Collectors' Van）で回収する。中身はテーブルに置かれ、近くにいる誰でも取れる。",
+          "source": "rrg-settlement"
+        },
+        {
+          "text": "前回の税を回収するまで、新しい税はたまらない。集落は最大5つまで持てる。",
+          "source": "rri-base"
+        },
+        {
+          "text": "公式も「税を集めるのと、現金を持って生きて帰るのは別の話」と注意している。回収したらすぐ洗浄する。",
+          "source": "steam-globalmap",
+          "link": "/guides/money"
+        },
+        {
+          "text": "11/20以降、集落オーナーのニックネームはサーバーを出ると非表示になる。",
+          "source": "steam-1120"
+        }
+      ]
+    },
+    {
+      "heading": "地区の支配と影の総督（クラン）",
+      "facts": [
+        {
+          "text": "地区を支配するにはクランが必要。支配クランは、その地区の集落オーナーに払われる税の一部を受け取り、資金洗浄の速度が上がる（地区レベルが高いほど大きい）。",
+          "source": "steam-pyramid"
+        },
+        {
+          "text": "頂点は「影の総督（Shadow Governor）」：中央の Highlands を支配するクランのリーダーで、ゲーム世界に1人だけ。そのクランは最良の洗浄レートを得て、マップ上の他の全クランに課税する。",
+          "source": "steam-pyramid"
+        },
+        {
+          "text": "流れは「住人 → 集落オーナー → 地区の支配クラン → 影の総督のクラン」。",
+          "source": "rri-clans"
+        },
+        {
+          "text": "販売センターの格納庫は「クランが地区の支配を確立する場所」とされる。",
+          "source": "rrg-sales",
+          "link": "/guides/map-sales-center"
+        },
+        {
+          "text": "ヘリコプターは、拠点が中央地区にある場合だけ買える（戦利品で見つかることもある）。",
+          "source": "kefir-heli",
+          "link": "/vehicles"
+        },
+        {
+          "text": "Highlands の住人は財産を持ったまま新しい州へ移れるようになる予定（ゲーム内の告知では「開発中」）。",
+          "source": "ingame-confiscation",
+          "link": "/guides/wipe"
+        }
+      ]
+    },
+    {
+      "heading": "襲撃と防衛",
+      "facts": [
+        {
+          "text": "セキュリティシステムにヒューズを入れると、攻撃側の時間とコストが大きく増える。防衛モジュールは味方に襲撃を知らせる。",
+          "source": "kefir-protect",
+          "link": "/calc?tab=defense"
+        },
+        {
+          "text": "他人の拠点に入るためのデコーダーは店で買えないので、襲撃側も相手を選ぶ必要がある。",
+          "source": "steam-1002",
+          "link": "/tools"
+        },
+        {
+          "text": "洗浄済みのお金は盗まれず、残った建物は建て直せる。拠点を丸ごと消すには超レアなアイテムが必要。",
+          "source": "steam-1002"
+        },
+        {
+          "text": "立ち退き権（Eviction Rights）は 11/17 から物々交換から一時的に外されている。",
+          "source": "steam-1117"
+        },
+        {
+          "text": "拠点が襲撃されている間は、商人・ブラックマーケット・Shipments の開封が使えない。",
+          "source": "rri-base"
+        },
+        {
+          "text": "車でフェンスを飛び越えられることは公式も認めており、徒歩や車での侵入を難しくする予定。",
+          "source": "steam-1113"
+        }
+      ]
+    },
+    {
+      "heading": "選び方のコツ",
+      "facts": [
+        {
+          "text": "権利書を買う前に、世界マップで今の州に空きがあるか確認する。",
+          "source": "rri-faq"
+        },
+        {
+          "text": "良い集落は新サーバーの初日に埋まる。土地が欲しいなら開設直後のサーバーに入る。",
+          "source": "fyi-land",
+          "link": "/guides/wipe"
+        },
+        {
+          "text": "立地は近くの特殊施設で選ぶ：農園なら貯水池、化学研究所なら研究所、密輸品ならブラックマーケット、防御重視ならバンカー。",
+          "source": "rrg-worldmap",
+          "derived": true,
+          "link": "/guides/production"
+        },
+        {
+          "text": "拠点と土地は7日ごとのワイプで没収される（その分は服役年数になる）。サイクルの終盤に建て始めると元が取りにくい。",
+          "source": "kefir-wipe",
+          "link": "/guides/jail-time"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "最初の区画を現金で借りられるか（Lenny の台詞と robrun.info は「現金で払える」、公式の 11/4 の変更は「書類に変更」）。",
+    "税の割合（住人→オーナー、オーナー→地区クラン、クラン→影の総督）。",
+    "地区の支配の取り方（クラン戦の手順・時間）。",
+    "特殊施設の効果の大きさと、ゲーム内で本当に効いているか。",
+    "1つの集落にある区画の数（Rob Run Guide のマップでは配置パターンごとに10区画）。",
+    "権利書の現在の価格（11/5の調整で値上げされたとの情報あり）。",
+    "Highlands 住人の財産を持った州移動が今使えるか。"
+  ]
+}

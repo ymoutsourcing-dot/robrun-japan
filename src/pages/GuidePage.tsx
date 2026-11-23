@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
-import { guideById } from "../lib/guides";
+import { guideById, mapGuideById } from "../lib/guides";
 import { GuideHeader, GuideSections, SourceLegend } from "../components/GuideBody";
 import JailExtras from "../components/guides/JailExtras";
 import MoneyExtras from "../components/guides/MoneyExtras";
 import WipeExtras from "../components/guides/WipeExtras";
 import PoliceExtras from "../components/guides/PoliceExtras";
 import ProductionExtras from "../components/guides/ProductionExtras";
+import MapExtras from "../components/guides/MapExtras";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import NotFound from "./NotFound";
 
@@ -24,11 +25,13 @@ export default function GuidePage() {
   useDocumentTitle(guide ? guide.title : null, guide ? `ROB RUN 攻略：${guide.summary}` : undefined);
   if (!guide) return <NotFound />;
   const Extras = EXTRAS[guide.id];
+  const mapGuide = mapGuideById.get(guide.id);
   return (
     <div className="mx-auto max-w-4xl space-y-4 px-3 py-4 sm:px-4">
       <GuideHeader guide={guide} />
       <SourceLegend />
       {Extras && <Extras />}
+      {mapGuide && <MapExtras guide={mapGuide} />}
       <GuideSections guide={guide} />
     </div>
   );

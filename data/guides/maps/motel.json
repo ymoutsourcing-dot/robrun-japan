@@ -1,0 +1,209 @@
+{
+  "id": "map-motel",
+  "title": "マップ解説：Lenny’s Motel（ハブ）",
+  "titleEn": "Map guide: Lenny's Motel (Hub)",
+  "summary": "拠点を持つまでの居場所になる砂漠のハブ。Lenny のサービス（ブラックマーケット・現金の保管・資金洗浄）、ルーレット、物々交換の扉、密輸品の購入と、ボイスチャットの決まりをまとめる。",
+  "updatedAt": "2026-11-23",
+  "sources": {},
+  "placesTitle": "モーテルの施設とサービス",
+  "places": [
+    {
+      "nameJa": "バー（Lair）",
+      "nameEn": "Lair",
+      "whatJa": "州の「犯罪の中心」。バーテンダーの Lenny（ここだけの商人）とルーレット台がある。仲間探しの場にもなる。",
+      "source": "rrg-motel"
+    },
+    {
+      "nameJa": "Lenny のノートPC",
+      "nameEn": "Lenny's laptop",
+      "whatJa": "ブラックマーケットで必要な物を注文できる。区画を持って Shipments を解放すると品揃えが増え、上の地区に移るとさらに良い品が出る。",
+      "source": "rrg-motel",
+      "link": "/shipments"
+    },
+    {
+      "nameJa": "現金の保管（Cash Stash）",
+      "nameEn": "Cash Stash",
+      "whatJa": "拠点がないうちに現金を保管できる唯一の場所。盗品（品物）は預けられない。",
+      "source": "kefir-stash",
+      "link": "/guides/money"
+    },
+    {
+      "nameJa": "ルーレット",
+      "nameEn": "Roulette",
+      "whatJa": "数字や区画にチップを置く。予想が正確なほど配当が大きく、勝ったチップは現金に換えられる。",
+      "source": "rrg-motel"
+    },
+    {
+      "nameJa": "秘密の扉（物々交換）",
+      "nameEn": "Secret Door",
+      "whatJa": "特定のアイテムを別のアイテムと交換できる（交換できる品は道具・鍵ページ）。",
+      "source": "rrg-motel",
+      "link": "/tools"
+    },
+    {
+      "nameJa": "密輸品の積荷",
+      "nameEn": "Contraband Cargo",
+      "whatJa": "積荷を買える。買った積荷は拠点の密輸品作業台で、より高く売れる貨物に詰め直せる。",
+      "source": "rrg-motel",
+      "link": "/cargo"
+    },
+    {
+      "nameJa": "乗り物",
+      "nameEn": "Car / Helicopter",
+      "whatJa": "Rob Run Guide のマップには車2台とヘリコプター1機の乗り物マーカーがある（借りられるかどうかは未確認）。",
+      "source": "rrg-motel"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "どんな場所か",
+      "facts": [
+        {
+          "text": "世界マップの説明文は「新人もベテランの犯罪者も、すべての道はここに通じる。ルーレットで運を試し、役に立つコネを作ろう」。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "全員がここから始まる。刑務所を出たばかりで金も住む所もないので、しばらくは Lenny のモーテルで寝泊まりする（公式の「権力ピラミッド」の最下層）。",
+          "source": "steam-pyramid"
+        },
+        {
+          "text": "公式の説明では、自分の拠点を持つまで戦利品を置いておける中立のハブ（バー）。仕切り役が縄張りを押さえているので撃たれる心配はない。ただし多くは置けない。",
+          "source": "steam-0910"
+        },
+        {
+          "text": "ハブにいるキャラクターは攻撃できず、死んでも持ち物を失わない。",
+          "source": "rri-police"
+        },
+        {
+          "text": "基本のしくみは、モーテルの Lenny に話しかけると教えてもらえる。",
+          "source": "kefir-intro"
+        },
+        {
+          "text": "モーテルは Looty Bay の中の建物ではなく、世界マップ上の別の目的地。",
+          "source": "wiki-map"
+        },
+        {
+          "text": "Rob Run Guide のマップではモーテルの所在は「Desert（砂漠）」。",
+          "source": "rrg-motel"
+        },
+        {
+          "text": "Lenny いわく「今いるのは俺のモーテルだ。ここから刑務所も見える」。",
+          "source": "rrg-npc"
+        }
+      ]
+    },
+    {
+      "heading": "Lenny でできること",
+      "facts": [
+        {
+          "text": "拠点がないうちは、現金を保管できるのは Lenny’s Motel だけ。盗んだ品物は自分の拠点に保管する。",
+          "source": "kefir-stash",
+          "link": "/guides/money"
+        },
+        {
+          "text": "Lenny は品物を受け取らない。「品物はここに持ってくるな。受け取るのは現金だけだ」。",
+          "source": "rrg-npc"
+        },
+        {
+          "text": "Lenny も資金洗浄をしてくれるが、手数料を取られる。自分の拠点の洗浄デスクなら手数料はかからない。",
+          "source": "rri-money",
+          "link": "/guides/money"
+        },
+        {
+          "text": "ブラックマーケットの入口は2つ：Lenny（モーテル）と、拠点のノートPC。",
+          "source": "wiki-map"
+        },
+        {
+          "text": "11/17の更新で、Lenny のメニューに Shipments（研究ツリー）が追加された。",
+          "source": "steam-1117",
+          "link": "/shipments"
+        },
+        {
+          "text": "Lenny への借金は $1,000,000。払うとキャラクターのスキンと服役年数+10年がもらえ、スキンは刑務所やワイプの後も残る。",
+          "source": "rri-faq",
+          "link": "/guides/jail-time"
+        }
+      ]
+    },
+    {
+      "heading": "ルーレット・物々交換・密輸品",
+      "facts": [
+        {
+          "text": "ルーレットの1回の賭け金は最大20万。必勝法はない。",
+          "source": "rri-faq"
+        },
+        {
+          "text": "ルーレットはゲーム内のお金だけで遊ぶ（Steam ストアの表記）。配当と確率は公式が出していない。",
+          "source": "fyi-roulette"
+        },
+        {
+          "text": "物々交換の扉（Goods for Goods）は、モーテルの酒場でバーの先の右手にあると2つのガイドが書いている。",
+          "source": "wiki-map"
+        },
+        {
+          "text": "立ち退き権（Eviction Rights）は 11/17 から物々交換から一時的に外されている。",
+          "source": "steam-1117",
+          "link": "/tools"
+        },
+        {
+          "text": "11/20以降、拠点（家）のないプレイヤーが密輸品を買おうとすると警告が出る。",
+          "source": "steam-1120",
+          "link": "/cargo"
+        }
+      ]
+    },
+    {
+      "heading": "行き方・ルール",
+      "facts": [
+        {
+          "text": "世界マップ下部の「Hub」ボタンからモーテルへ行ける（公式の世界マップ画面）。",
+          "source": "wiki-map"
+        },
+        {
+          "text": "11/17以降、区画を持たず服役年数もまだないプレイヤーは、刑務所と Lenny’s Motel でボイスチャットを使えない。",
+          "source": "steam-1117"
+        },
+        {
+          "text": "robrun.info では、文字チャット・ボイスチャットの制限（コミュニケーション制限）は「服役3年以上・区画あり・自分の集落あり」のどれかで解除、としている。",
+          "source": "rri-faq",
+          "note": "公式は「服役年数がない」と書いており、3年という数字は公式未確認"
+        }
+      ]
+    },
+    {
+      "heading": "使い方のコツ",
+      "facts": [
+        {
+          "text": "序盤の流れ：街で稼いだ現金はモーテルに預ける → 銀行口座を開いて区画を借りる → 拠点の洗浄デスクで銀行へ。",
+          "source": "kefir-make-money",
+          "link": "/guides/money",
+          "derived": true
+        },
+        {
+          "text": "モーテルに置ける量は少ない。品物や積荷をためるなら自分の家（区画）が必要。",
+          "source": "steam-0910",
+          "link": "/guides/map-settlements"
+        },
+        {
+          "text": "密輸品は作業台で詰め直して初めて価値が上がるので、拠点を持つ前に買い込まない。",
+          "source": "steam-1120",
+          "derived": true,
+          "link": "/cargo"
+        },
+        {
+          "text": "ルーレットは次のワイプで消えてもいい現金だけで遊ぶ。",
+          "source": "kefir-wipe",
+          "derived": true
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "ルーレットの配当倍率と当たる確率。",
+    "Lenny に資金洗浄を頼んだときの手数料の割合。",
+    "モーテルに保管できる現金の上限。",
+    "モーテルの車・ヘリのマーカーが貸し出し用かどうか。",
+    "ボイスチャット制限の解除条件（公式「服役年数がない」と robrun.info「3年以上」の食い違い）。",
+    "物々交換のレシピの最新の内容（パッチで変わる）。"
+  ]
+}

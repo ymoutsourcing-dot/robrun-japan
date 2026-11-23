@@ -72,23 +72,54 @@ for (const it of ds.items)
 // 攻略ガイド：出典キーの存在チェック
 {
   const shared = JSON.parse(readFileSync("data/guides/sources.json", "utf8")) as Record<string, unknown>;
-  for (const f of ["jail-time", "money", "wipe", "police", "production"]) {
-    const g = JSON.parse(readFileSync(`data/guides/${f}.json`, "utf8")) as {
+  // マップ解説（data/guides/maps/*.json）は maps/sources.json の出典も使える
+  const mapShared = JSON.parse(readFileSync("data/guides/maps/sources.json", "utf8")) as Record<string, unknown>;
+  const MAP_FILES = ["maps/looty-bay", "maps/motel", "maps/prison", "maps/sales-center", "maps/settlements"];
+  const guideIds = new Set<string>();
+  const guides = ["jail-time", "money", "wipe", "police", "production", ...MAP_FILES].map((f) => ({
+    f,
+    g: JSON.parse(readFileSync(`data/guides/${f}.json`, "utf8")) as {
+      id: string;
       sources: Record<string, unknown>;
-      sections: { facts: { source: string }[] }[];
+      sections: { facts: { source: string; link?: string }[] }[];
+      unknowns: string[];
       methods?: { source: string; setup: string[] }[];
       days?: { source: string }[];
       deathRules?: { source: string }[];
-    };
-    const has = (k: string) => k in g.sources || k in shared;
+      places?: { source: string; link?: string }[];
+      districtsSources?: string[];
+    },
+  }));
+  for (const { f, g } of guides) {
+    if (guideIds.has(g.id)) errors.push(`ガイド ${f}: id重複: ${g.id}`);
+    guideIds.add(g.id);
+  }
+  // サイト内リンク：存在するページ（/shipments/:id はアイテム、/guides/:id はガイドの存在も確認）
+  const PAGES = new Set(["/", "/shipments", "/items", "/calculator", "/calc", "/recommended", "/progress", "/about", "/changelog", "/guides", "/weapons", "/vehicles", "/cargo", "/tools", "/tips"]);
+  const linkOk = (link: string) => {
+    const path = link.split(/[?#]/)[0];
+    const m = /^\/(shipments|guides)\/([^/]+)$/.exec(path);
+    if (m) return m[1] === "shipments" ? ids.has(m[2]) : guideIds.has(m[2]);
+    return PAGES.has(path);
+  };
+  for (const { f, g } of guides) {
+    const isMap = f.startsWith("maps/");
+    const has = (k: string) => k in g.sources || k in shared || (isMap && k in mapShared);
     const refs = [
       ...g.sections.flatMap((s) => s.facts.map((x) => x.source)),
       ...(g.methods ?? []).map((m) => m.source),
       ...(g.days ?? []).map((d) => d.source),
       ...(g.deathRules ?? []).map((d) => d.source),
+      ...(g.places ?? []).map((p) => p.source),
+      ...(g.districtsSources ?? []),
     ];
     for (const r of refs) if (!has(r)) errors.push(`ガイド ${f}: 出典キーが存在しない: ${r}`);
     for (const m of g.methods ?? []) for (const id of m.setup) if (!ids.has(id)) errors.push(`ガイド ${f}: 存在しないアイテム: ${id}`);
+    if (isMap) {
+      const links = [...g.sections.flatMap((s) => s.facts.map((x) => x.link)), ...(g.places ?? []).map((p) => p.link)];
+      for (const l of links) if (l !== undefined && !linkOk(l)) errors.push(`ガイド ${f}: リンク先が存在しない: ${l}`);
+      if (!g.unknowns.length) errors.push(`ガイド ${f}: 「まだ分かっていないこと」が空`);
+    }
   }
 }
 

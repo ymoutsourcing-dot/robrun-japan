@@ -1,0 +1,163 @@
+{
+  "id": "map-sales-center",
+  "title": "マップ解説：販売センター（地区の中心）",
+  "titleEn": "Map guide: Sales Center (District Center)",
+  "summary": "各地区の中心にある売却拠点。使える人、地区レベル別の売却ボーナス、悪名レベルとの関係、危険と使い方をまとめる。",
+  "updatedAt": "2026-11-23",
+  "sources": {},
+  "placesTitle": "地区レベルと売却ボーナス",
+  "places": [
+    {
+      "nameJa": "レベル1地区（6地区）",
+      "nameEn": "Rustvale / Fairfield / Dustbowl / Redstone / Loneford / Cascadas",
+      "whatJa": "売却ボーナス +10%",
+      "source": "rrg-worldmap",
+      "link": "/guides/map-settlements"
+    },
+    {
+      "nameJa": "レベル2地区（3地区）",
+      "nameEn": "Fallrock / Rivertown / El Peso",
+      "whatJa": "売却ボーナス +20%",
+      "source": "rrg-worldmap",
+      "link": "/guides/map-settlements"
+    },
+    {
+      "nameJa": "レベル3地区（Highlands）",
+      "nameEn": "Highlands",
+      "whatJa": "売却ボーナス +30%",
+      "source": "rrg-worldmap",
+      "link": "/guides/map-settlements"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "どんな場所か",
+      "facts": [
+        {
+          "text": "公式によると、各地区には住人が盗品を売れる中心地がある。Looty Bay よりかなり高く売れることもあるが、人が集まる場所なりの危険がある。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "10地区それぞれに1つずつある（世界マップでは「○○ Center」）。説明文は「故買屋が、金になりそうな物なら何でも地区の住人と支配クランから買い取る。条件はかなり良い」。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "公式ヘルプ：地図の「$」マークのバン（故買屋）は Looty Bay か販売センターにある。",
+          "source": "kefir-sell",
+          "link": "/guides/money"
+        },
+        {
+          "text": "Lenny いわく「地区はレベル分けされていて、それぞれに販売センターとたくさんの集落がある」。",
+          "source": "rrg-npc"
+        },
+        {
+          "text": "Rob Run Guide のマップでは、販売センターに格納庫（Hangar）があり、説明文は「手段を選ばない犯罪者と命知らずが集まる場所。ここでクランが地区の支配を確立する」。ほかに車4台とヘリ1機の乗り物マーカーがある。",
+          "source": "rrg-sales"
+        },
+        {
+          "text": "密輸品作業台の説明文には、密輸貨物の出どころとして Looty Bay・Lenny’s Motel と並んで「配送センター（Distribution Center）」が出てくる。どこを指すかは未確認。",
+          "source": "game-workbench",
+          "link": "/cargo"
+        }
+      ]
+    },
+    {
+      "heading": "使える人",
+      "facts": [
+        {
+          "text": "区画を借りて集落の住人になると、販売センターで売れるようになり、密輸品も割引で買えるようになる（公式の「権力ピラミッド」）。",
+          "source": "steam-pyramid",
+          "link": "/guides/map-settlements"
+        },
+        {
+          "text": "入るのは誰でもできるが、売れるのはその地区に区画を借りている人だけ。",
+          "source": "rri-base"
+        },
+        {
+          "text": "世界マップの説明では、利用できるのは地区の住人と、その地区を支配するクランのメンバー。",
+          "source": "rrg-worldmap"
+        },
+        {
+          "text": "Lenny いわく「区画がないなら販売センターは使えない。街へ行くしかない」。",
+          "source": "rrg-npc",
+          "link": "/guides/map-looty-bay"
+        },
+        {
+          "text": "世界マップ下部に「Sales Center」ボタンがある。区画を持つまでグレー表示になる、とするガイドもある。",
+          "source": "wiki-map"
+        }
+      ]
+    },
+    {
+      "heading": "売却ボーナスと悪名レベル",
+      "facts": [
+        {
+          "text": "販売センターの売却ボーナスは地区レベルで決まる：レベル1地区 +10%、レベル2地区 +20%、レベル3地区（Highlands）+30%。",
+          "source": "rrg-worldmap",
+          "link": "/calc"
+        },
+        {
+          "text": "Rob Run Guide の注記：販売センターは地区のボーナスを使い、悪名レベルのボーナスは加算しない。",
+          "source": "rrg-sales",
+          "note": "ゲーム内では未検証"
+        },
+        {
+          "text": "街の故買屋では悪名レベルで売値が上がる（略奪品はレベル2で+10%、3で+20%、4で+35%、5で+50%）。",
+          "source": "rri-fame",
+          "link": "/calc"
+        },
+        {
+          "text": "上の2つが正しければ、悪名レベル4以上（ソロは最初からレベル4）で売るなら、略奪品は Highlands の販売センター（+30%）より街の故買屋の方が高い。悪名が低いとき・街を避けたいときは販売センターが有利。",
+          "source": "rrg-sales",
+          "derived": true,
+          "note": "ファン情報どうしの比較。ゲーム内で未検証"
+        }
+      ]
+    },
+    {
+      "heading": "危険",
+      "facts": [
+        {
+          "text": "砂漠は無法地帯で、誰でも襲ってくる。販売センターのような人気の場所は特に危ない。",
+          "source": "steam-globalmap"
+        },
+        {
+          "text": "砂漠に警察はいない。",
+          "source": "rri-base"
+        },
+        {
+          "text": "砂漠で死ぬと、持っている略奪品は常にすべて失う。",
+          "source": "kefir-die"
+        },
+        {
+          "text": "売ったお金はカウンターに置かれる。すぐ回収しないと盗まれたり没収されたりする。",
+          "source": "kefir-sell"
+        }
+      ]
+    },
+    {
+      "heading": "使い方のコツ",
+      "facts": [
+        {
+          "text": "区画を借りる地区を選ぶときは、売却ボーナス（+10〜30%）と権利書の値段を比べる。レベル2・3地区の区画には専用の書類が要る。",
+          "source": "kefir-plot",
+          "derived": true,
+          "link": "/guides/map-settlements"
+        },
+        {
+          "text": "1回の売却でまとめて運ぶほど、途中で死んだときの損も大きい。売値は悪名レベル別の計算機で比べられる。",
+          "source": "kefir-die",
+          "derived": true,
+          "link": "/calc"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "販売センターで積荷（木箱・金庫など）も売れるか、密輸品はどこで何%割引になるか。",
+    "悪名ボーナスが本当に加算されないか（Rob Run Guide の注記のみ）。",
+    "地区を支配するクランのメンバーが、住人でなくても売れるか（世界マップの説明文にはあるが未検証）。",
+    "格納庫（Hangar）でのクラン戦・地区支配の具体的な手順。",
+    "密輸品作業台の説明文に出てくる「配送センター（Distribution Center）」が、販売センターと同じ場所か別の施設か。"
+  ]
+}

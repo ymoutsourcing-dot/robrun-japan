@@ -1,0 +1,97 @@
+{
+  "steam-globalmap": {
+    "label": "公式記事「ROB RUN: Global Map」（2026/9/24・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/717917092255368502",
+    "kind": "official"
+  },
+  "steam-0910": {
+    "label": "公式記事「Your First Look at Looty Bay」（2026/9/10・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/667250326206677155",
+    "kind": "official"
+  },
+  "steam-base": {
+    "label": "公式記事「ROB RUN: Base Management」（2026/10/16・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/717918992460677890",
+    "kind": "official"
+  },
+  "steam-1002": {
+    "label": "公式記事「Frequently Asked Questions」（2026/10/2・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/717917724409332640",
+    "kind": "official"
+  },
+  "kefir-intro": {
+    "label": "Kefir公式ヘルプ「What should I do after the intro quests?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1342-what-should-i-do-after-the-intro-quests/",
+    "kind": "official"
+  },
+  "kefir-car": {
+    "label": "Kefir公式ヘルプ「How do I get a car?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1357-how-do-i-get-a-car/",
+    "kind": "official"
+  },
+  "kefir-heli": {
+    "label": "Kefir公式ヘルプ「How do I get a helicopter?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1359-how-do-i-get-a-helicopter/",
+    "kind": "official"
+  },
+  "rrg-worldmap": {
+    "label": "Rob Run Guide「世界マップ（Rocky Valley）」（地区・集落・施設の説明文。ゲームファイル抽出）",
+    "url": "https://robrunguide.app/en-US/map",
+    "kind": "fan"
+  },
+  "rrg-motel": {
+    "label": "Rob Run Guide「Lenny's Motel」マップ（施設・サービスの説明文）",
+    "url": "https://robrunguide.app/en-US/map/lennys-motel",
+    "kind": "fan"
+  },
+  "rrg-prison": {
+    "label": "Rob Run Guide「Prison」マップ（施設・ゲーム内テキスト）",
+    "url": "https://robrunguide.app/en-US/map/prison",
+    "kind": "fan"
+  },
+  "rrg-sales": {
+    "label": "Rob Run Guide「Sales Center」マップ（施設・注記）",
+    "url": "https://robrunguide.app/en-US/map/sales-center",
+    "kind": "fan"
+  },
+  "fyi-jail": {
+    "label": "robrun.fyi「Jail & prison」",
+    "url": "https://robrun.fyi/jail-and-prison",
+    "kind": "fan"
+  },
+  "fyi-selling": {
+    "label": "robrun.fyi「Selling loot」",
+    "url": "https://robrun.fyi/selling-loot",
+    "kind": "fan"
+  },
+  "fyi-land": {
+    "label": "robrun.fyi「Land & settlement titles」",
+    "url": "https://robrun.fyi/land-and-settlements",
+    "kind": "fan"
+  },
+  "fyi-roulette": {
+    "label": "robrun.fyi「Roulette & lottery」",
+    "url": "https://robrun.fyi/roulette-and-lottery",
+    "kind": "fan"
+  },
+  "wiki-change-server": {
+    "label": "robrunwiki.app「Change server」",
+    "url": "https://robrunwiki.app/guides/change-server",
+    "kind": "fan"
+  },
+  "wiki-base": {
+    "label": "robrunwiki.app「Base guide」",
+    "url": "https://robrunwiki.app/guides/base",
+    "kind": "fan"
+  },
+  "rri-clans": {
+    "label": "robrun.info「Кланы и войны банд」（クラン）",
+    "url": "https://robrun.info/mechanics/clans/",
+    "kind": "fan"
+  },
+  "game-workbench": {
+    "label": "ゲーム内のアイテム説明文（密輸品作業台）",
+    "url": "/shipments/cargo_exchange_workbench_1",
+    "kind": "data"
+  }
+}
