@@ -49,7 +49,7 @@ export function ItemIcon({ item, size = 20 }: { item: ShipmentItem; size?: numbe
         className="inline-flex shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-bg"
         style={{ width: size + 14, height: size + 14 }}
       >
-        <img src={item.icon} alt="" loading="lazy" className="h-full w-full object-contain p-0.5" />
+        <img src={item.icon} alt="" loading="lazy" className="h-full w-full object-cover" />
       </span>
     );
   return (
