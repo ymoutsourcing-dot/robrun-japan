@@ -15,6 +15,10 @@ function ownResearch(id: string) {
   return getItem(id)?.researchCost ?? 0;
 }
 
+/** 速度%の解釈：rate＝速さが(1+%)倍、reduce＝時間が(1−%)倍 */
+export type SpeedMode = "rate" | "reduce";
+const timeWith = (base: number, pct: number, mode: SpeedMode) => (mode === "rate" ? base / (1 + pct) : base * Math.max(0.05, 1 - pct));
+
 const min = (sec: number) => `${Math.floor(sec / 60)}分${Math.round(sec % 60) ? `${Math.round(sec % 60)}秒` : ""}`;
 const hours = (h: number) => (h < 1 ? `${Math.ceil(h * 60)}分` : `${Math.round(h * 10) / 10}時間`);
 
@@ -50,7 +54,7 @@ function Stat({ label, value, sub, accent }: { label: string; value: string; sub
 }
 
 /* ------------------------------------------------------------------ 栽培 */
-function Plantation() {
+function Plantation({ mode }: { mode: SpeedMode }) {
   const P = M.plantation;
   const [rarity, setRarity] = useState<Rarity>("Uncommon");
   const [tables, setTables] = useState(1);
@@ -58,7 +62,7 @@ function Plantation() {
   const [on, setOn] = useState<Record<string, boolean>>({});
   const baseSec = P.growthPoints * P.tickSeconds;
   const speedSum = P.upgrades.reduce((s, u) => s + (on[u.id] ? u.speed : 0), 0);
-  const sec = baseSec / (1 + speedSum);
+  const sec = timeWith(baseSec, speedSum, mode);
   const avgBags = (P.harvestMin + P.harvestMax) / 2;
   const perHarvest = bushes * tables * avgBags * P.bagPrice[rarity];
   const perHour = (perHarvest * 3600) / sec;
@@ -114,7 +118,7 @@ function Plantation() {
               const research = ownResearch(u.id);
               const unit = getItem(u.id)?.purchaseCost ?? 0;
               const cost = research + unit * tables;
-              const gain = (perHarvest * 3600 * u.speed) / baseSec; // 単体で付けた場合の増加
+              const gain = perHarvest * 3600 * (1 / timeWith(baseSec, u.speed, mode) - 1 / baseSec); // 単体で付けた場合の増加
               return (
                 <tr key={u.id}>
                   <td className="p-1.5">
@@ -140,7 +144,7 @@ function Plantation() {
       </div>
       <p className="mt-2 text-xs text-muted">
         「収益の増加/時」は、そのパーツだけを付けた場合の増加額。全部付けると速度 +{Math.round(P.upgrades.reduce((s, u) => s + u.speed, 0) * 100)}%（合計）で、
-        1時間あたり {money(Math.round(basePerHour))} → {money(Math.round((perHarvest * 3600 * (1 + P.upgrades.reduce((s, u) => s + u.speed, 0))) / baseSec))}。
+        1時間あたり {money(Math.round(basePerHour))} → {money(Math.round((perHarvest * 3600) / timeWith(baseSec, P.upgrades.reduce((s, u) => s + u.speed, 0), mode)))}（{min(timeWith(baseSec, P.upgrades.reduce((s, u) => s + u.speed, 0), mode))}）。
         研究費はパーツ単体の額（前提研究は栽培室・栽培テーブルのみで、すでに持っている前提）。
       </p>
     </Section>
@@ -148,14 +152,14 @@ function Plantation() {
 }
 
 /* ------------------------------------------------------------------ 冷凍庫 */
-function Freezer() {
+function Freezer({ mode }: { mode: SpeedMode }) {
   const F = M.freezer;
   const [rarity, setRarity] = useState<Rarity>("Uncommon");
   const [level, setLevel] = useState(0);
   const [on, setOn] = useState<Record<string, boolean>>({});
   const baseSec = F.points * F.tickSeconds;
   const speedSum = F.upgrades.reduce((s, u) => s + (on[u.id] ? u.speed : 0), 0);
-  const sec = baseSec / (1 + speedSum);
+  const sec = timeWith(baseSec, speedSum, mode);
   const add = F.crystalPrice[rarity] - F.concentratePrice[rarity];
   const slots = F.levels[level].slots;
   const perBatch = add * slots;
@@ -197,7 +201,7 @@ function Freezer() {
           <tbody className="divide-y divide-line/60">
             {F.upgrades.map((u) => {
               const c = ownResearch(u.id) + (getItem(u.id)?.purchaseCost ?? 0);
-              const gain = (perBatch * 3600 * u.speed) / baseSec;
+              const gain = perBatch * 3600 * (1 / timeWith(baseSec, u.speed, mode) - 1 / baseSec);
               return (
                 <tr key={u.id}>
                   <td className="p-1.5">
@@ -347,6 +351,7 @@ function Reactor() {
 
 /** 生産設備ガイド：栽培・冷凍・反応炉の計算機 */
 export default function ProductionExtras() {
+  const [mode, setMode] = useState<SpeedMode>("reduce");
   return (
     <>
       <div className="flex gap-2 rounded-lg border border-money/50 bg-money/5 p-3 text-sm">
@@ -356,8 +361,30 @@ export default function ProductionExtras() {
           成長株・試薬の入手コスト、悪名ボーナス、集落ボーナスは含みません。前提と出典は下にまとめています。
         </p>
       </div>
-      <Plantation />
-      <Freezer />
+      <Section title="強化パーツの「+%」の計算方式">
+        <div className="flex flex-wrap gap-2 text-sm">
+          {(
+            [
+              ["reduce", "時間が%だけ短くなる", "例：60分・+20% → 48分"],
+              ["rate", "速さが%だけ上がる", "例：60分・+20% → 50分"],
+            ] as const
+          ).map(([k, label, ex]) => (
+            <button
+              key={k}
+              onClick={() => setMode(k)}
+              className={`rounded-md border px-3 py-1.5 text-left ${mode === k ? "border-neon bg-neon/10 text-neon" : "border-line text-muted"}`}
+            >
+              {label}
+              <span className="block text-[11px] opacity-80">{ex}</span>
+            </button>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-muted">
+          プレイヤー報告：貨物作業台に錠前工具セット（+20%）を付けたら30分→24分。「時間が短くなる」方式（30×0.8＝24）と一致するため、こちらを初期設定にしています。複数パーツの効果は合計%として計算（未検証）。
+        </p>
+      </Section>
+      <Plantation mode={mode} />
+      <Freezer mode={mode} />
       <Reactor />
       <p className="text-xs text-muted">
         設備一式の初期費用は「<Link to="/guides/money" className="underline">金策の比較</Link>」ガイドを参照。

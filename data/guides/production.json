@@ -5,14 +5,56 @@
   "summary": "反応炉・冷凍庫・栽培テーブルの1回あたりの時間と、改造パーツで1時間あたりの収益がいくら増えるか、何時間で元が取れるかを計算する。",
   "updatedAt": "2026-11-23",
   "sources": {
-    "rri-item-reactor1": { "label": "robrun.info「Химический реактор」I", "url": "https://robrun.info/items/cargo_production_workbench_1/", "kind": "fan" },
-    "rri-item-reactor2": { "label": "robrun.info「Химический реактор」II", "url": "https://robrun.info/items/cargo_production_workbench_2/", "kind": "fan" },
-    "rri-item-reactor3": { "label": "robrun.info「Химический реактор」III", "url": "https://robrun.info/items/cargo_production_workbench_3/", "kind": "fan" },
-    "rri-item-freezer1": { "label": "robrun.info「Промышленный фризер」I", "url": "https://robrun.info/items/cargo_charge_workbench_lab_freezer_1/", "kind": "fan" },
-    "rri-item-gardenbed": { "label": "robrun.info「Стол для рассады」", "url": "https://robrun.info/items/cargo_charge_workbench_garden_bed/", "kind": "fan" },
-    "rri-item-converter": { "label": "robrun.info「Химический преобразователь」", "url": "https://robrun.info/items/cargo_production_workbench_upgrade_converter_1/", "kind": "fan" },
-    "rrg-plantation": { "label": "Rob Run Guide「Growing」ガイド", "url": "https://robrunguide.app/en-US/guides/plantation", "kind": "fan" },
-    "rrg-lab": { "label": "Rob Run Guide「Laboratory」ガイド", "url": "https://robrunguide.app/en-US/guides/lab", "kind": "fan" }
+    "rri-item-reactor1": {
+      "label": "robrun.info「Химический реактор」I",
+      "url": "https://robrun.info/items/cargo_production_workbench_1/",
+      "kind": "fan"
+    },
+    "rri-item-reactor2": {
+      "label": "robrun.info「Химический реактор」II",
+      "url": "https://robrun.info/items/cargo_production_workbench_2/",
+      "kind": "fan"
+    },
+    "rri-item-reactor3": {
+      "label": "robrun.info「Химический реактор」III",
+      "url": "https://robrun.info/items/cargo_production_workbench_3/",
+      "kind": "fan"
+    },
+    "rri-item-freezer1": {
+      "label": "robrun.info「Промышленный фризер」I",
+      "url": "https://robrun.info/items/cargo_charge_workbench_lab_freezer_1/",
+      "kind": "fan"
+    },
+    "rri-item-gardenbed": {
+      "label": "robrun.info「Стол для рассады」",
+      "url": "https://robrun.info/items/cargo_charge_workbench_garden_bed/",
+      "kind": "fan"
+    },
+    "rri-item-converter": {
+      "label": "robrun.info「Химический преобразователь」",
+      "url": "https://robrun.info/items/cargo_production_workbench_upgrade_converter_1/",
+      "kind": "fan"
+    },
+    "rrg-plantation": {
+      "label": "Rob Run Guide「Growing」ガイド",
+      "url": "https://robrunguide.app/en-US/guides/plantation",
+      "kind": "fan"
+    },
+    "rrg-lab": {
+      "label": "Rob Run Guide「Laboratory」ガイド",
+      "url": "https://robrunguide.app/en-US/guides/lab",
+      "kind": "fan"
+    },
+    "rri-cargo-items": {
+      "label": "robrun.info 各作業台パーツのページ（Ускорение）",
+      "url": "https://robrun.info/items/cargo_workbench_toolbox_1/",
+      "kind": "fan"
+    },
+    "player-report": {
+      "label": "プレイヤー報告（サイト利用者・2026/11/23）",
+      "url": "/changelog",
+      "kind": "fan"
+    }
   },
   "model": {
     "plantation": {
@@ -22,39 +64,101 @@
       "harvestMax": 4,
       "bushesPerTable": 6,
       "tablesPerRoom": 6,
-      "bagPrice": { "Uncommon": 4000, "Epic": 6000, "Legendary": 8000 },
+      "bagPrice": {
+        "Uncommon": 4000,
+        "Epic": 6000,
+        "Legendary": 8000
+      },
       "upgrades": [
-        { "id": "fan_1", "speed": 0.12 },
-        { "id": "water_pump_2", "speed": 0.14 },
-        { "id": "uv_lamp_3", "speed": 0.24 }
+        {
+          "id": "fan_1",
+          "speed": 0.12
+        },
+        {
+          "id": "water_pump_2",
+          "speed": 0.14
+        },
+        {
+          "id": "uv_lamp_3",
+          "speed": 0.24
+        }
       ]
     },
     "freezer": {
       "points": 10,
       "tickSeconds": 360,
       "levels": [
-        { "id": "cargo_charge_workbench_lab_freezer_1", "slots": 4 },
-        { "id": "cargo_charge_workbench_lab_freezer_2", "slots": 6 },
-        { "id": "cargo_charge_workbench_lab_freezer_3", "slots": 8 }
+        {
+          "id": "cargo_charge_workbench_lab_freezer_1",
+          "slots": 4
+        },
+        {
+          "id": "cargo_charge_workbench_lab_freezer_2",
+          "slots": 6
+        },
+        {
+          "id": "cargo_charge_workbench_lab_freezer_3",
+          "slots": 8
+        }
       ],
       "upgrades": [
-        { "id": "cargo_charge_workbench_upgrade_evaporator_1", "speed": 0.117 },
-        { "id": "cargo_charge_workbench_upgrade_refrigerant_1", "speed": 0.13 }
+        {
+          "id": "cargo_charge_workbench_upgrade_evaporator_1",
+          "speed": 0.117
+        },
+        {
+          "id": "cargo_charge_workbench_upgrade_refrigerant_1",
+          "speed": 0.13
+        }
       ],
-      "concentratePrice": { "Uncommon": 10000, "Epic": 15000, "Legendary": 25000 },
-      "crystalPrice": { "Uncommon": 30000, "Epic": 45000, "Legendary": 75000 }
+      "concentratePrice": {
+        "Uncommon": 10000,
+        "Epic": 15000,
+        "Legendary": 25000
+      },
+      "crystalPrice": {
+        "Uncommon": 30000,
+        "Epic": 45000,
+        "Legendary": 75000
+      }
     },
     "reactor": {
       "levels": [
-        { "id": "cargo_production_workbench_1", "cycleSeconds": 900, "cycles": 4 },
-        { "id": "cargo_production_workbench_2", "cycleSeconds": 530, "cycles": 6 },
-        { "id": "cargo_production_workbench_3", "cycleSeconds": 337, "cycles": 8 }
+        {
+          "id": "cargo_production_workbench_1",
+          "cycleSeconds": 900,
+          "cycles": 4
+        },
+        {
+          "id": "cargo_production_workbench_2",
+          "cycleSeconds": 530,
+          "cycles": 6
+        },
+        {
+          "id": "cargo_production_workbench_3",
+          "cycleSeconds": 337,
+          "cycles": 8
+        }
       ],
-      "reagentPrice": { "Uncommon": 20000, "Epic": 30000 },
+      "reagentPrice": {
+        "Uncommon": 20000,
+        "Epic": 30000
+      },
       "qualityUpgrades": [
-        { "id": "cargo_production_workbench_upgrade_engine_1", "effectJa": "わずかに上昇" },
-        { "id": "cargo_production_workbench_upgrade_thermometer_1", "effectJa": "大幅に上昇" },
-        { "id": "CargoProductionWorkbenchUpgradeConverter1", "effectJa": "非常に大きく上昇", "purchaseFallback": 300000, "purchaseFallbackSource": "rri-item-converter" }
+        {
+          "id": "cargo_production_workbench_upgrade_engine_1",
+          "effectJa": "わずかに上昇"
+        },
+        {
+          "id": "cargo_production_workbench_upgrade_thermometer_1",
+          "effectJa": "大幅に上昇"
+        },
+        {
+          "id": "CargoProductionWorkbenchUpgradeConverter1",
+          "effectJa": "非常に大きく上昇",
+          "purchaseFallback": 300000,
+          "purchaseFallbackSource": "rri-item-converter"
+        }
       ]
     }
   },
@@ -62,28 +166,70 @@
     {
       "heading": "数値の出典",
       "facts": [
-        { "text": "化学反応炉：I＝900秒×4サイクル、II＝530秒×6サイクル、III＝337秒×8サイクル。上位の反応炉ほどサイクル数が多く、1サイクルが短い。", "source": "rri-item-reactor1" },
-        { "text": "産業用冷凍庫：スロット数はI＝4、II＝6、III＝8。ティック間隔360秒、受け取りに5秒。濃縮液→クリスタルの変換には10ポイントが必要。", "source": "rri-item-freezer1" },
-        { "text": "冷凍庫の強化：改良型エバポレーター＋11.7%、高品質冷媒＋13%（同時に装着可）。", "source": "rri-lab" },
-        { "text": "栽培テーブル：6株、ティック間隔36秒。成長株は100ポイントで成熟株になる。収穫は5秒で、同じレアリティの収穫袋が2〜4個。株は残って次のサイクルが始まる。", "source": "rrg-plantation" },
-        { "text": "栽培テーブルの強化：扇風機＋12%、ウォーターポンプ＋14%、UVランプ＋24%（それぞれ専用スロットで同時に装着可）。栽培室にはテーブルを6台置ける。", "source": "rri-plantation" },
-        { "text": "売値：収穫袋 $4,000／$6,000／$8,000、濃縮液 $10,000／$15,000／$25,000、固形クリスタル $30,000／$45,000／$75,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）。", "source": "rri-cargo" }
+        {
+          "text": "化学反応炉：I＝900秒×4サイクル、II＝530秒×6サイクル、III＝337秒×8サイクル。上位の反応炉ほどサイクル数が多く、1サイクルが短い。",
+          "source": "rri-item-reactor1"
+        },
+        {
+          "text": "産業用冷凍庫：スロット数はI＝4、II＝6、III＝8。ティック間隔360秒、受け取りに5秒。濃縮液→クリスタルの変換には10ポイントが必要。",
+          "source": "rri-item-freezer1"
+        },
+        {
+          "text": "冷凍庫の強化：改良型エバポレーター＋11.7%、高品質冷媒＋13%（同時に装着可）。",
+          "source": "rri-lab"
+        },
+        {
+          "text": "栽培テーブル：6株、ティック間隔36秒。成長株は100ポイントで成熟株になる。収穫は5秒で、同じレアリティの収穫袋が2〜4個。株は残って次のサイクルが始まる。",
+          "source": "rrg-plantation"
+        },
+        {
+          "text": "栽培テーブルの強化：扇風機＋12%、ウォーターポンプ＋14%、UVランプ＋24%（それぞれ専用スロットで同時に装着可）。栽培室にはテーブルを6台置ける。",
+          "source": "rri-plantation"
+        },
+        {
+          "text": "売値：収穫袋 $4,000／$6,000／$8,000、濃縮液 $10,000／$15,000／$25,000、固形クリスタル $30,000／$45,000／$75,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）。",
+          "source": "rri-cargo"
+        },
+        {
+          "text": "貨物作業台の強化：錠前工具セット＋20%、貨物用丸ノコ＋20%。密輸品作業台の強化：ラベルプリンター I ＋15%、II ＋25%。",
+          "source": "rri-cargo-items"
+        }
       ]
     },
     {
       "heading": "計算の前提（推定）",
       "facts": [
-        { "text": "「1ティックで1ポイント進む」と仮定すると、栽培は100×36秒＝60分、冷凍は10×360秒＝60分、反応炉Iも4×900秒＝60分となり、3つとも1時間ちょうどに揃う。ゲーム内では未検証。", "source": "rrg-plantation", "derived": true },
-        { "text": "強化パーツの「+12%」などは速度（ポイントの進む速さ）の上昇として計算している（所要時間＝基本時間÷(1＋合計%)）。所要時間を直接その%だけ短くする方式の場合、効果はもう少し大きくなる。", "source": "rri-plantation", "derived": true },
-        { "text": "反応炉が1サイクルで濃縮液を何個作るか、試薬1つで何サイクル動くかは出典に記載がない（Rob Run Guide も収量は未掲載と明記）。反応炉の収益は「1サイクル＝濃縮液1個」と仮定した場合の参考値。", "source": "rrg-lab", "derived": true },
-        { "text": "品質系パーツ（産業用エンジン・温度計・化学コンバーター）の確率上昇の数値は非公開。そのため「何回レアリティが上がれば元が取れるか」で比較している。", "source": "rri-lab", "derived": true },
-        { "text": "成長株・試薬は街などで手に入る積荷で、入手コストは計算に含めていない。悪名レベルの売値ボーナス、集落のボーナス（収穫+1〜2袋）も含めていない。", "source": "rri-plantation", "derived": true }
+        {
+          "text": "「1ティックで1ポイント進む」と仮定すると、栽培は100×36秒＝60分、冷凍は10×360秒＝60分、反応炉Iも4×900秒＝60分となり、3つとも1時間ちょうどに揃う。ゲーム内では未検証。",
+          "source": "rrg-plantation",
+          "derived": true
+        },
+        {
+          "text": "強化パーツの「+12%」などの計算方式は2通り考えられる：①所要時間が%だけ短くなる（時間×(1−%)）、②速さが%だけ上がる（時間÷(1+%)）。プレイヤーの報告（貨物作業台＋錠前工具セット+20%で30分→24分）は①と一致するため①を初期設定にしている。複数パーツは合計%で計算（未検証）。",
+          "source": "rri-plantation",
+          "derived": true
+        },
+        {
+          "text": "反応炉が1サイクルで濃縮液を何個作るか、試薬1つで何サイクル動くかは出典に記載がない（Rob Run Guide も収量は未掲載と明記）。反応炉の収益は「1サイクル＝濃縮液1個」と仮定した場合の参考値。",
+          "source": "rrg-lab",
+          "derived": true
+        },
+        {
+          "text": "品質系パーツ（産業用エンジン・温度計・化学コンバーター）の確率上昇の数値は非公開。そのため「何回レアリティが上がれば元が取れるか」で比較している。",
+          "source": "rri-lab",
+          "derived": true
+        },
+        {
+          "text": "成長株・試薬は街などで手に入る積荷で、入手コストは計算に含めていない。悪名レベルの売値ボーナス、集落のボーナス（収穫+1〜2袋）も含めていない。",
+          "source": "rri-plantation",
+          "derived": true
+        }
       ]
     }
   ],
   "unknowns": [
     "1ティックで進むポイント数（ゲーム内での時間計測で確認予定）",
-    "速度%の計算方式（速度倍率か、時間短縮か）",
+    "速度%の計算方式（1件のプレイヤー報告では「時間短縮」方式と一致。2つ目のパーツを付けたときの時間で確定できる）",
     "反応炉の収量（1サイクルあたりの濃縮液の数）",
     "品質パーツによるレアリティ確率の具体的な数値"
   ]
