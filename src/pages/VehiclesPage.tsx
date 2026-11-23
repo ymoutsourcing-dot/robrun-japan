@@ -1,10 +1,10 @@
 import { Fragment, useState } from "react";
-import { Info, Lock } from "lucide-react";
+import { Info, Lock, Siren } from "lucide-react";
 import { equipment } from "../lib/equipment";
 import { getItem, items } from "../lib/data";
 import { money } from "../lib/format";
 import { SpecTable, type SpecColumn } from "../components/SpecTable";
-import { Section, TierBadge } from "../components/ui";
+import { ItemIcon, Section, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { ItemSummary, PlainSummary } from "../components/ItemSummary";
 import { AccName, AccordionProvider, AccPanel } from "../components/Accordion";
@@ -62,7 +62,21 @@ export default function VehiclesPage() {
         rows={rows}
         columns={columns}
         rowKey={(v) => v.id}
-        name={(v) => ({ ja: v.nameJa, en: v.nameEn, href: v.inShipments ? `/shipments/${v.id}` : undefined })}
+        name={(v) => {
+          const it = v.inShipments ? getItem(v.id) : undefined;
+          return {
+            ja: v.nameJa,
+            en: v.nameEn,
+            href: v.inShipments ? `/shipments/${v.id}` : undefined,
+            icon: it ? (
+              <ItemIcon item={it} size={30} />
+            ) : (
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-line bg-bg text-sky-300" aria-hidden>
+                <Siren size={22} />
+              </span>
+            ),
+          };
+        }}
         defaultSort={{ key: "speed", dir: "desc" }}
         expand={(v) => {
           const it = v.inShipments ? getItem(v.id) : undefined;

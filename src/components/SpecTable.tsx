@@ -22,7 +22,7 @@ interface Props<T> {
   rows: T[];
   columns: SpecColumn<T>[];
   rowKey: (row: T) => string;
-  name: (row: T) => { ja: string; en: string; href?: string; sub?: React.ReactNode };
+  name: (row: T) => { ja: string; en: string; href?: string; sub?: React.ReactNode; icon?: React.ReactNode };
   defaultSort?: { key: string; dir: "asc" | "desc" };
   selected?: Set<string>;
   onToggleSelect?: (id: string) => void;
@@ -119,6 +119,7 @@ export function SpecTable<T>({ rows, columns, rowKey, name, defaultSort, selecte
                         className="accent-[#5cff8a]"
                       />
                     )}
+                    {n.icon}
                     <div className="min-w-[8.5rem] max-w-[11rem]">
                       {expand ? (
                         <button type="button" onClick={() => toggleOpen(id)} className="group flex w-full items-start gap-1 text-left" aria-expanded={open.has(id)}>

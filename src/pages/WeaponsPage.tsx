@@ -6,7 +6,7 @@ import { getItem, normalize } from "../lib/data";
 import { ItemSummary, PlainSummary } from "../components/ItemSummary";
 import { money, RARITY_COLOR, RARITY_JA } from "../lib/format";
 import { SpecTable, type SpecColumn } from "../components/SpecTable";
-import { TierBadge } from "../components/ui";
+import { ItemIcon, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import type { Armor, Bag, EquipmentCommon, Weapon } from "../types/equipment";
 
@@ -102,6 +102,10 @@ const nameOf = (r: EquipmentCommon) => ({
   en: r.nameEn,
   href: r.inShipments ? `/shipments/${r.id}` : undefined,
   sub: r.inShipments ? undefined : <span className="text-[10px] text-muted">Shipments対象外</span>,
+  icon: (() => {
+    const it = r.inShipments ? getItem(r.id) : undefined;
+    return it ? <ItemIcon item={it} size={22} /> : <span className="inline-flex h-9 w-9 shrink-0 rounded-md border border-dashed border-line" aria-hidden />;
+  })(),
 });
 
 export default function WeaponsPage() {
