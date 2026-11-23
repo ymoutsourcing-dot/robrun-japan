@@ -76,7 +76,7 @@ for (const it of ds.items)
   const mapShared = JSON.parse(readFileSync("data/guides/maps/sources.json", "utf8")) as Record<string, unknown>;
   const MAP_FILES = ["maps/looty-bay", "maps/motel", "maps/prison", "maps/sales-center", "maps/settlements"];
   const guideIds = new Set<string>();
-  const guides = ["jail-time", "money", "wipe", "police", "production", ...MAP_FILES].map((f) => ({
+  const guides = ["jail-time", "money", "wipe", "police", "production", "monetization", ...MAP_FILES].map((f) => ({
     f,
     g: JSON.parse(readFileSync(`data/guides/${f}.json`, "utf8")) as {
       id: string;
