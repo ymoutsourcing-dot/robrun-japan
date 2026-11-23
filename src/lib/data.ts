@@ -1,6 +1,7 @@
 import datasetJson from "../generated/shipments.json";
 import recommendationsJson from "../generated/recommendations.json";
-import type { CategoryId, CategoryInfo, ShipmentDataset, ShipmentItem } from "../types/shipment";
+import itemUsageJson from "../generated/item-usage.json";
+import type { CategoryId, CategoryInfo, ItemUsage, ShipmentDataset, ShipmentItem } from "../types/shipment";
 
 export const dataset = datasetJson as unknown as ShipmentDataset;
 export const items: ShipmentItem[] = dataset.items;
@@ -9,6 +10,21 @@ export const categories: CategoryInfo[] = dataset.categories;
 export const recommendations = (recommendationsJson as unknown as {
   items: Record<string, { priority: number; reason: string; sourceUrl?: string }>;
 }).items;
+
+/** 使い方・入手方法（data/guides/item-usage.json。出典URLは解決済み） */
+const itemUsage = itemUsageJson as unknown as Record<string, ItemUsage>;
+export function getUsage(id: string): ItemUsage | undefined {
+  return itemUsage[id];
+}
+
+/** ツリーのツールチップ用：効果の数値と、最初の「これがあるとできること」か「使い方」の1行 */
+export function usageHint(id: string): string | null {
+  const u = itemUsage[id];
+  if (!u) return null;
+  const eff = u.effects.length ? "効果: " + u.effects.map((f) => `${f.label} ${f.value}`).join("、") : "";
+  const l = u.enables[0] ?? u.usage[0];
+  return [eff, l ? `▶ ${l.text}` : ""].filter(Boolean).join("\n") || null;
+}
 
 export const itemById = new Map(items.map((i) => [i.id, i]));
 export const categoryById = new Map(categories.map((c) => [c.id, c]));

@@ -92,6 +92,63 @@ for (const it of ds.items)
   }
 }
 
+// 使い方・入手方法（data/guides/item-usage.json）：ID・出典キー・リンク先アイテムの存在チェックと収録数
+{
+  const shared = JSON.parse(readFileSync("data/guides/sources.json", "utf8")) as Record<string, unknown>;
+  type Line = string | { text: string; items?: string[]; source?: string };
+  const usage = JSON.parse(readFileSync("data/guides/item-usage.json", "utf8")) as {
+    items: Record<
+      string,
+      {
+        effectsJa?: { label: string; value: string; source?: string; detail?: string; detailSource?: string }[];
+        enablesJa?: Line[];
+        requiresJa?: Line[];
+        usageJa?: Line[];
+        statsJa?: { label: string; value: string }[];
+        obtainJa?: Line[];
+        usedForJa?: Line[];
+        sources: string[];
+        notes?: string;
+      }
+    >;
+  };
+  const count = { effects: 0, usage: 0, enables: 0, requires: 0, stats: 0, obtain: 0, usedFor: 0, any: 0 };
+  for (const [id, u] of Object.entries(usage.items)) {
+    const where = `item-usage ${id}`;
+    if (!ids.has(id)) errors.push(`${where}: 存在しないアイテム`);
+    if (!Array.isArray(u.sources) || u.sources.length === 0) errors.push(`${where}: sources が空`);
+    for (const k of u.sources ?? []) if (!(k in shared)) errors.push(`${where}: 出典キーが存在しない: ${k}`);
+    const lines = [u.enablesJa, u.requiresJa, u.usageJa, u.obtainJa, u.usedForJa].flatMap((x) => x ?? []);
+    for (const l of lines) {
+      if (typeof l === "string") {
+        if (!l.trim()) errors.push(`${where}: 空の行`);
+        continue;
+      }
+      if (!l.text?.trim()) errors.push(`${where}: 空の行`);
+      if (l.source && !(l.source in shared)) errors.push(`${where}: 出典キーが存在しない: ${l.source}`);
+      for (const ref of l.items ?? []) if (!ids.has(ref)) errors.push(`${where}: リンク先アイテムが存在しない: ${ref}`);
+    }
+    for (const s of u.statsJa ?? []) if (!s.label || !s.value) errors.push(`${where}: statsJa に空の項目`);
+    for (const f of u.effectsJa ?? []) {
+      if (!f.label || !f.value) errors.push(`${where}: effectsJa に空の項目`);
+      for (const k of [f.source, f.detailSource]) if (k && !(k in shared)) errors.push(`${where}: 出典キーが存在しない: ${k}`);
+    }
+    if (u.effectsJa?.length) count.effects++;
+    if (u.usageJa?.length) count.usage++;
+    if (u.enablesJa?.length) count.enables++;
+    if (u.requiresJa?.length) count.requires++;
+    if (u.statsJa?.length) count.stats++;
+    if (u.obtainJa?.length) count.obtain++;
+    if (u.usedForJa?.length) count.usedFor++;
+    if (lines.length || u.statsJa?.length || u.effectsJa?.length) count.any++;
+  }
+  const alt = ds.items.filter((i) => i.purchaseCost === null && i.purchaseCostAlt != null).length;
+  console.log(
+    `使い方・入手方法: ${count.any}/${ds.items.length} 件（効果 ${count.effects} / 使い方 ${count.usage} / できること ${count.enables} / 必要なもの ${count.requires} / 性能 ${count.stats} / 入手 ${count.obtain} / 使い道 ${count.usedFor}）、購入価格の別出典 ${alt} 件`,
+  );
+  for (const it of ds.items) if (!usage.items[it.id]) notes.push(`使い方・入手方法 未収録: ${it.id}`);
+}
+
 // ゲーム風レイアウト（data/layout/game-layout.json）：全項目に位置があり、同じマスに2つ置かれていないか
 {
   const gl = JSON.parse(readFileSync("data/layout/game-layout.json", "utf8")) as {

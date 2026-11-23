@@ -8,6 +8,7 @@
     "data": "tsx scripts/build-data.ts",
     "validate": "tsx scripts/validate-data.ts && tsx scripts/validate-tools.ts",
     "extract": "tsx scripts/extract-robrunguide.ts",
+    "extract:rri": "tsx scripts/extract-robrun-info.ts",
     "typecheck": "tsc -b",
     "build": "npm run data && npm run validate && tsc -b && vite build",
     "lint": "eslint .",

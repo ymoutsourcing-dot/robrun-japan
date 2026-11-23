@@ -46,6 +46,10 @@ export interface ShipmentItem {
   researchCost: number | null;
   /** ノートPCでの購入価格（定価、割引前） */
   purchaseCost: number | null;
+  /** purchaseCost が未確認のとき、別の出典（robrun.info）に載っている購入価格。purchaseCost を上書きしない */
+  purchaseCostAlt?: number | null;
+  /** purchaseCostAlt の出典 URL */
+  purchaseCostAltSource?: string | null;
   /** 故買屋への売却価格（1個あたり） */
   salePrice: number | null;
 
@@ -74,6 +78,47 @@ export interface ShipmentItem {
   gameBuild?: string;
   /** ツリーのレイアウト情報（ゲーム内の並び順） */
   order: number;
+}
+
+/** 使い方・入手方法の1行（data/guides/item-usage.json → src/generated/item-usage.json） */
+export interface UsageLine {
+  text: string;
+  /** 文中で触れているアイテムの ID（UI でリンクにする） */
+  items: string[];
+  /** 行ごとの出典キー。null ならアイテム全体の出典 */
+  source: string | null;
+}
+
+export interface UsageSource {
+  key: string;
+  label: string;
+  url: string;
+  kind: "official" | "fan" | "data";
+}
+
+export interface UsageEffect {
+  label: string;
+  value: string;
+  source: string | null;
+  /** 補足（例：基本時間からの換算）とその出典 */
+  detail: string | null;
+  detailSource: string | null;
+}
+
+export interface ItemUsage {
+  /** 主要な効果の数値（説明文のすぐ下にバッジで表示） */
+  effects: UsageEffect[];
+  /** これがあるとできること */
+  enables: UsageLine[];
+  /** 使うのに必要なもの */
+  requires: UsageLine[];
+  usage: UsageLine[];
+  stats: { label: string; value: string }[];
+  obtain: UsageLine[];
+  usedFor: UsageLine[];
+  notes: string | null;
+  /** 出典（URL のテンプレートはアイテムごとに解決済み） */
+  sources: UsageSource[];
 }
 
 export interface CategoryInfo {

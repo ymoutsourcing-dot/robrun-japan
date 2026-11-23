@@ -169,14 +169,34 @@
     "url": "https://robrungame.app/guides/rob-run-prison/",
     "kind": "fan"
   },
-  "kefir-raid": {
-    "label": "Kefir公式ヘルプ「How do I raid other players' bases?」",
-    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1364-how-do-i-raid-other-players-bases/",
-    "kind": "official"
+  "shipments-data": {
+    "label": "本サイトのShipmentsデータ",
+    "url": "/shipments",
+    "kind": "data"
+  },
+  "game-text": {
+    "label": "ゲーム内のアイテム説明文",
+    "url": "/shipments/{id}",
+    "kind": "data"
+  },
+  "rri-item": {
+    "label": "robrun.info アイテムページ",
+    "url": "https://robrun.info/items/{rriId}/",
+    "kind": "fan"
+  },
+  "rrg-item": {
+    "label": "Rob Run Guide アイテムページ",
+    "url": "https://robrunguide.app/en-US/items/{itemId}",
+    "kind": "fan"
   },
   "rri-barter": {
     "label": "robrun.info「Бартер」（物々交換レシピ）",
     "url": "https://robrun.info/mechanics/barter/",
+    "kind": "fan"
+  },
+  "rri-cumulative": {
+    "label": "robrun.info「Накопительные предметы」（蓄積アイテム）",
+    "url": "https://robrun.info/mechanics/cumulative/",
     "kind": "fan"
   },
   "rri-raid": {
@@ -184,10 +204,30 @@
     "url": "https://robrun.info/guides/raid/",
     "kind": "fan"
   },
-  "rri-cumulative": {
-    "label": "robrun.info「Накопительные предметы」（蓄積アイテム）",
-    "url": "https://robrun.info/mechanics/cumulative/",
+  "rri-collections": {
+    "label": "robrun.info「Сбор коллекций」（コレクション）",
+    "url": "https://robrun.info/guides/collections/",
     "kind": "fan"
+  },
+  "rri-vehicle-mods": {
+    "label": "robrun.info「Модификация транспорта」（車両改造）",
+    "url": "https://robrun.info/guides/vehicle-mods/",
+    "kind": "fan"
+  },
+  "player-report": {
+    "label": "プレイヤー報告（サイト利用者・2026/11/23）",
+    "url": "/changelog",
+    "kind": "fan"
+  },
+  "rri-building-plan": {
+    "label": "robrun.info「План строения」（家具の設置・拠点防衛）",
+    "url": "https://robrun.info/guides/building-plan/",
+    "kind": "fan"
+  },
+  "kefir-raid": {
+    "label": "Kefir公式ヘルプ「How do I raid other players' bases?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1364-how-do-i-raid-other-players-bases/",
+    "kind": "official"
   },
   "rri-faq": {
     "label": "robrun.info「Вопросы и ответы」",
@@ -233,11 +273,6 @@
     "label": "robrunwiki.app「Item database」",
     "url": "https://robrunwiki.app/guides/items",
     "kind": "fan"
-  },
-  "shipments-data": {
-    "label": "本サイトのShipmentsデータ",
-    "url": "/shipments",
-    "kind": "data"
   },
   "ingame-confiscation": {
     "label": "ゲーム内の告知「Federal Confiscation Procedure」（プレイヤーのスクリーンショット・2026/11/23）",

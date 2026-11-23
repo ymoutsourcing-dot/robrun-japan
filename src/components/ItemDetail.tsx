@@ -8,11 +8,13 @@ import {
   displayNameEn,
   displayNameJa,
   getItem,
+  getUsage,
   recommendations,
 } from "../lib/data";
 import { money, settlementLevel, UNKNOWN } from "../lib/format";
 import { useProgress } from "../store/progress";
 import { ItemIcon, Priority, ProgressToggles, RarityBadge, StatusBadge, TierBadge } from "./ui";
+import { EffectBadges, ItemUsageSection, PurchasePrice } from "./ItemUsage";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -78,6 +80,10 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
         </div>
       </div>
 
+      <EffectBadges item={item} />
+
+      <ItemUsageSection item={item} onSelect={onSelect} />
+
       <section>
         <h2 className="mb-1 text-xs font-bold text-neon">研究情報</h2>
         <dl>
@@ -85,7 +91,7 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
             <span className="font-mono text-money">{money(item.researchCost)}</span>
           </Row>
           <Row label="購入価格（ノートPC・定価）">
-            <span className="font-mono text-money">{money(item.purchaseCost)}</span>
+            <PurchasePrice item={item} className="text-money" />
           </Row>
           <Row label="売却価格（故買屋・1個）">
             <span className="font-mono">{money(item.salePrice)}</span>
@@ -203,9 +209,15 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
           {rec && <Row label="評価の根拠">{rec.reason}</Row>}
           <Row label="解放価値（この先の派生研究数）">{desc} 件</Row>
           <Row label="用途タグ">{item.tags.length ? item.tags.join("・") : "—"}</Row>
-          <Row label="メリット / デメリット / 初心者・3人PT評価">
-            <span className="text-muted">{UNKNOWN}（検証データ収集中）</span>
-          </Row>
+          {getUsage(item.id) ? (
+            <Row label="初心者・3人PT評価">
+              <span className="text-muted">{UNKNOWN}（使い方・入手方法は上の欄に出典付きで掲載）</span>
+            </Row>
+          ) : (
+            <Row label="メリット / デメリット / 初心者・3人PT評価">
+              <span className="text-muted">{UNKNOWN}（検証データ収集中）</span>
+            </Row>
+          )}
         </dl>
       </section>
 

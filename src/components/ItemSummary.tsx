@@ -5,6 +5,7 @@ import { computeCost, displayNameJa, getItem } from "../lib/data";
 import { money, settlementLevel } from "../lib/format";
 import { useProgress } from "../store/progress";
 import { ProgressToggles, RarityBadge, StatusBadge } from "./ui";
+import { ItemUsageSummary, PurchasePrice } from "./ItemUsage";
 
 /** 一覧の行の中で開く、アイテムの要約（アコーディオンの中身） */
 export function ItemSummary({ item }: { item: ShipmentItem }) {
@@ -22,6 +23,7 @@ export function ItemSummary({ item }: { item: ShipmentItem }) {
           <span className="mr-1 text-[10px] font-bold text-muted">英語原文</span>
           {item.descriptionEn}
         </p>
+        <ItemUsageSummary item={item} />
         <ProgressToggles id={item.id} compact />
         {item.stats.length > 0 && (
           <dl className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-xs sm:grid-cols-3">
@@ -38,7 +40,7 @@ export function ItemSummary({ item }: { item: ShipmentItem }) {
         <dl className="space-y-0.5">
           {[
             ["研究費", <span className="font-mono text-money">{money(item.researchCost)}</span>],
-            ["購入価格", <span className="font-mono">{money(item.purchaseCost)}</span>],
+            ["購入価格", <PurchasePrice item={item} />],
             ["売却価格", <span className="font-mono">{money(item.salePrice)}</span>],
             ["必要地区レベル", settlementLevel(item.requiredSettlementLevel)],
             ...(item.requiredImprisonmentYears > 0

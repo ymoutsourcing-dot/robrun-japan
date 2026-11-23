@@ -2,7 +2,7 @@ import { memo } from "react";
 import { BaseEdge, Handle, Position, type Edge, type EdgeProps, type Node, type NodeProps } from "@xyflow/react";
 import { Bookmark, CheckCircle2, Lock, Star, UserRound } from "lucide-react";
 import type { CategoryId } from "../types/shipment";
-import { categoryName, displayNameEn, displayNameJa, toRoman } from "../lib/data";
+import { categoryName, displayNameEn, displayNameJa, toRoman, usageHint } from "../lib/data";
 import { money } from "../lib/format";
 import { useProgress } from "../store/progress";
 import { CATEGORY_ACCENT, CategoryIcon, ItemIcon } from "./ui";
@@ -43,6 +43,7 @@ function GameItemNodeImpl({ data, selected }: NodeProps<GameItemFlowNode>) {
     `研究費 ${money(item.researchCost)}`,
     item.requiredSettlementLevel !== null ? `必要地区レベル ${item.requiredSettlementLevel}` : "",
     item.requiredImprisonmentYears > 0 ? `服役${item.requiredImprisonmentYears}年以上` : "",
+    usageHint(item.id) ?? "",
   ]
     .filter(Boolean)
     .join("\n");
