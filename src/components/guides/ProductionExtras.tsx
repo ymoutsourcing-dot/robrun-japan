@@ -94,7 +94,7 @@ function Plantation({ mode }: { mode: SpeedMode }) {
       </div>
 
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
-        <Stat label="1サイクルの時間（推定）" value={min(sec)} sub={speedSum ? `基本 ${min(baseSec)}` : undefined} />
+        <Stat label="1サイクルの時間" value={min(sec)} sub={speedSum ? `基本 ${min(baseSec)}` : undefined} />
         <Stat label="1回の収穫（平均3袋/株）" value={money(perHarvest)} sub={`${P.harvestMin}〜${P.harvestMax}袋：${money(bushes * tables * P.harvestMin * P.bagPrice[rarity])}〜${money(bushes * tables * P.harvestMax * P.bagPrice[rarity])}`} />
         <Stat label="1時間あたり" value={money(Math.round(perHour))} accent />
         <Stat label="24時間あたり" value={money(Math.round(perHour * 24))} sub="放置で回し続けた場合" />
@@ -179,7 +179,7 @@ function Freezer({ mode }: { mode: SpeedMode }) {
         </div>
       </div>
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
-        <Stat label="1回の時間（推定）" value={min(sec)} sub={speedSum ? `基本 ${min(baseSec)}` : undefined} />
+        <Stat label="1回の時間" value={min(sec)} sub={speedSum ? `基本 ${min(baseSec)}` : undefined} />
         <Stat label="1個あたりの価値の増加" value={`+${money(add)}`} sub={`${money(F.concentratePrice[rarity])} → ${money(F.crystalPrice[rarity])}`} />
         <Stat label={`1回（${slots}個）の増加`} value={`+${money(perBatch)}`} />
         <Stat label="1時間あたりの増加" value={`+${money(Math.round(perHour))}`} accent />
@@ -250,6 +250,7 @@ function Freezer({ mode }: { mode: SpeedMode }) {
 function Reactor() {
   const R = M.reactor;
   const [rarity, setRarity] = useState<Rarity>("Uncommon");
+  const [chance, setChance] = useState(20);
   const conc = M.freezer.concentratePrice[rarity];
   return (
     <Section title="化学研究所：化学反応炉（試薬 → 濃縮液）">
@@ -299,16 +300,32 @@ function Reactor() {
         </table>
       </div>
 
-      <h3 className="mb-1 mt-4 text-xs font-bold text-neon">品質パーツ（高品質クリスタルの確率アップ）の損益分岐</h3>
-      <p className="mb-2 text-xs text-muted">確率の数値は非公開のため、「固形クリスタルが1段階上のレアリティになる回数」で元が取れるかを示します（クリスタルの差額：アンコモン→エピック +$15,000、エピック→レジェンダリー +$30,000）。</p>
+      <h3 className="mb-1 mt-4 text-xs font-bold text-neon">品質パーツ（高品質クリスタルの確率アップ）の元が取れるまで</h3>
+      <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
+        <label className="flex items-center gap-1">
+          パーツで1段階上のレアリティになる確率
+          <input
+            type="number"
+            min={1}
+            max={100}
+            value={chance}
+            onChange={(e) => setChance(Math.min(100, Math.max(1, Number(e.target.value) || 1)))}
+            className="w-16 rounded border border-line bg-bg px-1 py-0.5 font-mono outline-none focus:border-neon"
+          />
+          %
+        </label>
+        <span className="text-xs text-muted">初期値20%はプレイヤーの体感（20〜30%）の低い方。公式の数値は非公開。</span>
+      </div>
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[620px] text-sm">
+        <table className="w-full min-w-[680px] text-sm">
           <thead className="text-left text-xs text-muted">
             <tr>
               <th className="p-1.5">パーツ</th>
               <th className="p-1.5">効果（ゲーム内）</th>
               <th className="p-1.5 text-right">費用（研究＋購入）</th>
-              <th className="p-1.5 text-right">元が取れる回数</th>
+              <th className="p-1.5 text-right">1個あたりの期待増加</th>
+              <th className="p-1.5 text-right">元が取れるクリスタル数</th>
+              <th className="p-1.5 text-right">冷凍庫Iで（4個/時）</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line/60">
@@ -316,8 +333,10 @@ function Reactor() {
               const own = ownResearch(q.id);
               const purchase = getItem(q.id)?.purchaseCost ?? q.purchaseFallback ?? null;
               const c = purchase === null ? null : own + purchase;
-              const up1 = M.freezer.crystalPrice.Epic - M.freezer.crystalPrice.Uncommon;
-              const up2 = M.freezer.crystalPrice.Legendary - M.freezer.crystalPrice.Epic;
+              // アンコモン→エピック（+$15,000）が1段階上がる場合の期待値
+              const diff = M.freezer.crystalPrice.Epic - M.freezer.crystalPrice.Uncommon;
+              const ev = (chance / 100) * diff;
+              const n = c === null ? null : Math.ceil(c / ev);
               return (
                 <tr key={q.id}>
                   <td className="p-1.5">
@@ -328,22 +347,19 @@ function Reactor() {
                     {money(c)}
                     {getItem(q.id)?.purchaseCost == null && q.purchaseFallback && <span className="block text-[10px] text-sky-300">購入価格はrobrun.infoの値</span>}
                   </td>
-                  <td className="p-1.5 text-right font-mono">
-                    {c === null ? (
-                      "—"
-                    ) : (
-                      <>
-                        <span className="block">エピック化 {Math.ceil(c / up1)}回</span>
-                        <span className="block text-xs text-muted">レジェンダリー化なら {Math.ceil(c / up2)}回</span>
-                      </>
-                    )}
-                  </td>
+                  <td className="p-1.5 text-right font-mono text-money">+{money(Math.round(ev))}</td>
+                  <td className="p-1.5 text-right font-mono">{n === null ? "—" : `${n}個`}</td>
+                  <td className="p-1.5 text-right font-mono">{n === null ? "—" : hours(n / M.freezer.levels[0].slots)}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
       </div>
+      <p className="mt-2 text-xs text-muted">
+        期待増加＝確率×（エピックのクリスタル $45,000 − アンコモン $30,000）。エピック→レジェンダリーに上がる場合は差額が $30,000 なので、元が取れる個数は半分になります。
+        パーツごとに確率が違う（エンジン＜温度計＜コンバーター）はずですが、数値が不明なので同じ確率で計算しています。
+      </p>
       <p className="mt-2 text-xs text-muted">参考：試薬キャニスターはそのまま密輸業者に売ると {money(R.reagentPrice.Uncommon)}（アンコモン）。</p>
     </Section>
   );
@@ -357,7 +373,7 @@ export default function ProductionExtras() {
       <div className="flex gap-2 rounded-lg border border-money/50 bg-money/5 p-3 text-sm">
         <AlertTriangle size={18} className="mt-0.5 shrink-0 text-money" />
         <p>
-          時間は「1ティックで1ポイント進む」という<strong>推定</strong>です（栽培・冷凍・反応炉Iがすべて60分に揃うため妥当と見ていますが、ゲーム内では未検証）。
+          栽培テーブル・冷凍庫の1回60分はプレイヤー報告と一致（「1ティック1ポイント」の計算とも一致）。反応炉の時間と収量は未検証です。
           成長株・試薬の入手コスト、悪名ボーナス、集落ボーナスは含みません。前提と出典は下にまとめています。
         </p>
       </div>
@@ -380,7 +396,7 @@ export default function ProductionExtras() {
           ))}
         </div>
         <p className="mt-2 text-xs text-muted">
-          プレイヤー報告：貨物作業台に錠前工具セット（+20%）を付けたら30分→24分。「時間が短くなる」方式（30×0.8＝24）と一致するため、こちらを初期設定にしています。複数パーツの効果は合計%として計算（未検証）。
+          プレイヤー報告：貨物作業台（基本ちょうど30分）に錠前工具セット（+20%）を付けたら24分。「時間が短くなる」方式（30×0.8＝24）で確定としています。複数パーツの効果は合計%として計算（2つ目のパーツでの確認は未実施）。
         </p>
       </Section>
       <Plantation mode={mode} />
