@@ -365,6 +365,122 @@ function Reactor() {
   );
 }
 
+/* ------------------------------------------------------------------ 化学研究所の合計 */
+function LabTotal({ mode }: { mode: SpeedMode }) {
+  const R = M.reactor;
+  const F = M.freezer;
+  const [base, setBase] = useState<"Uncommon" | "Epic">("Uncommon");
+  const [reactor, setReactor] = useState(0);
+  const [freezer, setFreezer] = useState(0);
+  const [fUp, setFUp] = useState<Record<string, boolean>>({});
+  const [engine, setEngine] = useState(true);
+  const [chance, setChance] = useState(20);
+
+  const rl = R.levels[reactor];
+  const reactorSec = rl.cycleSeconds * rl.cycles;
+  const concPerHour = (rl.cycles * 3600) / reactorSec; // 仮定：1サイクル＝濃縮液1個
+  const fSpeed = F.upgrades.reduce((a, u) => a + (fUp[u.id] ? u.speed : 0), 0);
+  const freezeSec = timeWith(F.points * F.tickSeconds, fSpeed, mode);
+  const freezeCap = (F.levels[freezer].slots * 3600) / freezeSec;
+  const crystalsPerHour = Math.min(concPerHour, freezeCap);
+  const bottleneck = concPerHour < freezeCap ? "反応炉" : concPerHour > freezeCap ? "冷凍庫" : null;
+
+  const next = base === "Uncommon" ? "Epic" : "Legendary";
+  const diff = F.crystalPrice[next] - F.crystalPrice[base];
+  const p = engine ? chance / 100 : 0;
+  const valueEach = F.crystalPrice[base] + p * diff;
+  const gross = crystalsPerHour * valueEach;
+  const grossNoEngine = crystalsPerHour * F.crystalPrice[base];
+  const reagentsPerHour = crystalsPerHour / rl.cycles;
+  const reagentValue = reagentsPerHour * R.reagentPrice[base];
+
+  return (
+    <Section title="化学研究所の合計時給（反応炉 → 冷凍庫 → 固形クリスタル）">
+      <div className="mb-2 flex gap-2 rounded-md border border-money/50 bg-money/5 p-2 text-xs">
+        <AlertTriangle size={15} className="mt-0.5 shrink-0 text-money" />
+        <p>
+          反応炉は「1サイクル＝濃縮液1個（試薬1つで{rl.cycles}個）」と仮定しています。反応炉I〜IIIのサイクル数（4・6・8）が冷凍庫I〜IIIの枠数（4・6・8）と一致するため、この仮定は妥当と見ていますが未検証です。
+        </p>
+      </div>
+      <div className="grid gap-2 text-sm sm:grid-cols-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-muted">試薬</span>
+          <div className="flex overflow-hidden rounded-md border border-line text-xs">
+            {(["Uncommon", "Epic"] as const).map((r) => (
+              <button key={r} onClick={() => setBase(r)} className={`px-2 py-1 ${base === r ? "bg-neon/15 text-neon" : "text-muted"}`}>
+                {r === "Uncommon" ? "試薬キャニスター（アンコモン）" : "高品質試薬（エピック）"}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-muted">反応炉</span>
+          {R.levels.map((l, i) => (
+            <button key={l.id} onClick={() => setReactor(i)} className={`rounded border px-2 py-0.5 text-xs ${reactor === i ? "border-neon text-neon" : "border-line text-muted"}`}>
+              {["I", "II", "III"][i]}
+            </button>
+          ))}
+          <span className="text-muted">冷凍庫</span>
+          {F.levels.map((l, i) => (
+            <button key={l.id} onClick={() => setFreezer(i)} className={`rounded border px-2 py-0.5 text-xs ${freezer === i ? "border-neon text-neon" : "border-line text-muted"}`}>
+              {["I", "II", "III"][i]}（{l.slots}枠）
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="flex items-center gap-1">
+            <input type="checkbox" checked={engine} onChange={(e) => setEngine(e.target.checked)} className="accent-[#5cff8a]" />
+            <Name id="cargo_production_workbench_upgrade_engine_1" />
+          </label>
+          <label className="flex items-center gap-1 text-xs">
+            レア度アップ確率
+            <input
+              type="number"
+              min={1}
+              max={100}
+              value={chance}
+              onChange={(e) => setChance(Math.min(100, Math.max(1, Number(e.target.value) || 1)))}
+              className="w-14 rounded border border-line bg-bg px-1 py-0.5 font-mono"
+            />
+            %
+          </label>
+        </div>
+        <div className="flex flex-wrap items-center gap-3 text-xs">
+          {F.upgrades.map((u) => (
+            <label key={u.id} className="flex items-center gap-1">
+              <input type="checkbox" checked={!!fUp[u.id]} onChange={(e) => setFUp({ ...fUp, [u.id]: e.target.checked })} className="accent-[#5cff8a]" />
+              <Name id={u.id} />
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3 grid gap-2 sm:grid-cols-4">
+        <Stat label="反応炉：濃縮液/時（仮定）" value={`${Math.round(concPerHour * 10) / 10}個`} sub={`1回 ${min(reactorSec)}・試薬1つで${rl.cycles}個`} />
+        <Stat label="冷凍庫：処理できる数/時" value={`${Math.round(freezeCap * 10) / 10}個`} sub={`1回 ${min(freezeSec)}・${F.levels[freezer].slots}枠`} />
+        <Stat
+          label="クリスタル/時"
+          value={`${Math.round(crystalsPerHour * 10) / 10}個`}
+          sub={bottleneck ? `${bottleneck}がボトルネック` : "反応炉と冷凍庫が釣り合っている"}
+        />
+        <Stat label="クリスタル1個の期待値" value={money(Math.round(valueEach))} sub={engine ? `${money(F.crystalPrice[base])}＋${chance}%×${money(diff)}` : "品質パーツなし"} />
+      </div>
+      <div className="mt-2 grid gap-2 sm:grid-cols-3">
+        <Stat label={`合計の時給${engine ? "（エンジンあり）" : ""}`} value={money(Math.round(gross))} sub={`24時間で ${money(Math.round(gross * 24))}`} accent />
+        <Stat label="エンジンによる上乗せ/時" value={engine ? `+${money(Math.round(gross - grossNoEngine))}` : "—"} sub={`エンジンなしの時給 ${money(Math.round(grossNoEngine))}`} />
+        <Stat
+          label="試薬をそのまま売る場合との差/時"
+          value={`+${money(Math.round(gross - reagentValue))}`}
+          sub={`試薬 ${Math.round(reagentsPerHour * 100) / 100}個/時（売ると${money(Math.round(reagentValue))}）`}
+        />
+      </div>
+      <p className="mt-2 text-xs text-muted">
+        売値は悪名ボーナス前の密輸業者への価格。反応炉が1台・冷凍庫が1台の場合。試薬を集める手間・時間、粉末に加工する場合は含みません。
+      </p>
+    </Section>
+  );
+}
+
 /** 生産設備ガイド：栽培・冷凍・反応炉の計算機 */
 export default function ProductionExtras() {
   const [mode, setMode] = useState<SpeedMode>("reduce");
@@ -399,6 +515,7 @@ export default function ProductionExtras() {
           プレイヤー報告：貨物作業台（基本ちょうど30分）に錠前工具セット（+20%）を付けたら24分。「時間が短くなる」方式（30×0.8＝24）で確定としています。複数パーツの効果は合計%として計算（2つ目のパーツでの確認は未実施）。
         </p>
       </Section>
+      <LabTotal mode={mode} />
       <Plantation mode={mode} />
       <Freezer mode={mode} />
       <Reactor />
