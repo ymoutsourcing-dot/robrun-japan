@@ -49,6 +49,11 @@
       "label": "本サイトのShipmentsデータ（ゲームファイル抽出・Rob Run Guide）",
       "url": "/shipments",
       "kind": "data"
+    },
+    "ingame-confiscation": {
+      "label": "ゲーム内の告知「Federal Confiscation Procedure」（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
     }
   },
   "sections": [
@@ -58,6 +63,10 @@
         {
           "text": "7日ごとの連邦捜査（Federal Raid＝ワイプ）で、土地・拠点・武器・現金がすべて没収され、服役年数（Jail Time）と権威（Authority）に変換される。",
           "source": "kefir-wipe"
+        },
+        {
+          "text": "ゲーム内の没収告知でも「没収される所持品が多いほど刑期が長くなり、権威が高まる」と明記されている。",
+          "source": "ingame-confiscation"
         },
         {
           "text": "ワイプ後も残るのは、コスメ、プレイヤー名、チュートリアル進行、設定、そして累計の服役年数。",
@@ -98,12 +107,17 @@
         {
           "text": "刑期は1年から始まり、その州（サーバー）での資産額 $500,000 ごとに +1年。",
           "source": "robrun-info-police",
-          "value": { "base": 1, "perAmount": 500000 }
+          "value": {
+            "base": 1,
+            "perAmount": 500000
+          }
         },
         {
           "text": "1つの州（サーバー）で得られる年数は最大40年。",
           "source": "robrun-info-police",
-          "value": { "perState": 40 }
+          "value": {
+            "perState": 40
+          }
         },
         {
           "text": "11/17のパッチで「1日あたりの上限」と「全体の上限」が導入された（公式は数値を非公開）。",
@@ -112,7 +126,10 @@
         {
           "text": "上限の値は 1日（24時間）あたり40年、累計1,200年。上限に達すると通知が出て、超過分はカウントされない。ボーナス年数は1日上限の対象外だが、1,200年の累計上限は適用される。",
           "source": "robrun-info-police",
-          "value": { "perDay": 40, "total": 1200 }
+          "value": {
+            "perDay": 40,
+            "total": 1200
+          }
         }
       ]
     },
