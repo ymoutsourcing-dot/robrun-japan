@@ -97,8 +97,8 @@ export type ProductionGuide = Guide & {
       concentratePrice: Rates;
       crystalPrice: Rates;
       powderPrice: Rates;
-      /** 固形クリスタル1個を粉末にしたときの袋数（プレイヤー実測。未確認のレアリティは無し） */
-      powderPerCrystal: Partial<Rates>;
+      /** 固形クリスタル1個を粉末にした実測（袋数と推定価格）。未確認のレアリティは無し */
+      powderSamples: Partial<Record<"Uncommon" | "Epic" | "Legendary", { bags: number; value: number }[]>>;
     };
     reactor: {
       levels: { id: string; cycleSeconds: number; cycles: number }[];

@@ -401,8 +401,8 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
   // 売り方：クリスタルのまま（密輸業者）／粉末にして（故買屋）。粉末の袋数が未確認のレアリティは計算不可
   const valueOf = (r: "Uncommon" | "Epic" | "Legendary"): number | null => {
     if (!powder) return F.crystalPrice[r];
-    const n = F.powderPerCrystal[r];
-    return n === undefined ? null : n * F.powderPrice[r];
+    const xs = F.powderSamples[r];
+    return xs && xs.length ? xs.reduce((a, x) => a + x.value, 0) / xs.length : null;
   };
   const vBase = valueOf(base);
   const vNext = valueOf(next);
@@ -476,7 +476,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
               ラボテーブルで粉末にして（故買屋）
             </button>
           </div>
-          <span className="text-[11px] text-muted">粉末の袋数は実測：エピック37袋前後・レジェンダリー25袋（多少ばらつく・アンコモンは未確認）。加工は1個10秒</span>
+          <span className="text-[11px] text-muted">粉末の価値は実測の推定価格の平均：エピック $63,333（3回・$54,000〜$74,000）、レジェンダリー $100,000（1回）。アンコモンは未確認。加工は1個10秒</span>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs">
           {F.upgrades.map((u) => (
@@ -502,7 +502,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
         <Stat
           label={powder ? "クリスタル1個の期待値（粉末）" : "クリスタル1個の期待値"}
           value={unknownValue ? "未確認" : money(Math.round(valueEach))}
-          sub={unknownValue ? "粉末の袋数が未確認のレアリティを含む" : engine ? `${money(vBase)}＋${chance}%×${money(diff)}` : "品質パーツなし"}
+          sub={unknownValue ? "粉末の袋数が未確認のレアリティを含む" : engine ? `${money(Math.round(vBase ?? 0))}＋${chance}%×${money(Math.round(diff))}` : "品質パーツなし"}
         />
       </div>
       <div className="mt-2 grid gap-2 sm:grid-cols-3">
