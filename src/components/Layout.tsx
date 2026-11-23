@@ -6,6 +6,8 @@ import { ErrorBoundary } from "./ErrorBoundary";
 const NAV = [
   { to: "/shipments", label: "研究ツリー" },
   { to: "/items", label: "アイテム" },
+  { to: "/weapons", label: "武器" },
+  { to: "/vehicles", label: "車両" },
   { to: "/calculator", label: "費用計算" },
   { to: "/recommended", label: "おすすめ" },
   { to: "/guides", label: "攻略" },
@@ -18,7 +20,7 @@ export default function Layout() {
   const { pathname } = useLocation();
   const fullBleed = pathname === "/shipments";
   const link = ({ isActive }: { isActive: boolean }) =>
-    `rounded-md px-2.5 py-1.5 text-sm ${isActive ? "bg-neon/10 text-neon" : "text-muted hover:text-white"}`;
+    `rounded-md px-2 py-1.5 text-sm ${isActive ? "bg-neon/10 text-neon" : "text-muted hover:text-white"}`;
   return (
     <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-30 h-14 border-b border-line bg-bg/95 backdrop-blur">
@@ -28,19 +30,19 @@ export default function Layout() {
             <span className="text-sm font-bold">JAPAN</span>
             <span className="hidden rounded border border-line px-1 text-[10px] text-muted sm:inline">非公式</span>
           </Link>
-          <nav className="ml-auto hidden gap-0.5 md:flex">
+          <nav className="ml-auto hidden gap-0.5 lg:flex">
             {NAV.map((n) => (
               <NavLink key={n.to} to={n.to} className={link}>
                 {n.label}
               </NavLink>
             ))}
           </nav>
-          <button className="ml-auto p-2 md:hidden" onClick={() => setOpen((o) => !o)} aria-label="メニュー" aria-expanded={open}>
+          <button className="ml-auto p-2 lg:hidden" onClick={() => setOpen((o) => !o)} aria-label="メニュー" aria-expanded={open}>
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
         {open && (
-          <nav className="flex flex-col gap-0.5 border-b border-line bg-bg-panel p-2 md:hidden">
+          <nav className="flex flex-col gap-0.5 border-b border-line bg-bg-panel p-2 lg:hidden">
             {NAV.map((n) => (
               <NavLink key={n.to} to={n.to} className={link} onClick={() => setOpen(false)}>
                 {n.label}

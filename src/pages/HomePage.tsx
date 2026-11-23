@@ -10,6 +10,8 @@ const total = items.reduce((s, i) => s + (i.researchCost ?? 0), 0);
 const MAIN = [
   { to: "/shipments", icon: GitBranch, title: "Shipments研究ツリー", desc: `全${items.length}項目を日本語で。前提研究を線でつないで表示` },
   { to: "/items", icon: Database, title: "アイテムデータベース", desc: "日本語・英語で検索。研究費・購入価格・性能を比較" },
+  { to: "/weapons", icon: Crosshair, title: "武器・装備一覧", desc: "全46武器のダメージ・連射・DPSを比較" },
+  { to: "/vehicles", icon: Car, title: "車両一覧", desc: "速度・加速・積載量の比較と改造パーツ" },
   { to: "/calculator", icon: Calculator, title: "研究費用計算機", desc: "目標までの必要研究費を自動計算（研究済みは除外）" },
   { to: "/recommended", icon: Sparkles, title: "おすすめ研究・ルート", desc: "最初に研究できる項目、主要目標までの総額" },
   { to: "/guides/money", icon: Coins, title: "金策の比較", desc: "強盗・貨物・農園・化学研究所の初期費用と単価" },
@@ -20,8 +22,6 @@ const MAIN = [
 ];
 
 const COMING = [
-  { icon: Crosshair, title: "武器・装備一覧", desc: "ダメージ・連射速度などの比較" },
-  { icon: Car, title: "車両・カスタマイズ", desc: "車両性能と改造パーツ" },
   { icon: House, title: "拠点・生産設備", desc: "土地・建築・防衛・生産設備" },
 ];
 

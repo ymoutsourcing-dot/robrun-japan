@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "description": "武器・車両一覧用の日本語データ。Shipments に含まれるアイテムの名前・説明は shipments.ja.json を使う。",
+    "weaponTypesNote": "武器種はゲーム内説明文（pistol / revolver / shotgun / submachine gun / assault rifle / rifle / machine gun）から本サイトが分類したもの"
+  },
+  "weaponTypes": {
+    "dp9": "ピストル",
+    "vulture50": "ピストル",
+    "lbr44": "リボルバー",
+    "harris500": "ショットガン",
+    "ordr12": "ショットガン",
+    "tag12k": "ショットガン",
+    "mc10": "サブマシンガン",
+    "jp7": "サブマシンガン",
+    "apscalar": "サブマシンガン",
+    "cb45": "サブマシンガン",
+    "pdw90": "サブマシンガン",
+    "kl545": "アサルトライフル",
+    "rc556": "アサルトライフル",
+    "starh": "アサルトライフル",
+    "drm14": "ライフル",
+    "srreaper": "ライフル",
+    "lmg": "軽機関銃"
+  },
+  "weaponTypeOrder": ["ピストル", "リボルバー", "ショットガン", "サブマシンガン", "アサルトライフル", "ライフル", "軽機関銃"],
+  "ammo": {
+    "pistol_ammo_1": "ピストル弾",
+    "mp_ammo_1": "SMG弾",
+    "rifle_ammo_1": "アサルトライフル弾",
+    "shotgun_ammo_1": "ショットガン弾"
+  },
+  "extras": {
+    "pdw90_m1": { "nameJa": "PDW90 Mk1", "descriptionJa": "精度の高い高連射サブマシンガン。" },
+    "pdw90_m2": { "nameJa": "PDW90 Mk2", "descriptionJa": "精度の高い高連射サブマシンガン。" },
+    "pdw90_m3": { "nameJa": "PDW90 Mk3", "descriptionJa": "精度の高い高連射サブマシンガン。" },
+    "lmg_m2": { "nameJa": "LM 249 Mk2", "descriptionJa": "火力の高い軽量の突撃用機関銃。" },
+    "vest5_m1": { "nameJa": "バスティオンボディアーマー", "descriptionJa": "長時間の戦闘向けに作られた高性能な突撃用ボディアーマー。" }
+  },
+  "vehicles": {
+    "police_car_1": { "nameJa": "Longhorn Guard", "noteJa": "パトカー（警官専用）" },
+    "police_longhorn_wild_1": { "nameJa": "Longhorn Wild Guard", "noteJa": "パトカー（警官専用）" },
+    "police_longhorn_outrider_1": { "nameJa": "Longhorn Outrider", "noteJa": "警察のSUV（警官専用）" }
+  }
+}

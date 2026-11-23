@@ -17,6 +17,7 @@ import type {
   ShipmentDataset,
   ShipmentItem,
 } from "../src/types/shipment";
+import { buildEquipment } from "./build-equipment";
 
 const SITE_URL = (process.env.SITE_URL ?? "https://robrun-japan.vercel.app").replace(/\/$/, "");
 
@@ -239,11 +240,14 @@ const dataset: ShipmentDataset = {
 mkdirSync("src/generated", { recursive: true });
 writeFileSync("src/generated/shipments.json", JSON.stringify(dataset, null, 1) + "\n");
 
+// 武器・防具・車両一覧
+const equipment = buildEquipment(items, warnings);
+
 // recommendations の根拠文を別ファイルで UI に渡す
 writeFileSync("src/generated/recommendations.json", JSON.stringify(recs, null, 1) + "\n");
 
 // sitemap.xml
-const urls = ["/", "/shipments", "/items", "/calculator", "/recommended", "/about", "/changelog", "/guides", "/guides/money", "/guides/wipe", "/guides/jail-time", "/guides/police", ...items.map((i) => `/shipments/${i.id}`)];
+const urls = ["/", "/shipments", "/items", "/calculator", "/recommended", "/about", "/changelog", "/weapons", "/vehicles", "/guides", "/guides/money", "/guides/wipe", "/guides/jail-time", "/guides/police", ...items.map((i) => `/shipments/${i.id}`)];
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join("\n") +
@@ -257,5 +261,6 @@ writeFileSync(
   indexing ? `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n` : "User-agent: *\nDisallow: /\n",
 );
 
+console.log(`weapons: ${equipment.weapons.length}, armor: ${equipment.armor.length}, bags: ${equipment.bags.length}, vehicles: ${equipment.vehicles.length}`);
 console.log(`items: ${items.length}, icons: ${items.filter((i) => i.icon).length}, warnings: ${warnings.length}`);
 for (const w of warnings) console.log("  ⚠ " + w);

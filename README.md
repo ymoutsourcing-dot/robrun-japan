@@ -15,6 +15,9 @@ Shipments（研究ツリー）全 172 項目を日本語化し、研究費の計
 | アイテムDB | `/items` | 日本語・英語・ひらがな検索、カテゴリー/地区Lv/研究状態/用途/レアリティ/研究費で絞り込み、並び替え |
 | 費用計算機 | `/calculator?targets=a,b` | 複数目標の必要研究費（研究済み除外・共通前提は1回だけ計上）、購入費は別集計 |
 | おすすめ | `/recommended` | ゲームデータから算出した指標（主要目標までの総額、入口の研究、派生の多い研究、服役条件） |
+| 武器・装備 | `/weapons` | 武器46・防具5・バッグ7のスペック表（並び替え・比較） |
+| 車両 | `/vehicles` | 車両11台のスペック表、改造パーツ一覧 |
+| 攻略 | `/guides/:id` | 金策・ワイプ・服役年数・警察（出典付き、データは data/guides/*.json） |
 | 進捗 | `/progress` | 研究済み/予定/お気に入り、JSON エクスポート・インポート（LocalStorage 保存） |
 | データについて | `/about` | 出典・収録範囲・未確認データの一覧 |
 | 更新履歴 | `/changelog` | `data/changelog.json` の内容 |
@@ -84,6 +87,8 @@ for id in $(node -e 'for (const n of require("./data/source/shipments.source.jso
   curl -sSL -o "raw/items/$id.html" "https://robrunguide.app/en-US/items/$id"; sleep 1
 done
 npm run extract -- raw
+# 武器・車両（raw/compare.html, raw/vehicles.html と Shipments 外アイテムの raw/items/<id>.html）
+npx tsx scripts/extract-robrunguide-equipment.ts raw
 npm run build
 ```
 
