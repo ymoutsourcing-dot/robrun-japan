@@ -16,6 +16,7 @@ const NAV = [
   { to: "/calc", label: "計算機" },
   { to: "/recommended", label: "おすすめ" },
   { to: "/guides", label: "攻略" },
+  { to: "/guides/jail-time", label: "服役解除" },
   { to: "/tips", label: "小ネタ" },
   { to: "/progress", label: "進捗" },
   { to: "/about", label: "データについて" },
@@ -55,7 +56,7 @@ export default function Layout() {
           </Link>
           <nav className="ml-auto hidden gap-0.5 lg:flex">
             {NAV.map((n) => (
-              <NavLink key={n.to} to={n.to} className={link}>
+              <NavLink key={n.to} to={n.to} end={n.to === "/guides"} className={link}>
                 {n.label}
               </NavLink>
             ))}
@@ -67,7 +68,7 @@ export default function Layout() {
         {open && (
           <nav className="flex flex-col gap-0.5 border-b border-line bg-bg-panel p-2 lg:hidden">
             {NAV.map((n) => (
-              <NavLink key={n.to} to={n.to} className={link} onClick={() => setOpen(false)}>
+              <NavLink key={n.to} to={n.to} end={n.to === "/guides"} className={link} onClick={() => setOpen(false)}>
                 {n.label}
               </NavLink>
             ))}
