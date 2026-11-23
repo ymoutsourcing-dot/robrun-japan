@@ -318,5 +318,10 @@
     "label": "ゲーム内の告知「Federal Confiscation Procedure」（プレイヤーのスクリーンショット・2026/11/23）",
     "url": "/changelog",
     "kind": "official"
+  },
+  "rrg-compare": {
+    "label": "Rob Run Guide「Compare items」（ゲームファイル抽出）",
+    "url": "https://robrunguide.app/en-US/compare",
+    "kind": "fan"
   }
 }
