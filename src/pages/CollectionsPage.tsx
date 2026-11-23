@@ -28,9 +28,9 @@ interface Collection {
 const data = json as unknown as { source: { name: string; url: string; retrievedAt: string }; collections: Collection[] };
 const cap = (r: string) => r.charAt(0).toUpperCase() + r.slice(1);
 const CRATE_JA: Record<string, string> = {
-  "Collection Crate": "コレクション箱",
-  "Rare Collection Crate": "レアコレクション箱",
-  "Unique Collection Crate": "ユニークコレクション箱",
+  "Collection Crate": "コレクションの木箱",
+  "Rare Collection Crate": "レアコレクションの木箱",
+  "Unique Collection Crate": "ユニークコレクションの木箱",
 };
 
 function Rarity({ r }: { r: string }) {

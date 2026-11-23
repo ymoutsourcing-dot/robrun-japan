@@ -132,6 +132,36 @@ export default function CargoPage() {
         </div>
       </Section>
 
+      <Section title="密輸品作業台：詰め直し（Repack Cargo）">
+        <ul className="space-y-1.5 text-sm">
+          <li className="flex flex-wrap items-center gap-2">
+            <Rarity r="Uncommon" /> 密輸貨物 <span className="font-mono text-xs text-gray-400">Contraband Cargo</span>
+            <span className="font-mono text-money">{money(10000)}</span>
+            <span>→</span>
+            <Rarity r="Epic" /> プレミアム貨物 <span className="font-mono text-xs text-gray-400">Premium Cargo</span>
+            <span className="font-mono text-money">{money(35000)}</span>
+            <span className="text-xs text-muted">（通常・確定）</span>
+          </li>
+          <li className="flex flex-wrap items-center gap-2">
+            <Rarity r="Uncommon" /> 密輸貨物 <span className="font-mono text-money">{money(10000)}</span>
+            <span>→</span>
+            <Rarity r="Legendary" /> レアリティ貨物 <span className="font-mono text-xs text-gray-400">Rarity Cargo</span>
+            <span className="font-mono text-money">{money(40000)}</span>
+            <span className="text-xs text-muted">（集落ボーナスあり・「可能性あり」）</span>
+          </li>
+        </ul>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-xs text-muted">
+          <li>1個入れて1個出てくる。モーテルで$10,000で買って詰め直すと、売値（悪名ボーナス前）は$35,000（差額+$25,000）。</li>
+          <li>集落の「改良結果」ボーナスが効いていると、通常の結果の代わりにレアリティ貨物になる（ゲームデータの注記。確率は未記載）。このボーナスはブラックマーケット（Highlands）に隣接する集落のものと考えられる（<a href="/guides/map-settlements" className="underline">集落と地区</a>）。</li>
+          <li>作業台の「Modification」で強化パーツを付ける：ラベルプリンター（詰め直しが速くなる）、工具箱（枠を増やす）。詰め直しにかかる時間はデータに無く未確認。</li>
+          <li>
+            出典：
+            <a href="https://robrunguide.app/en-US/production" target="_blank" rel="noreferrer" className="underline">Rob Run Guide（ゲームファイル由来）</a>
+            ・売値は上の表と同じ robrun.info
+          </li>
+        </ul>
+      </Section>
+
       <Section title="開封の記録（プレイヤー実測）">
         <ul className="space-y-2 text-sm">
           {openings.map((o, i) => {
