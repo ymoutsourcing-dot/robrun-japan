@@ -24,7 +24,7 @@ export const RARITY_COLOR: Record<string, string> = {
   Uncommon: "text-green-300 border-green-600",
   Rare: "text-sky-300 border-sky-600",
   Epic: "text-rare border-rare",
-  Legendary: "text-orange-300 border-orange-500",
+  Legendary: "text-yellow-300 border-yellow-400",
   Exotic: "text-pink-300 border-pink-500",
 };
 
