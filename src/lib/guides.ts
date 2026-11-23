@@ -63,6 +63,7 @@ export type PoliceGuide = Guide & {
   copRewards: { label: string; value: string }[];
   copBonuses: { name: string; how: string; effect: string; duration: string }[];
   deathRules: { role: string; lose: string; source: string }[];
+  loadouts?: { rank: string; cost: string; weapon: string; sidearm: string; armor: string; car: string; items: string }[];
 };
 
 const shared = sharedSources as Record<string, Source>;

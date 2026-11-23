@@ -70,6 +70,10 @@ export default function VehiclesPage() {
             href: v.inShipments ? `/shipments/${v.id}` : undefined,
             icon: it ? (
               <ItemIcon item={it} size={30} />
+            ) : v.police ? (
+              <span className="inline-flex h-11 w-11 shrink-0 overflow-hidden rounded-md border border-line bg-bg" aria-hidden>
+                <img src={`/icons/${v.id}.webp`} alt="" className="h-full w-full object-cover" loading="lazy" />
+              </span>
             ) : (
               <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-line bg-bg text-sky-300" aria-hidden>
                 <Siren size={22} />

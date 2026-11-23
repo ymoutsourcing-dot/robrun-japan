@@ -22,6 +22,41 @@ export default function PoliceExtras() {
         </ul>
       </Section>
 
+      {g.loadouts && (
+        <Section title="ランク別の勤務装備（ゲーム内画面）">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[720px] text-sm">
+              <thead className="text-left text-xs text-muted">
+                <tr>
+                  {["ランク", "必要なもの", "メイン武器", "サブ武器", "アーマー", "パトカー", "持ち物"].map((h) => (
+                    <th key={h} className="p-1.5">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line/60">
+                {g.loadouts.map((l) => (
+                  <tr key={l.rank}>
+                    <td className="p-1.5 font-bold">{l.rank}</td>
+                    <td className="p-1.5 text-money">{l.cost}</td>
+                    <td className="p-1.5">{l.weapon}</td>
+                    <td className="p-1.5">{l.sidearm}</td>
+                    <td className="p-1.5">{l.armor}</td>
+                    <td className="p-1.5">{l.car}</td>
+                    <td className="p-1.5 text-xs">{l.items}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-muted">武器の機種名は画面から特定できないため種類のみ記載。数字は装弾数。</p>
+          <p className="mt-1">
+            <SourceTag source={g.sources["ingame-loadout"]} />
+          </p>
+        </Section>
+      )}
+
       <div className="grid gap-4 md:grid-cols-2">
         <Section title="警官の報酬（設定値）">
           <table className="w-full text-sm">
