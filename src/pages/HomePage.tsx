@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, Lock, CalendarClock, Siren } from "lucide-react";
+import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, KeyRound, Lock, CalendarClock, Siren } from "lucide-react";
 import { dataset, items } from "../lib/data";
 import { money } from "../lib/format";
 import { ProgressBar } from "../components/ProgressBar";
@@ -12,6 +12,7 @@ const MAIN = [
   { to: "/items", icon: Database, title: "アイテムデータベース", desc: "日本語・英語で検索。研究費・購入価格・性能を比較" },
   { to: "/weapons", icon: Crosshair, title: "武器・装備一覧", desc: "全46武器のダメージ・連射・DPSを比較" },
   { to: "/vehicles", icon: Car, title: "車両一覧", desc: "速度・加速・積載量の比較と改造パーツ" },
+  { to: "/tools", icon: KeyRound, title: "道具・鍵", desc: "デコーダー・ドリル・鍵・IDカードの使い道と物々交換レシピ" },
   { to: "/calculator", icon: Calculator, title: "研究費用計算機", desc: "目標までの必要研究費を自動計算（研究済みは除外）" },
   { to: "/recommended", icon: Sparkles, title: "おすすめ研究・ルート", desc: "最初に研究できる項目、主要目標までの総額" },
   { to: "/guides/money", icon: Coins, title: "金策の比較", desc: "強盗・貨物・農園・化学研究所の初期費用と単価" },

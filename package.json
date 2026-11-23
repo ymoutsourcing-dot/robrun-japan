@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run data && vite",
     "data": "tsx scripts/build-data.ts",
-    "validate": "tsx scripts/validate-data.ts",
+    "validate": "tsx scripts/validate-data.ts && tsx scripts/validate-tools.ts",
     "extract": "tsx scripts/extract-robrunguide.ts",
     "typecheck": "tsc -b",
     "build": "npm run data && npm run validate && tsc -b && vite build",
