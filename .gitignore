@@ -31,3 +31,6 @@ raw/
 src/generated/
 public/sitemap.xml
 public/robots.txt
+
+# Claude Code local worktrees/settings
+.claude/
