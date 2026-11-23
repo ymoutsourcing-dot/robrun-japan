@@ -59,6 +59,11 @@
       "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
       "url": "/changelog",
       "kind": "official"
+    },
+    "ingame-court-ruling": {
+      "label": "ゲーム内のワイプ判決画面「COURT RULING」「TOTAL JAIL TIME」（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
     }
   },
   "sections": [
@@ -147,6 +152,42 @@
       ]
     },
     {
+      "heading": "実例：ワイプの判決（プレイヤーの決算）",
+      "facts": [
+        {
+          "text": "ワイプ後に裁判の判決画面（COURT RULING）が出て、罪状・没収額の内訳・刑期が表示される。判決の種類は「ARREST（逮捕）」。下に「DISPUTE（異議）」と「ACCEPT（受け入れる）」のボタンがある。",
+          "source": "ingame-court-ruling"
+        },
+        {
+          "text": "没収（CONFISCATED）の内訳：所持品 Possessions $2,045,659／車両 Vehicles $80,000／建物 Properties $330,240／銀行口座 Bank Account $895,270／土地 Land ownership $320,000。",
+          "source": "ingame-court-ruling"
+        },
+        {
+          "text": "違法行為（ILLEGAL OPERATIONS）の内訳：クランへの資金提供 Funding criminal clans $0／犯罪のつながり Establishing criminal ties $1,887,000／役人への賄賂 Bribing officials $50,000。",
+          "source": "ingame-court-ruling"
+        },
+        {
+          "text": "合計 $5,608,169 で、刑期（FINAL SENTENCE）は11年。その後の画面で累計の服役年数（TOTAL JAIL TIME）は12年になった（ワイプ前は1年）。",
+          "source": "ingame-court-ruling"
+        },
+        {
+          "text": "$5,608,169 ÷ $500,000 ＝ 11.2 で、「$500,000ごとに+1年（端数切り捨て）」と一致する。ファンサイトの「1年から始まる」は、最初から持っている1年のことと考えられる（1年＋11年＝12年）。",
+          "source": "ingame-court-ruling",
+          "derived": true
+        },
+        {
+          "text": "「犯罪のつながり」は、金額の大きさから Shipments の研究に使ったお金と考えられる（未確認）。研究費も年数に数えられるので、研究に使ったお金は無駄にならない。",
+          "source": "ingame-court-ruling",
+          "derived": true
+        },
+        {
+          "text": "罪状（CHARGES）の欄には、脱走 Escape（立証）、殺人16人 Murders（立証）、密輸品0個 Contraband（証拠不十分）が並ぶ。刑期は資産額だけで計算が合うので、罪状で年数が増えたかは不明。",
+          "source": "ingame-court-ruling",
+          "derived": true
+        }
+      ]
+    },
+    {
       "heading": "服役年数を貯める方法",
       "facts": [
         {
@@ -212,6 +253,8 @@
   "unknowns": [
     "資産額→年数の換算式・各上限は公式未発表（ファンサイトの値）",
     "権威によって解放されるタトゥーの段階",
-    "車両・拠点などの資産評価額の内訳"
+    "罪状（殺人・脱走・密輸品）が刑期に影響するか",
+    "判決画面の「DISPUTE（異議）」を押すとどうなるか",
+    "「犯罪のつながり」に何が含まれるか"
   ]
 }
