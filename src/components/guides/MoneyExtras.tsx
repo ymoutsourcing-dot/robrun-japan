@@ -94,6 +94,11 @@ export default function MoneyExtras() {
                     <dd>{m.risk}</dd>
                   </div>
                   {m.note && <p className="text-xs text-muted">※{m.note}</p>}
+                  {(m.key === "plantation" || m.key === "lab") && (
+                    <Link to="/guides/production" className="text-xs text-sky-300 hover:underline">
+                      改造パーツの費用対効果を計算 →
+                    </Link>
+                  )}
                 </dl>
                 <div className="mt-auto pt-2">
                   <SourceTag source={g.sources[m.source]} />

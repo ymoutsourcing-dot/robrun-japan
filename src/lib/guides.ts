@@ -3,6 +3,7 @@ import jailTimeJson from "../../data/guides/jail-time.json";
 import moneyJson from "../../data/guides/money.json";
 import wipeJson from "../../data/guides/wipe.json";
 import policeJson from "../../data/guides/police.json";
+import productionJson from "../../data/guides/production.json";
 
 export type SourceKind = "official" | "fan" | "data";
 export interface Source {
@@ -70,7 +71,37 @@ export const moneyGuide = withShared(moneyJson as unknown as MoneyGuide);
 export const wipeGuide = withShared(wipeJson as unknown as WipeGuide);
 export const policeGuide = withShared(policeJson as unknown as PoliceGuide);
 
-export const ALL_GUIDES: Guide[] = [moneyGuide, wipeGuide, jailTimeGuide, policeGuide];
+type Rates = Record<"Uncommon" | "Epic" | "Legendary", number>;
+export type ProductionGuide = Guide & {
+  model: {
+    plantation: {
+      growthPoints: number;
+      tickSeconds: number;
+      harvestMin: number;
+      harvestMax: number;
+      bushesPerTable: number;
+      tablesPerRoom: number;
+      bagPrice: Rates;
+      upgrades: { id: string; speed: number }[];
+    };
+    freezer: {
+      points: number;
+      tickSeconds: number;
+      levels: { id: string; slots: number }[];
+      upgrades: { id: string; speed: number }[];
+      concentratePrice: Rates;
+      crystalPrice: Rates;
+    };
+    reactor: {
+      levels: { id: string; cycleSeconds: number; cycles: number }[];
+      reagentPrice: { Uncommon: number; Epic: number };
+      qualityUpgrades: { id: string; effectJa: string; purchaseFallback?: number; purchaseFallbackSource?: string }[];
+    };
+  };
+};
+export const productionGuide = withShared(productionJson as unknown as ProductionGuide);
+
+export const ALL_GUIDES: Guide[] = [moneyGuide, productionGuide, wipeGuide, jailTimeGuide, policeGuide];
 export const guideById = new Map(ALL_GUIDES.map((g) => [g.id, g]));
 
 /** 計算に使う数値（robrun.info 掲載のファン情報。公式未発表） */

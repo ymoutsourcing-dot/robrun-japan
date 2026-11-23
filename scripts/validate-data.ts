@@ -72,7 +72,7 @@ for (const it of ds.items)
 // 攻略ガイド：出典キーの存在チェック
 {
   const shared = JSON.parse(readFileSync("data/guides/sources.json", "utf8")) as Record<string, unknown>;
-  for (const f of ["jail-time", "money", "wipe", "police"]) {
+  for (const f of ["jail-time", "money", "wipe", "police", "production"]) {
     const g = JSON.parse(readFileSync(`data/guides/${f}.json`, "utf8")) as {
       sources: Record<string, unknown>;
       sections: { facts: { source: string }[] }[];

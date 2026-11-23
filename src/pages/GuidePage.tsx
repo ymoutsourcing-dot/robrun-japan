@@ -5,6 +5,7 @@ import JailExtras from "../components/guides/JailExtras";
 import MoneyExtras from "../components/guides/MoneyExtras";
 import WipeExtras from "../components/guides/WipeExtras";
 import PoliceExtras from "../components/guides/PoliceExtras";
+import ProductionExtras from "../components/guides/ProductionExtras";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import NotFound from "./NotFound";
 
@@ -14,6 +15,7 @@ const EXTRAS: Record<string, () => React.ReactElement> = {
   money: MoneyExtras,
   wipe: WipeExtras,
   police: PoliceExtras,
+  production: ProductionExtras,
 };
 
 export default function GuidePage() {
