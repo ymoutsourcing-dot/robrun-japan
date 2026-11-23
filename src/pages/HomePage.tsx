@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, KeyRound, Lock, CalendarClock, Siren } from "lucide-react";
+import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, KeyRound, Lock, CalendarClock, Siren, Lightbulb } from "lucide-react";
 import { dataset, items } from "../lib/data";
 import { money } from "../lib/format";
 import { ProgressBar } from "../components/ProgressBar";
@@ -19,6 +19,7 @@ const MAIN = [
   { to: "/guides/wipe", icon: CalendarClock, title: "ワイプまでの1週間", desc: "ワイプ時刻の計算機と7日間の動き方" },
   { to: "/guides/jail-time", icon: Lock, title: "服役年数の貯め方", desc: "計算式・上限・必要年数のShipments一覧と計算機" },
   { to: "/guides/police", icon: Siren, title: "警察・逮捕・賄賂", desc: "自首と賄賂、警官の報酬とボーナス" },
+  { to: "/tips", icon: Lightbulb, title: "小ネタ・攻略メモ", desc: "街のイベント、強盗スポット28か所の道具・売値比較、出典付きの小ネタ" },
   { to: "/progress", icon: ListChecks, title: "研究進捗の管理", desc: "研究済み・予定・お気に入り。JSONでバックアップ" },
 ];
 
