@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { AccordionProvider, AccPanel, useAccordion } from "../components/Accordion";
+import stepsJson from "../../data/guides/milestone-steps.json";
+import sourcesJson from "../../data/guides/sources.json";
+import { SourceTag } from "../components/GuideBody";
+import type { Source } from "../lib/guides";
+
+const STEPS = (stepsJson as { steps: Record<string, { text: string; source: string }[]> }).steps;
+const SOURCES = sourcesJson as Record<string, Source>;
 import { Info, Lock } from "lucide-react";
 import type { ShipmentItem } from "../types/shipment";
 import { ancestorsOf, categories, computeCost, descendantCount, displayNameEn, displayNameJa, getItem, items } from "../lib/data";
@@ -66,6 +73,26 @@ function MilestoneRow({ id, label }: { id: string; label: string }) {
       </button>
       {open && (
         <div className="my-1 border-l-2 border-neon/60 bg-bg p-3">
+          {STEPS[id] && (
+            <>
+              <p className="mb-1 text-xs font-bold text-neon">やること（手順）</p>
+              <ol className="mb-3 space-y-1.5 text-sm">
+                {STEPS[id].map((s, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-neon/15 font-mono text-[11px] text-neon">{i + 1}</span>
+                    <span className="min-w-0">
+                      {s.text}
+                      {SOURCES[s.source] && (
+                        <span className="mt-0.5 block">
+                          <SourceTag source={SOURCES[s.source]} />
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
           <p className="mb-1 text-xs font-bold text-neon">研究する順番</p>
           <ol className="mb-2 space-y-0.5 text-sm">
             {c.pending.map((p, i) => (

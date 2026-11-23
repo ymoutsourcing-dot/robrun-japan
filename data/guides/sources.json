@@ -323,5 +323,15 @@
     "label": "Rob Run Guide「Compare items」（ゲームファイル抽出）",
     "url": "https://robrunguide.app/en-US/compare",
     "kind": "fan"
+  },
+  "kefir-heli": {
+    "label": "Kefir公式ヘルプ「How do I get a helicopter?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1359-how-do-i-get-a-helicopter/",
+    "kind": "official"
+  },
+  "kefir-goods": {
+    "label": "Kefir公式ヘルプ「How do I unlock new goods?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1365-how-do-i-unlock-new-goods/",
+    "kind": "official"
   }
 }
