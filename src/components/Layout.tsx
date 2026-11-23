@@ -8,6 +8,7 @@ const NAV = [
   { to: "/items", label: "アイテム" },
   { to: "/calculator", label: "費用計算" },
   { to: "/recommended", label: "おすすめ" },
+  { to: "/guides", label: "攻略" },
   { to: "/progress", label: "進捗" },
   { to: "/about", label: "データについて" },
 ];

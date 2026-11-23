@@ -1,0 +1,182 @@
+{
+  "id": "jail-time",
+  "title": "服役年数（ジェイルタイム）と権威の上げ方",
+  "titleEn": "Jail Time & Authority",
+  "summary": "服役年数はROB RUNで唯一ワイプを越えて残る「レベル」。資産を持ったまま連邦捜査（ワイプ）を迎えると年数に変換され、一部のShipmentsの解放条件になる。",
+  "updatedAt": "2026-11-23",
+  "sources": {
+    "kefir-wipe": {
+      "label": "Kefir公式ヘルプ「What is the Federal Raid (Wipe)?」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1346-what-is-the-federal-raid-wipe/",
+      "kind": "official"
+    },
+    "kefir-goods": {
+      "label": "Kefir公式ヘルプ「How do I unlock new goods?」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1365-how-do-i-unlock-new-goods/",
+      "kind": "official"
+    },
+    "kefir-surrender": {
+      "label": "Kefir公式ヘルプ「Why surrender to the cops?」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1352-why-surrender-to-the-cops/",
+      "kind": "official"
+    },
+    "kefir-bribe": {
+      "label": "Kefir公式ヘルプ「Why pay a bribe?」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1353-why-pay-a-bribe/",
+      "kind": "official"
+    },
+    "steam-1117": {
+      "label": "公式パッチノート（2026/11/17・Steam）",
+      "url": "https://store.steampowered.com/news/app/4262460/view/717921532895037154",
+      "kind": "official"
+    },
+    "steam-pyramid": {
+      "label": "公式記事「Power Pyramid」（2026/10/28・Steam）",
+      "url": "https://store.steampowered.com/news/app/4262460/view/712290761518875046",
+      "kind": "official"
+    },
+    "robrun-info-police": {
+      "label": "robrun.info「Полиция и тюрьма」（ゲーム設定値を掲載するファンサイト）",
+      "url": "https://robrun.info/mechanics/police/",
+      "kind": "fan"
+    },
+    "robrunwiki-jail": {
+      "label": "robrunwiki.app「Jail Time and Authority」（公式Telegramの初回ワイプ告知を引用）",
+      "url": "https://robrunwiki.app/guides/jail-time",
+      "kind": "fan"
+    },
+    "shipments-data": {
+      "label": "本サイトのShipmentsデータ（ゲームファイル抽出・Rob Run Guide）",
+      "url": "/shipments",
+      "kind": "data"
+    }
+  },
+  "sections": [
+    {
+      "heading": "服役年数とは",
+      "facts": [
+        {
+          "text": "7日ごとの連邦捜査（Federal Raid＝ワイプ）で、土地・拠点・武器・現金がすべて没収され、服役年数（Jail Time）と権威（Authority）に変換される。",
+          "source": "kefir-wipe"
+        },
+        {
+          "text": "ワイプ後も残るのは、コスメ、プレイヤー名、チュートリアル進行、設定、そして累計の服役年数。",
+          "source": "kefir-wipe"
+        },
+        {
+          "text": "Shipmentsの一部は「一定レベル以上の地区にある集落に拠点を置く」か「服役年数を貯める」ことで解放される。",
+          "source": "kefir-goods"
+        },
+        {
+          "text": "服役年数が多いほど権威が上がり、新しいShipmentsと、より格の高いタトゥーが解放される。タトゥーは没収されない。",
+          "source": "robrun-info-police"
+        },
+        {
+          "text": "ワイプ時は資産が自動で年数に変換されるので、事前に自首する必要はない。",
+          "source": "robrun-info-police"
+        }
+      ]
+    },
+    {
+      "heading": "何が年数に換算されるか",
+      "facts": [
+        {
+          "text": "公式Telegramの初回ワイプ告知によると、換算対象は：洗浄済みの資金、アイテム、車両、不動産・土地、Shipmentsで解放したアイテム、クランへの支出、賄賂。",
+          "source": "robrunwiki-jail",
+          "note": "公式Telegram（ロシア語）の告知をファンサイト経由で確認。原文は未確認。"
+        },
+        {
+          "text": "つまり拠点・車両・Shipments解放に使ったお金は、ワイプ時に「無駄」にならず資産として数えられる。",
+          "source": "robrunwiki-jail",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "heading": "数値（計算式と上限）",
+      "facts": [
+        {
+          "text": "刑期は1年から始まり、その州（サーバー）での資産額 $500,000 ごとに +1年。",
+          "source": "robrun-info-police",
+          "value": { "base": 1, "perAmount": 500000 }
+        },
+        {
+          "text": "1つの州（サーバー）で得られる年数は最大40年。",
+          "source": "robrun-info-police",
+          "value": { "perState": 40 }
+        },
+        {
+          "text": "11/17のパッチで「1日あたりの上限」と「全体の上限」が導入された（公式は数値を非公開）。",
+          "source": "steam-1117"
+        },
+        {
+          "text": "上限の値は 1日（24時間）あたり40年、累計1,200年。上限に達すると通知が出て、超過分はカウントされない。ボーナス年数は1日上限の対象外だが、1,200年の累計上限は適用される。",
+          "source": "robrun-info-police",
+          "value": { "perDay": 40, "total": 1200 }
+        }
+      ]
+    },
+    {
+      "heading": "服役年数を貯める方法",
+      "facts": [
+        {
+          "text": "基本は「ワイプの瞬間にできるだけ多くの資産を持っておく」こと。資産 $19,500,000 以上で、その州の上限40年に届く（1年＋$500,000×39）。",
+          "source": "robrun-info-police",
+          "derived": true
+        },
+        {
+          "text": "ワイプ直前に資産を売り払わない。拠点・車両・解放済みShipmentsも換算対象。",
+          "source": "robrunwiki-jail"
+        },
+        {
+          "text": "現金は資金洗浄デスクで銀行へ。洗浄済みの資金は他プレイヤーに盗まれず、換算対象にも明記されている。",
+          "source": "robrunwiki-jail"
+        },
+        {
+          "text": "最終日に犯罪者として死なない。犯罪者は死ぬと所持品を失い、アイテムは換算対象なので年数が減る。",
+          "source": "robrunwiki-jail",
+          "derived": true
+        },
+        {
+          "text": "刑務所（世界マップ）で「Surrender to Feds（連邦に自首）」を選ぶと、その州の全資産が没収されて刑期になる。サーバー移動の手段でもあるが、資産はすべて失う。",
+          "source": "robrun-info-police"
+        },
+        {
+          "text": "1日40年・州ごと40年の上限があるため、1日に複数の州で自首して年数を稼ぐことはできない（11/17以降）。",
+          "source": "robrun-info-police",
+          "derived": true
+        }
+      ]
+    },
+    {
+      "heading": "通常の逮捕・自首・賄賂（服役年数とは別）",
+      "facts": [
+        {
+          "text": "警官に自首すると、バッグの中身は没収されるが装備中のギアは残る。",
+          "source": "kefir-surrender"
+        },
+        {
+          "text": "銀行にお金があれば警官に賄賂を提示でき、受け入れられればバッグの中身もすべて残る。",
+          "source": "kefir-bribe"
+        },
+        {
+          "text": "賄賂は銀行口座から支払い、1万刻みで最大20万。",
+          "source": "robrun-info-police"
+        },
+        {
+          "text": "街での通常の逮捕は短時間の拘留で、長い刑期（服役年数）は連邦捜査・ワイプから来る。",
+          "source": "robrun-info-police"
+        },
+        {
+          "text": "NPCを殺すと手配度が1上がり（最大3）、3で「最重要指名手配」となり街中に位置が表示される。",
+          "source": "robrun-info-police"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "資産額→年数の換算式・各上限は公式未発表（ファンサイトの値）",
+    "権威によって解放されるタトゥーの段階",
+    "車両・拠点などの資産評価額の内訳"
+  ]
+}

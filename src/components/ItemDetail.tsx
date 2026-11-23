@@ -47,6 +47,7 @@ function ItemLink({ id, onSelect }: { id: string; onSelect?: (id: string) => voi
 export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: (id: string) => void }) {
   const researchedArr = useProgress((s) => s.researched);
   const markAll = useProgress((s) => s.markResearchedWithAncestors);
+  const jailYears = useProgress((s) => s.jailYears);
   const cost = computeCost([item.id], new Set(researchedArr));
   const rec = recommendations[item.id];
   const desc = descendantCount(item.id);
@@ -96,9 +97,20 @@ export function ItemDetail({ item, onSelect }: { item: ShipmentItem; onSelect?: 
           </Row>
           {item.requiredImprisonmentYears > 0 && (
             <Row label="必要服役年数">
-              <span className="inline-flex items-center gap-1 text-danger">
-                <Lock size={13} />
-                {item.requiredImprisonmentYears} 年以上
+              <span className="inline-flex flex-col items-end">
+                <span className="inline-flex items-center gap-1 text-danger">
+                  <Lock size={13} />
+                  {item.requiredImprisonmentYears} 年以上
+                  {jailYears !== null &&
+                    (jailYears >= item.requiredImprisonmentYears ? (
+                      <span className="text-neon">（達成）</span>
+                    ) : (
+                      <span className="text-muted">（あと{item.requiredImprisonmentYears - jailYears}年）</span>
+                    ))}
+                </span>
+                <Link to="/guides/jail-time" className="text-xs text-sky-300 hover:underline">
+                  服役年数の貯め方 →
+                </Link>
               </span>
             </Row>
           )}

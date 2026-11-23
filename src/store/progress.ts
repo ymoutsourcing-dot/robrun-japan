@@ -8,6 +8,9 @@ interface ProgressState {
   researched: string[];
   favorite: string[];
   planned: string[];
+  /** プレイヤーが入力した現在の累計服役年数（未入力は null） */
+  jailYears: number | null;
+  setJailYears: (v: number | null) => void;
   toggle: (flag: Flag, id: string) => void;
   set: (flag: Flag, id: string, on: boolean) => void;
   /** 研究済みにする際、前提研究もまとめて研究済みにする */
@@ -24,6 +27,8 @@ export const useProgress = create<ProgressState>()(
       researched: [],
       favorite: [],
       planned: [],
+      jailYears: null,
+      setJailYears: (v) => set({ jailYears: v }),
       toggle: (flag, id) => {
         const cur = get()[flag];
         set({ [flag]: cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id] } as Partial<ProgressState>);
@@ -46,7 +51,8 @@ export const useProgress = create<ProgressState>()(
         const researched = pick("researched");
         const favorite = pick("favorite");
         const planned = pick("planned");
-        set({ researched, favorite, planned });
+        const jailYears = typeof o.jailYears === "number" && o.jailYears >= 0 ? o.jailYears : get().jailYears;
+        set({ researched, favorite, planned, jailYears });
         return { ok: true, count: researched.length };
       },
     }),
@@ -55,9 +61,9 @@ export const useProgress = create<ProgressState>()(
 );
 
 export function exportProgress(): string {
-  const { researched, favorite, planned } = useProgress.getState();
+  const { researched, favorite, planned, jailYears } = useProgress.getState();
   return JSON.stringify(
-    { app: "robrun-japan", version: 1, exportedAt: new Date().toISOString(), researched, favorite, planned },
+    { app: "robrun-japan", version: 1, exportedAt: new Date().toISOString(), researched, favorite, planned, jailYears },
     null,
     2,
   );

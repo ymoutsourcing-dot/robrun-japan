@@ -11,6 +11,8 @@ import ProgressPage from "./pages/ProgressPage";
 import AboutPage from "./pages/AboutPage";
 import ChangelogPage from "./pages/ChangelogPage";
 import NotFound from "./pages/NotFound";
+import GuidesPage from "./pages/GuidesPage";
+import JailTimeGuidePage from "./pages/JailTimeGuidePage";
 
 // React Flow を含むツリーページは遅延読み込み
 const TreePage = lazy(() => import("./pages/TreePage"));
@@ -46,6 +48,8 @@ export default function App() {
           <Route path="progress" element={<ProgressPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="changelog" element={<ChangelogPage />} />
+          <Route path="guides" element={<GuidesPage />} />
+          <Route path="guides/jail-time" element={<JailTimeGuidePage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
