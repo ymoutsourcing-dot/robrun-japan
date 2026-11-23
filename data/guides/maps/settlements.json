@@ -4,31 +4,191 @@
   "titleEn": "Map guide: Settlements & Districts (Desert)",
   "summary": "プレイヤーの拠点が並ぶ砂漠の世界マップ。10地区とレベル、特殊施設、区画の借り方、集落オーナーと税、地区支配と影の総督、襲撃、砂漠での死亡ルールをまとめる。",
   "updatedAt": "2026-11-23",
-  "sources": {},
+  "sources": {
+    "rri-settlement-bonuses": {
+      "label": "robrun.info「Бонусы поселений」（集落のボーナス）ガイド",
+      "url": "https://robrun.info/guides/settlement-bonuses/",
+      "kind": "fan"
+    },
+    "ingame-worldmap": {
+      "label": "ゲーム内の世界マップ（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
+    }
+  },
   "districtsTitle": "10地区の一覧",
-  "districtsSources": ["rrg-worldmap", "wiki-map"],
+  "districtsSources": [
+    "rrg-worldmap",
+    "wiki-map"
+  ],
   "districtsNote": "レベル・施設・売却ボーナスは Rob Run Guide（ゲームファイル抽出）、位置は robrunwiki.app が公式の世界マップ画像から読み取ったもの。施設の効果がゲーム内で有効かは未検証。",
   "districts": [
-    { "nameJa": "ハイランズ", "nameEn": "Highlands", "level": 3, "whereJa": "中央", "infraJa": ["放棄された検問所", "研究所", "ブラックマーケット", "兵器工場", "貯水池", "バンカー"], "saleBonus": "+30%" },
-    { "nameJa": "リバータウン", "nameEn": "Rivertown", "level": 2, "whereJa": "ハイランズの北", "infraJa": ["貯水池", "バンカー", "研究所"], "saleBonus": "+20%" },
-    { "nameJa": "フォールロック", "nameEn": "Fallrock", "level": 2, "whereJa": "ハイランズの西", "infraJa": ["兵器工場", "装備工場", "放棄された検問所", "バンカー"], "saleBonus": "+20%" },
-    { "nameJa": "エル・ペソ", "nameEn": "El Peso", "level": 2, "whereJa": "ハイランズの東（Looty Bay 側）", "infraJa": ["兵器工場", "研究所", "放棄された検問所"], "saleBonus": "+20%" },
-    { "nameJa": "ダストボウル", "nameEn": "Dustbowl", "level": 1, "whereJa": "最北", "infraJa": ["バンカー", "装備工場", "兵器工場"], "saleBonus": "+10%" },
-    { "nameJa": "レッドストーン", "nameEn": "Redstone", "level": 1, "whereJa": "北東", "infraJa": ["兵器工場"], "saleBonus": "+10%" },
-    { "nameJa": "フェアフィールド", "nameEn": "Fairfield", "level": 1, "whereJa": "最西", "infraJa": ["バンカー", "装備工場"], "saleBonus": "+10%" },
-    { "nameJa": "ローンフォード", "nameEn": "Loneford", "level": 1, "whereJa": "東（Looty Bay へ続く川に最も近い）", "infraJa": ["装備工場", "バンカー"], "saleBonus": "+10%" },
-    { "nameJa": "ラストベール", "nameEn": "Rustvale", "level": 1, "whereJa": "南西", "infraJa": ["兵器工場"], "saleBonus": "+10%" },
-    { "nameJa": "カスカダス", "nameEn": "Cascadas", "level": 1, "whereJa": "南東", "infraJa": ["装備工場", "兵器工場"], "saleBonus": "+10%" }
+    {
+      "nameJa": "ハイランズ",
+      "nameEn": "Highlands",
+      "level": 3,
+      "whereJa": "中央",
+      "infraJa": [
+        "放棄された検問所",
+        "研究所",
+        "ブラックマーケット",
+        "兵器工場",
+        "貯水池",
+        "バンカー"
+      ],
+      "saleBonus": "+30%"
+    },
+    {
+      "nameJa": "リバータウン",
+      "nameEn": "Rivertown",
+      "level": 2,
+      "whereJa": "ハイランズの北",
+      "infraJa": [
+        "貯水池",
+        "バンカー",
+        "研究所"
+      ],
+      "saleBonus": "+20%"
+    },
+    {
+      "nameJa": "フォールロック",
+      "nameEn": "Fallrock",
+      "level": 2,
+      "whereJa": "ハイランズの西",
+      "infraJa": [
+        "兵器工場",
+        "装備工場",
+        "放棄された検問所",
+        "バンカー"
+      ],
+      "saleBonus": "+20%"
+    },
+    {
+      "nameJa": "エル・ペソ",
+      "nameEn": "El Peso",
+      "level": 2,
+      "whereJa": "ハイランズの東（Looty Bay 側）",
+      "infraJa": [
+        "兵器工場",
+        "研究所",
+        "放棄された検問所"
+      ],
+      "saleBonus": "+20%"
+    },
+    {
+      "nameJa": "ダストボウル",
+      "nameEn": "Dustbowl",
+      "level": 1,
+      "whereJa": "最北",
+      "infraJa": [
+        "バンカー",
+        "装備工場",
+        "兵器工場"
+      ],
+      "saleBonus": "+10%"
+    },
+    {
+      "nameJa": "レッドストーン",
+      "nameEn": "Redstone",
+      "level": 1,
+      "whereJa": "北東",
+      "infraJa": [
+        "兵器工場"
+      ],
+      "saleBonus": "+10%"
+    },
+    {
+      "nameJa": "フェアフィールド",
+      "nameEn": "Fairfield",
+      "level": 1,
+      "whereJa": "最西",
+      "infraJa": [
+        "バンカー",
+        "装備工場"
+      ],
+      "saleBonus": "+10%"
+    },
+    {
+      "nameJa": "ローンフォード",
+      "nameEn": "Loneford",
+      "level": 1,
+      "whereJa": "東（Looty Bay へ続く川に最も近い）",
+      "infraJa": [
+        "装備工場",
+        "バンカー"
+      ],
+      "saleBonus": "+10%"
+    },
+    {
+      "nameJa": "ラストベール",
+      "nameEn": "Rustvale",
+      "level": 1,
+      "whereJa": "南西",
+      "infraJa": [
+        "兵器工場"
+      ],
+      "saleBonus": "+10%"
+    },
+    {
+      "nameJa": "カスカダス",
+      "nameEn": "Cascadas",
+      "level": 1,
+      "whereJa": "南東",
+      "infraJa": [
+        "装備工場",
+        "兵器工場"
+      ],
+      "saleBonus": "+10%"
+    }
   ],
   "placesTitle": "特殊施設（インフラ）の効果",
   "places": [
-    { "nameJa": "兵器工場", "nameEn": "Arms Factory", "whatJa": "近くの集落で、すべての武器が割引。", "source": "rrg-worldmap" },
-    { "nameJa": "装備工場", "nameEn": "Gear Factory", "whatJa": "近くの集落で、すべての装備が割引。", "source": "rrg-worldmap" },
-    { "nameJa": "バンカー", "nameEn": "Bunker", "whatJa": "近くの集落の拠点の建物の防御が上がる（主建物・離れ・壁に防御+3）。", "source": "rri-faq", "link": "/calc?tab=defense" },
-    { "nameJa": "貯水池", "nameEn": "Reservoir", "whatJa": "収穫が1回分増える確率がつく。", "source": "rrg-worldmap", "link": "/guides/production" },
-    { "nameJa": "研究所", "nameEn": "Laboratory", "whatJa": "調理（化学）サイクル全体が速くなる。", "source": "rrg-worldmap", "link": "/guides/production" },
-    { "nameJa": "ブラックマーケット", "nameEn": "Black Market", "whatJa": "密輸品の詰め直しがより儲かる（Highlands のみ）。", "source": "rrg-worldmap", "link": "/cargo" },
-    { "nameJa": "放棄された検問所", "nameEn": "Abandoned Checkpoint", "whatJa": "周りが検問所で囲まれる（Fallrock・El Peso・Highlands）。", "source": "rrg-worldmap" }
+    {
+      "nameJa": "研究所",
+      "nameEn": "Laboratory",
+      "whatJa": "化学の調理サイクル全体が速くなる（ゲーム内表示）。数値は20%（反応炉・冷凍庫・ラボテーブルすべて）。ある地区：Rivertown・El Peso・Highlands（3か所）。",
+      "source": "rri-settlement-bonuses",
+      "link": "/guides/production"
+    },
+    {
+      "nameJa": "貯水池",
+      "nameEn": "Reservoir",
+      "whatJa": "追加で収穫できる確率 +50%（ゲーム内表示）。ある地区：Rivertown・Highlands（2か所）。",
+      "source": "ingame-worldmap",
+      "link": "/guides/production"
+    },
+    {
+      "nameJa": "兵器工場",
+      "nameEn": "Arms Factory",
+      "whatJa": "すべての武器が割引（ゲーム内表示）。数値は15%。マップで一番多い施設。ある地区：Rustvale・Dustbowl・Redstone・Cascadas・Fallrock・El Peso・Highlands（7か所）。",
+      "source": "rri-settlement-bonuses"
+    },
+    {
+      "nameJa": "装備工場",
+      "nameEn": "Gear Factory",
+      "whatJa": "すべての装備（アーマーなど）が10%割引。ある地区：Fairfield・Dustbowl・Loneford・Cascadas・Fallrock（5か所）。",
+      "source": "rri-settlement-bonuses"
+    },
+    {
+      "nameJa": "バンカー",
+      "nameEn": "Bunker",
+      "whatJa": "拠点の建物の防御レベルが上がる（ゲーム内表示）。数値は家・離れ・フェンスに防御+3。ある地区：Fairfield・Dustbowl・Loneford・Fallrock・Rivertown・Highlands（6か所）。",
+      "source": "rri-settlement-bonuses",
+      "link": "/calc?tab=defense"
+    },
+    {
+      "nameJa": "放棄された検問所",
+      "nameEn": "Abandoned Checkpoint",
+      "whatJa": "周りが検問所で囲まれる（ゲーム内表示）。集落のマップ自体が変わる。ある地区：Fallrock・El Peso・Highlands（3か所）。",
+      "source": "ingame-worldmap"
+    },
+    {
+      "nameJa": "闇市場",
+      "nameEn": "Black Market",
+      "whatJa": "密輸品作業台での詰め直しがより儲かる。マップに1つだけ（Highlands）。",
+      "source": "rri-settlement-bonuses",
+      "link": "/cargo"
+    }
   ],
   "sections": [
     {
@@ -90,6 +250,26 @@
     {
       "heading": "特殊施設で立地を選ぶ",
       "facts": [
+        {
+          "text": "世界マップの六角形のマスにある施設（研究所・貯水池・兵器工場など）は、隣り合う集落（ふつう4〜6マス）にボーナスを与える。離れた集落には効かない。",
+          "source": "rri-settlement-bonuses"
+        },
+        {
+          "text": "ボーナスは重ねがけできる。複数の施設に隣接する集落なら、すべてのボーナスが同時に効く。",
+          "source": "rri-settlement-bonuses"
+        },
+        {
+          "text": "どの集落にどのボーナスがあるかは、世界マップで集落のマスを押すと出るカードで確認できる。",
+          "source": "rri-settlement-bonuses"
+        },
+        {
+          "text": "ボーナスを受けるには、その集落で区画を借りる（レベル2・3地区は同じレベルの土地区画の権利書が必要）か、集落の権利書で集落ごと買う。",
+          "source": "rri-settlement-bonuses"
+        },
+        {
+          "text": "複数のボーナスが重なる集落の例（Highlands）：No.23（研究所＋闇市場＋兵器工場）、No.29（貯水池＋闇市場＋兵器工場）、No.40（貯水池＋バンカー）。",
+          "source": "rri-settlement-bonuses"
+        },
         {
           "text": "周りの集落に効果を与える特殊な建造物がある（防御、ビジネスのボーナス、割引など）。複数の施設の近くにある集落もある。",
           "source": "steam-globalmap"
