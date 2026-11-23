@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "description": "目標別の研究プラン。targets に挙げた研究とその前提研究を、ゲームデータ（前提関係・研究費・購入価格）から自動で並べる。プランの選び方は本サイトの目標設定で、強さの評価ではない。"
+  },
+  "plans": [
+    {
+      "id": "lab-min",
+      "title": "化学研究所を最短で始める",
+      "goalJa": "試薬 → 濃縮液 → 固形クリスタル → 粉末 まで一通り回せる最小構成",
+      "targets": ["meth_lab_1", "cargo_production_workbench_1", "cargo_charge_workbench_lab_freezer_1", "cargo_workbench_lab_table_1"],
+      "link": "/guides/production"
+    },
+    {
+      "id": "lab-max",
+      "title": "化学研究所を最大まで",
+      "goalJa": "反応炉III・冷凍庫III・品質パーツ・冷凍庫パーツをすべて揃える",
+      "targets": [
+        "meth_lab_1",
+        "cargo_workbench_lab_table_1",
+        "cargo_production_workbench_3",
+        "cargo_charge_workbench_lab_freezer_3",
+        "CargoProductionWorkbenchUpgradeConverter1",
+        "cargo_charge_workbench_upgrade_refrigerant_1"
+      ],
+      "link": "/guides/production"
+    },
+    {
+      "id": "farm-min",
+      "title": "栽培室を最短で始める",
+      "goalJa": "栽培室と栽培テーブル1台で栽培を始める",
+      "targets": ["narco_farm_1", "cargo_charge_workbench_garden_bed"],
+      "link": "/guides/production"
+    },
+    {
+      "id": "farm-max",
+      "title": "栽培室を最大まで",
+      "goalJa": "扇風機・ウォーターポンプ・UVランプまで揃え、1サイクルを60分→30分に",
+      "targets": ["narco_farm_1", "cargo_charge_workbench_garden_bed", "uv_lamp_3"],
+      "link": "/guides/production"
+    },
+    {
+      "id": "cargo",
+      "title": "貨物・密輸品・コレクション",
+      "goalJa": "積荷を開ける・密輸品を詰め直す・コレクションを作る作業台と強化",
+      "targets": ["cargo_workbench_slot_1", "cargo_exchange_workbench_speedup_upgrade_2", "cargo_exchange_workbench_additional_double_slot_upgrade", "collection_upgrade_3"],
+      "link": "/cargo"
+    },
+    {
+      "id": "defense",
+      "title": "拠点の防衛を固める",
+      "goalJa": "小さな家・コンクリートフェンス・ヒューズ（レジェンダリー）・クラン通知の警報",
+      "targets": ["home_2", "wall_4", "defense_module_3", "clan_alarm_1"],
+      "link": "/calc?tab=defense"
+    },
+    {
+      "id": "laundering",
+      "title": "資金洗浄を速くする",
+      "goalJa": "紙幣計数機 III まで",
+      "targets": ["money_workbench_speedup_3"],
+      "link": "/guides/money"
+    },
+    {
+      "id": "settlement",
+      "title": "地区レベル3の集落・土地",
+      "goalJa": "レベル3地区の土地区画と集落の権利書",
+      "targets": ["plot_sale_3", "settlement_sale_3"],
+      "link": "/guides/money"
+    }
+  ]
+}

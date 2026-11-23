@@ -16,6 +16,7 @@ import GuidePage from "./pages/GuidePage";
 import WeaponsPage from "./pages/WeaponsPage";
 import VehiclesPage from "./pages/VehiclesPage";
 import CargoPage from "./pages/CargoPage";
+import CalcPage from "./pages/CalcPage";
 import ToolsPage from "./pages/ToolsPage";
 import TipsPage from "./pages/TipsPage";
 
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="weapons" element={<WeaponsPage />} />
           <Route path="vehicles" element={<VehiclesPage />} />
           <Route path="cargo" element={<CargoPage />} />
+          <Route path="calc" element={<CalcPage />} />
           <Route path="tools" element={<ToolsPage />} />
           <Route path="tips" element={<TipsPage />} />
           <Route path="*" element={<NotFound />} />

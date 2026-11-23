@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ReactFlow, Background, Controls, MiniMap, type Edge, type Node, type NodeProps } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { GitBranch, List, Search, X, CheckCircle2, Circle, Gamepad2, LayoutGrid } from "lucide-react";
+import { GitBranch, List, Search, X, CheckCircle2, Circle, Gamepad2, LayoutGrid, Lock } from "lucide-react";
 import type { CategoryId, ShipmentItem } from "../types/shipment";
 import { ancestorsOf, categories, categoryName, displayNameEn, displayNameJa, getItem, items, matchesQuery } from "../lib/data";
 import { layoutTree, NODE_W, treeOrder } from "../lib/treeLayout";
@@ -396,6 +396,7 @@ function ListView({
 }) {
   const researched = useProgress((s) => s.researched);
   const toggle = useProgress((s) => s.toggle);
+  const jailYears = useProgress((s) => s.jailYears);
   return (
     <div className="h-full overflow-y-auto px-2 py-3 sm:px-4">
       {categories
@@ -431,7 +432,20 @@ function ListView({
                         </span>
                         <span className="flex shrink-0 flex-col items-end gap-0.5">
                           <span className="font-mono text-xs text-money">{money(it.researchCost)}</span>
-                          <TierBadge level={it.requiredSettlementLevel} />
+                          <span className="flex items-center gap-1">
+                            {it.requiredImprisonmentYears > 0 && (
+                              <span
+                                className={`inline-flex items-center gap-0.5 rounded border px-1 font-mono text-[10px] leading-4 ${
+                                  jailYears !== null && jailYears >= it.requiredImprisonmentYears ? "border-neon/60 text-neon" : "border-danger/60 text-danger"
+                                }`}
+                                title={`服役${it.requiredImprisonmentYears}年以上でアンロック`}
+                              >
+                                <Lock size={10} />
+                                服役{it.requiredImprisonmentYears}年
+                              </span>
+                            )}
+                            <TierBadge level={it.requiredSettlementLevel} />
+                          </span>
                         </span>
                       </button>
                     </li>
