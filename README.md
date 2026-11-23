@@ -97,7 +97,7 @@ npm run build
 
 ### ゲーム内で確認した項目を「検証済み」にする
 
-今後の拡張ポイント: `data/verified.json` などで ID ごとに確認日・スクリーンショットを管理し、`build-data.ts` で `verificationStatus: "verified"` を付与する。
+`data/verified.json` に ID ごとの確認日・確認項目・出典を書く。`status: "verified"` で検証済み、`"outdated"` で現在のゲームと食い違い。`overrides.prerequisites` で前提研究を上書きできる。
 
 ## 公開（Vercel）
 

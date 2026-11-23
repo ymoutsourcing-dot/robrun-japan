@@ -211,6 +211,27 @@ const items: ShipmentItem[] = src.nodes.map((n) => {
   };
 });
 
+// ゲーム内で確認した情報で上書き（data/verified.json）
+const verified = readJson<{
+  items: Record<
+    string,
+    { status: "verified" | "outdated"; verifiedAt: string; checked?: string[]; overrides?: { prerequisites?: string[] }; source: string; note?: string }
+  >;
+}>("data/verified.json");
+for (const it of items) {
+  const v = verified.items[it.id];
+  if (!v) continue;
+  it.verificationStatus = v.status;
+  it.lastVerifiedAt = v.verifiedAt;
+  if (v.overrides?.prerequisites) it.prerequisites = v.overrides.prerequisites;
+  const parts = [
+    v.status === "verified" ? `ゲーム内で確認（${v.verifiedAt}・${v.source}）${v.checked ? "：" + v.checked.join("、") : ""}` : `ゲーム内と食い違い（${v.verifiedAt}）`,
+    v.note,
+    it.sourceNote,
+  ].filter(Boolean);
+  it.sourceNote = parts.join(" / ");
+}
+
 // 派生研究（逆引き）
 const byId = new Map(items.map((i) => [i.id, i]));
 for (const it of items)

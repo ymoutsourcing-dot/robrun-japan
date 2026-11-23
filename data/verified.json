@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "description": "ゲーム内で確認できた情報。build-data.ts が出典データに上書き・追記する。status: verified（確認済み）/ outdated（現在のゲームと食い違う）",
+    "fields": "checked=確認できた項目、overrides=出典データを置き換える値、note=補足"
+  },
+  "items": {
+    "flash_grenade_1": {
+      "status": "verified",
+      "verifiedAt": "2026-11-23",
+      "checked": ["研究費 $25,000", "地区レベル1以上", "説明文"],
+      "source": "プレイヤーのゲーム内スクリーンショット"
+    },
+    "frag_grenade_1": {
+      "status": "verified",
+      "verifiedAt": "2026-11-23",
+      "checked": ["研究費 $75,000", "地区レベル2以上", "説明文", "前提研究＝フラッシュグレネード"],
+      "overrides": { "prerequisites": ["flash_grenade_1"] },
+      "source": "プレイヤーのゲーム内スクリーンショット",
+      "note": "ゲーム内ではフラッシュグレネードの次。出典データ（build 26440801）ではスモークグレネードの次になっている"
+    },
+    "smoke_grenade_1": {
+      "status": "outdated",
+      "verifiedAt": "2026-11-23",
+      "source": "プレイヤーのゲーム内スクリーンショット",
+      "note": "現在のゲーム内ツリーには表示されない（フラッシュグレネードの次は破片手榴弾）。削除・非表示になった可能性がある"
+    }
+  }
+}
