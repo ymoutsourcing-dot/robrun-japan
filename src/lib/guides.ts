@@ -4,6 +4,7 @@ import moneyJson from "../../data/guides/money.json";
 import wipeJson from "../../data/guides/wipe.json";
 import policeJson from "../../data/guides/police.json";
 import productionJson from "../../data/guides/production.json";
+import monetizationJson from "../../data/guides/monetization.json";
 import mapSources from "../../data/guides/maps/sources.json";
 import mapLootyBayJson from "../../data/guides/maps/looty-bay.json";
 import mapMotelJson from "../../data/guides/maps/motel.json";
@@ -147,7 +148,9 @@ function mapGuide(json: unknown): MapGuide {
 export const MAP_GUIDES: MapGuide[] = [mapLootyBayJson, mapMotelJson, mapPrisonJson, mapSalesCenterJson, mapSettlementsJson].map(mapGuide);
 export const mapGuideById = new Map(MAP_GUIDES.map((g) => [g.id, g]));
 
-export const ALL_GUIDES: Guide[] = [moneyGuide, productionGuide, wipeGuide, jailTimeGuide, policeGuide, ...MAP_GUIDES];
+export const monetizationGuide = withShared(monetizationJson as unknown as Guide);
+
+export const ALL_GUIDES: Guide[] = [moneyGuide, productionGuide, wipeGuide, jailTimeGuide, policeGuide, monetizationGuide, ...MAP_GUIDES];
 export const guideById = new Map(ALL_GUIDES.map((g) => [g.id, g]));
 
 /** 計算に使う数値（robrun.info 掲載のファン情報。公式未発表） */

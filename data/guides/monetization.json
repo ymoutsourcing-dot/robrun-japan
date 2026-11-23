@@ -1,0 +1,137 @@
+{
+  "id": "monetization",
+  "title": "課金・バトルパス・B-Coin",
+  "titleEn": "Battle Pass & B-Coin",
+  "summary": "ROB RUNは基本無料。課金で買えるのは見た目（コスメ）だけで、強さや進行には影響しない。バトルパスの通貨・B-Coin・ショップの使い方をまとめる。",
+  "updatedAt": "2026-11-23",
+  "sources": {
+    "kefir-purchases": {
+      "label": "Kefir公式ヘルプ「Do purchases affect gameplay?」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1368-do-purchases-affect-gameplay/",
+      "kind": "official"
+    },
+    "kefir-missing-purchase": {
+      "label": "Kefir公式ヘルプ「I made a purchase but haven't received it」",
+      "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1369-i-made-a-purchase-but-haven-t-received-it-what-should-i-do/",
+      "kind": "official"
+    },
+    "ingame-shop": {
+      "label": "ゲーム内のカスタマイズ（ショップ）画面（プレイヤーのスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
+    },
+    "wiki-free": {
+      "label": "robrunwiki.app「Is ROB RUN free?」",
+      "url": "https://robrunwiki.app/guides/is-rob-run-free",
+      "kind": "fan"
+    }
+  },
+  "sections": [
+    {
+      "heading": "基本",
+      "facts": [
+        {
+          "text": "ROB RUNは基本無料（Steam）。早期アクセス終了後も価格は変えない予定。",
+          "source": "wiki-free"
+        },
+        {
+          "text": "B-Coinで買えるのは見た目（コスメ）アイテムだけ。ステータス・バランス・進行には影響しない。",
+          "source": "kefir-purchases"
+        },
+        {
+          "text": "B-Coinの残高とコスメは、毎週のワイプ（連邦捜査）でも消えない。",
+          "source": "kefir-wipe"
+        },
+        {
+          "text": "買ったのに届かないときは、ゲームを再起動してゲーム内メールを確認。それでもなければ領収書を添えてサポートへ。",
+          "source": "kefir-missing-purchase"
+        }
+      ]
+    },
+    {
+      "heading": "画面右上の数字",
+      "facts": [
+        {
+          "text": "「○○/1,000」（バッジのアイコン）はバトルパスの通貨。Looty Bayで仕事（強盗など）をすると貯まり、バトルパスの報酬と交換する（ゲーム内説明「Pull jobs across Looty Bay to rack up the Battle Pass currency and cash it in for free rewards」）。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "表示の上限は1,000。上限に達した後に稼いだ分が無駄になるかは未確認なので、1,000に近づいたら報酬と交換しておくのが安全（算出・推測を含む）。",
+          "source": "ingame-shop",
+          "derived": true
+        },
+        {
+          "text": "コイン（B）のアイコンの数字はB-Coinの残高、カードのアイコンの数字は銀行残高。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "「1 #」の意味（パスのレベルなど）は未確認。",
+          "source": "ingame-shop"
+        }
+      ]
+    },
+    {
+      "heading": "バトルパス（例：PURE CHEMISTRY）",
+      "facts": [
+        {
+          "text": "無料報酬と、有料の「プレミアムパス」報酬がある。プレミアムを買うと限定コスメがもらえる。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "表示例：無料報酬は鎮痛剤・ロックピック・ポーチ・ボディアーマー・鍵など37個（5＋32）。プレミアム報酬は防護服・B-Coin・武器スキン・バッグなど19個（4＋15）で、最終報酬はバンのスキン。期間は表示時点で残り11日。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "無料報酬にはゲーム内アイテム（装備・道具）も含まれる。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "地域（サーバーの地域）を変えても、バトルパスのポイントは引き継がれる（11/17以降）。",
+          "source": "steam-1117"
+        }
+      ]
+    },
+    {
+      "heading": "B-Coinの値段（ゲーム内表示・米ドル）",
+      "facts": [
+        {
+          "text": "$4.99＝500、$9.99＝1,100（1,000＋100）、$14.99＝1,700（1,500＋200）、$19.99＝2,400（2,000＋400）、$29.99＝3,700（3,000＋700）、$49.99＝6,500（5,000＋1,500）。",
+          "source": "ingame-shop"
+        },
+        {
+          "text": "1ドルあたりのB-Coinは、$4.99で約100、$49.99で約130。大きいパックほど最大30%お得（ゲーム内表示の割引率）。",
+          "source": "ingame-shop",
+          "derived": true
+        },
+        {
+          "text": "値段は地域やセールで変わることがある。",
+          "source": "wiki-free"
+        }
+      ]
+    },
+    {
+      "heading": "ショップのタブ",
+      "facts": [
+        {
+          "text": "PASS（バトルパス）／PACKS（パック）／CHARACTER（キャラクター）／VEHICLES（車両）／WEAPONS（武器）／B-COIN（購入）。車両と武器はスキン（見た目）。",
+          "source": "ingame-shop"
+        }
+      ]
+    },
+    {
+      "heading": "B-Coinとワイプ（ファン情報）",
+      "facts": [
+        {
+          "text": "robrun.infoによると、B-Coinは取引所で銀行のお金（洗浄済み）でも買え、連邦の没収の対象外。これが本当なら、ワイプ前に余った銀行残高をB-Coin（コスメ用）に変えておける。ゲーム内では未確認。",
+          "source": "rri-money"
+        }
+      ]
+    }
+  ],
+  "unknowns": [
+    "プレミアムパスの価格",
+    "バトルパスの通貨が1,000を超えたらどうなるか",
+    "「1 #」の意味",
+    "ゲーム内のお金でB-Coinを買えるかとそのレート"
+  ]
+}
