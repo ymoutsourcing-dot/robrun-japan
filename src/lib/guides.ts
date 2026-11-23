@@ -47,6 +47,10 @@ export interface MoneyMethod {
   offline: boolean;
   source: string;
   note?: string;
+  /** 時給を計算できる場合のモデル名（src/lib/production.ts） */
+  hourly?: string;
+  /** 時給を出せない理由 */
+  hourlyNote?: string;
 }
 export type MoneyGuide = Guide & { methods: MoneyMethod[]; notoriety: { level: number; loot: number; cargo: number }[] };
 

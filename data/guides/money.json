@@ -30,7 +30,8 @@
       "risk": "高：犯罪者として死ぬとバッグの中身を失う。警官・他プレイヤーに狙われる",
       "needsBase": false,
       "offline": false,
-      "source": "rri-cargo"
+      "source": "rri-cargo",
+      "hourlyNote": "1回の強盗にかかる時間と稼ぎが、場所・人数・警官の数で大きく変わるため算出できない"
     },
     {
       "key": "cargo",
@@ -59,7 +60,8 @@
       "risk": "中：運搬中に武器を出すと積荷を落とす。警官が没収できる",
       "needsBase": false,
       "offline": true,
-      "source": "rri-cargo"
+      "source": "rri-cargo",
+      "hourlyNote": "積荷を見つける時間と、開封した中身の価値が不明（開封は貨物作業台で30分・プレイヤー報告）"
     },
     {
       "key": "contraband",
@@ -88,7 +90,8 @@
       "needsBase": true,
       "offline": true,
       "source": "rri-cargo",
-      "note": "どの貨物が何に変わるかの対応・所要時間は未確認"
+      "note": "どの貨物が何に変わるかの対応・所要時間は未確認",
+      "hourlyNote": "詰め直しにかかる時間が不明"
     },
     {
       "key": "collection",
@@ -116,7 +119,8 @@
       "risk": "中：対象の盗品を集める必要がある",
       "needsBase": true,
       "offline": false,
-      "source": "rri-cargo"
+      "source": "rri-cargo",
+      "hourlyNote": "対象の盗品を揃える時間が状況次第のため算出できない"
     },
     {
       "key": "plantation",
@@ -150,7 +154,8 @@
       "needsBase": true,
       "offline": true,
       "source": "rri-plantation",
-      "note": "1サイクル約60分（推定）。強化パーツの費用対効果は「化学研究所・栽培室の改造パーツ 費用対効果」ガイドで計算できる"
+      "note": "1サイクル60分（プレイヤー報告で確認）。強化パーツの費用対効果は「化学研究所・栽培室の改造パーツ 費用対効果」ガイドで計算できる",
+      "hourly": "plantation"
     },
     {
       "key": "lab",
@@ -185,7 +190,8 @@
       "needsBase": true,
       "offline": true,
       "source": "rri-lab",
-      "note": "品質（レアリティ）はランダム。産業用エンジン・温度計・化学コンバーターで高品質の確率が上がる。1クリスタルから何個の粉末になるかは未確認。時間と改造パーツの費用対効果は「化学研究所・栽培室の改造パーツ 費用対効果」ガイドを参照"
+      "note": "品質（レアリティ）はランダム。産業用エンジン・温度計・化学コンバーターで高品質の確率が上がる。1クリスタルから何個の粉末になるかは未確認。時間と改造パーツの費用対効果は「化学研究所・栽培室の改造パーツ 費用対効果」ガイドを参照",
+      "hourly": "lab"
     },
     {
       "key": "police",
@@ -212,7 +218,8 @@
       "risk": "低：死んでも失うのは支給装備だけ",
       "needsBase": false,
       "offline": false,
-      "source": "rri-police"
+      "source": "rri-police",
+      "hourlyNote": "逮捕の頻度が状況次第のため算出できない"
     },
     {
       "key": "tax",
@@ -228,7 +235,8 @@
       "needsBase": false,
       "offline": true,
       "source": "kefir-settlement",
-      "note": "税率は未確認"
+      "note": "税率は未確認",
+      "hourlyNote": "税率と住人の数が不明"
     }
   ],
   "notoriety": [
