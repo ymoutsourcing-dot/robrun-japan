@@ -243,7 +243,7 @@ writeFileSync("src/generated/shipments.json", JSON.stringify(dataset, null, 1) +
 writeFileSync("src/generated/recommendations.json", JSON.stringify(recs, null, 1) + "\n");
 
 // sitemap.xml
-const urls = ["/", "/shipments", "/items", "/calculator", "/recommended", "/about", "/changelog", "/guides", "/guides/jail-time", ...items.map((i) => `/shipments/${i.id}`)];
+const urls = ["/", "/shipments", "/items", "/calculator", "/recommended", "/about", "/changelog", "/guides", "/guides/money", "/guides/wipe", "/guides/jail-time", "/guides/police", ...items.map((i) => `/shipments/${i.id}`)];
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join("\n") +

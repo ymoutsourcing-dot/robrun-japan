@@ -1,6 +1,15 @@
+import sharedSources from "../../data/guides/sources.json";
 import jailTimeJson from "../../data/guides/jail-time.json";
+import moneyJson from "../../data/guides/money.json";
+import wipeJson from "../../data/guides/wipe.json";
+import policeJson from "../../data/guides/police.json";
 
 export type SourceKind = "official" | "fan" | "data";
+export interface Source {
+  label: string;
+  url: string;
+  kind: SourceKind;
+}
 
 export interface GuideFact {
   text: string;
@@ -8,6 +17,8 @@ export interface GuideFact {
   note?: string;
   /** 出典の情報から本サイトが導いた内容 */
   derived?: boolean;
+  /** サイト内の関連ページ */
+  link?: string;
   value?: Record<string, number>;
 }
 
@@ -17,12 +28,50 @@ export interface Guide {
   titleEn: string;
   summary: string;
   updatedAt: string;
-  sources: Record<string, { label: string; url: string; kind: SourceKind }>;
+  sources: Record<string, Source>;
   sections: { heading: string; facts: GuideFact[] }[];
   unknowns: string[];
 }
 
-export const jailTimeGuide = jailTimeJson as Guide;
+export interface MoneyMethod {
+  key: string;
+  name: string;
+  nameEn: string;
+  setup: string[];
+  setupNote: string;
+  income: string;
+  examples: { label: string; value: number; valueMax?: number; derived?: boolean }[];
+  risk: string;
+  needsBase: boolean;
+  offline: boolean;
+  source: string;
+  note?: string;
+}
+export type MoneyGuide = Guide & { methods: MoneyMethod[]; notoriety: { level: number; loot: number; cargo: number }[] };
+
+export type WipeGuide = Guide & {
+  schedule: { cycleDays: number; regions: { name: string; openUtc: string; openLocal: string; jst: string }[] };
+  days: { day: string; title: string; items: string[]; source: string; derived?: boolean }[];
+};
+
+export type PoliceGuide = Guide & {
+  copRewards: { label: string; value: string }[];
+  copBonuses: { name: string; how: string; effect: string; duration: string }[];
+  deathRules: { role: string; lose: string; source: string }[];
+};
+
+const shared = sharedSources as Record<string, Source>;
+function withShared<T extends Guide>(g: T): T {
+  return { ...g, sources: { ...shared, ...g.sources } };
+}
+
+export const jailTimeGuide = withShared(jailTimeJson as Guide);
+export const moneyGuide = withShared(moneyJson as unknown as MoneyGuide);
+export const wipeGuide = withShared(wipeJson as unknown as WipeGuide);
+export const policeGuide = withShared(policeJson as unknown as PoliceGuide);
+
+export const ALL_GUIDES: Guide[] = [moneyGuide, wipeGuide, jailTimeGuide, policeGuide];
+export const guideById = new Map(ALL_GUIDES.map((g) => [g.id, g]));
 
 /** 計算に使う数値（robrun.info 掲載のファン情報。公式未発表） */
 function factValue(key: string): number {
@@ -55,10 +104,3 @@ export function assetsForYears(years: number): number | null {
 export function minDaysFor(missingYears: number): number {
   return missingYears <= 0 ? 0 : Math.ceil(missingYears / JAIL.perDay);
 }
-
-export const GUIDES = [
-  { id: "jail-time", title: jailTimeGuide.title, summary: jailTimeGuide.summary, ready: true },
-  { id: "money", title: "金策：強盗・貨物・農園・化学研究所の比較", summary: "収益・必要設備・リスクの比較", ready: false },
-  { id: "wipe", title: "ワイプ（連邦捜査）までの1週間の動き方", summary: "7日サイクルで何をするか", ready: false },
-  { id: "police", title: "警察・逮捕・賄賂のしくみ", summary: "自首と賄賂、警官プレイ", ready: false },
-];

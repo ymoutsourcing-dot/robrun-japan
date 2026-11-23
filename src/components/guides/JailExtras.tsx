@@ -1,42 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ExternalLink, Lock, CheckCircle2, AlertTriangle } from "lucide-react";
-import { items, displayNameEn, displayNameJa } from "../lib/data";
-import { JAIL, assetsForYears, jailTimeGuide as g, minDaysFor, yearsFromAssets, type SourceKind } from "../lib/guides";
-import { money } from "../lib/format";
-import { useProgress } from "../store/progress";
-import { ItemIcon, Section, TierBadge } from "../components/ui";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
-
-const KIND: Record<SourceKind, { label: string; cls: string }> = {
-  official: { label: "公式", cls: "border-neon text-neon" },
-  fan: { label: "ファン情報", cls: "border-sky-500 text-sky-300" },
-  data: { label: "ゲームデータ", cls: "border-rare text-rare" },
-};
+import { Lock, CheckCircle2, AlertTriangle } from "lucide-react";
+import { items, displayNameEn, displayNameJa } from "../../lib/data";
+import { JAIL, assetsForYears, minDaysFor, yearsFromAssets } from "../../lib/guides";
+import { money } from "../../lib/format";
+import { useProgress } from "../../store/progress";
+import { ItemIcon, Section, TierBadge } from "../ui";
 
 const gated = items.filter((i) => i.requiredImprisonmentYears > 0).sort((a, b) => a.requiredImprisonmentYears - b.requiredImprisonmentYears);
 
-export default function JailTimeGuidePage() {
-  useDocumentTitle("服役年数（ジェイルタイム）の貯め方・計算", "ROB RUN の服役年数（Jail Time）と権威の仕組み、貯め方、1日40年・累計1200年の上限、必要年数のShipments一覧と計算機。");
+/** 服役年数ガイド：注意書き・解放一覧・資産→年数の計算機 */
+export default function JailExtras() {
   const jailYears = useProgress((s) => s.jailYears);
   const setJailYears = useProgress((s) => s.setJailYears);
   const researched = useProgress((s) => s.researched);
   const [assets, setAssets] = useState("5000000");
   const assetsNum = Number(assets.replace(/[^\d]/g, "")) || 0;
   const cur = jailYears ?? 0;
-
   return (
-    <div className="mx-auto max-w-4xl space-y-4 px-3 py-4 sm:px-4">
-      <Link to="/guides" className="inline-flex items-center gap-1 text-sm text-muted hover:text-white">
-        <ChevronLeft size={16} /> 攻略ガイド
-      </Link>
-      <header>
-        <h1 className="text-2xl font-bold leading-snug">{g.title}</h1>
-        <p className="font-mono text-sm text-gray-300">{g.titleEn}</p>
-        <p className="mt-2 text-sm">{g.summary}</p>
-        <p className="mt-1 text-xs text-muted">最終更新: {g.updatedAt}</p>
-      </header>
-
+    <>
       <div className="flex gap-2 rounded-lg border border-money/50 bg-money/5 p-3 text-sm">
         <AlertTriangle size={18} className="mt-0.5 shrink-0 text-money" />
         <p>
@@ -138,42 +120,6 @@ export default function JailTimeGuidePage() {
         </div>
       </Section>
 
-      {g.sections.map((s) => (
-        <Section key={s.heading} title={s.heading}>
-          <ul className="space-y-2.5">
-            {s.facts.map((f, i) => {
-              const src = g.sources[f.source];
-              const kind = f.derived ? { label: "算出", cls: "border-money text-money" } : KIND[src.kind];
-              return (
-                <li key={i} className="text-sm leading-relaxed">
-                  <p>{f.text}</p>
-                  <p className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-muted">
-                    <span className={`rounded border px-1 ${kind.cls}`}>{kind.label}</span>
-                    {src.url.startsWith("/") ? (
-                      <Link to={src.url} className="underline">
-                        {src.label}
-                      </Link>
-                    ) : (
-                      <a href={src.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-0.5 underline">
-                        {src.label} <ExternalLink size={10} />
-                      </a>
-                    )}
-                    {f.note && <span>※{f.note}</span>}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        </Section>
-      ))}
-
-      <Section title="まだ分かっていないこと">
-        <ul className="list-disc space-y-0.5 pl-5 text-sm text-muted">
-          {g.unknowns.map((u) => (
-            <li key={u}>{u}</li>
-          ))}
-        </ul>
-      </Section>
-    </div>
+    </>
   );
 }

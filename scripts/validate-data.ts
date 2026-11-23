@@ -69,6 +69,29 @@ for (const it of ds.items)
       notes.push(`前提研究の方が必要地区レベルが高い: ${p}(${parent.requiredSettlementLevel}) -> ${it.id}(${it.requiredSettlementLevel})`);
   }
 
+// 攻略ガイド：出典キーの存在チェック
+{
+  const shared = JSON.parse(readFileSync("data/guides/sources.json", "utf8")) as Record<string, unknown>;
+  for (const f of ["jail-time", "money", "wipe", "police"]) {
+    const g = JSON.parse(readFileSync(`data/guides/${f}.json`, "utf8")) as {
+      sources: Record<string, unknown>;
+      sections: { facts: { source: string }[] }[];
+      methods?: { source: string; setup: string[] }[];
+      days?: { source: string }[];
+      deathRules?: { source: string }[];
+    };
+    const has = (k: string) => k in g.sources || k in shared;
+    const refs = [
+      ...g.sections.flatMap((s) => s.facts.map((x) => x.source)),
+      ...(g.methods ?? []).map((m) => m.source),
+      ...(g.days ?? []).map((d) => d.source),
+      ...(g.deathRules ?? []).map((d) => d.source),
+    ];
+    for (const r of refs) if (!has(r)) errors.push(`ガイド ${f}: 出典キーが存在しない: ${r}`);
+    for (const m of g.methods ?? []) for (const id of m.setup) if (!ids.has(id)) errors.push(`ガイド ${f}: 存在しないアイテム: ${id}`);
+  }
+}
+
 const total = ds.items.reduce((s, i) => s + (i.researchCost ?? 0), 0);
 console.log(`items: ${ds.items.length}`);
 console.log(`研究費合計: $${total.toLocaleString()}`);

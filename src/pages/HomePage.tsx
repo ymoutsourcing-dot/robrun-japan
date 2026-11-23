@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, Lock } from "lucide-react";
+import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, Lock, CalendarClock, Siren } from "lucide-react";
 import { dataset, items } from "../lib/data";
 import { money } from "../lib/format";
 import { ProgressBar } from "../components/ProgressBar";
@@ -12,12 +12,14 @@ const MAIN = [
   { to: "/items", icon: Database, title: "アイテムデータベース", desc: "日本語・英語で検索。研究費・購入価格・性能を比較" },
   { to: "/calculator", icon: Calculator, title: "研究費用計算機", desc: "目標までの必要研究費を自動計算（研究済みは除外）" },
   { to: "/recommended", icon: Sparkles, title: "おすすめ研究・ルート", desc: "最初に研究できる項目、主要目標までの総額" },
+  { to: "/guides/money", icon: Coins, title: "金策の比較", desc: "強盗・貨物・農園・化学研究所の初期費用と単価" },
+  { to: "/guides/wipe", icon: CalendarClock, title: "ワイプまでの1週間", desc: "ワイプ時刻の計算機と7日間の動き方" },
   { to: "/guides/jail-time", icon: Lock, title: "服役年数の貯め方", desc: "計算式・上限・必要年数のShipments一覧と計算機" },
+  { to: "/guides/police", icon: Siren, title: "警察・逮捕・賄賂", desc: "自首と賄賂、警官の報酬とボーナス" },
   { to: "/progress", icon: ListChecks, title: "研究進捗の管理", desc: "研究済み・予定・お気に入り。JSONでバックアップ" },
 ];
 
 const COMING = [
-  { icon: Coins, title: "金策攻略", desc: "強盗・貨物・農園・化学研究所の収益比較" },
   { icon: Crosshair, title: "武器・装備一覧", desc: "ダメージ・連射速度などの比較" },
   { icon: Car, title: "車両・カスタマイズ", desc: "車両性能と改造パーツ" },
   { icon: House, title: "拠点・生産設備", desc: "土地・建築・防衛・生産設備" },
