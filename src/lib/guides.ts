@@ -95,6 +95,9 @@ export type ProductionGuide = Guide & {
       upgrades: { id: string; speed: number }[];
       concentratePrice: Rates;
       crystalPrice: Rates;
+      powderPrice: Rates;
+      /** 固形クリスタル1個を粉末にしたときの袋数（プレイヤー実測。未確認のレアリティは無し） */
+      powderPerCrystal: Partial<Rates>;
     };
     reactor: {
       levels: { id: string; cycleSeconds: number; cycles: number }[];

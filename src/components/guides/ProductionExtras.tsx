@@ -386,6 +386,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
   const [fUp, setFUp] = useState<Record<string, boolean>>({});
   const [engine, setEngine] = useState(true);
   const [chance, setChance] = useState(20);
+  const [powder, setPowder] = useState(false);
 
   const rl = R.levels[reactor];
   const reactorSec = rl.cycleSeconds * rl.cycles;
@@ -397,11 +398,20 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
   const bottleneck = concPerHour < freezeCap ? "反応炉" : concPerHour > freezeCap ? "冷凍庫" : null;
 
   const next = base === "Uncommon" ? "Epic" : "Legendary";
-  const diff = F.crystalPrice[next] - F.crystalPrice[base];
+  // 売り方：クリスタルのまま（密輸業者）／粉末にして（故買屋）。粉末の袋数が未確認のレアリティは計算不可
+  const valueOf = (r: "Uncommon" | "Epic" | "Legendary"): number | null => {
+    if (!powder) return F.crystalPrice[r];
+    const n = F.powderPerCrystal[r];
+    return n === undefined ? null : n * F.powderPrice[r];
+  };
+  const vBase = valueOf(base);
+  const vNext = valueOf(next);
   const p = engine ? chance / 100 : 0;
-  const valueEach = F.crystalPrice[base] + p * diff;
+  const unknownValue = vBase === null || (p > 0 && vNext === null);
+  const diff = vBase !== null && vNext !== null ? vNext - vBase : 0;
+  const valueEach = vBase === null ? 0 : vBase + p * diff;
   const gross = crystalsPerHour * valueEach;
-  const grossNoEngine = crystalsPerHour * F.crystalPrice[base];
+  const grossNoEngine = crystalsPerHour * (vBase ?? 0);
   const reagentsPerHour = crystalsPerHour / rl.cycles;
   const reagentValue = reagentsPerHour * R.reagentPrice[base];
 
@@ -456,6 +466,18 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
             %
           </label>
         </div>
+        <div className="flex flex-wrap items-center gap-2 text-sm sm:col-span-2">
+          <span className="text-muted">売り方</span>
+          <div className="flex overflow-hidden rounded-md border border-line text-xs">
+            <button onClick={() => setPowder(false)} className={`px-2 py-1 ${!powder ? "bg-neon/15 text-neon" : "text-muted"}`}>
+              クリスタルのまま（密輸業者）
+            </button>
+            <button onClick={() => setPowder(true)} className={`px-2 py-1 ${powder ? "bg-neon/15 text-neon" : "text-muted"}`}>
+              ラボテーブルで粉末にして（故買屋）
+            </button>
+          </div>
+          <span className="text-[11px] text-muted">粉末の袋数は実測：エピック37袋・レジェンダリー25袋（アンコモンは未確認）</span>
+        </div>
         <div className="flex flex-wrap items-center gap-3 text-xs">
           {F.upgrades.map((u) => (
             <label key={u.id} className="flex items-center gap-1">
@@ -477,14 +499,23 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
           value={`${Math.round(crystalsPerHour * 10) / 10}個`}
           sub={bottleneck ? `${bottleneck}がボトルネック` : "反応炉と冷凍庫が釣り合っている"}
         />
-        <Stat label="クリスタル1個の期待値" value={money(Math.round(valueEach))} sub={engine ? `${money(F.crystalPrice[base])}＋${chance}%×${money(diff)}` : "品質パーツなし"} />
+        <Stat
+          label={powder ? "クリスタル1個の期待値（粉末）" : "クリスタル1個の期待値"}
+          value={unknownValue ? "未確認" : money(Math.round(valueEach))}
+          sub={unknownValue ? "粉末の袋数が未確認のレアリティを含む" : engine ? `${money(vBase)}＋${chance}%×${money(diff)}` : "品質パーツなし"}
+        />
       </div>
       <div className="mt-2 grid gap-2 sm:grid-cols-3">
-        <Stat label={`合計の時給${engine ? "（エンジンあり）" : ""}`} value={money(Math.round(gross))} sub={`24時間で ${money(Math.round(gross * 24))}`} accent />
-        <Stat label="エンジンによる上乗せ/時" value={engine ? `+${money(Math.round(gross - grossNoEngine))}` : "—"} sub={`エンジンなしの時給 ${money(Math.round(grossNoEngine))}`} />
+        <Stat
+          label={`合計の時給${engine ? "（エンジンあり）" : ""}${powder ? "・粉末" : ""}`}
+          value={unknownValue ? "未確認" : money(Math.round(gross))}
+          sub={unknownValue ? "高品質試薬（エピック）を選ぶと計算できます" : `24時間で ${money(Math.round(gross * 24))}`}
+          accent
+        />
+        <Stat label="エンジンによる上乗せ/時" value={unknownValue ? "未確認" : engine ? `+${money(Math.round(gross - grossNoEngine))}` : "—"} sub={unknownValue ? undefined : `エンジンなしの時給 ${money(Math.round(grossNoEngine))}`} />
         <Stat
           label="試薬をそのまま売る場合との差/時"
-          value={`+${money(Math.round(gross - reagentValue))}`}
+          value={unknownValue ? "未確認" : `+${money(Math.round(gross - reagentValue))}`}
           sub={`試薬 ${Math.round(reagentsPerHour * 100) / 100}個/時（売ると${money(Math.round(reagentValue))}）`}
         />
       </div>
