@@ -1,0 +1,559 @@
+{
+  "_meta": {
+    "description": "Shipments（研究ツリー）に無い道具・鍵・カードの用途と入手方法。各行の sources は data/guides/sources.json のキー。gameIds はゲーム内のアイテムID（robrun.info / robrunguide.app の個別ページのURLに使う）。relatedShipments は data/source/shipments.source.json の id。",
+    "rules": [
+      "出典にない数値・効果は書かない。分からないものは「未確認」",
+      "ファンサイト同士で食い違う場合は両方を書く"
+    ]
+  },
+  "updatedAt": "2026-11-23",
+  "entries": [
+    {
+      "id": "decoder-uncommon",
+      "nameJa": "デコーダー（アンコモン）",
+      "nameEn": "Decoder (Uncommon)",
+      "categoryJa": "デコーダー",
+      "rarity": "Uncommon",
+      "gameIds": ["decoder_1"],
+      "usageJa": [
+        { "text": "他プレイヤーの拠点を襲撃する道具。建物のセキュリティシステムに使うと、その建物に一時的に入れるようになる。所有者がシステムを修理すると締め出される。", "sources": ["kefir-raid"] },
+        { "text": "1個で建物の防御レベルを 1 下げる使い捨て品。防御が 0 になると「完全ハック」となり、建物に限定的に入れる。拠点にはしばらく行動制限（レイドブロック）がかかる。", "sources": ["rri-raid"] },
+        { "text": "建物の中の金庫・檻型の棚はデコーダーでは開かない（マスターキーが必要）。", "sources": ["rri-raid", "wiki-decoder"] },
+        { "text": "3個＋$10,000 でエピックのデコーダー1個と交換できる（下の「物々交換」）。", "sources": ["rri-barter", "rrg-items"] }
+      ],
+      "time": { "text": "1個の設置に 12秒", "sources": ["rri-raid", "wiki-decoder"] },
+      "statsJa": [
+        { "label": "防御を下げる量", "value": "1点", "sources": ["rri-raid", "wiki-decoder"] },
+        { "label": "スタック", "value": "10個", "sources": ["rri-items", "rrg-items"] },
+        { "label": "売値（故買屋）", "value": "$1,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "店では買えない（公式）。ルート品で、2026/11/4 の更新でスタック上限が引き上げられた。", "sources": ["wiki-decoder", "steam-1104"] },
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items"] },
+        { "text": "シーズン1のバトルパス報酬に含まれるという報告もある（ファンサイト4つが一致。必要な段階は食い違い）。", "sources": ["wiki-decoder"] }
+      ],
+      "relatedShipments": ["defense_module_1", "defense_module_2", "defense_module_3", "personal_alarm_1", "clan_alarm_1", "location_alarm_1", "storage_lockpick_1"],
+      "sources": ["kefir-raid", "rri-raid", "rri-barter", "rri-items", "rrg-items", "wiki-decoder", "steam-1104"]
+    },
+    {
+      "id": "decoder-epic",
+      "nameJa": "デコーダー（エピック）",
+      "nameEn": "Decoder (Epic)",
+      "categoryJa": "デコーダー",
+      "rarity": "Epic",
+      "gameIds": ["decoder_2"],
+      "usageJa": [
+        { "text": "アンコモンと同じく他プレイヤーの建物のセキュリティシステムに使う使い捨て品。1個で防御レベルを 3 下げる。", "sources": ["rri-raid", "wiki-decoder"] },
+        { "text": "50個で「立ち退き権」と交換するレシピがあるが、2026/11/17 のパッチで一時的に交換できなくなっている。", "sources": ["steam-1117", "rri-barter", "rrg-items"] }
+      ],
+      "time": { "text": "1個の設置に 12秒（アンコモンと同じ）", "sources": ["rri-raid"] },
+      "statsJa": [
+        { "label": "防御を下げる量", "value": "3点", "sources": ["rri-raid", "wiki-decoder"] },
+        { "label": "スタック", "value": "10個", "sources": ["rri-items", "rrg-items"] },
+        { "label": "売値（故買屋）", "value": "$5,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "物々交換でのみ入手（レニーのモーテルの怪しいドア／Suspicious Door）。レシピは2種類。", "sources": ["rri-items", "rrg-items", "wiki-decoder"] }
+      ],
+      "barter": [
+        {
+          "inputs": [
+            { "nameJa": "デコーダー（アンコモン）", "nameEn": "Decoder", "qty": 3, "toolId": "decoder-uncommon" },
+            { "nameJa": "現金", "nameEn": "Cash", "qty": 10000, "cash": true }
+          ],
+          "outputJa": "デコーダー（エピック）",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items"]
+        },
+        {
+          "inputs": [{ "nameJa": "アクションカメラ（エピック・満タン）", "nameEn": "Action Camera (full)", "qty": 1, "shipmentId": "action_camera_2_cumulative" }],
+          "outputJa": "デコーダー（エピック）",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items"],
+          "noteJa": "アクションカメラ（エピック）は悪名レベルに応じた犯罪行為で 70 ポイント貯めると満タンになる。"
+        }
+      ],
+      "relatedShipments": ["action_camera_2_cumulative", "defense_module_2"],
+      "sources": ["rri-raid", "rri-barter", "rri-items", "rrg-items", "wiki-decoder", "steam-1117", "rri-cumulative"]
+    },
+    {
+      "id": "decoder-legendary",
+      "nameJa": "デコーダー（レジェンダリー）",
+      "nameEn": "Decoder (Legendary)",
+      "categoryJa": "デコーダー",
+      "rarity": "Legendary",
+      "gameIds": ["decoder_3"],
+      "usageJa": [
+        { "text": "他プレイヤーの建物のセキュリティシステムに使う使い捨て品。1個で防御レベルを 5 下げる。", "sources": ["rri-raid"] }
+      ],
+      "time": { "text": "1個の設置に 12秒（デコーダー共通）", "sources": ["rri-raid"] },
+      "statsJa": [
+        { "label": "防御を下げる量", "value": "5点", "sources": ["rri-raid"] },
+        { "label": "スタック", "value": "10個", "sources": ["rri-items", "rrg-items"] },
+        { "label": "売値（故買屋）", "value": "$40,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "robrun.info：マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items"] },
+        { "text": "robrunwiki.app：入手先はファンサイト間で食い違い（3サイトは入手先不明、1サイトはランダムなルート品）。入手方法は未確認として扱う。", "sources": ["wiki-decoder"] }
+      ],
+      "notes": [
+        { "text": "「5点」はファンサイト2つが記載、もう1つは未確認扱い。", "sources": ["wiki-decoder"] }
+      ],
+      "sources": ["rri-raid", "rri-items", "rrg-items", "wiki-decoder"]
+    },
+    {
+      "id": "drill",
+      "nameJa": "ドリル",
+      "nameEn": "Drill",
+      "categoryJa": "ドリル",
+      "rarity": "Legendary",
+      "gameIds": ["drill_1"],
+      "usageJa": [
+        { "text": "Looty Bay の銀行（ダウンタウン）の金庫室の扉を破る道具。金庫室はドリルでしか破れない。", "sources": ["rrg-text", "rri-faq", "rri-items"] },
+        { "text": "破り始めると街全体に知らされる。警官はドリルを没収できる。", "sources": ["rrg-text", "rri-faq"] },
+        { "text": "金庫室の中：貸金庫12個、現金（$10,000）の置き場所6か所、銀行の現金袋（貨物）5個、金庫3個。", "sources": ["rrg-map"] },
+        { "text": "奥の「金の保管庫」にはドリルに加えて IDカード（銀行の金の保管庫）が必要。中には金塊の置き場所が7か所。", "sources": ["rrg-map", "wiki-keys"] }
+      ],
+      "timeNote": "未確認。ゲーム内の説明は「作業にかなり時間がかかり、とてもうるさい」で、秒数を載せた出典は見つからない。",
+      "timeSources": ["rri-items", "rrg-items"],
+      "statsJa": [
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] },
+        { "label": "売値（故買屋）", "value": "$32,800", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "3×2", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "物々交換でのみ入手（レニーのモーテルの怪しいドア）。", "sources": ["rri-items", "rrg-items", "wiki-heists"] }
+      ],
+      "barter": [
+        {
+          "inputs": [
+            { "nameJa": "アクションカメラ（エピック・満タン）", "nameEn": "Action Camera (full)", "qty": 1, "shipmentId": "action_camera_2_cumulative" },
+            { "nameJa": "USBハッキングツール（満タン）", "nameEn": "USB Hacking Tool (full)", "qty": 2, "shipmentId": "usb_1_cumulative" },
+            { "nameJa": "現金", "nameEn": "Cash", "qty": 50000, "cash": true }
+          ],
+          "outputJa": "ドリル",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items", "wiki-heists"],
+          "noteJa": "USBハッキングツールは鍵付き部屋のPCをハッキングして 5 ポイントで満タン（部屋のPC1台で1〜2ポイント）。"
+        }
+      ],
+      "notes": [
+        { "text": "交換に出す品を売った場合の売値と現金の合計：カメラ $100,000 ＋ USB $200,000×2 ＋ 現金 $50,000 ＝ $550,000（本サイトの算出）。", "sources": ["rri-items", "rrg-items"], "derived": true }
+      ],
+      "relatedShipments": ["usb_1_cumulative", "action_camera_2_cumulative", "deposit_box_1_cumulative", "mini_drill_1"],
+      "sources": ["rrg-text", "rri-faq", "rri-items", "rrg-items", "rrg-map", "rri-barter", "wiki-heists", "wiki-keys", "rri-cumulative"]
+    },
+    {
+      "id": "safe-keys",
+      "nameJa": "金庫の鍵（14種）",
+      "nameEn": "Safe Key",
+      "categoryJa": "鍵",
+      "rarity": "Uncommon",
+      "gameIds": ["safe_key_1", "safe_key_2", "safe_key_3", "safe_key_4", "safe_key_5", "safe_key_6", "safe_key_7", "safe_key_8", "safe_key_9", "safe_key_10", "safe_key_11", "safe_key_12", "safe_key_13", "safe_key_14"],
+      "usageJa": [
+        { "text": "鍵で金庫が開けられる（公式）。売ってしまわないよう注意。", "sources": ["steam-1113"] },
+        { "text": "それぞれ決まった建物の金庫1つ専用。鍵の名前で場所が分かる（下表）。", "sources": ["rri-items", "rrg-items"] },
+        { "text": "鍵を拾うとマップ上に対応する場所が表示されるという報告あり（ファンサイト2つ）。", "sources": ["wiki-keys"] }
+      ],
+      "timeNote": "未確認",
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$500（14種とも）", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] }
+      ],
+      "table": {
+        "title": "開けられる金庫",
+        "columns": ["地区", "場所"],
+        "rows": [
+          ["サニービーチ", "ホテル Seasons"],
+          ["サニービーチ", "ホテル Reef"],
+          ["サニービーチ", "コンビニ"],
+          ["サニービーチ", "薬局"],
+          ["サニービーチ", "桟橋のカフェ"],
+          ["サニービーチ", "家電店"],
+          ["ダウンタウン", "コンビニ（北）"],
+          ["ダウンタウン", "コンビニ（中心部）"],
+          ["ダウンタウン", "薬局"],
+          ["ダウンタウン", "カフェ"],
+          ["ダウンタウン", "ガソリンスタンド"],
+          ["ロレインヒルズ", "邸宅（Mansion）"],
+          ["ロレインヒルズ", "コテージの1つ"],
+          ["—", "ストリップクラブ（地区はサイトにより食い違い）"]
+        ],
+        "sources": ["rrg-items", "rri-items", "wiki-keys"]
+      },
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。決まった入手場所は無い。", "sources": ["rri-items", "wiki-keys"] }
+      ],
+      "notes": [
+        { "text": "1回で消費されるかどうかは未確認。ワイプで消える。", "sources": ["wiki-keys"] }
+      ],
+      "relatedShipments": ["mini_drill_1", "tablet_1_cumulative"],
+      "sources": ["steam-1113", "rri-items", "rrg-items", "wiki-keys"]
+    },
+    {
+      "id": "room-keys",
+      "nameJa": "部屋の鍵（13種）",
+      "nameEn": "Room Key",
+      "categoryJa": "鍵",
+      "rarity": "Epic",
+      "gameIds": ["room_key_1", "room_key_2", "room_key_3", "room_key_4", "room_key_5", "room_key_6", "room_key_7", "room_key_8", "room_key_9", "room_key_10", "room_key_11", "room_key_12", "room_key_13"],
+      "usageJa": [
+        { "text": "鍵の掛かった部屋に入るための鍵（公式にルート品として記載）。それぞれ決まった建物の部屋1つ専用。", "sources": ["wiki-keys", "rri-items", "rrg-items"] },
+        { "text": "部屋の中には USBハッキングツール用のPC（1台で1〜2ポイント）、金庫1〜2個（ミニドリルで開ける）、棚などがある。", "sources": ["rrg-map"] }
+      ],
+      "timeNote": "未確認",
+      "statsJa": [
+        { "label": "レアリティ", "value": "エピック（ガソリンスタンド右の部屋・ストリップクラブVIPルームはレジェンダリー）", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] }
+      ],
+      "table": {
+        "title": "開けられる部屋と売値",
+        "columns": ["地区", "場所", "売値"],
+        "rows": [
+          ["サニービーチ", "銃砲店（西）", "$2,250"],
+          ["サニービーチ", "装備品店", "$2,100"],
+          ["サニービーチ", "コンビニ", "$2,880"],
+          ["サニービーチ", "薬局", "$2,570"],
+          ["サニービーチ", "ホテルの1室", "$2,370"],
+          ["サニービーチ", "ストリップクラブの VIP ルーム", "$2,570"],
+          ["ダウンタウン", "銃砲店（東）", "$2,650"],
+          ["ダウンタウン", "装備品店", "$2,250"],
+          ["ダウンタウン", "コンビニ", "$2,350"],
+          ["ダウンタウン", "薬局", "$2,450"],
+          ["ダウンタウン", "ガソリンスタンドの隠し部屋（左）", "$2,700"],
+          ["ダウンタウン", "ガソリンスタンドの隠し部屋（右）", "$5,820"],
+          ["ロレインヒルズ", "コテージの1つ", "$2,340"]
+        ],
+        "sources": ["rrg-items", "rri-items"]
+      },
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items", "wiki-keys"] }
+      ],
+      "notes": [
+        { "text": "ストリップクラブの地区は robrun.info ではサニービーチ。他のサイトでは地区の記載が無い／食い違う。", "sources": ["rri-items", "wiki-keys"] }
+      ],
+      "relatedShipments": ["usb_1_cumulative", "mini_drill_1", "lockpick_1"],
+      "sources": ["wiki-keys", "rri-items", "rrg-items", "rrg-map"]
+    },
+    {
+      "id": "keycards",
+      "nameJa": "キーカード（4種）",
+      "nameEn": "Keycard",
+      "categoryJa": "カード",
+      "rarity": "Legendary",
+      "gameIds": ["vip_key_1", "vip_key_2", "vip_key_3", "vip_key_6"],
+      "usageJa": [
+        { "text": "特別な部屋を開けるカード。部屋の中には USBハッキングツール用のPC（1〜2ポイント）と金庫2〜3個などがある。", "sources": ["rri-items", "rrg-items", "rrg-map"] },
+        { "text": "警察署のキーカードで開くのは鍵付きの部屋で、武器庫ではない（武器庫は IDカード）。", "sources": ["wiki-keys", "rrg-map"] },
+        { "text": "ギャラリーのキーカードは保管室用。BIG EGG #53 の展示ケースはガラスカッターが必要。", "sources": ["wiki-keys", "rri-heists"] }
+      ],
+      "timeNote": "未確認",
+      "table": {
+        "title": "開けられる部屋と売値",
+        "columns": ["場所", "売値"],
+        "rows": [
+          ["グランドホテル（サニービーチ）の秘密の倉庫", "$5,620"],
+          ["警察署の鍵付きの部屋", "$4,620"],
+          ["ロレインヒルズのコテージの部屋", "$5,100"],
+          ["アートギャラリーの保管室", "$4,320"]
+        ],
+        "sources": ["rri-items", "rrg-items"]
+      },
+      "statsJa": [
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items", "wiki-keys"] }
+      ],
+      "relatedShipments": ["usb_1_cumulative", "mini_drill_1"],
+      "sources": ["rri-items", "rrg-items", "rrg-map", "wiki-keys", "rri-heists"]
+    },
+    {
+      "id": "id-card-armory",
+      "nameJa": "IDカード（警察署の武器庫）",
+      "nameEn": "ID Card (Police Armory)",
+      "categoryJa": "カード",
+      "rarity": "Exotic",
+      "gameIds": ["vip_key_4"],
+      "usageJa": [
+        { "text": "警察署の武器庫の扉を開ける。", "sources": ["rri-items", "rrg-items"] },
+        { "text": "武器庫の中：武器箱（貨物）3個、手りゅう弾・ガス弾などの置き場所、現金 $10,000 の置き場所。", "sources": ["rrg-map"] }
+      ],
+      "timeNote": "未確認",
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$7,200", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "物々交換でのみ入手（レニーのモーテルの怪しいドア）。", "sources": ["rri-items", "rrg-items", "wiki-keys"] }
+      ],
+      "barter": [
+        {
+          "inputs": [{ "nameJa": "証拠品", "nameEn": "Evidence", "qty": 20, "toolId": "evidence" }],
+          "outputJa": "IDカード（警察署の武器庫）",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items", "wiki-keys"]
+        }
+      ],
+      "sources": ["rri-items", "rrg-items", "rrg-map", "rri-barter", "wiki-keys"]
+    },
+    {
+      "id": "id-card-gold",
+      "nameJa": "IDカード（銀行の金の保管庫）",
+      "nameEn": "ID Card (Bank Gold Vault)",
+      "categoryJa": "カード",
+      "rarity": "Exotic",
+      "gameIds": ["vip_key_5"],
+      "usageJa": [
+        { "text": "Looty Bay の銀行の「金の保管庫」を開ける。", "sources": ["rri-items", "rrg-items"] },
+        { "text": "保管庫は金庫室の奥にあるため、先にドリルで金庫室の扉を破る必要がある。中には金塊の置き場所が7か所。", "sources": ["rrg-map", "wiki-keys"] }
+      ],
+      "timeNote": "未確認",
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$8,200", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "物々交換でのみ入手（レニーのモーテルの怪しいドア）。", "sources": ["rri-items", "rrg-items", "wiki-keys"] }
+      ],
+      "barter": [
+        {
+          "inputs": [{ "nameJa": "貸金庫キー（満タン）", "nameEn": "Deposit Box Keys (full)", "qty": 1, "shipmentId": "deposit_box_1_cumulative" }],
+          "outputJa": "IDカード（銀行の金の保管庫）",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items", "wiki-keys"],
+          "noteJa": "貸金庫キーは銀行の貸金庫を破って 60 ポイントで満タンになる。"
+        }
+      ],
+      "relatedShipments": ["deposit_box_1_cumulative"],
+      "sources": ["rri-items", "rrg-items", "rrg-map", "rri-barter", "wiki-keys", "rri-cumulative"]
+    },
+    {
+      "id": "yacht-key",
+      "nameJa": "ヨットの鍵",
+      "nameEn": "Yacht Key",
+      "categoryJa": "鍵",
+      "rarity": "Exotic",
+      "gameIds": ["yacht_key_1"],
+      "usageJa": [
+        { "text": "開けられる扉は無く、売るための貴重品（説明文：自分ではヨットを盗めないが、盗める者が大金を払う）。", "sources": ["rri-items", "rrg-items", "wiki-keys"] }
+      ],
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$2,000,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×2", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items"] }
+      ],
+      "sources": ["rri-items", "rrg-items", "wiki-keys"]
+    },
+    {
+      "id": "jammer",
+      "nameJa": "ジャマー",
+      "nameEn": "Jammer",
+      "categoryJa": "その他",
+      "rarity": "Exotic",
+      "gameIds": ["auto_flipper_1"],
+      "usageJa": [
+        { "text": "グランドホテルに展示されている車 Buletti を盗むのに必要（公式）。", "sources": ["steam-1113"] },
+        { "text": "手順：ジャマーを持って展示車に近づき、設置してアクセスが取れるまで待ち、車を持ち出す。警官にジャマーを没収されると失敗する。", "sources": ["rri-heists", "rrg-text"] },
+        { "text": "盗んだ Buletti Soltempra はワイプまで自分のものになり、スキンは永久に残る。", "sources": ["rri-heists", "rri-items"] },
+        { "text": "Buletti は研究して購入することもできる（Shipments の項目を参照）。", "sources": ["rri-heists", "shipments-data"] }
+      ],
+      "timeNote": "未確認。ゲーム内の説明は「静かに素早く作動する」で、秒数の出典は無い。",
+      "timeSources": ["rri-items", "rrg-items"],
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$64,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] },
+        { "label": "サイズ", "value": "1×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "robrun.info：ごく低い確率で見つかる。確率を上げるには悪名レベルを最大にする必要がある。", "sources": ["rri-items", "rri-faq"] },
+        { "text": "robrunwiki.app：入手先を書いているサイトは無い、としている（食い違い）。", "sources": ["wiki-heists"] }
+      ],
+      "notes": [
+        { "text": "公式も、ジャマーなどを用途を知らずに売ってしまう問題を認めている。故買屋で売る前に確認を。", "sources": ["steam-1113"] }
+      ],
+      "relatedShipments": ["buletti_soltempra"],
+      "sources": ["steam-1113", "rri-heists", "rri-items", "rri-faq", "rrg-items", "rrg-text", "wiki-heists", "shipments-data"]
+    },
+    {
+      "id": "glass-cutter",
+      "nameJa": "ガラスカッター",
+      "nameEn": "Glass Cutter",
+      "categoryJa": "その他",
+      "rarity": "Legendary",
+      "gameIds": ["glass_cutter_1"],
+      "usageJa": [
+        { "text": "アートギャラリーの展示品 BIG EGG #53 のガラスケースを開ける道具。", "sources": ["rri-items", "rrg-items", "rri-heists"] },
+        { "text": "BIG EGG #53 は街の外の故買屋で売る。売値 $550,000。", "sources": ["rri-heists", "rrg-items"] },
+        { "text": "1回で使い切り、警官に没収されることがある（ファンサイト3つ）。", "sources": ["wiki-heists", "rrg-text"] }
+      ],
+      "timeNote": "未確認。公式は 2026/11/4 に「卵を破る時間を短縮した」と発表したが、秒数は出ていない。",
+      "timeSources": ["steam-1104"],
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$20,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "スタック", "value": "1個", "sources": ["rrg-items"] },
+        { "label": "サイズ", "value": "2×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "コードタブレットとの物々交換でのみ入手（公式も「タブレットと交換」と説明。2026/11/4 に必要数が増えた）。", "sources": ["steam-1104", "rri-items", "rrg-items"] }
+      ],
+      "barter": [
+        {
+          "inputs": [{ "nameJa": "コードタブレット（満タン）", "nameEn": "Code Tablet (full)", "qty": 3, "shipmentId": "tablet_1_cumulative" }],
+          "outputJa": "ガラスカッター",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items", "wiki-heists"],
+          "noteJa": "コードタブレットは Looty Bay で金庫を開けて 4 ポイントで満タン。満タンでないものは使えない。"
+        }
+      ],
+      "notes": [
+        { "text": "タブレット3個をそのまま売ると $75,000×3 ＝ $225,000（本サイトの算出）。", "sources": ["rri-items", "rrg-items"], "derived": true }
+      ],
+      "relatedShipments": ["tablet_1_cumulative"],
+      "sources": ["rri-items", "rrg-items", "rri-heists", "rri-barter", "steam-1104", "wiki-heists", "rrg-text", "rri-cumulative"]
+    },
+    {
+      "id": "bolt-cutter",
+      "nameJa": "ボルトカッター（2種）",
+      "nameEn": "Bolt Cutter",
+      "categoryJa": "その他",
+      "rarity": "Uncommon",
+      "gameIds": ["bolt_cutter", "super_bolt_cutter"],
+      "usageJa": [
+        { "text": "ゲーム内の説明：居住地（settlement）の送電線を切るのに使える。切った後の効果は未確認。", "sources": ["rri-items", "rrg-items"] },
+        { "text": "robrunwiki.app は「南京錠やフェンスを切る」と記載しており、説明文と食い違う。", "sources": ["wiki-items"] }
+      ],
+      "timeNote": "未確認",
+      "table": {
+        "title": "種類",
+        "columns": ["レアリティ", "入手", "売値"],
+        "rows": [
+          ["アンコモン", "取引用ノートPC（ティアII）で購入", "$1,200"],
+          ["レジェンダリー", "取引用ノートPC（ティアIII）で購入", "$8,000"]
+        ],
+        "sources": ["rri-items", "rrg-items"]
+      },
+      "obtainJa": [
+        { "text": "取引用ノートPCで購入（購入価格は未確認）。", "sources": ["rri-items"] }
+      ],
+      "sources": ["rri-items", "rrg-items", "wiki-items"]
+    },
+    {
+      "id": "lottery",
+      "nameJa": "宝くじ",
+      "nameEn": "Lottery Ticket",
+      "categoryJa": "その他",
+      "rarity": "Uncommon",
+      "gameIds": ["lottery_ticket_1", "lottery_ticket_low_1", "lottery_ticket_medium_1", "lottery_ticket_high_1", "lottery_ticket_jackpot_1"],
+      "usageJa": [
+        { "text": "大当たりすることがある（公式）。うっかり売らないように。", "sources": ["steam-1113"] },
+        { "text": "使い方：宝くじを左クリックして「使う」を選び、券に書かれた金額で故買屋に売る。", "sources": ["rri-faq"] },
+        { "text": "当選金額ごとの確率は未確認。", "sources": ["rri-faq"] }
+      ],
+      "table": {
+        "title": "宝くじの種類と売値",
+        "columns": ["種類", "レアリティ", "売値"],
+        "rows": [
+          ["未使用の宝くじ（消耗品）", "アンコモン", "$40"],
+          ["売却用の券", "コモン", "$1"],
+          ["売却用の券", "エピック", "$10,000"],
+          ["売却用の券", "レジェンダリー", "$250,000"],
+          ["売却用の券", "エキゾチック", "$1,000,000"]
+        ],
+        "sources": ["rri-items", "rrg-items"]
+      },
+      "statsJa": [
+        { "label": "スタック", "value": "1枚", "sources": ["rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items"] }
+      ],
+      "sources": ["steam-1113", "rri-faq", "rri-items", "rrg-items"]
+    },
+    {
+      "id": "eviction-right",
+      "nameJa": "立ち退き権",
+      "nameEn": "Eviction Right",
+      "categoryJa": "その他",
+      "rarity": "Exotic",
+      "gameIds": ["evict_plot_1"],
+      "usageJa": [
+        { "text": "他プレイヤーを土地から立ち退かせ、その上の資産を失わせる書類。一部は自分のものにできる。", "sources": ["rri-items", "rri-raid"] },
+        { "text": "使うには、相手の拠点のセキュリティシステムを全部完全ハックしたうえで、土地の図面（Plot Plan）に使う。", "sources": ["rri-items", "rrg-items", "wiki-decoder"] }
+      ],
+      "statsJa": [
+        { "label": "売値（故買屋）", "value": "$4,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×2", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "2026/11/17 のパッチで物々交換から一時的に外された（公式）。現在の入手方法は未確認。", "sources": ["steam-1117", "wiki-decoder"] }
+      ],
+      "barter": [
+        {
+          "inputs": [{ "nameJa": "デコーダー（エピック）", "nameEn": "Decoder", "qty": 50, "toolId": "decoder-epic" }],
+          "outputJa": "立ち退き権",
+          "qty": 1,
+          "sources": ["rri-barter", "rrg-items"],
+          "disabled": true,
+          "noteJa": "現在は交換不可（2026/11/17〜）。ゲームファイル上のレシピとして残っている。"
+        }
+      ],
+      "sources": ["rri-items", "rri-raid", "rrg-items", "wiki-decoder", "steam-1117", "rri-barter"]
+    },
+    {
+      "id": "evidence",
+      "nameJa": "証拠品",
+      "nameEn": "Evidence",
+      "categoryJa": "その他",
+      "rarity": "Epic",
+      "gameIds": ["police_evidence_1"],
+      "usageJa": [
+        { "text": "20個で IDカード（警察署の武器庫）と交換できる。", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "statsJa": [
+        { "label": "スタック", "value": "10個", "sources": ["rri-items", "rrg-items"] },
+        { "label": "売値（故買屋）", "value": "$4,000", "sources": ["rri-items", "rrg-items"] },
+        { "label": "サイズ", "value": "2×1", "sources": ["rri-items", "rrg-items"] }
+      ],
+      "obtainJa": [
+        { "text": "マップ上の金庫・棚などを探すと一定確率で見つかる。", "sources": ["rri-items", "wiki-keys"] }
+      ],
+      "sources": ["rri-items", "rrg-items", "wiki-keys"]
+    }
+  ],
+  "buildings": {
+    "title": "建物ごとの防御と必要デコーダー数",
+    "sources": ["rri-raid"],
+    "noteJa": "防御＝建物の基本防御＋差したヒューズの合計（アンコモン+1／エピック+3／レジェンダリー+5）。必要数＝防御÷デコーダー1個の値（切り上げ）。ハックされてもヒューズは壊れず、修理すると防御が戻る。農場のフェンスはハックできない。",
+    "rows": [
+      { "shipmentId": "home_1", "base": 5, "slots": 9 },
+      { "shipmentId": "home_2", "base": 15, "slots": 27 },
+      { "nameJa": "邸宅", "nameEn": "Mansion", "base": 30, "slots": 42, "sources": ["wiki-decoder"] },
+      { "shipmentId": "car_garage_1", "base": 4, "slots": 6 },
+      { "shipmentId": "car_garage_2", "base": 6, "slots": 12 },
+      { "shipmentId": "storage_building_1", "base": 10, "slots": 15 },
+      { "shipmentId": "workshop_building_1", "base": 5, "slots": 9 },
+      { "shipmentId": "narco_farm_1", "base": 5, "slots": 9 },
+      { "shipmentId": "meth_lab_1", "base": 3, "slots": 6 },
+      { "shipmentId": "wall_2", "base": 2, "slots": 3 },
+      { "shipmentId": "wall_3", "base": 5, "slots": 6 },
+      { "shipmentId": "wall_4", "base": 10, "slots": 9 }
+    ]
+  },
+  "relatedShipmentNotes": [
+    { "id": "lockpick_1", "noteJa": "ドアやコンテナを警報を鳴らさずに開けられる。他人の車のトランクも開く。", "sources": ["rri-faq", "shipments-data"] },
+    { "id": "storage_lockpick_1", "noteJa": "他プレイヤーの拠点の金庫・檻型の棚を開ける（デコーダーでは開かない）。", "sources": ["rri-raid", "rri-faq"] },
+    { "id": "mini_drill_1", "noteJa": "鍵付きの部屋の中などにある金庫を開ける。持っていないと開けられない。", "sources": ["rrg-map", "rrg-text"] },
+    { "id": "deposit_box_1_cumulative", "noteJa": "銀行の貸金庫を破って 60 ポイントで満タン → IDカード（銀行の金の保管庫）と交換。", "sources": ["rri-cumulative", "rri-barter"] },
+    { "id": "usb_1_cumulative", "noteJa": "鍵付き部屋のPCをハッキングして 5 ポイントで満タン → 2個（＋カメラ・現金）でドリルと交換。", "sources": ["rri-cumulative", "rri-barter"] },
+    { "id": "tablet_1_cumulative", "noteJa": "Looty Bay の金庫を開けて 4 ポイントで満タン → 3個でガラスカッターと交換。", "sources": ["rri-cumulative", "rri-barter"] },
+    { "id": "action_camera_2_cumulative", "noteJa": "犯罪行為で 70 ポイント貯めて満タン → デコーダー（エピック）またはドリルの材料。", "sources": ["rri-cumulative", "rri-barter"] },
+    { "id": "defense_module_3", "noteJa": "防御 +5 のヒューズ。エピックのヒューズ1個＋$250,000 との物々交換でも手に入る。", "sources": ["rri-raid", "rri-barter"] },
+    { "id": "police_badge_2", "noteJa": "巡査部長バッジ15個との物々交換でも手に入る。", "sources": ["rri-barter"] }
+  ]
+}
