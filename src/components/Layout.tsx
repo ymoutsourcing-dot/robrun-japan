@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ListChecks, Menu, X } from "lucide-react";
+import { items } from "../lib/data";
+import { useProgress } from "../store/progress";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 const NAV = [
@@ -14,6 +16,23 @@ const NAV = [
   { to: "/progress", label: "進捗" },
   { to: "/about", label: "データについて" },
 ];
+
+/** どのページからでも研究進捗に戻れるボタン（研究進捗ページ・研究ツリーでは非表示） */
+function ProgressButton() {
+  const done = useProgress((s) => s.researched.length);
+  return (
+    <Link
+      to="/progress"
+      className="fixed bottom-4 right-4 z-40 flex items-center gap-1.5 rounded-full border border-neon/60 bg-bg-panel/95 px-3 py-2 text-sm text-neon shadow-lg shadow-black/40 backdrop-blur hover:bg-neon/10"
+    >
+      <ListChecks size={16} />
+      研究進捗
+      <span className="font-mono text-xs text-white">
+        {done}/{items.length}
+      </span>
+    </Link>
+  );
+}
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
@@ -51,7 +70,8 @@ export default function Layout() {
           </nav>
         )}
       </header>
-      <main className="flex-1">
+      {pathname !== "/progress" && pathname !== "/shipments" && <ProgressButton />}
+      <main className={`flex-1 ${pathname !== "/shipments" ? "pb-16" : ""}`}>
         <ErrorBoundary resetKey={pathname}>
           <Outlet />
         </ErrorBoundary>

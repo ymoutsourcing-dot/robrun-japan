@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
+import { AccordionProvider, AccPanel, useAccordion } from "../components/Accordion";
 import { Info, Lock } from "lucide-react";
 import type { ShipmentItem } from "../types/shipment";
 import { ancestorsOf, categories, computeCost, descendantCount, displayNameEn, displayNameJa, getItem, items } from "../lib/data";
@@ -7,17 +9,79 @@ import { CategoryIcon, ItemIcon, Section, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 function ItemRow({ it, right }: { it: ShipmentItem; right?: React.ReactNode }) {
+  const { isOpen, toggle } = useAccordion();
+  const open = isOpen(it.id);
   return (
     <li>
-      <Link to={`/shipments/${it.id}`} className="flex items-center gap-2 rounded-md px-1 py-1.5 hover:bg-bg-hover">
+      <button
+        type="button"
+        onClick={() => toggle(it.id)}
+        aria-expanded={open}
+        className={`group flex w-full items-center gap-2 rounded-md px-1 py-1.5 text-left hover:bg-bg-hover ${open ? "bg-bg-hover" : ""}`}
+      >
         <ItemIcon item={it} size={14} />
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-sm font-bold">{displayNameJa(it)}</span>
+          <span className={`block truncate text-sm font-bold group-hover:text-neon ${open ? "text-neon" : ""}`}>{displayNameJa(it)}</span>
           <span className="block truncate font-mono text-[11px] text-gray-300">{displayNameEn(it)}</span>
         </span>
         <TierBadge level={it.requiredSettlementLevel} />
         <span className="shrink-0 text-right font-mono text-sm text-money">{right ?? money(it.researchCost)}</span>
-      </Link>
+        <ChevronDown size={14} className={`shrink-0 text-muted transition-transform ${open ? "rotate-180 text-neon" : ""}`} />
+      </button>
+      <AccPanel id={it.id} />
+    </li>
+  );
+}
+
+/** 主要な目標：開くと研究ルート（順番と費用）とアイテムの要約 */
+function MilestoneRow({ id, label }: { id: string; label: string }) {
+  const { isOpen, toggle } = useAccordion();
+  const it = getItem(id);
+  if (!it) return null;
+  const c = computeCost([id], new Set());
+  const open = isOpen(`m:${id}`);
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={() => toggle(`m:${id}`)}
+        aria-expanded={open}
+        className={`group flex w-full flex-wrap items-center gap-x-3 gap-y-0.5 px-1 py-2 text-left hover:bg-bg-hover ${open ? "bg-bg-hover" : ""}`}
+      >
+        <ItemIcon item={it} size={14} />
+        <span className="min-w-0 flex-1">
+          <span className={`block text-sm font-bold group-hover:text-neon ${open ? "text-neon" : ""}`}>{label}</span>
+          <span className="block text-xs text-muted">
+            {displayNameJa(it)}・{c.pending.length} 段階
+            {c.maxImprisonmentYears > 0 && (
+              <span className="ml-1 text-danger">
+                <Lock size={10} className="inline" /> 服役{c.maxImprisonmentYears}年
+              </span>
+            )}
+          </span>
+        </span>
+        <TierBadge level={c.maxSettlementLevel} />
+        <span className="font-mono text-money">{money(c.researchTotal)}</span>
+        <ChevronDown size={14} className={`shrink-0 text-muted transition-transform ${open ? "rotate-180 text-neon" : ""}`} />
+      </button>
+      {open && (
+        <div className="my-1 border-l-2 border-neon/60 bg-bg p-3">
+          <p className="mb-1 text-xs font-bold text-neon">研究する順番</p>
+          <ol className="mb-2 space-y-0.5 text-sm">
+            {c.pending.map((p, i) => (
+              <li key={p.id} className="flex items-center gap-2">
+                <span className="w-5 text-right font-mono text-xs text-muted">{i + 1}.</span>
+                <span className="flex-1">{displayNameJa(p)}</span>
+                <TierBadge level={p.requiredSettlementLevel} />
+                <span className="w-24 text-right font-mono text-money">{money(p.researchCost)}</span>
+              </li>
+            ))}
+          </ol>
+          <Link to={`/calculator?targets=${id}`} className="text-xs text-sky-300 hover:underline">
+            費用計算機で開く（研究済みを除いて計算）→
+          </Link>
+        </div>
+      )}
     </li>
   );
 }
@@ -36,7 +100,6 @@ const MILESTONES: { id: string; label: string }[] = [
 
 export default function RecommendedPage() {
   useDocumentTitle("おすすめ研究・研究ルート", "ROB RUN の Shipments を進める順番の目安。無料・低コストで始められる研究、派生の多い研究、主要目標までの総研究費をデータから算出。");
-  const empty = new Set<string>();
 
   const starters = items
     .filter((i) => i.prerequisites.length === 0)
@@ -49,6 +112,7 @@ export default function RecommendedPage() {
   const gated = items.filter((i) => i.requiredImprisonmentYears > 0).sort((a, b) => a.requiredImprisonmentYears - b.requiredImprisonmentYears);
 
   return (
+    <AccordionProvider>
     <div className="mx-auto max-w-5xl space-y-4 px-3 py-4 sm:px-4">
       <div>
         <h1 className="text-2xl font-bold">おすすめ研究・研究ルート</h1>
@@ -63,31 +127,9 @@ export default function RecommendedPage() {
 
       <Section title="主要な目標までの総研究費（ゼロから・前提込み）">
         <ul className="divide-y divide-line/60">
-          {MILESTONES.map((m) => {
-            const it = getItem(m.id);
-            if (!it) return null;
-            const c = computeCost([m.id], empty);
-            return (
-              <li key={m.id}>
-                <Link to={`/calculator?targets=${m.id}`} className="flex flex-wrap items-center gap-x-3 gap-y-0.5 px-1 py-2 hover:bg-bg-hover">
-                  <ItemIcon item={it} size={14} />
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-bold">{m.label}</span>
-                    <span className="block text-xs text-muted">
-                      {displayNameJa(it)}・{c.pending.length} 段階
-                      {c.maxImprisonmentYears > 0 && (
-                        <span className="ml-1 text-danger">
-                          <Lock size={10} className="inline" /> 服役{c.maxImprisonmentYears}年
-                        </span>
-                      )}
-                    </span>
-                  </span>
-                  <TierBadge level={c.maxSettlementLevel} />
-                  <span className="font-mono text-money">{money(c.researchTotal)}</span>
-                </Link>
-              </li>
-            );
-          })}
+          {MILESTONES.map((m) => (
+            <MilestoneRow key={m.id} id={m.id} label={m.label} />
+          ))}
         </ul>
       </Section>
 
@@ -146,5 +188,6 @@ export default function RecommendedPage() {
         </ul>
       </Section>
     </div>
+    </AccordionProvider>
   );
 }

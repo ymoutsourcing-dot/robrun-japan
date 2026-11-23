@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Fragment, useState } from "react";
 import { Info, Lock } from "lucide-react";
 import { equipment } from "../lib/equipment";
-import { displayNameJa, getItem, items } from "../lib/data";
+import { getItem, items } from "../lib/data";
 import { money } from "../lib/format";
 import { SpecTable, type SpecColumn } from "../components/SpecTable";
-import { ItemIcon, Section, TierBadge } from "../components/ui";
+import { Section, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { ItemSummary, PlainSummary } from "../components/ItemSummary";
+import { AccName, AccordionProvider, AccPanel } from "../components/Accordion";
 import type { Vehicle } from "../types/equipment";
 
 const columns: SpecColumn<Vehicle>[] = [
@@ -46,6 +46,7 @@ export default function VehiclesPage() {
   const [showPolice, setShowPolice] = useState(true);
   const rows = equipment.vehicles.filter((v) => showPolice || !v.police);
   return (
+    <AccordionProvider>
     <div className="mx-auto max-w-7xl space-y-4 px-3 py-4 sm:px-4">
       <div>
         <h1 className="text-2xl font-bold">車両一覧</h1>
@@ -99,15 +100,10 @@ export default function VehiclesPage() {
             </thead>
             <tbody className="divide-y divide-line/60">
               {mods.map((m) => (
-                <tr key={m.id}>
+                <Fragment key={m.id}>
+                <tr>
                   <td className="p-1.5">
-                    <Link to={`/shipments/${m.id}`} className="flex items-center gap-2 hover:underline">
-                      <ItemIcon item={m} size={13} />
-                      <span>
-                        <span className="block font-bold">{displayNameJa(m)}</span>
-                        <span className="block font-mono text-[11px] text-gray-300">{m.nameEn}</span>
-                      </span>
-                    </Link>
+                    <AccName id={m.id} icon className="w-full max-w-[16rem]" />
                   </td>
                   <td className="p-1.5">{stat(m.id, "Attribute") ?? <span className="text-muted">—</span>}</td>
                   <td className="p-1.5">{stat(m.id, "Strength") ?? <span className="text-muted">—</span>}</td>
@@ -123,6 +119,8 @@ export default function VehiclesPage() {
                     )}
                   </td>
                 </tr>
+                <AccPanel id={m.id} colSpan={6} />
+                </Fragment>
               ))}
             </tbody>
           </table>
@@ -135,20 +133,18 @@ export default function VehiclesPage() {
             const it = getItem(id);
             if (!it) return null;
             return (
-              <li key={id}>
-                <Link to={`/shipments/${id}`} className="flex items-center gap-2 rounded-md border border-line bg-bg-card p-2 hover:border-neon">
-                  <ItemIcon item={it} size={14} />
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-bold">{displayNameJa(it)}</span>
-                    <span className="block truncate text-xs text-muted">{it.descriptionJa}</span>
-                  </span>
+              <li key={id} className="rounded-md border border-line bg-bg-card p-2">
+                <div className="flex items-center gap-2">
+                  <AccName id={id} icon className="flex-1" />
                   <span className="font-mono text-xs text-money">{money(it.researchCost)}</span>
-                </Link>
+                </div>
+                <AccPanel id={id} />
               </li>
             );
           })}
         </ul>
       </Section>
     </div>
+    </AccordionProvider>
   );
 }

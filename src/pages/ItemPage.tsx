@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ChevronLeft, GitBranch } from "lucide-react";
+import { ChevronLeft, GitBranch, ListChecks } from "lucide-react";
 import { displayNameEn, displayNameJa, getItem } from "../lib/data";
 import { ItemDetail } from "../components/ItemDetail";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -20,9 +20,14 @@ export default function ItemPage() {
         <button onClick={() => navigate(-1)} className="flex items-center gap-1 text-muted hover:text-white">
           <ChevronLeft size={16} /> 戻る
         </button>
-        <Link to={`/shipments?item=${item.id}`} className="flex items-center gap-1 text-neon hover:underline">
-          <GitBranch size={14} /> ツリーで見る
-        </Link>
+        <span className="flex items-center gap-3">
+          <Link to="/progress" className="flex items-center gap-1 text-muted hover:text-white">
+            <ListChecks size={14} /> 研究進捗
+          </Link>
+          <Link to={`/shipments?item=${item.id}`} className="flex items-center gap-1 text-neon hover:underline">
+            <GitBranch size={14} /> ツリーで見る
+          </Link>
+        </span>
       </nav>
       <div className="rounded-xl border border-line bg-bg-panel p-4">
         <ItemDetail item={item} onSelect={(next) => navigate(`/shipments/${next}`)} />

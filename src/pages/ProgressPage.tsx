@@ -1,11 +1,42 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { AccordionProvider, AccPanel, useAccordion } from "../components/Accordion";
 import { Download, Upload, RotateCcw } from "lucide-react";
 import { categories, displayNameJa, getItem, items } from "../lib/data";
 import { exportProgress, useProgress } from "../store/progress";
 import { CategoryIcon, Section } from "../components/ui";
 import { ProgressBar } from "../components/ProgressBar";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+
+/** 研究予定・お気に入りのチップ（クリックでその場に詳細を開く） */
+function List({ ids, empty }: { ids: string[]; empty: string }) {
+  const { isOpen, toggle } = useAccordion();
+  if (!ids.length) return <p className="text-sm text-muted">{empty}</p>;
+  return (
+    <>
+      <ul className="flex flex-wrap gap-1.5">
+        {ids.map((id) => {
+          const it = getItem(id);
+          return it ? (
+            <li key={id}>
+              <button
+                type="button"
+                onClick={() => toggle(id)}
+                aria-expanded={isOpen(id)}
+                className={`inline-block rounded border px-2 py-0.5 text-sm hover:border-neon ${isOpen(id) ? "border-neon text-neon" : "border-line"}`}
+              >
+                {displayNameJa(it)}
+              </button>
+            </li>
+          ) : null;
+        })}
+      </ul>
+      {ids.map((id) => (
+        <AccPanel key={id} id={id} />
+      ))}
+    </>
+  );
+}
 
 export default function ProgressPage() {
   useDocumentTitle("研究進捗の管理");
@@ -36,31 +67,14 @@ export default function ProgressPage() {
     }
   };
 
-  const List = ({ ids, empty }: { ids: string[]; empty: string }) =>
-    ids.length ? (
-      <ul className="flex flex-wrap gap-1.5">
-        {ids.map((id) => {
-          const it = getItem(id);
-          return it ? (
-            <li key={id}>
-              <Link to={`/shipments/${id}`} className="inline-block rounded border border-line px-2 py-0.5 text-sm hover:border-neon">
-                {displayNameJa(it)}
-              </Link>
-            </li>
-          ) : null;
-        })}
-      </ul>
-    ) : (
-      <p className="text-sm text-muted">{empty}</p>
-    );
-
   return (
+    <AccordionProvider>
     <div className="mx-auto max-w-4xl space-y-4 px-3 py-4 sm:px-4">
       <h1 className="text-2xl font-bold">研究進捗の管理</h1>
       <p className="text-sm text-muted">進捗はこのブラウザ（LocalStorage）にのみ保存されます。別の端末へ移すにはエクスポート／インポートを使ってください。</p>
 
       <Section title="全体の進捗">
-        <ProgressBar />
+        <ProgressBar link={false} />
         <div className="mt-4 grid gap-2 sm:grid-cols-2">
           {categories.map((c) => {
             const catItems = items.filter((i) => i.category === c.id);
@@ -111,5 +125,6 @@ export default function ProgressPage() {
         {msg && <p className="mt-2 text-sm text-neon">{msg}</p>}
       </Section>
     </div>
+    </AccordionProvider>
   );
 }

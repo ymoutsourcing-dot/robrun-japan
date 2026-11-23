@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { AccName, AccordionProvider, AccPanel } from "../Accordion";
 import { AlertTriangle, Clock } from "lucide-react";
-import { displayNameJa, getItem } from "../../lib/data";
+import { getItem } from "../../lib/data";
 import { productionGuide as g } from "../../lib/guides";
 import { money, RARITY_JA } from "../../lib/format";
 import { Section } from "../ui";
@@ -23,12 +24,7 @@ const min = (sec: number) => `${Math.floor(sec / 60)}分${Math.round(sec % 60) ?
 const hours = (h: number) => (h < 1 ? `${Math.ceil(h * 60)}分` : `${Math.round(h * 10) / 10}時間`);
 
 function Name({ id }: { id: string }) {
-  const it = getItem(id);
-  return (
-    <Link to={`/shipments/${id}`} className="font-bold hover:underline">
-      {it ? displayNameJa(it) : id}
-    </Link>
-  );
+  return <AccName id={id} showEn={false} />;
 }
 
 function RarityPicker({ value, onChange }: { value: Rarity; onChange: (r: Rarity) => void }) {
@@ -120,7 +116,8 @@ function Plantation({ mode }: { mode: SpeedMode }) {
               const cost = research + unit * tables;
               const gain = perHarvest * 3600 * (1 / timeWith(baseSec, u.speed, mode) - 1 / baseSec); // 単体で付けた場合の増加
               return (
-                <tr key={u.id}>
+                <Fragment key={u.id}>
+                <tr>
                   <td className="p-1.5">
                     <input type="checkbox" checked={!!on[u.id]} onChange={(e) => setOn({ ...on, [u.id]: e.target.checked })} className="accent-[#5cff8a]" />
                   </td>
@@ -137,6 +134,8 @@ function Plantation({ mode }: { mode: SpeedMode }) {
                   <td className="p-1.5 text-right font-mono text-money">+{money(Math.round(gain))}</td>
                   <td className="p-1.5 text-right font-mono">{gain > 0 ? hours(cost / gain) : "—"}</td>
                 </tr>
+                <AccPanel id={u.id} colSpan={6} />
+                </Fragment>
               );
             })}
           </tbody>
@@ -203,7 +202,8 @@ function Freezer({ mode }: { mode: SpeedMode }) {
               const c = ownResearch(u.id) + (getItem(u.id)?.purchaseCost ?? 0);
               const gain = perBatch * 3600 * (1 / timeWith(baseSec, u.speed, mode) - 1 / baseSec);
               return (
-                <tr key={u.id}>
+                <Fragment key={u.id}>
+                <tr>
                   <td className="p-1.5">
                     <input type="checkbox" checked={!!on[u.id]} onChange={(e) => setOn({ ...on, [u.id]: e.target.checked })} className="accent-[#5cff8a]" />
                   </td>
@@ -215,6 +215,8 @@ function Freezer({ mode }: { mode: SpeedMode }) {
                   <td className="p-1.5 text-right font-mono text-money">+{money(Math.round(gain))}</td>
                   <td className="p-1.5 text-right font-mono">{hours(c / gain)}</td>
                 </tr>
+                <AccPanel id={u.id} colSpan={6} />
+                </Fragment>
               );
             })}
             {F.levels.slice(1).map((l, i) => {
@@ -222,7 +224,8 @@ function Freezer({ mode }: { mode: SpeedMode }) {
               const prev = F.levels[i].slots;
               const gain = (add * (l.slots - F.levels[0].slots) * 3600) / baseSec;
               return (
-                <tr key={l.id}>
+                <Fragment key={l.id}>
+                <tr>
                   <td className="p-1.5 text-xs text-muted">—</td>
                   <td className="p-1.5">
                     <Name id={l.id} />
@@ -234,6 +237,8 @@ function Freezer({ mode }: { mode: SpeedMode }) {
                   <td className="p-1.5 text-right font-mono text-money">+{money(Math.round(gain))}</td>
                   <td className="p-1.5 text-right font-mono">{hours(c / gain)}</td>
                 </tr>
+                <AccPanel id={l.id} colSpan={6} />
+                </Fragment>
               );
             })}
           </tbody>
@@ -281,7 +286,8 @@ function Reactor() {
               const perHour = (l.cycles * 3600) / total;
               const c = ownResearch(l.id) + (getItem(l.id)?.purchaseCost ?? 0);
               return (
-                <tr key={l.id}>
+                <Fragment key={l.id}>
+                <tr>
                   <td className="p-1.5">
                     <Name id={l.id} />
                   </td>
@@ -294,6 +300,8 @@ function Reactor() {
                   <td className="p-1.5 text-right font-mono text-money">{money(Math.round(perHour * conc))}</td>
                   <td className="p-1.5 text-right font-mono">{money(c)}</td>
                 </tr>
+                <AccPanel id={l.id} colSpan={7} />
+                </Fragment>
               );
             })}
           </tbody>
@@ -338,7 +346,8 @@ function Reactor() {
               const ev = (chance / 100) * diff;
               const n = c === null ? null : Math.ceil(c / ev);
               return (
-                <tr key={q.id}>
+                <Fragment key={q.id}>
+                <tr>
                   <td className="p-1.5">
                     <Name id={q.id} />
                   </td>
@@ -351,6 +360,8 @@ function Reactor() {
                   <td className="p-1.5 text-right font-mono">{n === null ? "—" : `${n}個`}</td>
                   <td className="p-1.5 text-right font-mono">{n === null ? "—" : hours(n / M.freezer.levels[0].slots)}</td>
                 </tr>
+                <AccPanel id={q.id} colSpan={6} />
+                </Fragment>
               );
             })}
           </tbody>
@@ -455,6 +466,9 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
         </div>
       </div>
 
+      {["cargo_production_workbench_upgrade_engine_1", ...F.upgrades.map((u) => u.id)].map((id) => (
+        <AccPanel key={id} id={id} />
+      ))}
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
         <Stat label="反応炉：濃縮液/時（仮定）" value={`${Math.round(concPerHour * 10) / 10}個`} sub={`1回 ${min(reactorSec)}・試薬1つで${rl.cycles}個`} />
         <Stat label="冷凍庫：処理できる数/時" value={`${Math.round(freezeCap * 10) / 10}個`} sub={`1回 ${min(freezeSec)}・${F.levels[freezer].slots}枠`} />
@@ -485,7 +499,7 @@ function LabTotal({ mode }: { mode: SpeedMode }) {
 export default function ProductionExtras() {
   const [mode, setMode] = useState<SpeedMode>("reduce");
   return (
-    <>
+    <AccordionProvider>
       <div className="flex gap-2 rounded-lg border border-money/50 bg-money/5 p-3 text-sm">
         <AlertTriangle size={18} className="mt-0.5 shrink-0 text-money" />
         <p>
@@ -522,6 +536,6 @@ export default function ProductionExtras() {
       <p className="text-xs text-muted">
         設備一式の初期費用は「<Link to="/guides/money" className="underline">金策の比較</Link>」ガイドを参照。
       </p>
-    </>
+    </AccordionProvider>
   );
 }
