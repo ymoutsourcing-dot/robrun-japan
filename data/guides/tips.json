@@ -1,0 +1,3660 @@
+{
+  "updatedAt": "2026-11-23",
+  "gameBuild": "26586703",
+  "priceNote": "金額は Rob Run Guide に載っている故買屋への売値（1個あたり・悪名レベル1・ゲームファイルの参考値、build 26586703）。積荷は robrun.info の密輸業者への売値。実際の値段はサーバーや更新で変わることがある。",
+  "eventRules": [
+    {
+      "text": "Looty Bay に滞在中、ときどき街のイベントが始まる。参加できるのは犯罪者（マスク着用）だけ。",
+      "sources": [
+        "rri-faq",
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "始まる前に通知が出て、場所がマップに表示される。開始まで約3分あるので、その間に現地へ向かう。",
+      "sources": [
+        "rri-faq",
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "開始前は中身（コンテナ）を開けられない。開始後は約10分間で、先に取った人のもの。",
+      "sources": [
+        "rri-faq",
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "イベントを最後までやり遂げると悪名レベルが上がる行動の一つに数えられる。",
+      "sources": [
+        "rri-fame"
+      ],
+      "link": "/guides/money"
+    },
+    {
+      "text": "公式の紹介記事にも「ATMに現金が補充されたり、武器の隠し場所が漏れたりと、街では常に何かが起きている」とある。",
+      "sources": [
+        "steam-0917"
+      ]
+    },
+    {
+      "text": "開始時刻・発生間隔・1回の街滞在で何回起きるかは、どの資料にも書かれていない（未確認）。",
+      "sources": [
+        "rri-faq"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "valuable-cargo",
+      "nameJa": "貴重な積荷",
+      "nameEn": "Valuable Cargo",
+      "kind": "街のイベント",
+      "rows": [
+        {
+          "text": "情報屋が「もうすぐ貴重な積荷の受け渡しがある場所」を明かす。車のトランクに積まれた積荷を、他の人より先に盗み出す。",
+          "sources": [
+            "rrg-text",
+            "rri-faq"
+          ],
+          "label": "内容"
+        },
+        {
+          "text": "毎回マップに表示される地点（固定の場所かどうかは未確認）。",
+          "sources": [
+            "rri-faq"
+          ],
+          "label": "場所"
+        },
+        {
+          "text": "トランクから積荷を取り出すのに約7秒かかる。積荷は手で持つか車のトランクで運ぶ。",
+          "sources": [
+            "rri-faq",
+            "wiki-cargo"
+          ],
+          "label": "取り方"
+        },
+        {
+          "text": "積荷「貴重な積荷」（レジェンダリー）。密輸業者にそのまま売ると $150,000（悪名レベル1）。拠点の貨物作業台で開けることもできるが、中身は未確認。",
+          "sources": [
+            "rri-cargo",
+            "wiki-cargo"
+          ],
+          "link": "/cargo",
+          "label": "中身・報酬"
+        },
+        {
+          "text": "マップに出るので他の犯罪者と取り合いになる。警官は積荷を没収でき、没収されると警官側の報酬は $25,000。積荷を持ったまま武器を構えると落としてしまう。",
+          "sources": [
+            "rri-cargo",
+            "rrg-text"
+          ],
+          "label": "危険"
+        }
+      ]
+    },
+    {
+      "id": "tip-off",
+      "nameJa": "タレコミ（ATMの現金）",
+      "nameEn": "Tip-off",
+      "kind": "街のイベント",
+      "rows": [
+        {
+          "text": "ハッカーが「まもなく大量の現金が入るATM」を教えてくれる。ATMの現金を他の人より先に盗む。",
+          "sources": [
+            "rri-faq",
+            "rrg-text"
+          ],
+          "label": "内容"
+        },
+        {
+          "text": "マップに表示されるATM。街のATMの数はファンサイトで13〜14か所と報告。",
+          "sources": [
+            "rri-faq",
+            "wiki-map"
+          ],
+          "label": "場所"
+        },
+        {
+          "text": "現金（汚れた金）。金額は未確認。",
+          "sources": [
+            "rri-faq"
+          ],
+          "label": "中身・報酬"
+        },
+        {
+          "text": "現金は盗まれたり没収されたりする。手に入れたら早めに資金洗浄を。",
+          "sources": [
+            "kefir-stolen"
+          ],
+          "link": "/guides/money",
+          "label": "危険"
+        }
+      ]
+    },
+    {
+      "id": "bank-cash-bag",
+      "nameJa": "銀行の金庫室の札束バッグ",
+      "nameEn": "Bank Money Bag (bank vault)",
+      "kind": "強盗で手に入る積荷",
+      "rows": [
+        {
+          "text": "ルーティ・ベイ銀行の金庫室。扉はドリルでしか開かない。",
+          "sources": [
+            "rrg-map",
+            "rri-faq"
+          ],
+          "link": "/tools",
+          "label": "場所"
+        },
+        {
+          "text": "積荷「銀行の札束バッグ」が5個。1個 $60,000 で密輸業者に売れるので、全部持ち出せば $300,000。",
+          "sources": [
+            "rrg-map",
+            "rri-cargo"
+          ],
+          "derived": true,
+          "label": "中身・報酬"
+        },
+        {
+          "text": "同じ金庫室に現金 $10,000 の置き場所が6か所、貸金庫12個、金庫3個（ミニドリル）。奥の金の保管庫（IDカードが必要）に金塊（1本 $52,000）の置き場所が7か所。",
+          "sources": [
+            "rrg-map"
+          ],
+          "label": "ほかの戦利品"
+        },
+        {
+          "text": "ドリルを設置すると街全体に知らされる。警官はドリルを没収できる。",
+          "sources": [
+            "rri-faq",
+            "rrg-text"
+          ],
+          "label": "危険"
+        }
+      ]
+    },
+    {
+      "id": "armory-weapon-box",
+      "nameJa": "警察署の武器庫の武器部品の木箱",
+      "nameEn": "Weapon Parts Box (police armory)",
+      "kind": "強盗で手に入る積荷",
+      "rows": [
+        {
+          "text": "警察署の武器庫。IDカード（警察署の武器庫）で開ける。",
+          "sources": [
+            "rrg-map"
+          ],
+          "link": "/tools",
+          "label": "場所"
+        },
+        {
+          "text": "レジェンダリーの「武器部品の木箱」が3個。1個 $120,000 なので全部で $360,000。",
+          "sources": [
+            "rrg-map",
+            "rri-cargo"
+          ],
+          "derived": true,
+          "label": "中身・報酬"
+        },
+        {
+          "text": "現金 $10,000、パウダー、破片手りゅう弾・ガスグレネードの置き場所。軽機関銃や警察のベストがあったというプレイヤー報告もある。",
+          "sources": [
+            "rrg-map"
+          ],
+          "label": "ほかの戦利品"
+        },
+        {
+          "text": "警官は本物のプレイヤーで、警察署は警官の拠点。",
+          "sources": [
+            "steam-0917",
+            "rri-faq"
+          ],
+          "label": "危険"
+        }
+      ]
+    },
+    {
+      "id": "heist-cargo",
+      "nameJa": "金庫・スーツケースなど持ち運ぶ積荷",
+      "nameEn": "Portable Safe / Expensive Safe / Suitcases",
+      "kind": "強盗で手に入る積荷",
+      "rows": [
+        {
+          "text": "公式によると、金庫ごと盗んで拠点で切り開くプレイヤーもいる。強盗先でスーツケース・木箱・金庫が手に入るとファンサイトが報告。",
+          "sources": [
+            "steam-0917",
+            "wiki-cargo"
+          ],
+          "label": "内容"
+        },
+        {
+          "text": "密輸業者への売値：携帯金庫 $100,000、高級金庫 $200,000、スーツケース（白・青・赤）各 $25,000、閉じた札束バッグ $25,000（悪名レベル1）。",
+          "sources": [
+            "rri-cargo"
+          ],
+          "link": "/cargo",
+          "label": "中身・報酬"
+        },
+        {
+          "text": "どの建物に出るかは未確認（Rob Run Guide の建物データには銀行・武器庫以外の積荷が載っていない）。",
+          "sources": [
+            "rrg-map"
+          ],
+          "label": "場所"
+        },
+        {
+          "text": "拠点の貨物作業台で開ける。ファンサイトの目安は普通の積荷が約30分、金庫は約60分。",
+          "sources": [
+            "wiki-cargo"
+          ],
+          "label": "開け方"
+        }
+      ]
+    },
+    {
+      "id": "arms-stash",
+      "nameJa": "武器の隠し場所",
+      "nameEn": "Arms stash",
+      "kind": "公式の紹介のみ",
+      "rows": [
+        {
+          "text": "公式の紹介記事に「武器の隠し場所の位置が漏れる」ことがあると書かれている。",
+          "sources": [
+            "steam-0917"
+          ],
+          "label": "内容"
+        },
+        {
+          "text": "ゲーム内での名前・中身・発生条件は未確認。ファンサイトで説明しているところは見つからなかった。",
+          "sources": [
+            "rri-faq",
+            "wiki-heists"
+          ],
+          "label": "詳細"
+        }
+      ]
+    }
+  ],
+  "eventUnknowns": [
+    "現金輸送車・エアドロップ・輸送隊のようなイベントは、調べた資料（公式・ファンサイト）には記載なし。ゲーム内テキストに「Cash-in-transit Guards（現金輸送の警備員）」という語はあるが、何に使われるかは未確認。",
+    "ゲーム内テキストに「Special Delivery（特別配達）」というイベント名らしき語もあるが、内容は未確認。",
+    "タレコミで手に入る現金の額、貴重な積荷を開けたときの中身。",
+    "イベントの発生間隔・時刻（「ときどき」としか書かれていない）。"
+  ],
+  "locationNotes": [
+    {
+      "text": "同じ建物でも、持っている道具・鍵・準備しだいで小銭にも大金にもなる。",
+      "sources": [
+        "steam-0917"
+      ]
+    },
+    {
+      "text": "店員は状況しだいで手を上げるか、警察に通報する。強盗中は店員に銃を向け続けると警報を防げる。",
+      "sources": [
+        "rrg-map",
+        "kefir-heists"
+      ]
+    },
+    {
+      "text": "ロックピックで扉やコンテナを開けても警報は鳴らない。ガラスを割ると鳴ることがある。",
+      "sources": [
+        "rrg-text",
+        "rri-faq"
+      ]
+    },
+    {
+      "text": "配電盤（Circuit breaker）がある建物では、配電盤を破るとカメラと警報を止められる。カメラは警報を出す前に壊す。",
+      "sources": [
+        "rrg-map",
+        "rri-faq"
+      ]
+    },
+    {
+      "text": "店員を殺すと手配度（Wanted）が早く上がる。",
+      "sources": [
+        "rri-faq"
+      ]
+    },
+    {
+      "text": "警報が鳴ると警察署ごと押し寄せてくる。警官は本物のプレイヤー。",
+      "sources": [
+        "steam-1101",
+        "steam-0917"
+      ]
+    },
+    {
+      "text": "銀行のドリル・ギャラリーの展示ケース・グランドホテルの Buletti は、手を出すと街全体に知らされる。",
+      "sources": [
+        "rri-heists",
+        "rri-faq",
+        "wiki-heists"
+      ]
+    },
+    {
+      "text": "鍵・キーカードは決まった建物の部屋や金庫1つ専用。どの鍵がどこで使えるかは「道具・鍵」ページ。",
+      "sources": [
+        "rrg-items"
+      ],
+      "link": "/tools"
+    },
+    {
+      "text": "金庫を開けるとコードタブレット、鍵付き部屋のPCをハックするとUSBハッキングツール、貸金庫を開けると貸金庫キーにポイントがたまる（満タンで物々交換・売却）。",
+      "sources": [
+        "rrg-items",
+        "rrg-map"
+      ],
+      "link": "/tools"
+    },
+    {
+      "text": "アクションカメラ（3種）は、悪名レベル2/3/4以上で犯罪行動をするとポイントがたまる。同時に複数持っても、ポイントが入るのは1つだけ。",
+      "sources": [
+        "rrg-map",
+        "rrg-text"
+      ]
+    }
+  ],
+  "locationUnknowns": [
+    "金庫・棚（キャビネット）・貸金庫の中身と出る確率（Rob Run Guide にも一覧なし）。",
+    "「ルートポイント」が毎回すべて出るか（出現率）。下の「決まった品の合計」は全部出た場合の値。",
+    "警報が鳴ってから警官に通知されるまでの秒数。",
+    "高級コテージの金庫を開ける道具（Rob Run Guide に記載なし）。",
+    "警察署・アートギャラリーの地区名（パークサイド／パームサイド／中心部でサイト間が食い違い）。"
+  ],
+  "locations": [
+    {
+      "id": "bank",
+      "rrgId": "building-18",
+      "nameJa": "ルーティ・ベイ銀行",
+      "nameEn": "Looty Bay Bank",
+      "typeJa": "ランドマーク",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 3,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "bank_vault",
+          "nameJa": "金庫室",
+          "nameEn": "Main safe",
+          "access": [
+            "drill_1"
+          ],
+          "cabinets": 0,
+          "depositBoxes": 12,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 6,
+              "min": 10000,
+              "max": 10000
+            }
+          ],
+          "fixed": [],
+          "cargo": [
+            {
+              "item": "bank_cash_bag",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "id": "bank_gold",
+          "nameJa": "金の保管庫",
+          "nameEn": "Gold vault",
+          "access": [
+            "drill_1",
+            "vip_key_5"
+          ],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "vip_key_5"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "gold_bar_1",
+              "spots": 7,
+              "min": 1,
+              "max": 1
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "cash_1",
+        "gemstone_3",
+        "gold_bar_1"
+      ],
+      "charge": {
+        "tablet": 3,
+        "usb": 0,
+        "depositBox": 12,
+        "camera": 42
+      },
+      "fyiSpots": 32,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "民間人（マスクなし）で行くと口座開設・資金洗浄した金の引き出しができる。",
+          "sources": [
+            "kefir-bank"
+          ],
+          "link": "/guides/money"
+        },
+        {
+          "text": "金庫室はドリル、奥の金の保管庫はドリル＋IDカード（銀行の金の保管庫）。IDカードは満タンの貸金庫キーとの物々交換で入手。",
+          "sources": [
+            "rrg-map",
+            "rri-faq"
+          ],
+          "link": "/tools"
+        },
+        {
+          "text": "ドリルを設置すると街全体に知らされる。",
+          "sources": [
+            "rri-faq",
+            "rrg-text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "police",
+      "rrgId": "building-16",
+      "nameJa": "警察署",
+      "nameEn": "Police Station",
+      "typeJa": "ランドマーク",
+      "districtJa": "パークサイド",
+      "districtEn": "Parkside",
+      "districtSources": [
+        "fyi-heists",
+        "wiki-map"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "police_evidence",
+          "nameJa": "鍵付きの部屋（金庫室）",
+          "nameEn": "Safe room",
+          "access": [
+            "vip_key_2"
+          ],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 2,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            },
+            {
+              "item": "drugs_bricket_1",
+              "spots": 7,
+              "min": 5,
+              "max": 5
+            },
+            {
+              "item": "flash_grenade_1",
+              "spots": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "item": "smoke_grenade_1",
+              "spots": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "item": "weaponparts_box_1",
+              "spots": 3,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "police_armory",
+          "nameJa": "武器庫",
+          "nameEn": "Armory",
+          "access": [
+            "vip_key_4"
+          ],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            },
+            {
+              "item": "drugs_1",
+              "spots": 1,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "item": "frag_grenade_1",
+              "spots": 2,
+              "min": 1,
+              "max": 1
+            },
+            {
+              "item": "gas_grenade_1",
+              "spots": 2,
+              "min": 1,
+              "max": 1
+            }
+          ],
+          "fixed": [],
+          "cargo": [
+            {
+              "item": "weapon_box_1",
+              "count": 3
+            }
+          ],
+          "reported": [
+            "lmg_m2"
+          ]
+        }
+      ],
+      "notable": [
+        "cash_1",
+        "drugs_1",
+        "rc556_m3"
+      ],
+      "charge": {
+        "tablet": 3,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 16
+      },
+      "fyiSpots": 47,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "鍵付きの部屋はキーカード、武器庫は IDカード（警察署の武器庫）。IDカードは証拠品20個との物々交換で入手。",
+          "sources": [
+            "rrg-map",
+            "rri-faq"
+          ],
+          "link": "/tools"
+        },
+        {
+          "text": "警官に志願する場所でもある。警官は本物のプレイヤー。",
+          "sources": [
+            "kefir-cop",
+            "steam-0917"
+          ],
+          "link": "/guides/police"
+        }
+      ],
+      "districtNote": "地区はサイト間で食い違い"
+    },
+    {
+      "id": "gallery",
+      "rrgId": "building-17",
+      "nameJa": "アートギャラリー",
+      "nameEn": "Art Gallery",
+      "typeJa": "ランドマーク",
+      "districtJa": "パークサイド",
+      "districtEn": "Parkside",
+      "districtSources": [
+        "fyi-heists",
+        "wiki-map"
+      ],
+      "staff": 3,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_17_vip_key_6",
+          "nameJa": "保管室",
+          "nameEn": "Locked room",
+          "access": [
+            "vip_key_6"
+          ],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 2,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "antique_set_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "drugs_bricket_1",
+              "spots": 3,
+              "min": 5,
+              "max": 5
+            }
+          ],
+          "fixed": [
+            {
+              "item": "figurine_1",
+              "count": 3
+            }
+          ],
+          "cargo": []
+        },
+        {
+          "id": "building_17_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "antique_set_1",
+              "spots": 18,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "antique_1",
+        "antique_2",
+        "antique_4",
+        "picture_tube_3"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 10
+      },
+      "fyiSpots": 91,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "展示品 BIG EGG #53 のケースはガラスカッターでしか開かない（コードタブレット3個と交換）。卵は街の外へ運んで故買屋に売る。",
+          "sources": [
+            "rri-heists",
+            "rrg-heists"
+          ],
+          "link": "/tools"
+        },
+        {
+          "text": "2026/11/4 の更新で卵を破る時間が短くなった（その代わりガラスカッターに必要なタブレットが増えた）。",
+          "sources": [
+            "steam-1104"
+          ]
+        },
+        {
+          "text": "ケースを破ると街全体に知られる。",
+          "sources": [
+            "rri-heists"
+          ]
+        }
+      ],
+      "districtNote": "地区はサイト間で食い違い"
+    },
+    {
+      "id": "grand-hotel",
+      "rrgId": "building-5",
+      "nameJa": "グランドホテル",
+      "nameEn": "Grand Hotel",
+      "typeJa": "ランドマーク",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 3,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_5_vip_key_1",
+          "nameJa": "秘密の倉庫",
+          "nameEn": "Locked room",
+          "access": [
+            "vip_key_1"
+          ],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 2,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 4,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            }
+          ],
+          "fixed": [
+            {
+              "item": "drugs_1",
+              "count": 3
+            }
+          ],
+          "cargo": []
+        },
+        {
+          "id": "building_5_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 2,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "jewelry_pouch_1",
+              "spots": 22,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "necklace_6",
+        "watch_5",
+        "ring_6",
+        "earrings_2"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 12
+      },
+      "fyiSpots": 55,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "展示車 Buletti Soltempra を盗むにはジャマーが必要（公式）。盗んだ車はワイプまで自分のもの。",
+          "sources": [
+            "steam-1113",
+            "rri-heists"
+          ],
+          "link": "/tools"
+        },
+        {
+          "text": "ホテル内に宝飾品を売る商人がいる。",
+          "sources": [
+            "rrg-map"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reef-hotel",
+      "rrgId": "building-13",
+      "nameJa": "リーフホテル",
+      "nameEn": "Reef Hotel",
+      "typeJa": "ホテル",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_13_room_key_12",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_12"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_13_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_2"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "toy_2",
+        "lighter_3",
+        "poker_cards_3",
+        "vinyl_1"
+      ],
+      "charge": {
+        "tablet": 3,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 18
+      },
+      "fyiSpots": 25,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "seasons-hotel",
+      "rrgId": "building-12",
+      "nameJa": "シーズンズホテル",
+      "nameEn": "Seasons Hotel",
+      "typeJa": "ホテル",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_12_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 4,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 1,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "toy_2",
+        "lighter_3",
+        "poker_cards_3",
+        "vinyl_1"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 5
+      },
+      "fyiSpots": 16,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "strip-club",
+      "rrgId": "building-14",
+      "nameJa": "ストリップクラブ",
+      "nameEn": "Strip Club",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_14_room_key_13",
+          "nameJa": "VIPルーム",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_13"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 2,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            },
+            {
+              "item": "drugs_1",
+              "spots": 1,
+              "min": 1,
+              "max": 1
+            }
+          ],
+          "fixed": [
+            {
+              "item": "cash_1",
+              "count": 1000
+            },
+            {
+              "item": "dp9_m2",
+              "count": 1
+            },
+            {
+              "item": "drugs_1",
+              "count": 4
+            }
+          ],
+          "cargo": []
+        },
+        {
+          "id": "building_14_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_3"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 3,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [
+            {
+              "item": "picture_fake_1",
+              "count": 1
+            }
+          ],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "cash_1",
+        "poker_cards_2",
+        "condoms_4",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 3,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 18
+      },
+      "fyiSpots": 48,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "VIPルームの床に現金 $1,000、拳銃 DP-9 Mk2、パウダー4個が置かれている。",
+          "sources": [
+            "rrg-map"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gas-station",
+      "rrgId": "building-21",
+      "nameJa": "ガソリンスタンド",
+      "nameEn": "Gas Station",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_21_room_key_5",
+          "nameJa": "隠し部屋（左）",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_5"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "drugs_bricket_1",
+              "spots": 1,
+              "min": 5,
+              "max": 5
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_21_room_key_6",
+          "nameJa": "隠し部屋（右）",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_6"
+          ],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "car_spare_parts_1",
+              "spots": 8,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_21_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_12"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "car_spare_parts_1",
+              "spots": 2,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_1",
+        "car_device_2",
+        "car_parts_5",
+        "car_parts_8"
+      ],
+      "charge": {
+        "tablet": 4,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 25
+      },
+      "fyiSpots": 39,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "ゲーム内の説明文では「警官お気に入りのたまり場」。",
+          "sources": [
+            "rrg-map"
+          ]
+        },
+        {
+          "text": "隠し部屋が左右に2つあり、それぞれ別の部屋の鍵が必要。",
+          "sources": [
+            "rrg-map",
+            "rri-faq"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jewelry-west",
+      "rrgId": "building-7",
+      "nameJa": "宝石店（西）",
+      "nameEn": "Jewelry Store: West",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_7_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 4,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "jewelry_pouch_1",
+              "spots": 8,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "necklace_2",
+        "watch_4",
+        "ring_5",
+        "earrings_2"
+      ],
+      "charge": {
+        "tablet": 0,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 4
+      },
+      "fyiSpots": 29,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "鍵は不要。ガラスのショーケースを割ると警報が鳴ることがある。",
+          "sources": [
+            "fyi-heists",
+            "rrg-text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jewelry-east",
+      "rrgId": "building-26",
+      "nameJa": "宝石店（東）",
+      "nameEn": "Jewelry Store: East",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_26_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 4,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "jewelry_pouch_1",
+              "spots": 8,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "necklace_2",
+        "watch_4",
+        "ring_5",
+        "earrings_2"
+      ],
+      "charge": {
+        "tablet": 0,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 4
+      },
+      "fyiSpots": 29,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "鍵は不要。ガラスのショーケースを割ると警報が鳴ることがある。",
+          "sources": [
+            "fyi-heists",
+            "rrg-text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gun-west",
+      "rrgId": "building-9",
+      "nameJa": "銃砲店（西）",
+      "nameEn": "Gun Shop: West",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_9_room_key_1",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_1"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_9_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "weaponparts_box_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "rifle_ammo_1",
+        "weapon_cleaning_2",
+        "rc556_m3",
+        "weapon_trinket_3"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 16
+      },
+      "fyiSpots": 28,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "銃を買える店ではない（武器はルートかブラックマーケット）。銃のケースを割ると警報が鳴ることがある。",
+          "sources": [
+            "wiki-map",
+            "fyi-heists"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gun-east",
+      "rrgId": "building-27",
+      "nameJa": "銃砲店（東）",
+      "nameEn": "Gun Shop: East",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_27_room_key_3",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_3"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_27_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "weaponparts_box_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "rifle_ammo_1",
+        "weapon_cleaning_2",
+        "rc556_m3",
+        "weapon_trinket_3"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 16
+      },
+      "fyiSpots": 28,
+      "sources": [
+        "rrg-map"
+      ],
+      "notes": [
+        {
+          "text": "銃を買える店ではない（武器はルートかブラックマーケット）。銃のケースを割ると警報が鳴ることがある。",
+          "sources": [
+            "wiki-map",
+            "fyi-heists"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "equipment-west",
+      "rrgId": "building-8",
+      "nameJa": "装備品店（西）",
+      "nameEn": "Equipment Store: West",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_8_room_key_2",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_2"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_8_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "equip_carbine_1",
+              "spots": 7,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "equipment_2",
+        "burner_2",
+        "equipment_11",
+        "vest3_m3"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 15
+      },
+      "fyiSpots": 19,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "equipment-east",
+      "rrgId": "building-28",
+      "nameJa": "装備品店（東）",
+      "nameEn": "Equipment Store: East",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_28_room_key_4",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_4"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_28_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "equip_carbine_1",
+              "spots": 7,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "equipment_2",
+        "burner_2",
+        "equipment_11",
+        "vest3_m3"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 15
+      },
+      "fyiSpots": 19,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "electronics-west",
+      "rrgId": "building-11",
+      "nameJa": "家電店（西）",
+      "nameEn": "Electronics Store",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": false,
+      "rooms": [
+        {
+          "id": "building_11_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_13"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "electronics_box_1",
+              "spots": 4,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "headphones_1",
+        "phone_4",
+        "console_4",
+        "laptop_4"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 3
+      },
+      "fyiSpots": 21,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Electronics Store (Sunny Beach)",
+      "notes": [
+        {
+          "text": "robrun.fyi は必要な道具にミニドリルも挙げているが、Rob Run Guide のデータでは金庫は1つ（金庫の鍵）だけ。",
+          "sources": [
+            "fyi-heists",
+            "rrg-map"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electronics-east",
+      "rrgId": "building-19",
+      "nameJa": "家電店（東）",
+      "nameEn": "Electronics Store",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_19_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 4,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "electronics_box_1",
+              "spots": 4,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "headphones_1",
+        "phone_4",
+        "console_4",
+        "laptop_4"
+      ],
+      "charge": {
+        "tablet": 0,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 4
+      },
+      "fyiSpots": 15,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Electronics Store (Downtown)"
+    },
+    {
+      "id": "pharmacy-downtown",
+      "rrgId": "building-23",
+      "nameJa": "薬局（ダウンタウン）",
+      "nameEn": "Pharmacy",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_23_room_key_8",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_8"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "pharma_pack_1",
+              "spots": 1,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_23_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_10"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "pharma_pack_1",
+              "spots": 7,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "painkiller_1",
+        "condoms_3",
+        "pharma_tools_4",
+        "vial_5"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 13
+      },
+      "fyiSpots": 25,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Pharmacy (Downtown)"
+    },
+    {
+      "id": "pharmacy-sunny",
+      "rrgId": "building-10",
+      "nameJa": "薬局（サニービーチ）",
+      "nameEn": "Pharmacy",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_10_room_key_9",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_9"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "pharma_pack_1",
+              "spots": 1,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_10_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_5"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            },
+            {
+              "item": "pharma_pack_1",
+              "spots": 7,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "painkiller_1",
+        "condoms_3",
+        "pharma_tools_4",
+        "vial_5"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 13
+      },
+      "fyiSpots": 25,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Pharmacy (Sunny Beach)"
+    },
+    {
+      "id": "conv-north",
+      "rrgId": "building-20",
+      "nameJa": "コンビニ（ダウンタウン北）",
+      "nameEn": "Convenience Store",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_20_room_key_10",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_10"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_20_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_4"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_3",
+        "alcohol_1",
+        "alcohol_2",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 12
+      },
+      "fyiSpots": 21,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Convenience Store North"
+    },
+    {
+      "id": "conv-center",
+      "rrgId": "building-24",
+      "nameJa": "コンビニ（ダウンタウン中央）",
+      "nameEn": "Convenience Store",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_24_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_8"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_3",
+        "alcohol_1",
+        "alcohol_2",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 5
+      },
+      "fyiSpots": 14,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Convenience Store Center"
+    },
+    {
+      "id": "conv-sunny",
+      "rrgId": "building-6",
+      "nameJa": "コンビニ（サニービーチ）",
+      "nameEn": "Convenience Store",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_6_room_key_11",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_11"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [],
+          "cargo": []
+        },
+        {
+          "id": "building_6_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_9"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 6,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_3",
+        "alcohol_1",
+        "alcohol_2",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 12
+      },
+      "fyiSpots": 21,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Convenience Store (Sunny Beach)"
+    },
+    {
+      "id": "rusty-burgers",
+      "rrgId": "building-25",
+      "nameJa": "ラスティ・バーガーズ・カフェ",
+      "nameEn": "Rusty Burgers Café",
+      "typeJa": "店舗",
+      "districtJa": "ダウンタウン",
+      "districtEn": "Downtown",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_25_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 4,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_11"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 3,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 2,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_3",
+        "alcohol_1",
+        "alcohol_2",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 5
+      },
+      "fyiSpots": 17,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "ocean-breeze",
+      "rrgId": "building-15",
+      "nameJa": "オーシャンブリーズ・カフェ",
+      "nameEn": "Ocean Breeze Café",
+      "typeJa": "店舗",
+      "districtJa": "サニービーチ",
+      "districtEn": "Sunny Beach",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_15_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_6"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "alcohol_box_1",
+              "spots": 5,
+              "min": 1,
+              "max": 2
+            },
+            {
+              "item": "cash_1",
+              "spots": 2,
+              "min": 300,
+              "max": 1200
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "alcohol_3",
+        "alcohol_1",
+        "alcohol_2",
+        "alcohol_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 3
+      },
+      "fyiSpots": 19,
+      "sources": [
+        "rrg-map"
+      ]
+    },
+    {
+      "id": "mansion",
+      "rrgId": "building-0",
+      "nameJa": "貴族の邸宅",
+      "nameEn": "Noble's Mansion",
+      "typeJa": "住宅",
+      "districtJa": "ロレインヒルズ",
+      "districtEn": "Loraine Hills",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_0_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_7"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "car_spare_parts_1",
+              "spots": 3,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [
+            {
+              "item": "picture_fake_1",
+              "count": 1
+            }
+          ],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "perfume_2",
+        "baseball_card_5",
+        "comics_3",
+        "journal_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 6
+      },
+      "fyiSpots": 25,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Aristocrat's Mansion"
+    },
+    {
+      "id": "cottage-keycard",
+      "rrgId": "building-1",
+      "nameJa": "コテージ（キーカードの部屋）",
+      "nameEn": "Cottage",
+      "typeJa": "住宅",
+      "districtJa": "ロレインヒルズ",
+      "districtEn": "Loraine Hills",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_1_vip_key_3",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "vip_key_3"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 1,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            },
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "cash_1",
+              "spots": 1,
+              "min": 10000,
+              "max": 10000
+            },
+            {
+              "item": "drugs_bricket_1",
+              "spots": 6,
+              "min": 5,
+              "max": 5
+            }
+          ],
+          "fixed": [
+            {
+              "item": "drugs_1",
+              "count": 2
+            }
+          ],
+          "cargo": []
+        },
+        {
+          "id": "building_1_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "car_spare_parts_1",
+              "spots": 2,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "perfume_2",
+        "comics_2",
+        "drugs_1",
+        "journal_4"
+      ],
+      "charge": {
+        "tablet": 2,
+        "usb": 1,
+        "depositBox": 0,
+        "camera": 19
+      },
+      "fyiSpots": 33,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Cottage No. 3"
+    },
+    {
+      "id": "cottage-roomkey",
+      "rrgId": "building-3",
+      "nameJa": "コテージ（鍵付きの部屋）",
+      "nameEn": "Cottage",
+      "typeJa": "住宅",
+      "districtJa": "ロレインヒルズ",
+      "districtEn": "Loraine Hills",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 1,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_3_room_key_7",
+          "nameJa": "鍵付きの部屋",
+          "nameEn": "Locked room",
+          "access": [
+            "room_key_7"
+          ],
+          "cabinets": 3,
+          "depositBoxes": 0,
+          "computers": [
+            {
+              "points": 2,
+              "count": 1
+            }
+          ],
+          "safes": [
+            {
+              "opener": "mini_drill_1"
+            }
+          ],
+          "nodes": [],
+          "fixed": [
+            {
+              "item": "drugs_1",
+              "count": 2
+            }
+          ],
+          "cargo": []
+        },
+        {
+          "id": "building_3_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 2,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [],
+          "nodes": [
+            {
+              "item": "antique_set_1",
+              "spots": 3,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "perfume_2",
+        "baseball_card_5",
+        "comics_3",
+        "journal_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 2,
+        "depositBox": 0,
+        "camera": 14
+      },
+      "fyiSpots": 31,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Cottage No. 5"
+    },
+    {
+      "id": "cottage-safekey",
+      "rrgId": "building-4",
+      "nameJa": "コテージ（金庫の鍵）",
+      "nameEn": "Cottage",
+      "typeJa": "住宅",
+      "districtJa": "ロレインヒルズ",
+      "districtEn": "Loraine Hills",
+      "districtSources": [
+        "rrg-text"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_4_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 1,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": "safe_key_14"
+            }
+          ],
+          "nodes": [
+            {
+              "item": "car_spare_parts_1",
+              "spots": 2,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "perfume_2",
+        "baseball_card_5",
+        "comics_3",
+        "journal_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 7
+      },
+      "fyiSpots": 20,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Cottage No. 4"
+    },
+    {
+      "id": "elite-cottage",
+      "rrgId": "building-2",
+      "nameJa": "高級コテージ",
+      "nameEn": "Elite Cottage",
+      "typeJa": "住宅",
+      "districtJa": "ロレインヒルズ",
+      "districtEn": "Loraine Hills",
+      "districtSources": [
+        "fyi-heists"
+      ],
+      "staff": 2,
+      "breaker": true,
+      "rooms": [
+        {
+          "id": "building_2_unassigned",
+          "nameJa": "建物内（鍵なしで入れる場所）",
+          "nameEn": "Loot points in the building",
+          "access": [],
+          "cabinets": 0,
+          "depositBoxes": 0,
+          "computers": [],
+          "safes": [
+            {
+              "opener": null
+            }
+          ],
+          "nodes": [
+            {
+              "item": "car_spare_parts_1",
+              "spots": 2,
+              "min": 1,
+              "max": 2
+            }
+          ],
+          "fixed": [
+            {
+              "item": "picture_fake_1",
+              "count": 2
+            }
+          ],
+          "cargo": []
+        }
+      ],
+      "notable": [
+        "perfume_2",
+        "baseball_card_5",
+        "comics_3",
+        "journal_5"
+      ],
+      "charge": {
+        "tablet": 1,
+        "usb": 0,
+        "depositBox": 0,
+        "camera": 6
+      },
+      "fyiSpots": 22,
+      "sources": [
+        "rrg-map"
+      ],
+      "aliasEn": "Luxury Cottage",
+      "notes": [
+        {
+          "text": "金庫が1つあるが、開ける道具は Rob Run Guide に記載なし（未確認）。robrun.fyi も「鍵の記載なし」。",
+          "sources": [
+            "rrg-map",
+            "fyi-heists"
+          ]
+        }
+      ]
+    }
+  ],
+  "items": {
+    "alcohol_1": {
+      "ja": "ブラックパイレーツのボトル",
+      "en": "Black Pirate Bottle",
+      "rarity": "uncommon",
+      "price": 306
+    },
+    "alcohol_2": {
+      "ja": "クリスタルライトのボトル",
+      "en": "Krystal Light Bottle",
+      "rarity": "epic",
+      "price": 4590
+    },
+    "alcohol_3": {
+      "ja": "ダイヤモンドブリーズのボトル",
+      "en": "Diamond Breeze Bottle",
+      "rarity": "uncommon",
+      "price": 330
+    },
+    "alcohol_5": {
+      "ja": "ゴールデンジャガーのボトル",
+      "en": "Golden Jaguar Bottle",
+      "rarity": "legendary",
+      "price": 27700
+    },
+    "alcohol_box_1": {
+      "ja": "酒",
+      "en": "Alcohol",
+      "rarity": "common",
+      "price": 50
+    },
+    "antique_1": {
+      "ja": "神像",
+      "en": "Deity Statue",
+      "rarity": "epic",
+      "price": 4300
+    },
+    "antique_2": {
+      "ja": "金の猫の像",
+      "en": "Golden Cat Statue",
+      "rarity": "epic",
+      "price": 4666
+    },
+    "antique_4": {
+      "ja": "石の乙女像",
+      "en": "Stone Maiden Statue",
+      "rarity": "legendary",
+      "price": 27420
+    },
+    "antique_set_1": {
+      "ja": "安物の骨董品",
+      "en": "Cheap Antiques",
+      "rarity": "common",
+      "price": 50
+    },
+    "bank_cash_bag": {
+      "ja": "銀行の札束バッグ（積荷）",
+      "en": "Bank Money Bag",
+      "rarity": "legendary",
+      "price": null
+    },
+    "baseball_card_5": {
+      "ja": "ブラッドリー・サンダーソンのカード",
+      "en": "Bradley Sanderson Card",
+      "rarity": "epic",
+      "price": 3376
+    },
+    "burner_2": {
+      "ja": "キャンプ用コンロ",
+      "en": "Field Stove",
+      "rarity": "epic",
+      "price": 5220
+    },
+    "car_device_2": {
+      "ja": "安物のカーステレオ",
+      "en": "Cheap Car Stereo",
+      "rarity": "uncommon",
+      "price": 440
+    },
+    "car_parts_5": {
+      "ja": "ハンドル",
+      "en": "Steering Wheel",
+      "rarity": "epic",
+      "price": 5360
+    },
+    "car_parts_8": {
+      "ja": "高級カーコンプレッサー",
+      "en": "Premium Car Compressor",
+      "rarity": "legendary",
+      "price": 29760
+    },
+    "car_spare_parts_1": {
+      "ja": "車の部品",
+      "en": "Car Parts",
+      "rarity": "common",
+      "price": 50
+    },
+    "cash_1": {
+      "ja": "現金",
+      "en": "Cash",
+      "rarity": "uncommon",
+      "price": 1
+    },
+    "comics_2": {
+      "ja": "TADASHI のコミック",
+      "en": "TADASHI Comic Book",
+      "rarity": "uncommon",
+      "price": 466
+    },
+    "comics_3": {
+      "ja": "DIGITAL SOUL のコミック",
+      "en": "DIGITAL SOUL Comic Book",
+      "rarity": "epic",
+      "price": 5106
+    },
+    "condoms_3": {
+      "ja": "Zipit コンドーム",
+      "en": "Zipit Condoms",
+      "rarity": "epic",
+      "price": 2860
+    },
+    "condoms_4": {
+      "ja": "LUX コンドーム",
+      "en": "LUX Condoms",
+      "rarity": "epic",
+      "price": 3566
+    },
+    "console_4": {
+      "ja": "G-Cube ゲーム機",
+      "en": "G-Cube Console",
+      "rarity": "epic",
+      "price": 9956
+    },
+    "dp9_m2": {
+      "ja": "DP-9 Mk2（拳銃）",
+      "en": "DP-9 Mk2",
+      "rarity": "uncommon",
+      "price": 120
+    },
+    "drill_1": {
+      "ja": "ドリル",
+      "en": "Drill",
+      "rarity": "legendary",
+      "price": 32800
+    },
+    "drugs_1": {
+      "ja": "パウダー",
+      "en": "Powder",
+      "rarity": "epic",
+      "price": 4052
+    },
+    "drugs_bricket_1": {
+      "ja": "ブリック",
+      "en": "Brick",
+      "rarity": "common",
+      "price": 120
+    },
+    "earrings_2": {
+      "ja": "AMINA のイヤリング",
+      "en": "AMINA Earrings",
+      "rarity": "legendary",
+      "price": 33840
+    },
+    "electronics_box_1": {
+      "ja": "電子部品",
+      "en": "Electronics",
+      "rarity": "common",
+      "price": 50
+    },
+    "equip_carbine_1": {
+      "ja": "カラビナセット",
+      "en": "Carabiner Set",
+      "rarity": "common",
+      "price": 50
+    },
+    "equipment_11": {
+      "ja": "コレクター向けマルチツール",
+      "en": "Collectible Multitool",
+      "rarity": "legendary",
+      "price": 30400
+    },
+    "equipment_2": {
+      "ja": "双眼鏡",
+      "en": "Binoculars",
+      "rarity": "uncommon",
+      "price": 470
+    },
+    "figurine_1": {
+      "ja": "壊れやすい置物",
+      "en": "Fragile Figurine",
+      "rarity": "uncommon",
+      "price": 80
+    },
+    "flash_grenade_1": {
+      "ja": "フラッシュグレネード",
+      "en": "Flash Grenade",
+      "rarity": "epic",
+      "price": 1600
+    },
+    "frag_grenade_1": {
+      "ja": "破片手りゅう弾",
+      "en": "Frag Grenade",
+      "rarity": "legendary",
+      "price": 5984
+    },
+    "gas_grenade_1": {
+      "ja": "ガスグレネード",
+      "en": "Gas Grenade",
+      "rarity": "legendary",
+      "price": 15092
+    },
+    "gemstone_3": {
+      "ja": "ケース入りルビー",
+      "en": "Ruby in Case",
+      "rarity": "legendary",
+      "price": 20000
+    },
+    "gold_bar_1": {
+      "ja": "金塊",
+      "en": "Gold Bar",
+      "rarity": "legendary",
+      "price": 52000
+    },
+    "headphones_1": {
+      "ja": "AIRHEADS ヘッドホン",
+      "en": "AIRHEADS Headphones",
+      "rarity": "uncommon",
+      "price": 230
+    },
+    "jewelry_pouch_1": {
+      "ja": "模造アクセサリー",
+      "en": "Costume Jewelry",
+      "rarity": "common",
+      "price": 150
+    },
+    "journal_4": {
+      "ja": "VELVET RIOT 誌",
+      "en": "VELVET RIOT Magazine",
+      "rarity": "epic",
+      "price": 4766
+    },
+    "journal_5": {
+      "ja": "OPALINE 誌",
+      "en": "OPALINE Magazine",
+      "rarity": "legendary",
+      "price": 32226
+    },
+    "laptop_4": {
+      "ja": "PD STATION ノートPC",
+      "en": "PD STATION Laptop",
+      "rarity": "legendary",
+      "price": 29556
+    },
+    "lighter_3": {
+      "ja": "RedOlive ライター",
+      "en": "RedOlive Lighter",
+      "rarity": "epic",
+      "price": 2976
+    },
+    "mini_drill_1": {
+      "ja": "ミニドリル",
+      "en": "Mini Drill",
+      "rarity": "epic",
+      "price": 7200
+    },
+    "necklace_2": {
+      "ja": "GUDDI のネックレス",
+      "en": "GUDDI Necklace",
+      "rarity": "uncommon",
+      "price": 342
+    },
+    "necklace_6": {
+      "ja": "PENARAI のネックレス",
+      "en": "PENARAI Necklace",
+      "rarity": "legendary",
+      "price": 30134
+    },
+    "painkiller_1": {
+      "ja": "鎮痛剤",
+      "en": "Painkillers",
+      "rarity": "uncommon",
+      "price": 200
+    },
+    "perfume_2": {
+      "ja": "FLERS の香水",
+      "en": "FLERS Perfume",
+      "rarity": "uncommon",
+      "price": 210
+    },
+    "pharma_pack_1": {
+      "ja": "医薬品",
+      "en": "Medications",
+      "rarity": "common",
+      "price": 50
+    },
+    "pharma_tools_4": {
+      "ja": "血圧計",
+      "en": "Blood Pressure Monitor",
+      "rarity": "epic",
+      "price": 5176
+    },
+    "phone_4": {
+      "ja": "Flip Ring スマートフォン",
+      "en": "Flip Ring Smartphone",
+      "rarity": "epic",
+      "price": 2696
+    },
+    "picture_fake_1": {
+      "ja": "絵画（安物）",
+      "en": "Painting",
+      "rarity": "common",
+      "price": 80
+    },
+    "picture_tube_3": {
+      "ja": "絵画（レジェンダリー）",
+      "en": "Painting",
+      "rarity": "legendary",
+      "price": 21936
+    },
+    "poker_cards_2": {
+      "ja": "Mystic Card Chronicles のデッキ",
+      "en": "Mystic Card Chronicles Deck",
+      "rarity": "epic",
+      "price": 2670
+    },
+    "poker_cards_3": {
+      "ja": "Ace's Dominion のデッキ",
+      "en": "Ace's Dominion Deck",
+      "rarity": "uncommon",
+      "price": 236
+    },
+    "rc556_m3": {
+      "ja": "RC 5.56 Mk3（ライフル）",
+      "en": "RC 5.56 Mk3",
+      "rarity": "epic",
+      "price": 12800
+    },
+    "rifle_ammo_1": {
+      "ja": "アサルトライフルの弾",
+      "en": "Assault Rifle Ammo",
+      "rarity": "common",
+      "price": null
+    },
+    "ring_5": {
+      "ja": "MAFFI の指輪",
+      "en": "MAFFI Ring",
+      "rarity": "epic",
+      "price": 5078
+    },
+    "ring_6": {
+      "ja": "PRIDE の指輪",
+      "en": "PRIDE Ring",
+      "rarity": "legendary",
+      "price": 34876
+    },
+    "room_key_1": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2250
+    },
+    "room_key_10": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2350
+    },
+    "room_key_11": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2880
+    },
+    "room_key_12": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2370
+    },
+    "room_key_13": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "legendary",
+      "price": 2570
+    },
+    "room_key_2": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2100
+    },
+    "room_key_3": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2650
+    },
+    "room_key_4": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2250
+    },
+    "room_key_5": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2700
+    },
+    "room_key_6": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "legendary",
+      "price": 5820
+    },
+    "room_key_7": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2340
+    },
+    "room_key_8": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2450
+    },
+    "room_key_9": {
+      "ja": "部屋の鍵",
+      "en": "Room Key",
+      "rarity": "epic",
+      "price": 2570
+    },
+    "safe_key_1": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_10": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_11": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_12": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_13": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_14": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_2": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_3": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_4": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_5": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_6": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_7": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_8": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "safe_key_9": {
+      "ja": "金庫の鍵",
+      "en": "Safe Key",
+      "rarity": "uncommon",
+      "price": 500
+    },
+    "smoke_grenade_1": {
+      "ja": "スモークグレネード",
+      "en": "Smoke Grenade",
+      "rarity": "epic",
+      "price": 2016
+    },
+    "toy_2": {
+      "ja": "CollectiToy #2 フィギュア",
+      "en": "CollectiToy #2 Figure",
+      "rarity": "uncommon",
+      "price": 370
+    },
+    "vest3_m3": {
+      "ja": "ヘビーボディアーマー MK3",
+      "en": "Heavy MK3 Body Armor",
+      "rarity": null,
+      "price": null
+    },
+    "vial_5": {
+      "ja": "美容アンプル",
+      "en": "Cosmetic Ampule",
+      "rarity": "legendary",
+      "price": 25216
+    },
+    "vinyl_1": {
+      "ja": "プラチナディスク",
+      "en": "Platinum Disc",
+      "rarity": "legendary",
+      "price": 36936
+    },
+    "vip_key_1": {
+      "ja": "キーカード（グランドホテルの秘密の倉庫）",
+      "en": "Keycard",
+      "rarity": "legendary",
+      "price": 5620
+    },
+    "vip_key_2": {
+      "ja": "キーカード（警察署の鍵付き部屋）",
+      "en": "Keycard",
+      "rarity": "legendary",
+      "price": 4620
+    },
+    "vip_key_3": {
+      "ja": "キーカード（ロレインヒルズのコテージ）",
+      "en": "Keycard",
+      "rarity": "legendary",
+      "price": 5100
+    },
+    "vip_key_4": {
+      "ja": "IDカード（警察署の武器庫）",
+      "en": "ID Card",
+      "rarity": "exotic",
+      "price": 7200
+    },
+    "vip_key_5": {
+      "ja": "IDカード（銀行の金の保管庫）",
+      "en": "ID Card",
+      "rarity": "exotic",
+      "price": 8200
+    },
+    "vip_key_6": {
+      "ja": "キーカード（ギャラリーの保管室）",
+      "en": "Keycard",
+      "rarity": "legendary",
+      "price": 4320
+    },
+    "watch_4": {
+      "ja": "NURDAN の腕時計",
+      "en": "NURDAN Watch",
+      "rarity": "epic",
+      "price": 5688
+    },
+    "watch_5": {
+      "ja": "POLEX の腕時計",
+      "en": "POLEX Watch",
+      "rarity": "legendary",
+      "price": 32842
+    },
+    "weapon_box_1": {
+      "ja": "武器部品の木箱（積荷）",
+      "en": "Weapon Parts Box",
+      "rarity": "legendary",
+      "price": null
+    },
+    "weapon_cleaning_2": {
+      "ja": "プロ用銃手入れキット",
+      "en": "Professional Gun Cleaning Kit",
+      "rarity": "epic",
+      "price": 2950
+    },
+    "weapon_trinket_3": {
+      "ja": "ドローンのコントローラー",
+      "en": "Drone Controller",
+      "rarity": "legendary",
+      "price": 24890
+    },
+    "weaponparts_box_1": {
+      "ja": "武器部品",
+      "en": "Weapon Parts",
+      "rarity": "common",
+      "price": 50
+    }
+  },
+  "tips": [
+    {
+      "text": "ソロは最初から悪名レベル4で、売却とルートにボーナスがある。デュオも高めのレベルから始まる。",
+      "sources": [
+        "steam-1113",
+        "kefir-notoriety"
+      ],
+      "link": "/guides/money"
+    },
+    {
+      "text": "故買屋で売ったお金はカウンターに置かれる。すぐ回収しないと盗まれたり没収されたりする。",
+      "sources": [
+        "kefir-sell"
+      ]
+    },
+    {
+      "text": "街の専門店の値段はノートPC（ブラックマーケット）の3倍。買い物はノートPCで。",
+      "sources": [
+        "rri-money"
+      ],
+      "link": "/guides/money"
+    },
+    {
+      "text": "販売センターで売れるのは、その地区に区画を借りている人だけ（入るのは誰でも可）。",
+      "sources": [
+        "rri-base",
+        "kefir-sell"
+      ]
+    },
+    {
+      "text": "故買屋（$マーク）は普通の戦利品、密輸業者は積荷を買う。売る相手を間違えないように。",
+      "sources": [
+        "rri-faq",
+        "wiki-cargo"
+      ],
+      "link": "/cargo"
+    },
+    {
+      "text": "売却場所での待ち伏せは公式が想定している遊び方。安全な売却地点を試したこともあるが、緊張感がなくなるので見送った。",
+      "sources": [
+        "steam-1113"
+      ]
+    },
+    {
+      "text": "ゴミ箱から見つかる現金は 2026/11/4 の更新で増えた。",
+      "sources": [
+        "steam-1104"
+      ]
+    },
+    {
+      "text": "積荷を持ったまま武器を構えると、自動で積荷を落とす。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "地面に落とした積荷やバッグは、しばらくすると消える。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "別の車に乗り換えると、前の車のトランクの中身は地面に落ちる。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "車のトランクはロックピックでいつでもどこでも開けられてしまう。戦利品を車に置きっぱなしにしない。",
+      "sources": [
+        "rri-faq",
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "買った車は死んでも消えず、付けた改造パーツも落とさない。",
+      "sources": [
+        "rrg-npc",
+        "rri-faq"
+      ],
+      "link": "/vehicles"
+    },
+    {
+      "text": "逃げるときは、犯罪者の車の方がパトカーより小回りが利く。街のあちこちのジャンプ台も追跡を振り切るのに使える。",
+      "sources": [
+        "steam-1113"
+      ]
+    },
+    {
+      "text": "レッカー車の荷台のスロープでもジャンプでき、跳んだ後はしばらくスロープが下がる。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "犯罪者の状態は街を出るまで解除されない。マスクを外しても民間人には戻らない。",
+      "sources": [
+        "kefir-heists"
+      ]
+    },
+    {
+      "text": "警察は橋を封鎖して街から出られないようにすることがある。",
+      "sources": [
+        "rri-faq"
+      ]
+    },
+    {
+      "text": "Looty Bay の滞在には1人ずつ約40分のタイマーがあり、終わる前に街を出ないと装備と持ち物を失う。",
+      "sources": [
+        "rri-faq"
+      ],
+      "link": "/guides/police"
+    },
+    {
+      "text": "パーティは最大3人で、Looty Bay では全員が同じ役割（民間人・犯罪者・警官）になる。人数を増やすと偶然の出会いが減るため、公式は当面増やさない方針。",
+      "sources": [
+        "steam-1113",
+        "rri-faq",
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "Looty Bay では他のサーバーのプレイヤーとも出会う。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "Q キーで警官に投降できる。投降・逮捕で取られるのはバッグの中身だけで、装備は残る。",
+      "sources": [
+        "rri-faq",
+        "kefir-surrender"
+      ],
+      "link": "/guides/police"
+    },
+    {
+      "text": "懲役3年以上・区画あり・自分の居住地あり、のどれも満たさないうちは「コミュニケーション制限」で、グループ・クランのチャット以外の文字チャットが使えない。ボイスチャットはレニーのモーテルと刑務所以外なら使える。",
+      "sources": [
+        "rri-faq"
+      ],
+      "link": "/guides/jail-time"
+    },
+    {
+      "text": "コンビニの店員いわく「売り場には安物しか置いていない。値打ち物は奥にしまってある」。",
+      "sources": [
+        "rrg-npc"
+      ]
+    },
+    {
+      "text": "居住地の借金取りのバン（Debt Collectors' Van）で税を回収すると、中身はテーブルに置かれ、近くにいる誰でも取れる。",
+      "sources": [
+        "rrg-settlement"
+      ]
+    },
+    {
+      "text": "ゲーム内テキストには「〇〇の拠点が破られている！」という通知がある。設定で「戦闘イベントのフィード」の表示を切り替えられる。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "ゲーム内テキストによると、Looty Bay の港は「犯罪の横行により閉鎖中」。",
+      "sources": [
+        "rrg-text"
+      ]
+    },
+    {
+      "text": "キーなどの拾い物は使い道を自分で見つけてほしい、というのが公式の考え（例：鍵で金庫、宝くじで大当たり、ジャマーで Buletti）。うっかり売らないように。",
+      "sources": [
+        "steam-1113"
+      ],
+      "link": "/tools"
+    },
+    {
+      "text": "ワイプ前の1週間の動き方は別ページにまとめている。",
+      "sources": [
+        "kefir-wipe"
+      ],
+      "link": "/guides/wipe"
+    }
+  ]
+}

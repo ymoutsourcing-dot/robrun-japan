@@ -274,6 +274,46 @@
     "url": "https://robrunwiki.app/guides/items",
     "kind": "fan"
   },
+  "steam-0917": {
+    "label": "公式記事「Gameplay Overview」（2026/9/17・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/693146657813954745",
+    "kind": "official"
+  },
+  "steam-1101": {
+    "label": "公式記事「Playtest News」（2026/11/1・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/712290761518876879",
+    "kind": "official"
+  },
+  "rrg-heists": {
+    "label": "Rob Run Guide「Major heists: tools and preparation」",
+    "url": "https://robrunguide.app/en-US/guides/heists",
+    "kind": "fan"
+  },
+  "rrg-npc": {
+    "label": "Rob Run Guide「NPC tips」（ゲーム内NPCの会話）",
+    "url": "https://robrunguide.app/en-US/npc-tips",
+    "kind": "fan"
+  },
+  "rrg-settlement": {
+    "label": "Rob Run Guide「Settlement」マップ",
+    "url": "https://robrunguide.app/en-US/map/settlement",
+    "kind": "fan"
+  },
+  "fyi-heists": {
+    "label": "robrun.fyi「ROB RUN heists: all 28 robbery targets」",
+    "url": "https://robrun.fyi/heists",
+    "kind": "fan"
+  },
+  "wiki-cargo": {
+    "label": "robrunwiki.app「Cargo guide」",
+    "url": "https://robrunwiki.app/guides/cargo",
+    "kind": "fan"
+  },
+  "wiki-map": {
+    "label": "robrunwiki.app「Map and locations」",
+    "url": "https://robrunwiki.app/guides/map",
+    "kind": "fan"
+  },
   "ingame-confiscation": {
     "label": "ゲーム内の告知「Federal Confiscation Procedure」（プレイヤーのスクリーンショット・2026/11/23）",
     "url": "/changelog",

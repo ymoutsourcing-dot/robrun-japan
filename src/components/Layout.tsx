@@ -15,6 +15,7 @@ const NAV = [
   { to: "/calculator", label: "費用計算" },
   { to: "/recommended", label: "おすすめ" },
   { to: "/guides", label: "攻略" },
+  { to: "/tips", label: "小ネタ" },
   { to: "/progress", label: "進捗" },
   { to: "/about", label: "データについて" },
 ];
