@@ -2,13 +2,26 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ReactFlow, Background, Controls, MiniMap, type Edge, type Node, type NodeProps } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { GitBranch, List, Search, X, CheckCircle2, Circle } from "lucide-react";
+import { GitBranch, List, Search, X, CheckCircle2, Circle, Gamepad2, LayoutGrid } from "lucide-react";
 import type { CategoryId, ShipmentItem } from "../types/shipment";
 import { ancestorsOf, categories, categoryName, displayNameEn, displayNameJa, getItem, items, matchesQuery } from "../lib/data";
 import { layoutTree, NODE_W, treeOrder } from "../lib/treeLayout";
+import { GAME_NODE_H, GAME_NODE_W, layoutGame } from "../lib/gameLayout";
 import { money } from "../lib/format";
 import { useProgress } from "../store/progress";
 import { ShipmentNode, type ShipmentFlowNode } from "../components/ShipmentNode";
+import {
+  CenterLineNode,
+  GameItemNode,
+  GamePhotoNode,
+  GameStepEdge,
+  LennyNode,
+  type CenterLineFlowNode,
+  type GameItemFlowNode,
+  type GamePhotoFlowNode,
+  type GameStepEdgeType,
+  type LennyFlowNode,
+} from "../components/GameTreeNodes";
 import { ItemDetail } from "../components/ItemDetail";
 import { CategoryIcon, ItemIcon, TierBadge } from "../components/ui";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -26,7 +39,18 @@ function HeaderNodeView({ data }: NodeProps<HeaderNode>) {
   );
 }
 
-const nodeTypes = { shipment: ShipmentNode, header: HeaderNodeView };
+const nodeTypes = {
+  shipment: ShipmentNode,
+  header: HeaderNodeView,
+  gameItem: GameItemNode,
+  gamePhoto: GamePhotoNode,
+  lenny: LennyNode,
+  centerLine: CenterLineNode,
+};
+const edgeTypes = { gameStep: GameStepEdge };
+
+type TreeLayoutMode = "standard" | "game";
+type AnyFlowNode = ShipmentFlowNode | HeaderNode | GameItemFlowNode | GamePhotoFlowNode | LennyFlowNode | CenterLineFlowNode;
 
 type StatusFilter = "all" | "todo" | "done";
 
@@ -37,7 +61,18 @@ export default function TreePage() {
   const [params, setParams] = useSearchParams();
   const selectedId = params.get("item");
   const selected = selectedId ? getItem(selectedId) : undefined;
-  const [view, setView] = useState<"tree" | "list">(() => (params.get("view") === "list" || isNarrow() ? "list" : "tree"));
+  // ゲーム風レイアウト（?layout=game）。標準レイアウトが既定
+  const mode: TreeLayoutMode = params.get("layout") === "game" ? "game" : "standard";
+  const [view, setView] = useState<"tree" | "list">(() =>
+    params.get("view") === "list" || (isNarrow() && mode !== "game") ? "list" : "tree",
+  );
+  const setMode = (m: TreeLayoutMode) => {
+    const next = new URLSearchParams(params);
+    if (m === "game") next.set("layout", "game");
+    else next.delete("layout");
+    setParams(next, { replace: true });
+    setView("tree");
+  };
   const [cats, setCats] = useState<CategoryId[]>(() => {
     const c = params.get("cat");
     return c ? (c.split(",") as CategoryId[]) : categories.map((c) => c.id);
@@ -70,9 +105,44 @@ export default function TreePage() {
   );
 
   const layout = useMemo(() => layoutTree(cats), [cats]);
+  const game = useMemo(() => (mode === "game" ? layoutGame(cats) : null), [mode, cats]);
 
-  const flowNodes = useMemo<(ShipmentFlowNode | HeaderNode)[]>(() => {
+  const flowNodes = useMemo<AnyFlowNode[]>(() => {
     const filtering = query !== "" || status !== "all";
+    const itemData = (item: ShipmentItem) => ({
+      item,
+      dimmed: filtering && !isMatch(item),
+      highlighted: pathSet.has(item.id) && item.id !== selectedId,
+    });
+    if (game) {
+      const decor = { selectable: false, draggable: false, focusable: false } as const;
+      return [
+        {
+          id: "center-line",
+          type: "centerLine",
+          position: { x: game.line.x1, y: -1.5 },
+          data: { width: game.line.x2 - game.line.x1 },
+          zIndex: -1,
+          ...decor,
+        } satisfies CenterLineFlowNode,
+        { id: "lenny", type: "lenny", position: game.lenny, data: { decorative: true }, ...decor } satisfies LennyFlowNode,
+        ...game.photos.map<GamePhotoFlowNode>((p) => ({
+          id: `photo-${p.category}`,
+          type: "gamePhoto",
+          position: { x: p.x, y: p.y },
+          data: { category: p.category, direction: p.direction, count: p.count },
+          ...decor,
+        })),
+        ...game.nodes.map<GameItemFlowNode>((n) => ({
+          id: n.item.id,
+          type: "gameItem",
+          position: { x: n.x, y: n.y },
+          data: itemData(n.item),
+          selected: n.item.id === selectedId,
+          draggable: false,
+        })),
+      ];
+    }
     return [
       ...layout.headers.map<HeaderNode>((h) => ({
         id: `header-${h.category}`,
@@ -86,18 +156,45 @@ export default function TreePage() {
         id: n.item.id,
         type: "shipment",
         position: { x: n.x, y: n.y },
-        data: {
-          item: n.item,
-          dimmed: filtering && !isMatch(n.item),
-          highlighted: pathSet.has(n.item.id) && n.item.id !== selectedId,
-        },
+        data: itemData(n.item),
         selected: n.item.id === selectedId,
         draggable: false,
       })),
     ];
-  }, [layout, isMatch, pathSet, selectedId, query, status]);
+  }, [layout, game, isMatch, pathSet, selectedId, query, status]);
 
   const edges = useMemo<Edge[]>(() => {
+    const edgeStyle = (onPath: boolean, done: boolean, base: string) => ({
+      stroke: onPath ? "#ffd84d" : done ? "#5cff8a" : base,
+      strokeWidth: onPath ? 3 : 1.5,
+    });
+    if (game) {
+      // ゲーム風: カテゴリー写真 → ルート、親 → 子 を直角の線で結ぶ
+      const visible = new Set(game.nodes.map((n) => n.item.id));
+      const out: GameStepEdgeType[] = [];
+      for (const n of game.nodes) {
+        const up = n.direction === "up";
+        const parents = n.item.prerequisites.filter((p) => visible.has(p));
+        const sameCat = n.item.prerequisites.some((p) => getItem(p)?.category === n.item.category);
+        const sources = sameCat ? parents : [`photo-${n.item.category}`];
+        for (const p of sources) {
+          const onPath = pathSet.has(n.item.id) && (pathSet.has(p) || p.startsWith("photo-"));
+          const done = researchedSet.has(p) && researchedSet.has(n.item.id);
+          out.push({
+            id: `${p}->${n.item.id}`,
+            source: p,
+            target: n.item.id,
+            sourceHandle: up ? "st" : "sb",
+            targetHandle: up ? "tb" : "tt",
+            type: "gameStep",
+            data: { direction: n.direction },
+            zIndex: onPath ? 1 : 0,
+            style: edgeStyle(onPath, done, "#8c949e"),
+          });
+        }
+      }
+      return out;
+    }
     const visible = new Set(layout.nodes.map((n) => n.item.id));
     const out: Edge[] = [];
     for (const n of layout.nodes)
@@ -111,11 +208,11 @@ export default function TreePage() {
           target: n.item.id,
           type: "smoothstep",
           animated: onPath,
-          style: { stroke: onPath ? "#ffd84d" : done ? "#5cff8a" : "#4a525c", strokeWidth: onPath ? 2.5 : 1.5 },
+          style: edgeStyle(onPath, done, "#4a525c"),
         });
       }
     return out;
-  }, [layout, pathSet, researchedSet]);
+  }, [layout, game, pathSet, researchedSet]);
 
   const toggleCat = (id: CategoryId) =>
     setCats((cur) => (cur.includes(id) ? cur.filter((c) => c !== id) : [...cur, id]));
@@ -172,6 +269,26 @@ export default function TreePage() {
               リスト
             </button>
           </div>
+          <div className="flex overflow-hidden rounded-md border border-line text-sm" role="group" aria-label="ツリーの配置">
+            <button
+              className={`flex items-center gap-1 px-2 py-1.5 ${view === "tree" && mode === "standard" ? "bg-neon/15 text-neon" : "text-muted"}`}
+              onClick={() => setMode("standard")}
+              aria-pressed={mode === "standard"}
+              title="カテゴリーごとに左→右で並べた標準の配置"
+            >
+              <LayoutGrid size={14} />
+              標準
+            </button>
+            <button
+              className={`flex items-center gap-1 px-2 py-1.5 ${view === "tree" && mode === "game" ? "bg-neon/15 text-neon" : "text-muted"}`}
+              onClick={() => setMode("game")}
+              aria-pressed={mode === "game"}
+              title="ゲーム内の研究ツリーに近い配置"
+            >
+              <Gamepad2 size={14} />
+              ゲーム風
+            </button>
+          </div>
           <ProgressBar className="w-full sm:w-56" />
         </div>
         <div className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-0.5">
@@ -203,12 +320,25 @@ export default function TreePage() {
               nodes={flowNodes}
               edges={edges}
               nodeTypes={nodeTypes}
-              onNodeClick={(_, n) => n.type === "shipment" && select(n.id)}
+              edgeTypes={edgeTypes}
+              onNodeClick={(_, n) => (n.type === "shipment" || n.type === "gameItem") && select(n.id)}
               onPaneClick={() => select(null)}
               nodesDraggable={false}
               nodesConnectable={false}
-              key={cats.join(",")}
+              key={`${mode}:${cats.join(",")}`}
               onInit={(inst) => {
+                if (game) {
+                  // ゲーム風: 選択中のアイテム、なければツリー全体を表示
+                  const target = selectedId ? game.nodes.find((n) => n.item.id === selectedId) : undefined;
+                  if (target) inst.setCenter(target.x + GAME_NODE_W / 2, target.y + GAME_NODE_H / 2, { zoom: 0.9 });
+                  else {
+                    // 一部のカテゴリーだけ表示中は装飾（中央線・Lenny）を除いて表示中の木に合わせる
+                    const all = cats.length === categories.length;
+                    const fit = flowNodes.filter((n) => n.type !== "centerLine" && (all || n.type !== "lenny"));
+                    inst.fitView({ padding: { top: "16px", bottom: "16px", left: "56px", right: "16px" }, nodes: fit.map((n) => ({ id: n.id })) });
+                  }
+                  return;
+                }
                 // 初期表示: 選択中のアイテム、なければ先頭カテゴリーにズーム（全体は左下の ⛶ ボタン）
                 const target = selectedId ? layout.nodes.find((n) => n.item.id === selectedId) : undefined;
                 if (target) {
@@ -226,7 +356,8 @@ export default function TreePage() {
             >
               <Background color="#2a2f36" gap={24} />
               <Controls showInteractive={false} />
-              <MiniMap pannable zoomable className="!hidden md:!block" nodeColor={(n) => (researchedSet.has(n.id) ? "#5cff8a" : "#4a525c")} maskColor="rgba(18,20,22,0.7)" />
+              {/* ゲーム風は全体表示が既定なのでミニマップは出さない（右下の項目に重なるため） */}
+              {!game && <MiniMap pannable zoomable className="!hidden md:!block" nodeColor={(n) => (researchedSet.has(n.id) ? "#5cff8a" : "#4a525c")} maskColor="rgba(18,20,22,0.7)" />}
             </ReactFlow>
           ) : (
             <ListView cats={cats} isMatch={isMatch} onSelect={select} selectedId={selectedId} />
