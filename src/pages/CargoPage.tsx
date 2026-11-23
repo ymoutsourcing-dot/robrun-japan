@@ -18,7 +18,8 @@ interface Cargo {
 interface Opening {
   cargo: string;
   date: string;
-  estimatedValue: number;
+  estimatedValue: number | null;
+  purchasePrice?: number;
   station: string;
   contentsJa: string;
   source: string;
@@ -37,7 +38,7 @@ export default function CargoPage() {
   const [sort, setSort] = useState<"price" | "rarity" | "name">("price");
   const rows = useMemo(() => {
     const opened = new Map<string, number[]>();
-    for (const o of openings) opened.set(o.cargo, [...(opened.get(o.cargo) ?? []), o.estimatedValue]);
+    for (const o of openings) if (o.estimatedValue != null) opened.set(o.cargo, [...(opened.get(o.cargo) ?? []), o.estimatedValue]);
     return cargo
       .map((c) => {
         const vals = opened.get(c.id) ?? [];
@@ -151,6 +152,7 @@ export default function CargoPage() {
           </li>
         </ul>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-xs text-muted">
+          <li>密輸貨物は詰め直さずに、貨物作業台で開ける（Search）こともできる。中身は酒のボトル（下の開封の記録）。$5,000で売られていた例もある（プレイヤー報告）。</li>
           <li>1個入れて1個出てくる。モーテルで$10,000で買って詰め直すと、売値（悪名ボーナス前）は$35,000（差額+$25,000）。</li>
           <li>集落の「改良結果」ボーナスが効いていると、通常の結果の代わりにレアリティ貨物になる（ゲームデータの注記。確率は未記載）。このボーナスはブラックマーケット（Highlands）に隣接する集落のものと考えられる（<a href="/guides/map-settlements" className="underline">集落と地区</a>）。</li>
           <li>作業台の「Modification」で強化パーツを付ける：ラベルプリンター（詰め直しが速くなる）、工具箱（枠を増やす）。詰め直しにかかる時間はデータに無く未確認。</li>
@@ -171,7 +173,8 @@ export default function CargoPage() {
                 <p className="flex flex-wrap items-center gap-2">
                   <span className="font-bold">{c?.nameJa ?? o.cargo}</span>
                   {c && <Rarity r={c.rarity} />}
-                  <span className="font-mono text-neon">推定 {money(o.estimatedValue)}</span>
+                  <span className="font-mono text-neon">{o.estimatedValue != null ? `推定 ${money(o.estimatedValue)}` : "推定価格 未確認"}</span>
+                  {o.purchasePrice != null && <span className="text-xs text-muted">購入 {money(o.purchasePrice)}</span>}
                   {c?.smugglerPrice && <span className="text-xs text-muted">（そのまま売ると {money(c.smugglerPrice)}）</span>}
                 </p>
                 <p className="mt-0.5 text-xs text-gray-300">中身：{o.contentsJa}</p>
