@@ -95,7 +95,7 @@ for (const it of ds.items)
     guideIds.add(g.id);
   }
   // サイト内リンク：存在するページ（/shipments/:id はアイテム、/guides/:id はガイドの存在も確認）
-  const PAGES = new Set(["/", "/shipments", "/items", "/calculator", "/calc", "/recommended", "/progress", "/about", "/changelog", "/guides", "/weapons", "/vehicles", "/cargo", "/tools", "/tips"]);
+  const PAGES = new Set(["/", "/shipments", "/items", "/calculator", "/calc", "/recommended", "/progress", "/about", "/changelog", "/guides", "/weapons", "/vehicles", "/cargo", "/collections", "/tools", "/tips"]);
   const linkOk = (link: string) => {
     const path = link.split(/[?#]/)[0];
     const m = /^\/(shipments|guides)\/([^/]+)$/.exec(path);

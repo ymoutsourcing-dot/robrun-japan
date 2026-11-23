@@ -24,6 +24,11 @@
       "label": "robrunwiki.app「Is ROB RUN free?」",
       "url": "https://robrunwiki.app/guides/is-rob-run-free",
       "kind": "fan"
+    },
+    "player-board": {
+      "label": "プレイヤー報告（ホワイトボードからPASS画面を開いたスクリーンショット・2026/11/23）",
+      "url": "/changelog",
+      "kind": "official"
     }
   },
   "sections": [
@@ -80,6 +85,10 @@
         {
           "text": "無料報酬はバトルパスの通貨で「買う」（例：鎮痛剤×3＝200）。買えるのは Lenny’s Motel か集落にいるときだけ（「Available only at Lenny's or in a settlement」）。",
           "source": "ingame-shop"
+        },
+        {
+          "text": "ゲーム内のホワイトボードからもPASS画面を開いて報酬を買える（プレイヤー報告。残り日数・1ページ目の報酬・購入ボタンが表示される）。ホワイトボードがある場所（拠点・モーテルなど）は未確認。",
+          "source": "player-board"
         },
         {
           "text": "報酬はページ分け。1ページ目は18個（無料12・プレミアム6）。2ページ目は、通貨を合計1,250使うと開く（「Spent 0/1250」）。",

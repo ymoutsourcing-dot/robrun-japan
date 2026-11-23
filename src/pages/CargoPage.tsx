@@ -57,6 +57,7 @@ export default function CargoPage() {
     <div className="mx-auto max-w-5xl space-y-4 px-3 py-4 sm:px-4">
       <div>
         <h1 className="text-2xl font-bold">積荷（カーゴ）図鑑</h1>
+        <p className="text-sm"><a href="/collections" className="text-sky-300 hover:underline">コレクション箱のレシピ一覧 →</a></p>
         <p className="text-sm text-muted">
           積荷はそのまま密輸業者に売るか、貨物作業台で開けて中身を売るかを選べます。開けた場合の価値はプレイヤーの実測を集めています。
         </p>

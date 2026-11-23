@@ -346,7 +346,7 @@ const equipment = buildEquipment(items, warnings);
 writeFileSync("src/generated/recommendations.json", JSON.stringify(recs, null, 1) + "\n");
 
 // sitemap.xml
-const urls = ["/", "/shipments", "/items", "/calculator", "/calc", "/recommended", "/about", "/changelog", "/weapons", "/vehicles", "/tools", "/tips", "/guides", "/guides/money", "/guides/production", "/guides/monetization", "/guides/wipe", "/guides/jail-time", "/guides/police", "/guides/map-looty-bay", "/guides/map-motel", "/guides/map-prison", "/guides/map-sales-center", "/guides/map-settlements", ...items.map((i) => `/shipments/${i.id}`)];
+const urls = ["/", "/shipments", "/items", "/calculator", "/calc", "/recommended", "/about", "/changelog", "/weapons", "/vehicles", "/tools", "/tips", "/cargo", "/collections", "/guides", "/guides/money", "/guides/production", "/guides/monetization", "/guides/wipe", "/guides/jail-time", "/guides/police", "/guides/map-looty-bay", "/guides/map-motel", "/guides/map-prison", "/guides/map-sales-center", "/guides/map-settlements", ...items.map((i) => `/shipments/${i.id}`)];
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join("\n") +

@@ -1,0 +1,1434 @@
+{
+ "source": {
+  "name": "Rob Run Guide",
+  "url": "https://robrunguide.app/en-US/production",
+  "note": "Collection recipes from game files (build 26464639 per item pages)",
+  "retrievedAt": "2026-11-23"
+ },
+ "collections": [
+  {
+   "id": "collection_0",
+   "crateId": "collection_reward_cargo_0",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "alcohol_1",
+     "nameEn": "Black Pirate Bottle",
+     "nameJa": "ブラックパイレーツのボトル",
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": 306
+    },
+    {
+     "id": "alcohol_8",
+     "nameEn": "Severka Bottle",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "alcohol_4",
+     "nameEn": "Happy Forester Bottle",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "alcohol_box_1",
+     "nameEn": "Alcohol",
+     "nameJa": "酒",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_1",
+   "crateId": "collection_reward_cargo_1",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "car_parts_6",
+     "nameEn": "Spark Plugs",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_parts_2",
+     "nameEn": "Car Headlight",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_parts_4",
+     "nameEn": "DW-04",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_spare_parts_1",
+     "nameEn": "Car Parts",
+     "nameJa": "車の部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_10",
+   "crateId": "collection_reward_cargo_10",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "weapon_trinket_1",
+     "nameEn": "Gyroscope",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "weapon_trinket_4",
+     "nameEn": "Modern Compass",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "blade_1",
+     "nameEn": "Imperial Collectible Knife",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "weaponparts_box_1",
+     "nameEn": "Weapon Parts",
+     "nameJa": "武器部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_11",
+   "crateId": "collection_reward_cargo_11",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "earrings_4",
+     "nameEn": "MAFFI Earrings",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "ring_1",
+     "nameEn": "ALON GIA Ring",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "necklace_1",
+     "nameEn": "ALON GIA Necklace",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "jewelry_pouch_1",
+     "nameEn": "Costume Jewelry",
+     "nameJa": "模造アクセサリー",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 150
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_12",
+   "crateId": "collection_reward_cargo_12",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "pharma_tools_1",
+     "nameEn": "Thermometer",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "vial_7",
+     "nameEn": "Vial With Illegal Drug",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "condoms_1",
+     "nameEn": "Burex Condoms",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "pharma_pack_1",
+     "nameEn": "Medications",
+     "nameJa": "医薬品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_13",
+   "crateId": "collection_reward_cargo_13",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "electronics_box_1",
+     "nameEn": "Electronics",
+     "nameJa": "電子部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    },
+    {
+     "id": "console_1",
+     "nameEn": "Key-Ten-Do Console",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "headphones_2",
+     "nameEn": "MS MIC Headphones",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "phone_2",
+     "nameEn": "D-MAX Smartphone",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_14",
+   "crateId": "collection_reward_cargo_14",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "toy_3",
+     "nameEn": "CollectiToy #3 Figure",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "cigar_2",
+     "nameEn": "Old Huba Cigars",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "poker_cards_2",
+     "nameEn": "Mystic Card Chronicles Deck",
+     "nameJa": "Mystic Card Chronicles のデッキ",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 2670
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_15",
+   "crateId": "collection_reward_cargo_15",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "alcohol_6",
+     "nameEn": "Eclipse Bottle",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "watch_6",
+     "nameEn": "PENARAI Watch",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "necklace_4",
+     "nameEn": "REFIER Necklace",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_16",
+   "crateId": "collection_reward_cargo_16",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "blade_4",
+     "nameEn": "Cyber Collectible Knife",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "gunpowder_2",
+     "nameEn": "Standard Gunpowder Kit",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equip_carbine_3",
+     "nameEn": "Reinforced Carabiner",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_17",
+   "crateId": "collection_reward_cargo_17",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "car_parts_5",
+     "nameEn": "Steering Wheel",
+     "nameJa": "ハンドル",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 5360
+    },
+    {
+     "id": "car_device_3",
+     "nameEn": "Dashcam",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "laptop_3",
+     "nameEn": "HUBRID Laptop",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_18",
+   "crateId": "collection_reward_cargo_18",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "antique_1",
+     "nameEn": "Deity Statue",
+     "nameJa": "神像",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 4300
+    },
+    {
+     "id": "vial_2",
+     "nameEn": "Vial With Liquid",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "pharma_tools_3",
+     "nameEn": "Glucometer",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_19",
+   "crateId": "collection_reward_cargo_19",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "console_3",
+     "nameEn": "ZTX Console",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "headphones_3",
+     "nameEn": "DS MAX Headphones",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "ring_5",
+     "nameEn": "MAFFI Ring",
+     "nameJa": "MAFFI の指輪",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 5078
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_2",
+   "crateId": "collection_reward_cargo_2",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "equipment_4",
+     "nameEn": "Field Ration",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equipment_1",
+     "nameEn": "Laser Rangefinder",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equipment_2",
+     "nameEn": "Binoculars",
+     "nameJa": "双眼鏡",
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": 470
+    },
+    {
+     "id": "equip_carbine_1",
+     "nameEn": "Carabiner Set",
+     "nameJa": "カラビナセット",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_20",
+   "crateId": "collection_reward_cargo_20",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "comics_3",
+     "nameEn": "DIGITAL SOUL Comic Book",
+     "nameJa": "DIGITAL SOUL のコミック",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 5106
+    },
+    {
+     "id": "perfume_4",
+     "nameEn": "LACROCAS Perfume",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "condoms_3",
+     "nameEn": "Zipit Condoms",
+     "nameJa": "Zipit コンドーム",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 2860
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_21",
+   "crateId": "collection_reward_cargo_21",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "antique_1",
+     "nameEn": "Deity Statue",
+     "nameJa": "神像",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 4300
+    },
+    {
+     "id": "car_trinket_3",
+     "nameEn": "Car Perfume",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_trinket_4",
+     "nameEn": "Racer Keychain",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_22",
+   "crateId": "collection_reward_cargo_22",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "alcohol_10",
+     "nameEn": "Old Pocket Bottle",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 4,
+     "sale": null
+    },
+    {
+     "id": "equipment_10",
+     "nameEn": "Premium Multitool",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "lighter_3",
+     "nameEn": "RedOlive Lighter",
+     "nameJa": "RedOlive ライター",
+     "rarity": "epic",
+     "qty": 2,
+     "sale": 2976
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_23",
+   "crateId": "collection_reward_cargo_23",
+   "crateEn": "Rare Collection Crate",
+   "crateRarity": "epic",
+   "crateValue": 150000,
+   "requires": [
+    "collection_upgrade_2"
+   ],
+   "ingredients": [
+    {
+     "id": "weapon_cleaning_2",
+     "nameEn": "Professional Gun Cleaning Kit",
+     "nameJa": "プロ用銃手入れキット",
+     "rarity": "epic",
+     "qty": 1,
+     "sale": 2950
+    },
+    {
+     "id": "gun_grease_2",
+     "nameEn": "Professional Gun Grease",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "weapon_trinket_2",
+     "nameEn": "Ballistic Chronograph",
+     "nameJa": null,
+     "rarity": "epic",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_24",
+   "crateId": "collection_reward_cargo_24",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "blade_5",
+     "nameEn": "Nightfall Collectible Knife",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "lighter_5",
+     "nameEn": "SkyDragon Lighter",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "perfume_5",
+     "nameEn": "DUCHEE Perfume",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_25",
+   "crateId": "collection_reward_cargo_25",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "laptop_4",
+     "nameEn": "PD STATION Laptop",
+     "nameJa": "PD STATION ノートPC",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 29556
+    },
+    {
+     "id": "car_trinket_5",
+     "nameEn": "Pit Bull Bobblehead",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "ring_6",
+     "nameEn": "PRIDE Ring",
+     "nameJa": "PRIDE の指輪",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 34876
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_26",
+   "crateId": "collection_reward_cargo_26",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "burner_3",
+     "nameEn": "High-precision Stove",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "poker_cards_5",
+     "nameEn": "Joker's Choice Deck",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "gunpowder_3",
+     "nameEn": "Refined Gunpowder Kit",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_27",
+   "crateId": "collection_reward_cargo_27",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "car_parts_8",
+     "nameEn": "Premium Car Compressor",
+     "nameJa": "高級カーコンプレッサー",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 29760
+    },
+    {
+     "id": "phone_5",
+     "nameEn": "Tuver Phone",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equipment_7",
+     "nameEn": "Modern Tactical Binoculars",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_28",
+   "crateId": "collection_reward_cargo_28",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "alcohol_12",
+     "nameEn": "Krystal Authority Bottle",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "watch_5",
+     "nameEn": "POLEX Watch",
+     "nameJa": "POLEX の腕時計",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 32842
+    },
+    {
+     "id": "condoms_5",
+     "nameEn": "Playgirl Condoms",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_29",
+   "crateId": "collection_reward_cargo_29",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "headphones_5",
+     "nameEn": "Beat Head Headphones",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equip_carbine_4",
+     "nameEn": "Tactical Carabiner",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "weapon_trinket_3",
+     "nameEn": "Drone Controller",
+     "nameJa": "ドローンのコントローラー",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 24890
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_3",
+   "crateId": "collection_reward_cargo_3",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "weapon_cleaning_1",
+     "nameEn": "Gun Cleaning Kit",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "gun_grease_1",
+     "nameEn": "Gun Grease",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "gunpowder_1",
+     "nameEn": "Basic Gunpowder Kit",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "weaponparts_box_1",
+     "nameEn": "Weapon Parts",
+     "nameJa": "武器部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_30",
+   "crateId": "collection_reward_cargo_30",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "comics_5",
+     "nameEn": "MASK Comic Book",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "necklace_6",
+     "nameEn": "PENARAI Necklace",
+     "nameJa": "PENARAI のネックレス",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 30134
+    },
+    {
+     "id": "car_parts_1",
+     "nameEn": "Royal Motors Emblem",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_31",
+   "crateId": "collection_reward_cargo_31",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "journal_5",
+     "nameEn": "OPALINE Magazine",
+     "nameJa": "OPALINE 誌",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 32226
+    },
+    {
+     "id": "earrings_2",
+     "nameEn": "AMINA Earrings",
+     "nameJa": "AMINA のイヤリング",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 33840
+    },
+    {
+     "id": "vial_5",
+     "nameEn": "Cosmetic Ampule",
+     "nameJa": "美容アンプル",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 25216
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_32",
+   "crateId": "collection_reward_cargo_32",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "pharma_tools_5",
+     "nameEn": "Dental Loupes",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "gun_grease_3",
+     "nameEn": "Synthetic Gun Grease",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equipment_11",
+     "nameEn": "Collectible Multitool",
+     "nameJa": "コレクター向けマルチツール",
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": 30400
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_33",
+   "crateId": "collection_reward_cargo_33",
+   "crateEn": "Unique Collection Crate",
+   "crateRarity": "legendary",
+   "crateValue": 500000,
+   "requires": [
+    "collection_upgrade_3"
+   ],
+   "ingredients": [
+    {
+     "id": "toy_5",
+     "nameEn": "CollectiToy x TA",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_device_5",
+     "nameEn": "Premium Dashcam",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "baseball_card_1",
+     "nameEn": "Eason McKinley Card",
+     "nameJa": null,
+     "rarity": "legendary",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_4",
+   "crateId": "collection_reward_cargo_4",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "earrings_3",
+     "nameEn": "SUGI Earrings",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "watch_1",
+     "nameEn": "PEGIUET Watch",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "necklace_5",
+     "nameEn": "CHIPARDI Necklace",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "jewelry_pouch_1",
+     "nameEn": "Costume Jewelry",
+     "nameJa": "模造アクセサリー",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 150
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_5",
+   "crateId": "collection_reward_cargo_5",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "vial_1",
+     "nameEn": "Vial With Supplements",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "vial_3",
+     "nameEn": "Vial With Vaccine",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "pharma_tools_6",
+     "nameEn": "Ophthalmoscope",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "pharma_pack_1",
+     "nameEn": "Medications",
+     "nameJa": "医薬品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_6",
+   "crateId": "collection_reward_cargo_6",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [],
+   "ingredients": [
+    {
+     "id": "electronics_box_1",
+     "nameEn": "Electronics",
+     "nameJa": "電子部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    },
+    {
+     "id": "laptop_1",
+     "nameEn": "AIR-P Laptop",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "phone_1",
+     "nameEn": "G-FLOW Smartphone",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "headphones_1",
+     "nameEn": "AIRHEADS Headphones",
+     "nameJa": "AIRHEADS ヘッドホン",
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": 230
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_7",
+   "crateId": "collection_reward_cargo_7",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "alcohol_7",
+     "nameEn": "Fine Wine Bottle",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "alcohol_3",
+     "nameEn": "Diamond Breeze Bottle",
+     "nameJa": "ダイヤモンドブリーズのボトル",
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": 330
+    },
+    {
+     "id": "alcohol_9",
+     "nameEn": "Omega Bottle",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "alcohol_box_1",
+     "nameEn": "Alcohol",
+     "nameJa": "酒",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_8",
+   "crateId": "collection_reward_cargo_8",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "car_device_2",
+     "nameEn": "Cheap Car Stereo",
+     "nameJa": "安物のカーステレオ",
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": 440
+    },
+    {
+     "id": "car_device_1",
+     "nameEn": "Affordable Dashcam",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_trinket_1",
+     "nameEn": "Hanging Dice",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "car_spare_parts_1",
+     "nameEn": "Car Parts",
+     "nameJa": "車の部品",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  },
+  {
+   "id": "collection_9",
+   "crateId": "collection_reward_cargo_9",
+   "crateEn": "Collection Crate",
+   "crateRarity": "uncommon",
+   "crateValue": 50000,
+   "requires": [
+    "collection_upgrade_1"
+   ],
+   "ingredients": [
+    {
+     "id": "equip_carbine_1",
+     "nameEn": "Carabiner Set",
+     "nameJa": "カラビナセット",
+     "rarity": "common",
+     "qty": 10,
+     "sale": 50
+    },
+    {
+     "id": "burner_1",
+     "nameEn": "Camping Stove",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "lighter_1",
+     "nameEn": "Snap-Snap Lighter",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    },
+    {
+     "id": "equip_carbine_2",
+     "nameEn": "Steel Carabiner",
+     "nameJa": null,
+     "rarity": "uncommon",
+     "qty": 1,
+     "sale": null
+    }
+   ],
+   "notes": [
+    "The collection selection depends on the available slot and match progress."
+   ]
+  }
+ ]
+}
