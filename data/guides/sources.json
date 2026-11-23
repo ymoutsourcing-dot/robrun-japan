@@ -33,5 +33,15 @@
   "wiki-wipe": { "label": "robrunwiki.app「Wipe guide」", "url": "https://robrunwiki.app/guides/wipe", "kind": "fan" },
   "wiki-police": { "label": "robrunwiki.app「Police guide」", "url": "https://robrunwiki.app/guides/police", "kind": "fan" },
   "robrungame-prison": { "label": "robrungame.app「ROB RUN Prison」（プレイヤー報告を集約）", "url": "https://robrungame.app/guides/rob-run-prison/", "kind": "fan" },
-  "shipments-data": { "label": "本サイトのShipmentsデータ", "url": "/shipments", "kind": "data" }
+  "shipments-data": { "label": "本サイトのShipmentsデータ", "url": "/shipments", "kind": "data" },
+  "game-text": { "label": "ゲーム内のアイテム説明文", "url": "/shipments/{id}", "kind": "data" },
+  "rri-item": { "label": "robrun.info アイテムページ", "url": "https://robrun.info/items/{rriId}/", "kind": "fan" },
+  "rrg-item": { "label": "Rob Run Guide アイテムページ", "url": "https://robrunguide.app/en-US/items/{itemId}", "kind": "fan" },
+  "rri-barter": { "label": "robrun.info「Бартер」（物々交換）", "url": "https://robrun.info/mechanics/barter/", "kind": "fan" },
+  "rri-cumulative": { "label": "robrun.info「Накопительные предметы」（ポイントを貯めるアイテム）", "url": "https://robrun.info/mechanics/cumulative/", "kind": "fan" },
+  "rri-raid": { "label": "robrun.info「Взлом и защита базы」（拠点の襲撃と防衛）", "url": "https://robrun.info/guides/raid/", "kind": "fan" },
+  "rri-collections": { "label": "robrun.info「Сбор коллекций」（コレクション）", "url": "https://robrun.info/guides/collections/", "kind": "fan" },
+  "rri-vehicle-mods": { "label": "robrun.info「Модификация транспорта」（車両改造）", "url": "https://robrun.info/guides/vehicle-mods/", "kind": "fan" },
+  "player-report": { "label": "プレイヤー報告（サイト利用者・2026/11/23）", "url": "/changelog", "kind": "fan" },
+  "rri-building-plan": { "label": "robrun.info「План строения」（家具の設置・拠点防衛）", "url": "https://robrun.info/guides/building-plan/", "kind": "fan" }
 }

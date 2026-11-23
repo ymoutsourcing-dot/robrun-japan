@@ -49,6 +49,7 @@ data/                       ← ゲームデータ（表示ロジックと分離
   changelog.json                 更新履歴
 scripts/
   extract-robrunguide.ts    保存した HTML → data/source/*.json
+  extract-robrun-info.ts    robrun.info のアイテムページ HTML → data/source/robrun-info.source.json
   build-data.ts             data/* を統合 → src/generated/*.json, public/sitemap.xml, public/robots.txt
   validate-data.ts          整合性チェック（ID重複・存在しない前提・循環・未翻訳 など）
 src/

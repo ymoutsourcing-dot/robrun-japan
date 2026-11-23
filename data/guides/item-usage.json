@@ -1,0 +1,6658 @@
+{
+ "_comment": "アイテムごとの使い方・入手方法（日本語・手書き）。各行は文字列か {text, items?, source?}。source を省略した行はアイテムの sources（主に rri-item＝robrun.info のアイテムページ）が出典。statsJa・obtainJa は data/source/robrun-info.source.json を訳したもの。出典キーは data/guides/sources.json。",
+ "items": {
+  "fukurou_tensa": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "手頃な日常用の車",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク2行・貨物1枠。トランクバッグは1個、カーゴラックは1個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ]
+  },
+  "car_suspension_2": {
+   "effectsJa": [
+    {
+     "label": "ハンドリング",
+     "value": "アップ（強化幅：中）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のハンドリング（強化幅：中）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_steering_rack_1": {
+   "effectsJa": [
+    {
+     "label": "ハンドリング",
+     "value": "アップ（強化幅：小）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のハンドリング（強化幅：小）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_steering_rack_2": {
+   "effectsJa": [
+    {
+     "label": "ハンドリング",
+     "value": "アップ（強化幅：中）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のハンドリング（強化幅：中）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_ecu_1": {
+   "effectsJa": [
+    {
+     "label": "最高速度",
+     "value": "アップ（強化幅：小）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の最高速度（強化幅：小）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_ecu_2": {
+   "effectsJa": [
+    {
+     "label": "最高速度",
+     "value": "アップ（強化幅：中）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の最高速度（強化幅：中）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_ecu_3": {
+   "effectsJa": [
+    {
+     "label": "最高速度",
+     "value": "アップ（強化幅：大）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の最高速度（強化幅：大）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "royal_e": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "トランクの大きい快適なセダン",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク3行・貨物2枠。トランクバッグは1個、カーゴラックは1個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ]
+  },
+  "longhorn_wild": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "加速の速いパワフルな車",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク3行・貨物1枠。トランクバッグは1個、カーゴラックは1個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ]
+  },
+  "buletti_soltempra": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "最高のスピードと最高の格を備えた車",
+     "source": "game-text"
+    },
+    {
+     "text": "貨物スロットは0で、改造しても貨物は積めない（トランクは2行、トランクバッグ1個まで）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "グランドホテルの展示車を「ジャマー」で盗むこともできる。盗んだ車はワイプまで手元に残り、スキンは永久に残る",
+     "source": "rri-heists"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "マップ上に置かれている場所：グランドホテル（サニービーチ）×1"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods",
+    "rri-heists"
+   ]
+  },
+  "car_turbocharger_1": {
+   "effectsJa": [
+    {
+     "label": "加速",
+     "value": "アップ（強化幅：小）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の加速（強化幅：小）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_turbocharger_2": {
+   "effectsJa": [
+    {
+     "label": "加速",
+     "value": "アップ（強化幅：中）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の加速（強化幅：中）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_engine_cooling_1": {
+   "effectsJa": [
+    {
+     "label": "加速",
+     "value": "アップ（強化幅：小）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の加速（強化幅：小）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_engine_cooling_2": {
+   "effectsJa": [
+    {
+     "label": "加速",
+     "value": "アップ（強化幅：中）",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の加速（強化幅：中）を上げる改造パーツ",
+     "source": "rrg-item"
+    },
+    {
+     "text": "自分の車のボンネットを開け、対応するスロットにパーツをドラッグして取り付ける",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "longhorn_van": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "獲物を運ぶための大容量バン",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク8行・貨物6枠。トランクバッグは2個、カーゴラックは3個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "強化カーゴラックを3個付けると貨物は 6＋3×2＝12 枠になる",
+     "items": [
+      "car_cargo_2"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ],
+   "notes": "robrun.info ではハンドリング30（本サイトの性能データは10）。"
+  },
+  "longhorn_titan": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "パワーがあり積載量も大きいSUV",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク6行・貨物6枠。トランクバッグは2個、カーゴラックは1個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ],
+   "notes": "robrun.info ではハンドリング60（本サイトの性能データは10）。"
+  },
+  "royal_j": {
+   "requiresJa": [
+    {
+     "text": "自分の車を持つには自分の家が必要。家がないうちはパーキングメーターか拠点のキーロッカーで借りる車だけ（レンタル車は改造不可）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "街中でも郊外でも快適に走れるクロスオーバー",
+     "source": "game-text"
+    },
+    {
+     "text": "改造なしでトランク6行・貨物4枠。トランクバッグは3個、カーゴラックは2個まで付けられる",
+     "items": [
+      "car_inventory_1",
+      "car_cargo_1"
+     ],
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "購入した車は死んでも消えない。より上位の車には上の地区への引っ越しが必要",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-vehicle-mods"
+   ],
+   "notes": "robrun.info ではハンドリング60（本サイトの性能データは10）。"
+  },
+  "car_police_radio_1": {
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "近くのパトカーと Looty Bay の交戦フィードを追跡できる車載無線",
+     "source": "game-text"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_inventory_1": {
+   "effectsJa": [
+    {
+     "label": "トランク",
+     "value": "+1行",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のトランク行を+1する",
+     "source": "rrg-item"
+    },
+    {
+     "text": "付けられる数は車種ごとに決まっている（Fukurou Tensa・Royal E・Longhorn Wild・Buletti Soltempra は1個、Longhorn Van・Titan は2個、Royal J は3個）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_inventory_2": {
+   "effectsJa": [
+    {
+     "label": "トランク",
+     "value": "+2行",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のトランク行を+2する",
+     "source": "rrg-item"
+    },
+    {
+     "text": "付けられる数は車種ごとに決まっている（Fukurou Tensa・Royal E・Longhorn Wild・Buletti Soltempra は1個、Longhorn Van・Titan は2個、Royal J は3個）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_inventory_3": {
+   "effectsJa": [
+    {
+     "label": "トランク",
+     "value": "+3行",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車のトランク行を+3する",
+     "source": "rrg-item"
+    },
+    {
+     "text": "付けられる数は車種ごとに決まっている（Fukurou Tensa・Royal E・Longhorn Wild・Buletti Soltempra は1個、Longhorn Van・Titan は2個、Royal J は3個）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_cargo_1": {
+   "effectsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "+1",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の貨物スロットを+1する",
+     "source": "rrg-item"
+    },
+    {
+     "text": "付けられる数は車種ごとに決まっている（Longhorn Van は3個、Royal J は2個、Fukurou Tensa・Royal E・Titan・Wild は1個、Buletti Soltempra は不可）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "car_cargo_2": {
+   "effectsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "+2",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "取り付けられるのは自分の車だけ（レンタル車には付けられない）。自分の車を持つには自分の家が必要",
+     "source": "rri-vehicle-mods"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "車の貨物スロットを+2する",
+     "source": "rrg-item"
+    },
+    {
+     "text": "付けられる数は車種ごとに決まっている（Longhorn Van は3個、Royal J は2個、Fukurou Tensa・Royal E・Titan・Wild は1個、Buletti Soltempra は不可）",
+     "source": "rri-vehicle-mods"
+    },
+    {
+     "text": "取り付けたパーツは死んでも落とさない",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の自動車部品店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-vehicle-mods",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "romanov_r8": {
+   "requiresJa": [
+    {
+     "text": "置くにはヘリポートが必要",
+     "items": [
+      "helicopter_garage_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "個人・ビジネス用の多用途ヘリコプター",
+     "source": "game-text"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "最高速度（設定値）",
+     "value": "35"
+    },
+    {
+     "label": "上昇速度",
+     "value": "35"
+    },
+    {
+     "label": "下降速度",
+     "value": "15"
+    },
+    {
+     "label": "重量",
+     "value": "780"
+    },
+    {
+     "label": "上昇限度（ソフト／ハード）",
+     "value": "175 / 210"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "action_camera_1_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "40ポイント",
+     "source": "rri-item"
+    },
+    {
+     "label": "必要な悪名レベル",
+     "value": "2",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "ポイントが入るのは悪名レベル2のとき",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "悪名レベル2で特定の犯罪行為をするとポイントが貯まり、40ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-cumulative",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "tablet_1_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "4ポイント",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "Looty Bay で金庫を開けるとポイントが貯まり、4ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると物々交換に使うか、高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：満タン3個 → ガラスカッター",
+     "source": "rri-barter"
+    },
+    {
+     "text": "ガラスカッターはアートギャラリーの展示ケース（BIG EGG #53）を開けるのに必要",
+     "source": "rri-heists"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cumulative",
+    "game-text",
+    "rri-barter",
+    "rri-heists",
+    "rri-base"
+   ]
+  },
+  "usb_1_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "5ポイント",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "鍵のかかった部屋のパソコンをハッキングするとポイントが貯まり、5ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると物々交換に使うか、高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：満タン2個＋満タンのアクションカメラ1個＋$50,000 → ドリル",
+     "items": [
+      "action_camera_2_cumulative"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cumulative",
+    "game-text",
+    "rri-barter",
+    "rri-base"
+   ]
+  },
+  "lockpick_1": {
+   "effectsJa": [
+    {
+     "label": "解錠",
+     "value": "警報なし",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "警報を鳴らさずにドアやコンテナを開けられる。他人の車のトランクも開けられる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "storage_lockpick_1": {
+   "effectsJa": [
+    {
+     "label": "開けられる",
+     "value": "他人の金庫・セキュリティキャビネット",
+     "source": "game-text"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "他プレイヤーの金庫（小型・中型・大型）を開けられる",
+     "items": [
+      "storage_1",
+      "storage_2",
+      "storage_3"
+     ],
+     "source": "game-text"
+    },
+    {
+     "text": "他プレイヤーのセキュリティキャビネット（貨物用の鍵付きラック）を開けられる",
+     "items": [
+      "shelving_4",
+      "shelving_5",
+      "shelving_6"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "他プレイヤーの保護された収納を開けるための鍵",
+     "source": "game-text"
+    },
+    {
+     "text": "デコーダーで建物のセキュリティを破っても、中の金庫とセキュリティキャビネットはマスターキーがないと開かない",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "mini_drill_1": {
+   "usageJa": [
+    {
+     "text": "小型で精密。金庫の錠を素早く開ける",
+     "source": "game-text"
+    },
+    {
+     "text": "robrun.info では、Looty Bay の住宅・ホテル・店舗・警察署・銀行などにある金庫17か所（Looty Bay 銀行の銀行金庫×3を含む）を開けられる対象として挙げている",
+     "source": "rri-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "deposit_box_1_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "60ポイント",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "銀行の貸金庫を開けるとポイントが貯まり、60ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると物々交換に使うか、高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：満タン1個 → 銀行の金塊保管庫のIDカード",
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cumulative",
+    "game-text",
+    "rri-barter",
+    "rri-base"
+   ]
+  },
+  "plot_sale_1": {
+   "enablesJa": [
+    {
+     "text": "地区Lv1の集落で区画を借りられるようになり、新しいアイテムが解放される",
+     "source": "game-text"
+    },
+    {
+     "text": "区画を借りた地区のレベルがノートPCの販売ティアになる（区画なし＝I、地区Lv2＝II、地区Lv3＝III）",
+     "source": "rri-base"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "区画を借りられるのはオーナーのいる集落だけ。集落の賃貸看板で契約する",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "上の地区へ移るには、その地区レベルの権利書が必要。新しい区画を借りると拠点の中身ごと引っ越し、前の区画は空く（襲撃ブロック中は不可）",
+     "source": "rri-base"
+    },
+    {
+     "text": "その地区の販売センターで売れるのは、その地区に区画を借りている人だけ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "plot_sale_2": {
+   "enablesJa": [
+    {
+     "text": "地区Lv2の集落で区画を借りられるようになり、新しいアイテムが解放される",
+     "source": "game-text"
+    },
+    {
+     "text": "区画を借りた地区のレベルがノートPCの販売ティアになる（区画なし＝I、地区Lv2＝II、地区Lv3＝III）",
+     "source": "rri-base"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "区画を借りられるのはオーナーのいる集落だけ。集落の賃貸看板で契約する",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "上の地区へ移るには、その地区レベルの権利書が必要。新しい区画を借りると拠点の中身ごと引っ越し、前の区画は空く（襲撃ブロック中は不可）",
+     "source": "rri-base"
+    },
+    {
+     "text": "その地区の販売センターで売れるのは、その地区に区画を借りている人だけ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "plot_sale_3": {
+   "enablesJa": [
+    {
+     "text": "地区Lv3の集落で区画を借りられるようになり、新しいアイテムが解放される",
+     "source": "game-text"
+    },
+    {
+     "text": "区画を借りた地区のレベルがノートPCの販売ティアになる（区画なし＝I、地区Lv2＝II、地区Lv3＝III）",
+     "source": "rri-base"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "区画を借りられるのはオーナーのいる集落だけ。集落の賃貸看板で契約する",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "上の地区へ移るには、その地区レベルの権利書が必要。新しい区画を借りると拠点の中身ごと引っ越し、前の区画は空く（襲撃ブロック中は不可）",
+     "source": "rri-base"
+    },
+    {
+     "text": "その地区の販売センターで売れるのは、その地区に区画を借りている人だけ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "settlement_sale_1": {
+   "enablesJa": [
+    {
+     "text": "地区Lv1の集落を購入できる。オーナーは集落内の区画を無料で使え、他プレイヤーに区画を貸し、その金融取引から税を取れる",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "税は住人が資金洗浄やノートPCでの購入をするたびに入り、同じ集落の回収バンで受け取る。前の税を回収するまで次は貯まらない",
+     "source": "rri-base"
+    },
+    {
+     "text": "所有できる集落は最大5つ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "settlement_sale_2": {
+   "enablesJa": [
+    {
+     "text": "地区Lv2の集落を購入できる。オーナーは集落内の区画を無料で使え、他プレイヤーに区画を貸し、その金融取引から税を取れる",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "税は住人が資金洗浄やノートPCでの購入をするたびに入り、同じ集落の回収バンで受け取る。前の税を回収するまで次は貯まらない",
+     "source": "rri-base"
+    },
+    {
+     "text": "所有できる集落は最大5つ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "settlement_sale_3": {
+   "enablesJa": [
+    {
+     "text": "地区Lv3の集落を購入できる。オーナーは集落内の区画を無料で使え、他プレイヤーに区画を貸し、その金融取引から税を取れる",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "税は住人が資金洗浄やノートPCでの購入をするたびに入り、同じ集落の回収バンで受け取る。前の税を回収するまで次は貯まらない",
+     "source": "rri-base"
+    },
+    {
+     "text": "所有できる集落は最大5つ",
+     "source": "rri-base"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "dp9_m1": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発18ダメージ（頭部27）、連射333発/分、装弾数14発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "20"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "1.9秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "dp9_m2": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発18ダメージ（頭部27）、連射333発/分、装弾数14発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "20"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "1.9秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.15秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    }
+   ],
+   "obtainJa": [
+    "マップ上に置かれている場所：ストリップクラブ（サニービーチ）×1"
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $300 が記載されている。"
+  },
+  "lbr44_m1": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発34ダメージ（頭部51）、連射200発/分、装弾数6発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "35"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "lbr44_m2": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発34ダメージ（頭部51）、連射200発/分、装弾数6発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "35"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.15秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $20,000 が記載されている。"
+  },
+  "vulture50_m1": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発36ダメージ（頭部54）、連射240発/分、装弾数7発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "40"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "vulture50_m2": {
+   "usageJa": [
+    {
+     "text": "ピストル（セミオート）。1発36ダメージ（頭部54）、連射240発/分、装弾数7発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "40"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.15秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $50,000 が記載されている。"
+  },
+  "harris500_m1": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射120発/分、装弾数5発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "7"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "harris500_m2": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射120発/分、装弾数5発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "7"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,500 が記載されている。"
+  },
+  "harris500_m3": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射120発/分、装弾数7発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "9"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,500 が記載されている。"
+  },
+  "ordr12_m1": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射171発/分、装弾数6発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "7"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "ordr12_m2": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射171発/分、装弾数6発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "7"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $28,000 が記載されている。"
+  },
+  "ordr12_m3": {
+   "usageJa": [
+    {
+     "text": "ショットガン（セミオート）。1発9ダメージ（頭部14）、連射171発/分、装弾数8発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "9"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $28,000 が記載されている。"
+  },
+  "tag12k_m1": {
+   "usageJa": [
+    {
+     "text": "ショットガン（フルオート）。1発9ダメージ（頭部14）、連射240発/分、装弾数5発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "8"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.5秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "tag12k_m2": {
+   "usageJa": [
+    {
+     "text": "ショットガン（フルオート）。1発9ダメージ（頭部14）、連射240発/分、装弾数5発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "8"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $110,000 が記載されている。"
+  },
+  "tag12k_m3": {
+   "usageJa": [
+    {
+     "text": "ショットガン（フルオート）。1発9ダメージ（頭部14）、連射240発/分、装弾数8発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "10"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $110,000 が記載されている。"
+  },
+  "mc10_m1": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発12ダメージ（頭部18）、連射667発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "25"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "mc10_m2": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発12ダメージ（頭部18）、連射667発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "25"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,500 が記載されている。"
+  },
+  "mc10_m3": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発12ダメージ（頭部18）、連射667発/分、装弾数40発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "29"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,500 が記載されている。"
+  },
+  "jp7_m1": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発15ダメージ（頭部23）、連射750発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "27"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "1.9秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "jp7_m2": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発15ダメージ（頭部23）、連射750発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "27"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "1.9秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $29,000 が記載されている。"
+  },
+  "jp7_m3": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発15ダメージ（頭部23）、連射750発/分、装弾数40発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "31"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "1.9秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $29,000 が記載されている。"
+  },
+  "apscalar_m1": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射1,000発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "30"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "apscalar_m2": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射1,000発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "30"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $115,000 が記載されている。"
+  },
+  "apscalar_m3": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射1,000発/分、装弾数45発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "34"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $115,000 が記載されている。"
+  },
+  "kl545_m1": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発15ダメージ（頭部23）、連射600発/分、装弾数30発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "45"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "kl545_m2": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発15ダメージ（頭部23）、連射600発/分、装弾数30発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "45"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $6,000 が記載されている。"
+  },
+  "kl545_m3": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発15ダメージ（頭部23）、連射600発/分、装弾数45発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "50"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $6,000 が記載されている。"
+  },
+  "rc556_m1": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発16ダメージ（頭部24）、連射667発/分、装弾数30発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "55"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "rc556_m2": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発16ダメージ（頭部24）、連射667発/分、装弾数30発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "55"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $32,000 が記載されている。"
+  },
+  "rc556_m3": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発16ダメージ（頭部24）、連射667発/分、装弾数50発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "60"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "見つかることがある場所：銃砲店・西（サニービーチ）、警察署（パークサイド）、銃砲店・東（ダウンタウン）"
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $32,000 が記載されている。"
+  },
+  "srreaper_m1": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発17ダメージ（頭部26）、連射750発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "65"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "srreaper_m2": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発17ダメージ（頭部26）、連射750発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "65"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $120,000 が記載されている。"
+  },
+  "srreaper_m3": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発17ダメージ（頭部26）、連射750発/分、装弾数40発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "70"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $120,000 が記載されている。"
+  },
+  "backpack_2": {
+   "effectsJa": [
+    {
+     "label": "インベントリ",
+     "value": "+2行",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "役立つアイテムをたくさん入れられるバッグ。インベントリが2行増える",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "backpack_3": {
+   "effectsJa": [
+    {
+     "label": "インベントリ",
+     "value": "+4行",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "役立つアイテムをたくさん入れられるバッグ。インベントリが4行増える",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "backpack_4": {
+   "effectsJa": [
+    {
+     "label": "インベントリ",
+     "value": "+6行",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "役立つアイテムをたくさん入れられるバッグ。インベントリが6行増える",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "flash_grenade_1": {
+   "effectsJa": [
+    {
+     "label": "効果",
+     "value": "目つぶし",
+     "source": "game-text"
+    },
+    {
+     "label": "起爆",
+     "value": "2秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "敵を一時的に目つぶしするグレネード。投げてから2秒で起爆",
+     "source": "rrg-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "1秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.45秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.6秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の銃砲店でも買える（価格はノートPCの3倍・民間人のときのみ）",
+    "マップ上に置かれている場所：警察署（パークサイド）×1"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "smoke_grenade_1": {
+   "effectsJa": [
+    {
+     "label": "効果",
+     "value": "煙幕",
+     "source": "game-text"
+    },
+    {
+     "label": "起爆",
+     "value": "2秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "起爆すると煙幕を張るグレネード。投げてから2秒で起爆",
+     "source": "rrg-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "1秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.45秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.6秒"
+    }
+   ],
+   "obtainJa": [
+    "マップ上に置かれている場所：警察署（パークサイド）×1"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text"
+   ],
+   "notes": "robrun.info のアイテムページには研究ツリー（研究費・前提研究）とノートPCでの購入の記載がなく、入手方法は警察署に置かれているものだけが載っている。"
+  },
+  "vest1_m1": {
+   "effectsJa": [
+    {
+     "label": "アーマーセグメント",
+     "value": "1",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アーマーセグメント1のボディアーマー",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "壊れたセグメントはスチールプレートで回復できる",
+     "items": [
+      "armor_plate_1",
+      "armor_plate_2"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "vest2_m1": {
+   "effectsJa": [
+    {
+     "label": "アーマーセグメント",
+     "value": "2",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アーマーセグメント2のボディアーマー",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "壊れたセグメントはスチールプレートで回復できる",
+     "items": [
+      "armor_plate_1",
+      "armor_plate_2"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "vest3_m1": {
+   "effectsJa": [
+    {
+     "label": "アーマーセグメント",
+     "value": "3",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アーマーセグメント3のボディアーマー",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "壊れたセグメントはスチールプレートで回復できる",
+     "items": [
+      "armor_plate_1",
+      "armor_plate_2"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "vest4_m1": {
+   "effectsJa": [
+    {
+     "label": "アーマーセグメント",
+     "value": "4",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アーマーセグメント4のボディアーマー",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "壊れたセグメントはスチールプレートで回復できる",
+     "items": [
+      "armor_plate_1",
+      "armor_plate_2"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "armor_plate_1": {
+   "effectsJa": [
+    {
+     "label": "セグメント回復",
+     "value": "1",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.3秒",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "ボディアーマーを着ているときに使う",
+     "items": [
+      "vest1_m1",
+      "vest2_m1",
+      "vest3_m1",
+      "vest4_m1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "ボディアーマーの耐久を回復する。1枚でセグメント1つ、使用1.3秒",
+     "source": "rrg-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "0秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.3秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.3秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "armor_plate_2": {
+   "effectsJa": [
+    {
+     "label": "セグメント回復",
+     "value": "2",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.6秒",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "ボディアーマーを着ているときに使う",
+     "items": [
+      "vest1_m1",
+      "vest2_m1",
+      "vest3_m1",
+      "vest4_m1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "ボディアーマーの耐久を回復する。1枚でセグメント2つ、使用1.6秒",
+     "source": "rrg-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "0秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.6秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.3秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "belt_1": {
+   "effectsJa": [
+    {
+     "label": "ポケット",
+     "value": "1個",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムに素早くアクセスするためのポーチ。ポケット1個",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "belt_2": {
+   "effectsJa": [
+    {
+     "label": "ポケット",
+     "value": "2個",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムに素早くアクセスするためのポーチ。ポケット2個",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "belt_3": {
+   "effectsJa": [
+    {
+     "label": "ポケット",
+     "value": "3個",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムに素早くアクセスするためのポーチ。ポケット3個",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "belt_4": {
+   "effectsJa": [
+    {
+     "label": "ポケット",
+     "value": "4個",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムに素早くアクセスするためのポーチ。ポケット4個",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の防具店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "afak_1": {
+   "effectsJa": [
+    {
+     "label": "回復",
+     "value": "100 HP（即時）",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "9秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "個人用の救急キット。即時に100 HP回復。使用に9秒かかり、使用中は移動できず、ジャンプで中断される",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "8秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "9秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.7秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "いいえ"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "はい"
+    },
+    {
+     "label": "回復量",
+     "value": "100 HP"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の薬局でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "painkiller_1": {
+   "effectsJa": [
+    {
+     "label": "回復",
+     "value": "25 HP（即時）",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.8秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "即効性の鎮痛剤。即時に25 HP回復、使用1.8秒。移動しながら使える",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.8秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.6秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    },
+    {
+     "label": "回復量",
+     "value": "25 HP"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の薬局でも買える（価格はノートPCの3倍・民間人のときのみ）",
+    "見つかることがある場所：薬局（サニービーチ）、薬局（ダウンタウン）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "painkiller_2": {
+   "effectsJa": [
+    {
+     "label": "回復",
+     "value": "40 HP（即時）",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.8秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "即効性の鎮痛剤。即時に40 HP回復、使用1.8秒。移動しながら使える",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "1.8秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.6秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    },
+    {
+     "label": "回復量",
+     "value": "40 HP"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の薬局でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "injector_1": {
+   "effectsJa": [
+    {
+     "label": "回復",
+     "value": "8 HP×5秒（計40）",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.9秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "体力を素早く回復する複合薬。1秒ごとに8 HP×5回（計40 HP）、使用0.9秒。移動しながら使える",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "4秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.4秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.9秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.5秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    },
+    {
+     "label": "回復量",
+     "value": "8 HP"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の薬局でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "injector_2": {
+   "effectsJa": [
+    {
+     "label": "回復",
+     "value": "16 HP×5秒（計80）",
+     "source": "rrg-item"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.9秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "体力を素早く回復する複合薬。1秒ごとに16 HP×5回（計80 HP）、使用0.9秒。移動しながら使える",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "4秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.4秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.9秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.5秒"
+    },
+    {
+     "label": "移動しながら使える",
+     "value": "はい"
+    },
+    {
+     "label": "ジャンプで中断される",
+     "value": "いいえ"
+    },
+    {
+     "label": "回復量",
+     "value": "16 HP"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の薬局でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "home_1": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "5",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "9",
+     "source": "rri-raid"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "自分の家があると自分の車を持てる（家がないとレンタル車のみ）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "最初の区画を借りると、トレーラーハウスが無料でもらえる",
+     "source": "rri-base"
+    },
+    {
+     "text": "基本防御5、ヒューズ用スロット9（最大防御50）",
+     "source": "rri-raid"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "汚れた金の上限",
+     "value": "$5,000,000"
+    },
+    {
+     "label": "洗浄高速化スロット",
+     "value": "1"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "rri-raid"
+   ]
+  },
+  "home_2": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "15",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "27",
+     "source": "rri-raid"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "自分の家があると自分の車を持てる（家がないとレンタル車のみ）",
+     "source": "rri-base"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "基本的な防御を備えた普通の家",
+     "source": "game-text"
+    },
+    {
+     "text": "基本防御15、ヒューズ用スロット27（最大防御150）",
+     "source": "rri-raid"
+    },
+    {
+     "text": "家の種類はノートPCの販売ティアには影響しない",
+     "source": "rri-base"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "汚れた金の上限",
+     "value": "$50,000,000"
+    },
+    {
+     "label": "洗浄高速化スロット",
+     "value": "3"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base",
+    "game-text",
+    "rri-raid"
+   ]
+  },
+  "wall_2": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "2",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "3",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "基本防御2、ヒューズ用スロット3（最大防御17）。フェンスにもセキュリティシステムがあり、襲撃者はこれも破る必要がある",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "wall_3": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "5",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "6",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "基本防御5、ヒューズ用スロット6（最大防御35）。フェンスにもセキュリティシステムがあり、襲撃者はこれも破る必要がある",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "wall_4": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "10",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "9",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "基本防御10、ヒューズ用スロット9（最大防御55）。フェンスにもセキュリティシステムがあり、襲撃者はこれも破る必要がある",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "defense_module_1": {
+   "effectsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "+1",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステム（壁のパネル）のスロットに入れると防御レベルが上がる",
+     "source": "game-text"
+    },
+    {
+     "text": "防御レベル＝建物の基本防御＋ヒューズのポイント合計。デコーダーは1個で1／3／5ポイント削るので、防御が高いほど襲撃に多くのデコーダーが要る",
+     "source": "rri-raid"
+    },
+    {
+     "text": "破られてもヒューズは壊れず、パネルを修理すれば防御が戻る",
+     "source": "rri-raid"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "1"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "defense_module_2": {
+   "effectsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "+3",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステム（壁のパネル）のスロットに入れると防御レベルが上がる",
+     "source": "game-text"
+    },
+    {
+     "text": "防御レベル＝建物の基本防御＋ヒューズのポイント合計。デコーダーは1個で1／3／5ポイント削るので、防御が高いほど襲撃に多くのデコーダーが要る",
+     "source": "rri-raid"
+    },
+    {
+     "text": "破られてもヒューズは壊れず、パネルを修理すれば防御が戻る",
+     "source": "rri-raid"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "3"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：1個＋$250,000 → レジェンダリーの電子ヒューズ1個",
+     "items": [
+      "defense_module_3"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-barter",
+    "rri-base"
+   ]
+  },
+  "defense_module_3": {
+   "effectsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "+5",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステム（壁のパネル）のスロットに入れると防御レベルが上がる",
+     "source": "game-text"
+    },
+    {
+     "text": "防御レベル＝建物の基本防御＋ヒューズのポイント合計。デコーダーは1個で1／3／5ポイント削るので、防御が高いほど襲撃に多くのデコーダーが要る",
+     "source": "rri-raid"
+    },
+    {
+     "text": "破られてもヒューズは壊れず、パネルを修理すれば防御が戻る",
+     "source": "rri-raid"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "防御ポイント",
+     "value": "5"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）",
+    {
+     "text": "物々交換：エピックの電子ヒューズ1個＋$250,000 → 1個",
+     "items": [
+      "defense_module_2"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-barter",
+    "rri-base"
+   ]
+  },
+  "clan_alarm_1": {
+   "effectsJa": [
+    {
+     "label": "侵入時の通知先",
+     "value": "オーナー＋クラン全員",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステムに入れておくと、侵入（ハッキング）が始まったときにオーナーとクラン全員に通知する",
+     "source": "game-text"
+    },
+    {
+     "text": "警報システム用のスロットはヒューズとは別に3つある。防御レベルは上がらない",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "location_alarm_1": {
+   "effectsJa": [
+    {
+     "label": "侵入時の通知先",
+     "value": "ロケーションの全員",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステムに入れておくと、侵入（ハッキング）が始まったときにそのロケーションにいる全プレイヤーに通知する",
+     "source": "game-text"
+    },
+    {
+     "text": "警報システム用のスロットはヒューズとは別に3つある。防御レベルは上がらない",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "personal_alarm_1": {
+   "effectsJa": [
+    {
+     "label": "侵入時の通知先",
+     "value": "オーナー",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "建物のセキュリティシステムに入れておくと、侵入（ハッキング）が始まったときにオーナーに通知する",
+     "source": "game-text"
+    },
+    {
+     "text": "警報システム用のスロットはヒューズとは別に3つある。防御レベルは上がらない",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "money_workbench_speedup_1": {
+   "requiresJa": [
+    {
+     "text": "資金洗浄デスクの上に設置する（デスク自体は Shipments 外）",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "資金洗浄デスクを強化する紙幣計数機。デスクが良いほど洗浄できる額が増える",
+     "source": "rri-money"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-money",
+    "rri-base"
+   ]
+  },
+  "money_workbench_speedup_2": {
+   "requiresJa": [
+    {
+     "text": "資金洗浄デスクの上に設置する（デスク自体は Shipments 外）",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "資金洗浄デスクを強化する紙幣計数機。デスクが良いほど洗浄できる額が増える",
+     "source": "rri-money"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-money",
+    "rri-base"
+   ]
+  },
+  "money_workbench_speedup_3": {
+   "requiresJa": [
+    {
+     "text": "資金洗浄デスクの上に設置する（デスク自体は Shipments 外）",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "資金洗浄デスクを強化する紙幣計数機。デスクが良いほど洗浄できる額が増える",
+     "source": "rri-money"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-money",
+    "rri-base"
+   ]
+  },
+  "collection_upgrade_1": {
+   "effectsJa": [
+    {
+     "label": "コレクション",
+     "value": "+7種",
+     "source": "rri-collections"
+    },
+    {
+     "label": "箱の売値",
+     "value": "$50,000",
+     "source": "rri-collections"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "追加コレクション7種を解放。完成した箱は密輸業者に $50,000（悪名ボーナス前）",
+     "source": "rri-collections"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "コレクションテーブルに使う書類",
+     "items": [
+      "collection_table"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "パックするときに必要だが消費されない（何度でも使える）",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-collections",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "collection_upgrade_2": {
+   "effectsJa": [
+    {
+     "label": "コレクション",
+     "value": "+10種",
+     "source": "rri-collections"
+    },
+    {
+     "label": "箱の売値",
+     "value": "$150,000",
+     "source": "rri-collections"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "特別コレクション10種を解放。完成した「レアコレクションの箱」は密輸業者に $150,000（悪名ボーナス前）",
+     "source": "rri-collections"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "コレクションテーブルに使う書類",
+     "items": [
+      "collection_table"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "パックするときに必要だが消費されない（何度でも使える）",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-collections",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "collection_upgrade_3": {
+   "effectsJa": [
+    {
+     "label": "コレクション",
+     "value": "+10種",
+     "source": "rri-collections"
+    },
+    {
+     "label": "箱の売値",
+     "value": "$500,000",
+     "source": "rri-collections"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "ユニークコレクション10種を解放。完成した「ユニークコレクションの箱」は密輸業者に $500,000（悪名ボーナス前）",
+     "source": "rri-collections"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "コレクションテーブルに使う書類",
+     "items": [
+      "collection_table"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "パックするときに必要だが消費されない（何度でも使える）",
+     "source": "rrg-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-collections",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "cargo_workbench_1": {
+   "effectsJa": [
+    {
+     "label": "スロット",
+     "value": "2",
+     "source": "rri-item"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "錠前工具セット・貨物用丸ノコで開けるのが速くなり、ベンチバイスで枠が増える",
+     "items": [
+      "cargo_workbench_toolbox_1",
+      "cargo_workbench_circular_saw_1",
+      "cargo_workbench_slot_1"
+     ],
+     "source": "rri-cargo"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物（箱・金庫・バッグなど）を開けて中身を取り出す作業台",
+     "source": "rri-cargo"
+    },
+    {
+     "text": "家具は箱で届く。家の壁にある建築プランを開き、空いている枠に箱をドラッグすると設置される",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "2"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cargo",
+    "rri-building-plan",
+    "rri-base"
+   ],
+   "notes": "robrun.info のアイテムページではスロット2、同サイトの「Грузы и производство」では「強化なしは1枠」と記載が食い違う。"
+  },
+  "cargo_workbench_slot_1": {
+   "effectsJa": [
+    {
+     "label": "貨物作業台の枠",
+     "value": "増える（数は記載なし）",
+     "source": "game-text"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "貨物作業台に取り付ける",
+     "items": [
+      "cargo_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物作業台の枠を増やす据え置き型の万力（増える数は記載なし）",
+     "source": "rri-item"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_workbench_toolbox_1": {
+   "effectsJa": [
+    {
+     "label": "開封の作業時間",
+     "value": "−20%",
+     "source": "rri-item",
+     "detail": "30分→24分（貨物作業台の基本30分・プレイヤー実測）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "貨物作業台に取り付ける",
+     "items": [
+      "cargo_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物作業台を強化し、貨物を開ける作業を少し速くする（+20%）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+20%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_workbench_circular_saw_1": {
+   "effectsJa": [
+    {
+     "label": "開封の作業時間",
+     "value": "−20%",
+     "source": "rri-item",
+     "detail": "30分→24分（貨物作業台の基本30分・プレイヤー実測）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "貨物作業台に取り付ける",
+     "items": [
+      "cargo_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物作業台を強化し、貨物を開ける作業を速くする（+20%）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+20%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_exchange_workbench_1": {
+   "effectsJa": [
+    {
+     "label": "基本スロット",
+     "value": "1",
+     "source": "rri-item"
+    },
+    {
+     "label": "高速化パーツ枠",
+     "value": "2",
+     "source": "rri-item"
+    },
+    {
+     "label": "拡張パーツ枠",
+     "value": "1",
+     "source": "rri-item"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "ラベルプリンターで速く、工具箱で枠が増える",
+     "items": [
+      "cargo_exchange_workbench_speedup_upgrade_1",
+      "cargo_exchange_workbench_additional_slot_upgrade"
+     ],
+     "source": "rri-cargo"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "詰め直しは自分の家の敷地に置いた密輸品作業台でしかできない（11/20以降、家がないまま密輸品を買うと警告が出る）",
+     "source": "rri-cargo"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "Looty Bay・Lenny’s Motel・販売センターの密輸貨物を、より高く売れる貨物に詰め直す",
+     "source": "game-text"
+    },
+    {
+     "text": "レシピ：密輸貨物（アンコモン）1個 → プレミアム貨物（エピック）1個。集落のボーナスが有効なときは代わりにレアリティ貨物（レジェンダリー）になる",
+     "source": "rrg-item"
+    },
+    {
+     "text": "密輸業者への売値は密輸貨物 $10,000、プレミアム貨物 $35,000、レアリティ貨物 $40,000（悪名ボーナス前）",
+     "source": "rri-cargo"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "基本スロット",
+     "value": "1"
+    },
+    {
+     "label": "高速化パーツのスロット",
+     "value": "2"
+    },
+    {
+     "label": "拡張パーツのスロット",
+     "value": "1"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cargo",
+    "game-text",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "cargo_exchange_workbench_additional_slot_upgrade": {
+   "effectsJa": [
+    {
+     "label": "密輸品作業台の貨物枠",
+     "value": "+1",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "密輸品作業台に取り付ける",
+     "items": [
+      "cargo_exchange_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "密輸品作業台の貨物枠を+1する工具箱",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "追加される貨物スロット",
+     "value": "+1"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_exchange_workbench_additional_double_slot_upgrade": {
+   "effectsJa": [
+    {
+     "label": "密輸品作業台の貨物枠",
+     "value": "+2",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "密輸品作業台に取り付ける",
+     "items": [
+      "cargo_exchange_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "密輸品作業台の貨物枠を+2する工具箱",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "追加される貨物スロット",
+     "value": "+2"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_exchange_workbench_speedup_upgrade_1": {
+   "effectsJa": [
+    {
+     "label": "詰め直し速度",
+     "value": "+15%",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "密輸品作業台に取り付ける",
+     "items": [
+      "cargo_exchange_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "密輸品作業台の詰め直しを速くする（+15%）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+15%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_exchange_workbench_speedup_upgrade_2": {
+   "effectsJa": [
+    {
+     "label": "詰め直し速度",
+     "value": "+25%",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "密輸品作業台に取り付ける",
+     "items": [
+      "cargo_exchange_workbench_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "密輸品作業台の詰め直しを速くする（+25%）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+25%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "first_aid_cabinet_1": {
+   "enablesJa": [
+    {
+     "text": "襲撃中に倒されても拠点で復活して防衛を続けられる",
+     "source": "rri-building-plan"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "壁掛けの救急キャビネット。そばで回復でき、そこでリスポーンできる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "storage_4": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×9マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "はい",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる小さな棚（6×9マス）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう。失っても困らない物だけ入れる",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×9マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "storage_1": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×9マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "いいえ",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる小型金庫（6×9マス）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×9マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "storage_2": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×18マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "いいえ",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる中型金庫（6×18マス）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×18マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "storage_3": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×27マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "いいえ",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる大型金庫（6×27マス）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×27マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "storage_5": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×18マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "はい",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる中くらいの棚（6×18マス）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう。失っても困らない物だけ入れる",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×18マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "storage_6": {
+   "effectsJa": [
+    {
+     "label": "容量",
+     "value": "6×27マス",
+     "source": "rri-item"
+    },
+    {
+     "label": "鍵なしで開く",
+     "value": "はい",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "アイテムを入れる大きな棚（6×27マス）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう。失っても困らない物だけ入れる",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "容量",
+     "value": "6×27マス"
+    },
+    {
+     "label": "鍵なしで開けられる",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_1": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "6枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "なし",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置くラック（6枠）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "6"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_2": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "9枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "なし",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置くラック（9枠）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "9"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_3": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "12枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "なし",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置くラック（12枠）",
+     "source": "rri-item"
+    },
+    {
+     "text": "建物のセキュリティを破られると鍵なしで開けられてしまう",
+     "source": "rri-building-plan"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "12"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "いいえ"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_4": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "6枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "マスターキーが必要",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置く鍵付きラック（6枠）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "6"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_5": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "9枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "マスターキーが必要",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置く鍵付きラック（9枠）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "9"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "shelving_6": {
+   "effectsJa": [
+    {
+     "label": "貨物",
+     "value": "12枠",
+     "source": "rri-item"
+    },
+    {
+     "label": "保護",
+     "value": "マスターキーが必要",
+     "source": "rri-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "他人が開けるにはマスターキーが必要（建物のセキュリティを破られても、鍵なしでは開かない）",
+     "items": [
+      "storage_lockpick_1"
+     ],
+     "source": "rri-building-plan"
+    },
+    {
+     "text": "家の建築プランの空き枠に設置する家具なので、自分の家が必要",
+     "source": "rri-building-plan"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "貨物を置く鍵付きラック（12枠）",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "12"
+    },
+    {
+     "label": "保護（マスターキーが必要）",
+     "value": "はい"
+    },
+    {
+     "label": "開ける時間",
+     "value": "1秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-building-plan",
+    "rri-base"
+   ]
+  },
+  "car_lift_1": {
+   "enablesJa": [
+    {
+     "text": "車の下回り（アンダーボディ）の改造がしやすくなる",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "屋外に置く車両リフト",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ],
+   "notes": "どの改造パーツが「下回り」に当たるかは出典に記載がなく未確認。robrun.info の車両改造ガイドは、ボンネットを開けて取り付ける手順だけを説明している。"
+  },
+  "car_garage_1": {
+   "effectsJa": [
+    {
+     "label": "駐車",
+     "value": "1台",
+     "source": "game-text"
+    },
+    {
+     "label": "基本防御",
+     "value": "4",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "駐車スペース1台分の小さなガレージ。追加の収納家具を置ける",
+     "source": "game-text"
+    },
+    {
+     "text": "基本防御4、ヒューズ用スロット6（最大防御34）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "car_garage_2": {
+   "effectsJa": [
+    {
+     "label": "駐車",
+     "value": "2台",
+     "source": "game-text"
+    },
+    {
+     "label": "基本防御",
+     "value": "6",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "駐車スペース2台分の大きなガレージ。追加の収納家具を置ける",
+     "source": "game-text"
+    },
+    {
+     "text": "基本防御6、ヒューズ用スロット12（最大防御66）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "helicopter_garage_1": {
+   "effectsJa": [
+    {
+     "label": "置ける",
+     "value": "Romanov R8",
+     "source": "game-text"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "ヘリコプター Romanov R8 を置けるようになる（R8 にはヘリポートが必要）",
+     "items": [
+      "romanov_r8"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "ヘリコプターの発着場",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "workshop_building_1": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "5",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "9",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "作業台をたくさん追加で置ける離れ",
+     "source": "game-text"
+    },
+    {
+     "text": "基本防御5、ヒューズ用スロット9（最大防御50）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "storage_building_1": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "10",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "15",
+     "source": "rri-raid"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "収納家具をたくさん追加で置ける離れ",
+     "source": "game-text"
+    },
+    {
+     "text": "基本防御10、ヒューズ用スロット15（最大防御85）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "cargo_manifest_2_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "12ポイント",
+     "source": "rri-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "密輸業者に積荷を納品するとポイントが貯まり、12ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-cumulative",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "narco_farm_1": {
+   "effectsJa": [
+    {
+     "label": "栽培テーブル",
+     "value": "6台",
+     "source": "rri-plantation"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "栽培テーブルを置いて成長株を育てられる",
+     "items": [
+      "cargo_charge_workbench_garden_bed"
+     ],
+     "source": "rri-plantation"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "拠点の建物なので、先に自分の家が必要",
+     "source": "rri-plantation"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "人目につかない小さな農園",
+     "source": "game-text"
+    },
+    {
+     "text": "栽培テーブルを6台置ける",
+     "source": "rri-plantation"
+    },
+    {
+     "text": "基本防御5、ヒューズ用スロット9（最大防御50）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-plantation",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_garden_bed": {
+   "effectsJa": [
+    {
+     "label": "株数",
+     "value": "6",
+     "source": "rri-item"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "36秒",
+     "source": "rri-item",
+     "detail": "1回60分（100ポイント×36秒）",
+     "detailSource": "player-report"
+    },
+    {
+     "label": "収穫",
+     "value": "1株2〜4袋",
+     "source": "rri-plantation"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "扇風機・ウォーターポンプ・UVランプで成長が速くなる（それぞれ専用スロットで同時に付けられる）",
+     "items": [
+      "fan_1",
+      "water_pump_2",
+      "uv_lamp_3"
+     ],
+     "source": "rri-plantation"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "栽培室に置く（栽培室1つにテーブル6台）",
+     "items": [
+      "narco_farm_1"
+     ],
+     "source": "rri-plantation"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "成長株（貨物）を置くと育ち、100ポイントで成熟株になる",
+     "source": "rrg-item"
+    },
+    {
+     "text": "1台に6株置ける",
+     "source": "rri-plantation"
+    },
+    {
+     "text": "成熟株から収穫袋が2〜4個（約5秒）。株は同じレアリティの成長株に戻って次のサイクルが始まるので植え直し不要",
+     "source": "rri-plantation"
+    },
+    {
+     "text": "収穫袋は故買屋に1袋 $4,000／$6,000／$8,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）",
+     "source": "rri-plantation"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "6"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "36秒"
+    },
+    {
+     "label": "回収にかかる時間",
+     "value": "5秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-plantation",
+    "rrg-item",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "fan_1": {
+   "effectsJa": [
+    {
+     "label": "成長時間",
+     "value": "−12%",
+     "source": "rri-plantation",
+     "detail": "1回 60分→52.8分（%は所要時間の短縮。栽培テーブル1回60分）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "栽培テーブルに設置する",
+     "items": [
+      "cargo_charge_workbench_garden_bed"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "栽培テーブルの成長を12%速くする。扇風機・ウォーターポンプ・UVランプはそれぞれ専用スロットなので同時に付けられる",
+     "source": "rri-plantation"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+12%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-plantation",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "water_pump_2": {
+   "effectsJa": [
+    {
+     "label": "成長時間",
+     "value": "−14%",
+     "source": "rri-plantation",
+     "detail": "1回 60分→51.6分（%は所要時間の短縮。栽培テーブル1回60分）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "栽培テーブルに設置する",
+     "items": [
+      "cargo_charge_workbench_garden_bed"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "栽培テーブルの成長を14%速くする。扇風機・ウォーターポンプ・UVランプはそれぞれ専用スロットなので同時に付けられる",
+     "source": "rri-plantation"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+14%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-plantation",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "uv_lamp_3": {
+   "effectsJa": [
+    {
+     "label": "成長時間",
+     "value": "−24%",
+     "source": "rri-plantation",
+     "detail": "1回 60分→45.6分（%は所要時間の短縮。栽培テーブル1回60分）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "栽培テーブルに設置する",
+     "items": [
+      "cargo_charge_workbench_garden_bed"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "栽培テーブルの成長を24%速くする。扇風機・ウォーターポンプ・UVランプはそれぞれ専用スロットなので同時に付けられる",
+     "source": "rri-plantation"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+24%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-plantation",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "meth_lab_1": {
+   "effectsJa": [
+    {
+     "label": "基本防御",
+     "value": "3",
+     "source": "rri-raid"
+    },
+    {
+     "label": "ヒューズ枠",
+     "value": "6",
+     "source": "rri-raid"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "化学反応炉・産業用冷凍庫・ラボテーブルを置いて、試薬から結晶を作れる",
+     "items": [
+      "cargo_production_workbench_1",
+      "cargo_charge_workbench_lab_freezer_1",
+      "cargo_workbench_lab_table_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "拠点の建物なので、先に自分の家が必要",
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "試薬缶を処理するためのガレージを改装した建物",
+     "source": "game-text"
+    },
+    {
+     "text": "動いている間は建物の上に煙が出て、稼働がばれる。作業を中断すると貨物が床に落ち、反応炉の試薬は失われる",
+     "source": "rri-lab"
+    },
+    {
+     "text": "基本防御3、ヒューズ用スロット6（最大防御33）",
+     "source": "rri-raid"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "game-text",
+    "rri-raid",
+    "rri-base"
+   ]
+  },
+  "cargo_workbench_lab_table_1": {
+   "effectsJa": [
+    {
+     "label": "スロット",
+     "value": "2",
+     "source": "rri-item"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "固形クリスタルを粉末にして売れる",
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "完成した固形クリスタルを砕いて小分けにする作業台（結晶の粉末にする）",
+     "source": "rri-lab"
+    },
+    {
+     "text": "粉末は故買屋に1袋 $1,000／$2,000／$4,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）",
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "スロット数",
+     "value": "2"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rri-base"
+   ]
+  },
+  "cargo_open_workbench_upgrade_additional_slot_2": {
+   "requiresJa": [
+    {
+     "text": "ラボテーブルに設置する",
+     "items": [
+      "cargo_workbench_lab_table_1"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "原料を正確に計量し、結晶を粉砕・包装できる状態にする（効果の数値は記載なし）",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_production_workbench_1": {
+   "effectsJa": [
+    {
+     "label": "サイクル",
+     "value": "900秒×4回",
+     "source": "rri-item",
+     "detail": "試薬1つで濃縮液4個。15分ごとに1個、60分（プレイヤー確認）",
+     "detailSource": "player-report"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "産業用エンジン・産業用温度計・化学コンバーターを付けられる（それぞれ専用スロットで同時に付けられる）",
+     "items": [
+      "cargo_production_workbench_upgrade_engine_1",
+      "cargo_production_workbench_upgrade_thermometer_1",
+      "CargoProductionWorkbenchUpgradeConverter1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "試薬缶を入れると、結晶の元になる濃縮液を作る。濃縮液のレアリティはランダムで、反応炉の強化パーツで高レアの確率が上がる",
+     "source": "rri-lab"
+    },
+    {
+     "text": "1サイクル900秒×4サイクル",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "1サイクルの長さ",
+     "value": "900秒"
+    },
+    {
+     "label": "サイクル数",
+     "value": "4"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_production_workbench_2": {
+   "effectsJa": [
+    {
+     "label": "サイクル",
+     "value": "530秒×6回",
+     "source": "rri-item"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "産業用エンジン・産業用温度計・化学コンバーターを付けられる（それぞれ専用スロットで同時に付けられる）",
+     "items": [
+      "cargo_production_workbench_upgrade_engine_1",
+      "cargo_production_workbench_upgrade_thermometer_1",
+      "CargoProductionWorkbenchUpgradeConverter1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "試薬缶を入れると、結晶の元になる濃縮液を作る。濃縮液のレアリティはランダムで、反応炉の強化パーツで高レアの確率が上がる",
+     "source": "rri-lab"
+    },
+    {
+     "text": "1サイクル530秒×6サイクル",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "1サイクルの長さ",
+     "value": "530秒"
+    },
+    {
+     "label": "サイクル数",
+     "value": "6"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rri-base"
+   ]
+  },
+  "cargo_production_workbench_3": {
+   "effectsJa": [
+    {
+     "label": "サイクル",
+     "value": "337秒×8回",
+     "source": "rri-item"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "産業用エンジン・産業用温度計・化学コンバーターを付けられる（それぞれ専用スロットで同時に付けられる）",
+     "items": [
+      "cargo_production_workbench_upgrade_engine_1",
+      "cargo_production_workbench_upgrade_thermometer_1",
+      "CargoProductionWorkbenchUpgradeConverter1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "試薬缶を入れると、結晶の元になる濃縮液を作る。濃縮液のレアリティはランダムで、反応炉の強化パーツで高レアの確率が上がる",
+     "source": "rri-lab"
+    },
+    {
+     "text": "1サイクル337秒×8サイクル",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "1サイクルの長さ",
+     "value": "337秒"
+    },
+    {
+     "label": "サイクル数",
+     "value": "8"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rri-base"
+   ]
+  },
+  "cargo_production_workbench_upgrade_engine_1": {
+   "effectsJa": [
+    {
+     "label": "高品質の確率",
+     "value": "少し上がる",
+     "source": "game-text"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学反応炉に設置する",
+     "items": [
+      "cargo_production_workbench_1",
+      "cargo_production_workbench_2",
+      "cargo_production_workbench_3"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "高品質な結晶ができる確率を少し上げる（具体的な%は記載なし）",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_production_workbench_upgrade_thermometer_1": {
+   "effectsJa": [
+    {
+     "label": "高品質の確率",
+     "value": "かなり上がる",
+     "source": "game-text"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学反応炉に設置する",
+     "items": [
+      "cargo_production_workbench_1",
+      "cargo_production_workbench_2",
+      "cargo_production_workbench_3"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "高品質な結晶ができる確率をかなり上げる（具体的な%は記載なし）",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "CargoProductionWorkbenchUpgradeConverter1": {
+   "effectsJa": [
+    {
+     "label": "高品質の確率",
+     "value": "大きく上がる",
+     "source": "game-text"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学反応炉に設置する",
+     "items": [
+      "cargo_production_workbench_1",
+      "cargo_production_workbench_2",
+      "cargo_production_workbench_3"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "高品質な結晶ができる確率を大きく上げる（具体的な%は記載なし）",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_lab_freezer_1": {
+   "effectsJa": [
+    {
+     "label": "入れられる濃縮液",
+     "value": "4個",
+     "source": "rri-item"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒",
+     "source": "rri-item",
+     "detail": "1回60分（10ポイント×360秒）",
+     "detailSource": "player-report"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "改良型エバポレーター・高品質冷媒で凍結が速くなる（同時に付けられる）",
+     "items": [
+      "cargo_charge_workbench_upgrade_evaporator_1",
+      "cargo_charge_workbench_upgrade_refrigerant_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "濃縮液を入れて凍らせ、固形クリスタルにする。濃縮液1個は10ポイントで固形クリスタル1個になる",
+     "source": "rrg-item"
+    },
+    {
+     "text": "入れられる数は4個。ティック間隔360秒、回収5秒",
+     "source": "rri-item"
+    },
+    {
+     "text": "固形クリスタルは密輸業者に $30,000／$45,000／$75,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）。ラボテーブルで粉末にもできる",
+     "items": [
+      "cargo_workbench_lab_table_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "4"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒"
+    },
+    {
+     "label": "回収にかかる時間",
+     "value": "5秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rrg-item",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_lab_freezer_2": {
+   "effectsJa": [
+    {
+     "label": "入れられる濃縮液",
+     "value": "6個",
+     "source": "rri-item"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒",
+     "source": "rri-item",
+     "detail": "1回60分（10ポイント×360秒）",
+     "detailSource": "player-report"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "改良型エバポレーター・高品質冷媒で凍結が速くなる（同時に付けられる）",
+     "items": [
+      "cargo_charge_workbench_upgrade_evaporator_1",
+      "cargo_charge_workbench_upgrade_refrigerant_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "濃縮液を入れて凍らせ、固形クリスタルにする。濃縮液1個は10ポイントで固形クリスタル1個になる",
+     "source": "rrg-item"
+    },
+    {
+     "text": "入れられる数は6個。ティック間隔360秒、回収5秒",
+     "source": "rri-item"
+    },
+    {
+     "text": "固形クリスタルは密輸業者に $30,000／$45,000／$75,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）。ラボテーブルで粉末にもできる",
+     "items": [
+      "cargo_workbench_lab_table_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "6"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒"
+    },
+    {
+     "label": "回収にかかる時間",
+     "value": "5秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rrg-item",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_lab_freezer_3": {
+   "effectsJa": [
+    {
+     "label": "入れられる濃縮液",
+     "value": "8個",
+     "source": "rri-item"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒",
+     "source": "rri-item",
+     "detail": "1回60分（10ポイント×360秒）",
+     "detailSource": "player-report"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "改良型エバポレーター・高品質冷媒で凍結が速くなる（同時に付けられる）",
+     "items": [
+      "cargo_charge_workbench_upgrade_evaporator_1",
+      "cargo_charge_workbench_upgrade_refrigerant_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "化学研究所に置く",
+     "items": [
+      "meth_lab_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "濃縮液を入れて凍らせ、固形クリスタルにする。濃縮液1個は10ポイントで固形クリスタル1個になる",
+     "source": "rrg-item"
+    },
+    {
+     "text": "入れられる数は8個。ティック間隔360秒、回収5秒",
+     "source": "rri-item"
+    },
+    {
+     "text": "固形クリスタルは密輸業者に $30,000／$45,000／$75,000（アンコモン／エピック／レジェンダリー、悪名ボーナス前）。ラボテーブルで粉末にもできる",
+     "items": [
+      "cargo_workbench_lab_table_1"
+     ],
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "貨物スロット",
+     "value": "8"
+    },
+    {
+     "label": "ティック間隔",
+     "value": "360秒"
+    },
+    {
+     "label": "回収にかかる時間",
+     "value": "5秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-lab",
+    "rrg-item",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_upgrade_evaporator_1": {
+   "effectsJa": [
+    {
+     "label": "凍結時間",
+     "value": "−11.7%",
+     "source": "rri-lab",
+     "detail": "1回 60分→53分（%は所要時間の短縮。産業用冷凍庫1回60分）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "産業用冷凍庫に設置する",
+     "items": [
+      "cargo_charge_workbench_lab_freezer_1",
+      "cargo_charge_workbench_lab_freezer_2",
+      "cargo_charge_workbench_lab_freezer_3"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "産業用冷凍庫の凍結を11.7%速くする。改良型エバポレーターと高品質冷媒は同時に付けられる",
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+11.7%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-lab",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "cargo_charge_workbench_upgrade_refrigerant_1": {
+   "effectsJa": [
+    {
+     "label": "凍結時間",
+     "value": "−13%",
+     "source": "rri-lab",
+     "detail": "1回 60分→52.2分（%は所要時間の短縮。産業用冷凍庫1回60分）",
+     "detailSource": "player-report"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "産業用冷凍庫に設置する",
+     "items": [
+      "cargo_charge_workbench_lab_freezer_1",
+      "cargo_charge_workbench_lab_freezer_2",
+      "cargo_charge_workbench_lab_freezer_3"
+     ],
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "産業用冷凍庫の凍結を13%速くする。改良型エバポレーターと高品質冷媒は同時に付けられる",
+     "source": "rri-lab"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "速度アップ",
+     "value": "+13%"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-lab",
+    "player-report",
+    "rri-base"
+   ]
+  },
+  "action_camera_2_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "70ポイント",
+     "source": "rri-item"
+    },
+    {
+     "label": "必要な悪名レベル",
+     "value": "3",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "ポイントが入るのは悪名レベル3のとき",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "悪名レベル3で特定の犯罪行為をするとポイントが貯まり、70ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると物々交換に使うか、高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "街の電子機器店でも買える（価格はノートPCの3倍・民間人のときのみ）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：満タン1個 → エピックのデコーダー1個",
+     "source": "rri-barter"
+    },
+    {
+     "text": "物々交換：満タン1個＋満タンのUSBハッキングツール2個＋$50,000 → ドリル",
+     "items": [
+      "usb_1_cumulative"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-cumulative",
+    "rri-barter",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "action_camera_3_cumulative": {
+   "effectsJa": [
+    {
+     "label": "満タンまで",
+     "value": "100ポイント",
+     "source": "rri-item"
+    },
+    {
+     "label": "必要な悪名レベル",
+     "value": "4",
+     "source": "rrg-item"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "ポイントが入るのは悪名レベル4のとき",
+     "source": "game-text"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "悪名レベル4で特定の犯罪行為をするとポイントが貯まり、100ポイントで満タンのアイテムに変わる",
+     "source": "rri-cumulative"
+    },
+    {
+     "text": "満タンにすると高く売れる",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-cumulative",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "collection_table": {
+   "effectsJa": [
+    {
+     "label": "基本コレクション",
+     "value": "7種",
+     "source": "rri-collections"
+    },
+    {
+     "label": "箱の売値",
+     "value": "$50,000",
+     "source": "rri-collections"
+    }
+   ],
+   "enablesJa": [
+    {
+     "text": "追加・特別・ユニークコレクションの書類で、集められるコレクションが増える",
+     "items": [
+      "collection_upgrade_1",
+      "collection_upgrade_2",
+      "collection_upgrade_3"
+     ],
+     "source": "rri-collections"
+    }
+   ],
+   "requiresJa": [
+    {
+     "text": "拠点に置く家具なので、自分の家が必要",
+     "source": "rri-collections"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "盗んだ品をそろえてパックすると、密輸業者に売れる貨物（コレクションの箱）になる",
+     "source": "game-text"
+    },
+    {
+     "text": "最初は基本コレクション7種。箱は密輸業者に $50,000（悪名ボーナス前）。対象の品はインベントリで虫眼鏡アイコンが付く",
+     "source": "rri-collections"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-collections",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "frag_grenade_1": {
+   "effectsJa": [
+    {
+     "label": "最大ダメージ",
+     "value": "300",
+     "source": "rrg-item"
+    },
+    {
+     "label": "起爆",
+     "value": "3秒",
+     "source": "rrg-item"
+    }
+   ],
+   "usageJa": [
+    {
+     "text": "爆発範囲に大ダメージを与えるグレネード。最大ダメージ300、投げてから3秒で起爆",
+     "source": "rrg-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "再使用までの待ち時間",
+     "value": "1秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "使用時間",
+     "value": "0.45秒"
+    },
+    {
+     "label": "使用後の硬直",
+     "value": "0.6秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    "マップ上に置かれている場所：警察署（パークサイド）×2"
+   ],
+   "sources": [
+    "rri-item",
+    "rrg-item",
+    "rri-base"
+   ]
+  },
+  "cb45_m1": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射545発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "34"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "cb45_m2": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射545発/分、装弾数25発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "34"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,780 が記載されている。"
+  },
+  "cb45_m3": {
+   "usageJa": [
+    {
+     "text": "SMG（フルオート）。1発14ダメージ（頭部21）、連射545発/分、装弾数40発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "40"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.2秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $3,780 が記載されている。"
+  },
+  "starh_m1": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発21ダメージ（頭部32）、連射500発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "50"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "starh_m2": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発21ダメージ（頭部32）、連射500発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "50"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $27,500 が記載されている。"
+  },
+  "starh_m3": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（フルオート）。1発21ダメージ（頭部32）、連射500発/分、装弾数40発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "55"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.1秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $27,500 が記載されている。"
+  },
+  "drm14_m1": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（セミオート）。1発34ダメージ（頭部51）、連射240発/分、装弾数10発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "95"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.3秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "rri-base"
+   ]
+  },
+  "drm14_m2": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（セミオート）。1発34ダメージ（頭部51）、連射240発/分、装弾数10発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "95"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $103,500 が記載されている。"
+  },
+  "drm14_m3": {
+   "usageJa": [
+    {
+     "text": "アサルトライフル（セミオート）。1発34ダメージ（頭部51）、連射240発/分、装弾数20発",
+     "source": "rri-item"
+    }
+   ],
+   "statsJa": [
+    {
+     "label": "フルダメージ距離（単位の記載なし）",
+     "value": "100"
+    },
+    {
+     "label": "素早いリロード",
+     "value": "2.2秒"
+    },
+    {
+     "label": "構えるまでの時間",
+     "value": "0.25秒"
+    },
+    {
+     "label": "取り出し時間",
+     "value": "0.35秒"
+    }
+   ],
+   "sources": [
+    "rri-item"
+   ],
+   "notes": "robrun.info には購入方法の欄がなく、購入価格は Mk1 と同じ $103,500 が記載されている。"
+  },
+  "police_radio_1": {
+   "usageJa": [
+    {
+     "text": "近くのパトロールの位置と Looty Bay の交戦フィードをマップに表示する",
+     "source": "game-text"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-base"
+   ]
+  },
+  "police_badge_1": {
+   "usageJa": [
+    {
+     "text": "警官として勤務するときに、巡査部長の装備を1回だけ選べる",
+     "source": "game-text"
+    },
+    {
+     "text": "バッジは使い切り。街で見つかるほか、研究後に購入できる。バッジがなくても基本装備で警官になれる",
+     "source": "rri-police"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入（販売ティアの条件なし）"
+   ],
+   "usedForJa": [
+    {
+     "text": "物々交換：15個 → 警部補バッジ1個",
+     "items": [
+      "police_badge_2"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-police",
+    "rri-barter",
+    "rri-base",
+    "rrg-item"
+   ],
+   "notes": "警察ガイドでは「10個」としているが、robrun.info の物々交換ページ・アイテムページと Rob Run Guide のレシピはいずれも15個。"
+  },
+  "police_badge_2": {
+   "usageJa": [
+    {
+     "text": "警官として勤務するときに、警部補の装備を1回だけ選べる",
+     "source": "game-text"
+    },
+    {
+     "text": "バッジは使い切り。街で見つかるほか、研究後に購入できる",
+     "source": "rri-police"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIが必要（地区Lv2以上に区画を借りていること）",
+    {
+     "text": "物々交換：巡査部長バッジ15個 → 1個",
+     "items": [
+      "police_badge_1"
+     ],
+     "source": "rri-barter"
+    }
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-police",
+    "rri-barter",
+    "rri-base"
+   ]
+  },
+  "police_badge_3": {
+   "usageJa": [
+    {
+     "text": "警官として勤務するときに、警部の装備を1回だけ選べる",
+     "source": "game-text"
+    },
+    {
+     "text": "バッジは使い切り。街で見つかるほか、研究後に購入できる",
+     "source": "rri-police"
+    }
+   ],
+   "obtainJa": [
+    "研究後、ノートPC（ブラックマーケット）で購入。販売ティアIIIが必要（地区Lv3以上に区画を借りていること）"
+   ],
+   "sources": [
+    "rri-item",
+    "game-text",
+    "rri-police",
+    "rri-base"
+   ]
+  }
+ }
+}

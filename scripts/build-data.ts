@@ -5,14 +5,17 @@
  *   data/i18n/shipments.ja.json        … アイテム名・説明の日本語訳
  *   data/i18n/terms.ja.json            … ステータス名などの用語辞書
  *   data/guides/recommendations.json   … 攻略評価（根拠付きのもののみ）
+ *   data/source/robrun-info.source.json … robrun.info の生データ（extract-robrun-info.ts で生成）
+ *   data/guides/item-usage.json        … 使い方・入手方法の日本語（出典付き・手書き）
  *
- * 出力: src/generated/shipments.json, public/sitemap.xml
+ * 出力: src/generated/shipments.json, src/generated/item-usage.json, public/sitemap.xml
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import type {
   CategoryId,
   CategoryInfo,
   ItemStat,
+  ItemUsage,
   Rarity,
   ShipmentDataset,
   ShipmentItem,
@@ -76,7 +79,34 @@ interface RecommendationsFile {
   >;
 }
 
+interface RriFile {
+  items: Record<string, { url: string; rriId: string; purchasePrice: number | null }>;
+}
+
+type UsageLineIn = string | { text: string; items?: string[]; source?: string };
+interface UsageFile {
+  items: Record<
+    string,
+    {
+      effectsJa?: { label: string; value: string; source?: string; detail?: string; detailSource?: string }[];
+      enablesJa?: UsageLineIn[];
+      requiresJa?: UsageLineIn[];
+      usageJa?: UsageLineIn[];
+      statsJa?: { label: string; value: string }[];
+      obtainJa?: UsageLineIn[];
+      usedForJa?: UsageLineIn[];
+      sources: string[];
+      notes?: string;
+    }
+  >;
+}
+
 const src = readJson<SourceFile>("data/source/shipments.source.json");
+const rri = readJson<RriFile>("data/source/robrun-info.source.json");
+const usageIn = readJson<UsageFile>("data/guides/item-usage.json");
+const sharedSources = readJson<Record<string, { label: string; url: string; kind: "official" | "fan" | "data" }>>(
+  "data/guides/sources.json",
+);
 const ja = readJson<JaFile>("data/i18n/shipments.ja.json");
 const terms = readJson<TermsFile>("data/i18n/terms.ja.json");
 const recs = readJson<RecommendationsFile>("data/guides/recommendations.json");
@@ -192,6 +222,10 @@ const items: ShipmentItem[] = src.nodes.map((n) => {
     icon: findIcon(n.id),
     researchCost: n.unlockCash,
     purchaseCost: page?.purchasePrice ?? null,
+    // 購入価格が未確認のときだけ、robrun.info の値を別項目として持つ（上書きしない）
+    purchaseCostAlt: page?.purchasePrice == null ? (rri.items[n.id]?.purchasePrice ?? null) : null,
+    purchaseCostAltSource:
+      page?.purchasePrice == null && rri.items[n.id]?.purchasePrice != null ? rri.items[n.id].url : null,
     salePrice: page?.salePrice ?? null,
     requiredSettlementLevel: n.requiredTier,
     requiredImprisonmentYears: n.requiredImprisonmentYears ?? 0,
@@ -260,6 +294,50 @@ const dataset: ShipmentDataset = {
 
 mkdirSync("src/generated", { recursive: true });
 writeFileSync("src/generated/shipments.json", JSON.stringify(dataset, null, 1) + "\n");
+
+// 使い方・入手方法（data/guides/item-usage.json）。出典 URL のテンプレートをアイテムごとに解決する
+{
+  const toLines = (arr: UsageLineIn[] | undefined) =>
+    (arr ?? []).map((l) =>
+      typeof l === "string" ? { text: l, items: [], source: null } : { text: l.text, items: l.items ?? [], source: l.source ?? null },
+    );
+  const out: Record<string, ItemUsage> = {};
+  for (const [id, u] of Object.entries(usageIn.items)) {
+    const node = src.nodes.find((n) => n.id === id);
+    if (!node) {
+      warnings.push(`item-usage: 存在しないアイテム: ${id}`);
+      continue;
+    }
+    const lines = {
+      enables: toLines(u.enablesJa),
+      requires: toLines(u.requiresJa),
+      usage: toLines(u.usageJa),
+      obtain: toLines(u.obtainJa),
+      usedFor: toLines(u.usedForJa),
+    };
+    const effects = (u.effectsJa ?? []).map((f) => ({
+      label: f.label,
+      value: f.value,
+      source: f.source ?? null,
+      detail: f.detail ?? null,
+      detailSource: f.detailSource ?? null,
+    }));
+    const keys = new Set(u.sources);
+    for (const f of effects) for (const k of [f.source, f.detailSource]) if (k) keys.add(k);
+    for (const ls of Object.values(lines)) for (const l of ls) if (l.source) keys.add(l.source);
+    const sources = [...keys].map((key) => {
+      const sv = sharedSources[key];
+      if (!sv) warnings.push(`item-usage: 出典キーなし: ${key} (${id})`);
+      const url = (sv?.url ?? "")
+        .replace("{id}", id)
+        .replace("{itemId}", node.itemId)
+        .replace("{rriId}", rri.items[id]?.rriId ?? node.itemId);
+      return { key, label: sv?.label ?? key, url, kind: sv?.kind ?? "fan" };
+    });
+    out[id] = { effects, ...lines, stats: u.statsJa ?? [], notes: u.notes ?? null, sources };
+  }
+  writeFileSync("src/generated/item-usage.json", JSON.stringify(out, null, 1) + "\n");
+}
 
 // 武器・防具・車両一覧
 const equipment = buildEquipment(items, warnings);
