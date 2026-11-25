@@ -338,5 +338,10 @@
     "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
     "url": "/changelog",
     "kind": "official"
+  },
+  "player-lottery": {
+    "label": "プレイヤー報告（宝くじ・Discordでの仲間の報告とスクリーンショット・2026/11/25）",
+    "url": "/changelog",
+    "kind": "fan"
   }
 }
