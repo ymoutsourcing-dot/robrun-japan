@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, KeyRound, Lock, CalendarClock, Siren, Lightbulb, Boxes } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { GitBranch, Database, Calculator, Sparkles, ListChecks, Coins, Car, House, Crosshair, Info, KeyRound, Lock, CalendarClock, Siren, Lightbulb, Boxes, Search } from "lucide-react";
 import { dataset, items } from "../lib/data";
 import { money } from "../lib/format";
 import { ProgressBar } from "../components/ProgressBar";
@@ -29,6 +29,7 @@ const COMING = [
 ];
 
 export default function HomePage() {
+  const navigate = useNavigate();
   useDocumentTitle(null, "ROB RUN の非公式日本語攻略サイト。Shipments（研究ツリー）全172項目を日本語化し、研究費の計算や進捗管理ができます。");
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-3 py-6 sm:px-4">
@@ -51,6 +52,17 @@ export default function HomePage() {
             費用を計算する
           </Link>
         </div>
+        <form
+          className="mt-4 flex max-w-md items-center gap-2 rounded-md border border-line bg-bg px-3 focus-within:border-neon"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const q = new FormData(e.currentTarget).get("q")?.toString().trim();
+            if (q) navigate(`/search?q=${encodeURIComponent(q)}`);
+          }}
+        >
+          <Search size={16} className="text-muted" />
+          <input name="q" placeholder="サイト内検索（例：宝くじ、ドリル、税）" className="w-full bg-transparent py-2 text-sm outline-none" />
+        </form>
         <ProgressBar className="mt-5 max-w-sm" />
       </section>
 

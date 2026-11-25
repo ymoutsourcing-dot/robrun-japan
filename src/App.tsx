@@ -17,6 +17,7 @@ import WeaponsPage from "./pages/WeaponsPage";
 import VehiclesPage from "./pages/VehiclesPage";
 import CargoPage from "./pages/CargoPage";
 import CollectionsPage from "./pages/CollectionsPage";
+import SearchPage from "./pages/SearchPage";
 import CalcPage from "./pages/CalcPage";
 import ToolsPage from "./pages/ToolsPage";
 import TipsPage from "./pages/TipsPage";
@@ -61,6 +62,7 @@ export default function App() {
           <Route path="vehicles" element={<VehiclesPage />} />
           <Route path="cargo" element={<CargoPage />} />
           <Route path="collections" element={<CollectionsPage />} />
+          <Route path="search" element={<SearchPage />} />
           <Route path="calc" element={<CalcPage />} />
           <Route path="tools" element={<ToolsPage />} />
           <Route path="tips" element={<TipsPage />} />

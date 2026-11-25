@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { ListChecks, Menu, X } from "lucide-react";
+import { ListChecks, Menu, Search, X } from "lucide-react";
 import { items } from "../lib/data";
 import { useProgress } from "../store/progress";
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -42,7 +42,13 @@ function ProgressButton() {
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+  // ページ内リンク（#id）で開いたとき、その位置までスクロールする
+  useEffect(() => {
+    if (!hash) return;
+    const t = setTimeout(() => document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: "start" }), 150);
+    return () => clearTimeout(t);
+  }, [pathname, hash]);
   const fullBleed = pathname === "/shipments";
   const link = ({ isActive }: { isActive: boolean }) =>
     `rounded-md px-2 py-1.5 text-sm ${isActive ? "bg-neon/10 text-neon" : "text-muted hover:text-white"}`;
@@ -62,7 +68,16 @@ export default function Layout() {
               </NavLink>
             ))}
           </nav>
-          <button className="ml-auto p-2 lg:hidden" onClick={() => setOpen((o) => !o)} aria-label="メニュー" aria-expanded={open}>
+          <Link
+            to="/search"
+            onClick={() => setOpen(false)}
+            aria-label="サイト内検索"
+            className="ml-auto flex items-center gap-1 rounded-md border border-line px-2 py-1.5 text-sm text-muted hover:border-neon hover:text-neon lg:ml-1"
+          >
+            <Search size={16} />
+            <span className="sm:inline hidden">検索</span>
+          </Link>
+          <button className="p-2 lg:hidden" onClick={() => setOpen((o) => !o)} aria-label="メニュー" aria-expanded={open}>
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>

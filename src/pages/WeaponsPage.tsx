@@ -118,7 +118,7 @@ export default function WeaponsPage() {
     setParams(n, { replace: true });
   };
   const [type, setType] = useState<string>("all");
-  const [q, setQ] = useState("");
+  const [q, setQ] = useState(params.get("q") ?? "");
   const [onlyShipments, setOnlyShipments] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const toggle = (id: string) =>

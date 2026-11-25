@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ExternalLink, Info, Search } from "lucide-react";
 import json from "../../data/source/collections.source.json";
 import { money, RARITY_COLOR, RARITY_JA } from "../lib/format";
@@ -89,7 +89,8 @@ function Card({ c }: { c: Collection }) {
 
 export default function CollectionsPage() {
   useDocumentTitle("コレクション レシピ一覧", "ROB RUN のコレクションテーブルで作れるコレクション箱 全34レシピ。必要な材料と個数、箱の価値、必要な研究。");
-  const [q, setQ] = useState("");
+  const [params] = useSearchParams();
+  const [q, setQ] = useState(params.get("q") ?? "");
   const [crate, setCrate] = useState("all");
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
