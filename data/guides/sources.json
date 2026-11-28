@@ -343,5 +343,35 @@
     "label": "プレイヤー報告（宝くじ・Discordでの仲間の報告とスクリーンショット・2026/11/25）",
     "url": "/changelog",
     "kind": "fan"
+  },
+  "kefir-car": {
+    "label": "Kefir公式ヘルプ「How do I get and upgrade my own car?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1358-how-do-i-get-and-upgrade-my-own-car/",
+    "kind": "official"
+  },
+  "kefir-lockpick": {
+    "label": "Kefir公式ヘルプ「How do I lockpick a trunk?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1360-how-do-i-lockpick-a-trunk/",
+    "kind": "official"
+  },
+  "kefir-errors": {
+    "label": "Kefir公式ヘルプ「What should I do if I get an error code?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1377-what-should-i-do-if-i-get-an-error-code/",
+    "kind": "official"
+  },
+  "kefir-fps": {
+    "label": "Kefir公式ヘルプ「What should I do if my FPS drops drastically when moving the mouse?」",
+    "url": "https://kefirgames.helpshift.com/hc/en/14-rob-run/faq/1383-what-should-i-do-if-my-fps-drops-drastically-when-moving-the-mouse/",
+    "kind": "official"
+  },
+  "steam-1123": {
+    "label": "公式記事「Anti-Cheat Measures and Servers」（2026/11/23・Steam）",
+    "url": "https://store.steampowered.com/news/app/4262460/view/712292668328117294",
+    "kind": "official"
+  },
+  "rrg-catalog": {
+    "label": "Rob Run Guide アイテムカタログ（ゲームファイルの説明文・故買屋への売値）",
+    "url": "https://robrunguide.app/en-US/items",
+    "kind": "fan"
   }
 }
