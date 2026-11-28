@@ -98,5 +98,10 @@
     "label": "ゲーム内のワイプ画面「CONFISCATION」（プレイヤーのスクリーンショット・2026/11/23）",
     "url": "/changelog",
     "kind": "official"
+  },
+  "ingame-lb-map": {
+    "label": "ゲーム内の Looty Bay の地図（プレイヤーのスクリーンショット・2026/11/28）",
+    "url": "/guides/map-looty-bay",
+    "kind": "official"
   }
 }

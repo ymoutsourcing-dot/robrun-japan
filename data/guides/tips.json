@@ -357,8 +357,7 @@
     "金庫・棚（キャビネット）・貸金庫の中身と出る確率（Rob Run Guide にも一覧なし）。",
     "「ルートポイント」が毎回すべて出るか（出現率）。下の「決まった品の合計」は全部出た場合の値。",
     "警報が鳴ってから警官に通知されるまでの秒数。",
-    "高級コテージの金庫を開ける道具（Rob Run Guide に記載なし）。",
-    "警察署・アートギャラリーの地区名（パークサイド／パームサイド／中心部でサイト間が食い違い）。"
+    "高級コテージの金庫を開ける道具（Rob Run Guide に記載なし）。"
   ],
   "locations": [
     {
@@ -486,11 +485,10 @@
       "nameJa": "警察署",
       "nameEn": "Police Station",
       "typeJa": "ランドマーク",
-      "districtJa": "パークサイド",
-      "districtEn": "Parkside",
+      "districtJa": "パームサイド",
+      "districtEn": "Palmside",
       "districtSources": [
-        "fyi-heists",
-        "wiki-map"
+        "ingame-lb-map"
       ],
       "staff": 1,
       "breaker": false,
@@ -646,11 +644,10 @@
       "nameJa": "アートギャラリー",
       "nameEn": "Art Gallery",
       "typeJa": "ランドマーク",
-      "districtJa": "パークサイド",
-      "districtEn": "Parkside",
+      "districtJa": "パームサイド",
+      "districtEn": "Palmside",
       "districtSources": [
-        "fyi-heists",
-        "wiki-map"
+        "ingame-lb-map"
       ],
       "staff": 3,
       "breaker": false,

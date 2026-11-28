@@ -432,5 +432,45 @@
    "x": -270.1,
    "y": 39.5
   }
- ]
+ ],
+ "images": {
+  "note": "プレイヤー提供のゲーム内マップのスクリーンショット（2026/11/28）。建物アイコンの位置とゲームデータの座標を対応させて配置（誤差は数px）。",
+  "layers": [
+   {
+    "file": "/maps/looty-bay/overview.webp",
+    "x": -689.37,
+    "y": -921.23,
+    "width": 1351.12,
+    "height": 1209.57
+   },
+   {
+    "file": "/maps/looty-bay/loraine-hills.webp",
+    "x": -588.53,
+    "y": -657.28,
+    "width": 627.35,
+    "height": 469.48
+   },
+   {
+    "file": "/maps/looty-bay/sunny-beach.webp",
+    "x": -629.13,
+    "y": -278.79,
+    "width": 491.13,
+    "height": 571.52
+   },
+   {
+    "file": "/maps/looty-bay/palmside.webp",
+    "x": -200.52,
+    "y": -266.27,
+    "width": 382.71,
+    "height": 492.79
+   },
+   {
+    "file": "/maps/looty-bay/downtown.webp",
+    "x": -12.73,
+    "y": -536.19,
+    "width": 680.46,
+    "height": 565.75
+   }
+  ]
+ }
 }

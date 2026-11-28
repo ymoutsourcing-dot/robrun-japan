@@ -373,5 +373,10 @@
     "label": "Rob Run Guide アイテムカタログ（ゲームファイルの説明文・故買屋への売値）",
     "url": "https://robrunguide.app/en-US/items",
     "kind": "fan"
+  },
+  "ingame-lb-map": {
+    "label": "ゲーム内の Looty Bay の地図（プレイヤーのスクリーンショット・2026/11/28）",
+    "url": "/guides/map-looty-bay",
+    "kind": "official"
   }
 }

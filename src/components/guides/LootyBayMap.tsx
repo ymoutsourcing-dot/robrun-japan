@@ -19,6 +19,7 @@ const data = mapJson as unknown as {
   initialBounds: Box;
   labels: { nameEn: string; x: number; y: number }[];
   places: Place[];
+  images?: { note: string; layers: { file: string; x: number; y: number; width: number; height: number }[] };
 };
 const LABEL_JA: Record<string, string> = {
   Downtown: "ダウンタウン",
@@ -33,14 +34,14 @@ const ASPECT = data.initialBounds.height / data.initialBounds.width;
 export default function LootyBayMap() {
   const [view, setView] = useState<Box>(data.initialBounds);
   const [sel, setSel] = useState<string | null>(null);
-  const [show, setShow] = useState({ car: true, heli: true });
+  const [show, setShow] = useState({ car: false, heli: true, pins: true });
   const svg = useRef<SVGSVGElement>(null);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const moved = useRef(false);
 
   const clamp = (v: Box): Box => {
     const b = data.bounds;
-    const width = Math.min(Math.max(v.width, 120), b.width);
+    const width = Math.min(Math.max(v.width, 200), b.width);
     const height = width * ASPECT;
     return {
       width,
@@ -109,11 +110,12 @@ export default function LootyBayMap() {
     <section className="rounded-xl border border-line bg-bg-panel p-3">
       <h2 className="mb-1 text-lg font-bold">Looty Bay の地図（建物と車の位置）</h2>
       <p className="mb-2 text-xs text-muted">
-        ホイール・ピンチで拡大、ドラッグで移動。点を押すと名前と強盗スポットの情報。道路や建物の形は描いておらず、位置だけを示している。
+        ホイール・ピンチで拡大、ドラッグで移動。緑の丸を押すと名前と強盗スポットの情報。背景はゲーム内の地図のスクリーンショット。
       </p>
       <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
-        <span className="flex items-center gap-1"><span className="inline-block h-3 w-3 rounded-full bg-neon" />建物（強盗スポット）</span>
-        <span className="flex items-center gap-1"><span className="inline-block h-3 w-3 rounded-full border-2 border-yellow-300 bg-neon" />主要な建物</span>
+        <span className="flex items-center gap-1"><span className="inline-block h-3 w-3 rounded-full border-2 border-green-600" />建物（強盗スポット）</span>
+        <span className="flex items-center gap-1"><span className="inline-block h-3 w-3 rounded-full border-2 border-yellow-500" />主要な建物</span>
+        <label className="flex items-center gap-1"><input type="checkbox" checked={show.pins} onChange={(e) => setShow({ ...show, pins: e.target.checked })} className="accent-[#5cff8a]" />名前と印を表示</label>
         <label className="flex items-center gap-1"><input type="checkbox" checked={show.car} onChange={(e) => setShow({ ...show, car: e.target.checked })} className="accent-[#5cff8a]" /><span className="inline-block h-3 w-3 rounded-sm bg-sky-400" />車のスポーン</label>
         <label className="flex items-center gap-1"><input type="checkbox" checked={show.heli} onChange={(e) => setShow({ ...show, heli: e.target.checked })} className="accent-[#5cff8a]" /><span className="inline-block h-3 w-3 rotate-45 bg-orange-400" />ヘリのスポーン</label>
       </div>
@@ -136,13 +138,17 @@ export default function LootyBayMap() {
               <path d="M50 0H0V50" fill="none" stroke="#1d2a24" strokeWidth={1} />
             </pattern>
           </defs>
-          <rect x={data.bounds.minX} y={data.bounds.minY} width={data.bounds.width} height={data.bounds.height} fill="url(#lb-grid)" />
-          {data.labels.map((l) => (
+          <rect x={data.bounds.minX} y={data.bounds.minY} width={data.bounds.width} height={data.bounds.height} fill={data.images ? "#5ea9b1" : "url(#lb-grid)"} />
+          {/* 全体図は常に表示、拡大したら詳細のスクショを重ねる */}
+          {data.images?.layers.filter((_, i) => i === 0 || view.width < 900).map((l) => (
+            <image key={l.file} href={l.file} x={l.x} y={l.y} width={l.width} height={l.height} preserveAspectRatio="none" pointerEvents="none" />
+          ))}
+          {!data.images && data.labels.map((l) => (
             <text key={l.nameEn} x={l.x} y={l.y} textAnchor="middle" fontSize={s * 3.2} fill="#5cff8a" opacity={0.35} fontWeight="bold" pointerEvents="none">
               {LABEL_JA[l.nameEn] ?? l.nameEn}
             </text>
           ))}
-          {places.map((p) => {
+          {show.pins && places.map((p) => {
             const on = p.id === sel;
             const pick = (e: React.MouseEvent) => {
               e.stopPropagation();
@@ -154,9 +160,9 @@ export default function LootyBayMap() {
               return <rect key={p.id} x={p.x - s} y={p.y - s} width={s * 2} height={s * 2} fill="#fb923c" transform={`rotate(45 ${p.x} ${p.y})`} stroke={on ? "#fff" : "none"} strokeWidth={s * 0.4} onClick={pick} className="cursor-pointer" />;
             return (
               <g key={p.id} onClick={pick} className="cursor-pointer">
-                <circle cx={p.x} cy={p.y} r={s * (p.landmark ? 1.6 : 1.2)} fill="#5cff8a" stroke={on ? "#fff" : p.landmark ? "#fde047" : "#0b1210"} strokeWidth={s * 0.4} />
+                <circle cx={p.x} cy={p.y} r={s * (p.landmark ? 2.2 : 1.8)} fill="#5cff8a" fillOpacity={on ? 0.35 : 0.08} stroke={on ? "#ffffff" : p.landmark ? "#eab308" : "#16a34a"} strokeWidth={s * 0.45} />
                 {(view.width < 700 || p.landmark || on) && (
-                  <text x={p.x} y={p.y - s * 2} textAnchor="middle" fontSize={s * 2} fill="#e5e7eb" stroke="#0b1210" strokeWidth={s * 0.5} paintOrder="stroke" pointerEvents="none">
+                  <text x={p.x} y={p.y - s * 2} textAnchor="middle" fontSize={s * 2} fill="#ffffff" stroke="#111827" strokeWidth={s * 0.5} paintOrder="stroke" pointerEvents="none">
                     {nameOf(p)}
                   </text>
                 )}
@@ -191,7 +197,7 @@ export default function LootyBayMap() {
         <a href={data.source.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-0.5 text-sky-300 hover:underline">
           {data.source.name} <ExternalLink size={11} />
         </a>
-        （ゲームファイル由来・{data.source.retrievedAt}取得）。地区名の位置も同じ出典。故買屋・密輸業者のバンなど、ここに無い場所は未収録。
+        （ゲームファイル由来・{data.source.retrievedAt}取得）。{data.images?.note} 故買屋・密輸業者のバンなど、データに無い場所の印は未収録（地図上の $ や箱のアイコンはゲーム内の表示）。
       </p>
     </section>
   );
