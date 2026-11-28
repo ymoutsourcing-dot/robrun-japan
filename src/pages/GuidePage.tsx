@@ -7,6 +7,7 @@ import WipeExtras from "../components/guides/WipeExtras";
 import PoliceExtras from "../components/guides/PoliceExtras";
 import ProductionExtras from "../components/guides/ProductionExtras";
 import MapExtras from "../components/guides/MapExtras";
+import LootyBayMap from "../components/guides/LootyBayMap";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import NotFound from "./NotFound";
 
@@ -31,6 +32,7 @@ export default function GuidePage() {
       <GuideHeader guide={guide} />
       <SourceLegend />
       {Extras && <Extras />}
+      {guide.id === "map-looty-bay" && <LootyBayMap />}
       {mapGuide && <MapExtras guide={mapGuide} />}
       <GuideSections guide={guide} />
     </div>

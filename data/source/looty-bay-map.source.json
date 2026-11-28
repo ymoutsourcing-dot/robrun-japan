@@ -1,0 +1,436 @@
+{
+ "source": {
+  "name": "Rob Run Guide「Looty Bay」マップ",
+  "url": "https://robrunguide.app/en-US/map/looty-bay",
+  "note": "建物・車両スポーンの座標のみ（ゲームファイル由来）。地図画像は使わず本サイトで描画。",
+  "retrievedAt": "2026-11-28"
+ },
+ "bounds": {
+  "minX": -750,
+  "minY": -950,
+  "width": 1500,
+  "height": 1500
+ },
+ "initialBounds": {
+  "minX": -650,
+  "minY": -720,
+  "width": 1300,
+  "height": 1100
+ },
+ "labels": [
+  {
+   "nameEn": "Downtown",
+   "x": 365,
+   "y": -86
+  },
+  {
+   "nameEn": "Loraine Hills",
+   "x": -301,
+   "y": -514
+  },
+  {
+   "nameEn": "Palmside",
+   "x": -18.5,
+   "y": 47.8
+  },
+  {
+   "nameEn": "Sunny Beach",
+   "x": -367,
+   "y": -150
+  }
+ ],
+ "places": [
+  {
+   "id": "building-1",
+   "nameEn": "Cottage",
+   "kind": "building",
+   "landmark": false,
+   "x": -254.3,
+   "y": -541.8
+  },
+  {
+   "id": "building-7",
+   "nameEn": "Jewelry Store: West",
+   "kind": "building",
+   "landmark": false,
+   "x": -423.4,
+   "y": -107.2
+  },
+  {
+   "id": "building-17",
+   "nameEn": "Art Gallery",
+   "kind": "building",
+   "landmark": true,
+   "x": -12.8,
+   "y": 122.7
+  },
+  {
+   "id": "building-19",
+   "nameEn": "Electronics Store",
+   "kind": "building",
+   "landmark": false,
+   "x": 219.7,
+   "y": -245.1
+  },
+  {
+   "id": "building-16",
+   "nameEn": "Police Station",
+   "kind": "building",
+   "landmark": true,
+   "x": -64.8,
+   "y": -6.1
+  },
+  {
+   "id": "building-12",
+   "nameEn": "Seasons Hotel",
+   "kind": "building",
+   "landmark": false,
+   "x": -283.7,
+   "y": 21.6
+  },
+  {
+   "id": "building-4",
+   "nameEn": "Cottage",
+   "kind": "building",
+   "landmark": false,
+   "x": -262.8,
+   "y": -469.0
+  },
+  {
+   "id": "building-20",
+   "nameEn": "Convenience Store",
+   "kind": "building",
+   "landmark": false,
+   "x": 506.9,
+   "y": -273.4
+  },
+  {
+   "id": "building-5",
+   "nameEn": "Grand Hotel",
+   "kind": "building",
+   "landmark": true,
+   "x": -338.6,
+   "y": -213.8
+  },
+  {
+   "id": "building-21",
+   "nameEn": "Gas Station",
+   "kind": "building",
+   "landmark": false,
+   "x": 239.6,
+   "y": -118.6
+  },
+  {
+   "id": "building-6",
+   "nameEn": "Convenience Store",
+   "kind": "building",
+   "landmark": false,
+   "x": -390.3,
+   "y": -85.9
+  },
+  {
+   "id": "building-0",
+   "nameEn": "Noble's Mansion",
+   "kind": "building",
+   "landmark": false,
+   "x": -372.4,
+   "y": -504.6
+  },
+  {
+   "id": "building-9",
+   "nameEn": "Gun Shop: West",
+   "kind": "building",
+   "landmark": false,
+   "x": -317.0,
+   "y": -30.6
+  },
+  {
+   "id": "building-23",
+   "nameEn": "Pharmacy",
+   "kind": "building",
+   "landmark": false,
+   "x": 355.2,
+   "y": -108.0
+  },
+  {
+   "id": "building-3",
+   "nameEn": "Cottage",
+   "kind": "building",
+   "landmark": false,
+   "x": -310.2,
+   "y": -480.2
+  },
+  {
+   "id": "building-26",
+   "nameEn": "Jewelry Store: East",
+   "kind": "building",
+   "landmark": false,
+   "x": 368.7,
+   "y": -45.7
+  },
+  {
+   "id": "building-8",
+   "nameEn": "Equipment Store: West",
+   "kind": "building",
+   "landmark": false,
+   "x": -303.9,
+   "y": -78.3
+  },
+  {
+   "id": "building-2",
+   "nameEn": "Elite Cottage",
+   "kind": "building",
+   "landmark": false,
+   "x": -304.8,
+   "y": -538.1
+  },
+  {
+   "id": "building-25",
+   "nameEn": "Rusty Burgers Café",
+   "kind": "building",
+   "landmark": false,
+   "x": 246.5,
+   "y": -37.9
+  },
+  {
+   "id": "building-14",
+   "nameEn": "Strip Club",
+   "kind": "building",
+   "landmark": false,
+   "x": -471.1,
+   "y": 19.3
+  },
+  {
+   "id": "building-13",
+   "nameEn": "Reef Hotel",
+   "kind": "building",
+   "landmark": false,
+   "x": -369.2,
+   "y": 18.8
+  },
+  {
+   "id": "building-24",
+   "nameEn": "Convenience Store",
+   "kind": "building",
+   "landmark": false,
+   "x": 454.2,
+   "y": -101.9
+  },
+  {
+   "id": "building-18",
+   "nameEn": "Looty Bay Bank",
+   "kind": "building",
+   "landmark": true,
+   "x": 340.2,
+   "y": -385.9
+  },
+  {
+   "id": "building-28",
+   "nameEn": "Equipment Store: East",
+   "kind": "building",
+   "landmark": false,
+   "x": 319.4,
+   "y": 117.2
+  },
+  {
+   "id": "building-27",
+   "nameEn": "Gun Shop: East",
+   "kind": "building",
+   "landmark": false,
+   "x": 434.5,
+   "y": 116.4
+  },
+  {
+   "id": "building-10",
+   "nameEn": "Pharmacy",
+   "kind": "building",
+   "landmark": false,
+   "x": -271.4,
+   "y": -44.1
+  },
+  {
+   "id": "building-11",
+   "nameEn": "Electronics Store",
+   "kind": "building",
+   "landmark": false,
+   "x": -254.0,
+   "y": -47.4
+  },
+  {
+   "id": "building-15",
+   "nameEn": "Ocean Breeze Café",
+   "kind": "building",
+   "landmark": false,
+   "x": -325.5,
+   "y": 235.6
+  },
+  {
+   "id": "transport-2614",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 15.3,
+   "y": 35.7
+  },
+  {
+   "id": "transport-2606",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -453.8,
+   "y": -255.5
+  },
+  {
+   "id": "transport-2624",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 254.4,
+   "y": -384.6
+  },
+  {
+   "id": "transport-2618",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 522.5,
+   "y": -90.1
+  },
+  {
+   "id": "transport-2620",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 493.1,
+   "y": -254.4
+  },
+  {
+   "id": "transport-2613",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -383.7,
+   "y": -108.1
+  },
+  {
+   "id": "transport-2621",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 252.8,
+   "y": -81.8
+  },
+  {
+   "id": "transport-2609",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -280.2,
+   "y": 159.1
+  },
+  {
+   "id": "transport-2607",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -220.8,
+   "y": -302.1
+  },
+  {
+   "id": "transport-2610",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -195.4,
+   "y": -524.6
+  },
+  {
+   "id": "transport-2619",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 322.3,
+   "y": -40.5
+  },
+  {
+   "id": "transport-2616",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -72.4,
+   "y": -132.4
+  },
+  {
+   "id": "transport-2626",
+   "nameEn": "Helicopter",
+   "kind": "heli",
+   "landmark": false,
+   "x": -108.6,
+   "y": -179.3
+  },
+  {
+   "id": "transport-2622",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 367.4,
+   "y": 127.9
+  },
+  {
+   "id": "transport-2617",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -15.0,
+   "y": 99.6
+  },
+  {
+   "id": "transport-2625",
+   "nameEn": "Helicopter",
+   "kind": "heli",
+   "landmark": false,
+   "x": -118.4,
+   "y": -25.3
+  },
+  {
+   "id": "transport-2623",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": 412.9,
+   "y": -177.1
+  },
+  {
+   "id": "transport-2612",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -357.7,
+   "y": -56.4
+  },
+  {
+   "id": "transport-2611",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -475.5,
+   "y": -22.2
+  },
+  {
+   "id": "transport-2615",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -59.2,
+   "y": 24.4
+  },
+  {
+   "id": "transport-2608",
+   "nameEn": "Car",
+   "kind": "car",
+   "landmark": false,
+   "x": -270.1,
+   "y": 39.5
+  }
+ ]
+}
